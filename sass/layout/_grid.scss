@@ -1,0 +1,15 @@
+
+.grid {
+  .region.content &.large {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      width: 100%;
+
+      @include breakpoint(720px) {
+        width: 50%;
+      }
+    }
+  }
+}

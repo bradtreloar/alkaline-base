@@ -1,0 +1,27 @@
+@import 'alkaline';
+
+.product {
+  display: flex;
+
+  .field--name-price {
+    p {
+      margin: 0 0 16px;
+    }
+
+    strong {
+      font-size: 140%;
+      font-weight: bold;
+    }
+  }
+
+  // the atc form
+  .field--name-variations {
+    @include clearfix;
+    margin: 16px 0;
+
+    form {
+      float: left;
+      min-width: 200px;
+    }
+  }
+}

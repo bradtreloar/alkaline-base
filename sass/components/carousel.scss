@@ -1,0 +1,58 @@
+@import 'alkaline';
+
+@include foundation-orbit;
+
+.orbit {
+  @include orbit-wrapper;
+}
+
+.orbit-container {
+  @include orbit-container;
+}
+
+.orbit-slide {
+  @include orbit-slide;
+}
+
+.orbit-figure {
+  @include orbit-figure;
+  background: $black;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
+.orbit-image {
+  @include orbit-image;
+}
+
+.orbit-caption {
+  @include orbit-caption;
+}
+
+%orbit-control {
+  @include orbit-control;
+
+  svg { 
+    fill: $white;
+    height: 1.5em;
+    width: 1.5em;
+  }
+}
+
+.orbit-previous {
+  @extend %orbit-control;
+  @include orbit-previous;
+}
+
+.orbit-next {
+  @extend %orbit-control;
+  @include orbit-next;
+}
+
+.orbit-bullets {
+  @include orbit-bullets;
+}

@@ -1,0 +1,39 @@
+@import 'alkaline';
+
+.card {
+  height: 100%;
+  margin: 24px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  > a {
+    display: block;
+    margin: 0 auto 24px;
+    max-width: 240px;
+  }
+
+  figcaption {
+    div {
+      margin: 16px 0 0 0;
+    }
+
+    > a:not(:first-child) {
+      @include button;
+      float: left;
+    }
+  }
+
+  @include breakpoint(960px) {
+    display: flex;
+
+    > a {
+      display: block;
+      margin: 0 24px 0 0;
+      width: 240px;
+    }
+  }
+}

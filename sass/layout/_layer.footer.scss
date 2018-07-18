@@ -1,0 +1,21 @@
+
+$footer-layer-background: $medium-gray !default;
+$footer-layer-color: $black !default;
+
+.layer.footer {
+  color: $footer-layer-color;
+  background-color: $footer-layer-background;
+  margin: 96px 0 0 0;
+}
+
+.layer.boilerplate {
+  .block {
+    // @todo move this to component stylesheet
+    text-align: center;
+    font-size: 85%;
+    font-weight: bold;
+    padding: 16px 24px;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+}

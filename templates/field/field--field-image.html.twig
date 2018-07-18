@@ -1,0 +1,12 @@
+{% for item in items %}
+<figure>
+  <picture{{ attributes }}>
+    {{ item.content }}
+  </picture>
+  {% if item.caption %}
+    <figcaption>
+      {{ item.caption }}
+    </figcaption>
+  {% endif %}
+</figure>
+{% endfor %}

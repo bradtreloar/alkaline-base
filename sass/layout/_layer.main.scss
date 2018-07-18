@@ -1,0 +1,19 @@
+
+.layer.main {
+
+  .block {
+    margin: $global-margin auto;
+    max-width: $global-width;
+    padding: 0 $global-margin;
+    
+    > h2 {
+      margin: $global-margin 0;
+    }
+  }
+
+  .block--hero-banner {
+    margin: 0 auto $global-margin;
+    max-width: none;
+    padding: 0;
+  }
+}

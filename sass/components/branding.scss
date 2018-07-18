@@ -1,0 +1,23 @@
+@import 'alkaline';
+
+.branding {
+  display: flex;
+  height: 100%;
+
+  a {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    padding: 12px 16px;
+  
+    // the image size is constrained 
+    // by the size of the header
+    img {
+      display: block;
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}

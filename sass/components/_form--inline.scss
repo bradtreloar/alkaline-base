@@ -1,0 +1,10 @@
+@import 'alkaline';
+
+.region.content
+form .form--inline {
+  display: flex;
+    
+  .form-actions {
+    margin-left: 16px;
+  }
+}

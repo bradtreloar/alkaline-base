@@ -1,0 +1,116 @@
+@import 'alkaline';
+
+// Foundation overrides
+$drilldown-background: inherit;
+$drilldown-submenu-background: inherit;
+$dropdownmenu-border: 0 solid transparent;
+
+
+@mixin alkaline-menu {
+  .menu {
+    &, li, a {
+      background: inherit;
+    }
+  
+    a {
+      @include alkaline-menu-button;
+    }
+
+    &.social-share {
+      @include alkaline-social-share-menu;
+    }
+  }
+}
+
+
+@mixin alkaline-dropdown-menu {
+  
+}
+
+
+@mixin alkaline-drilldown-menu {
+
+}
+
+
+@mixin alkaline-menu-button {
+  color: inherit;
+  display: block;
+    
+  svg.icon {
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: middle;
+    
+    // If the menu item has an icon then hide the
+    // text labal until there is ample horizontal space.
+    & + span {
+      display: none;
+      
+      @include breakpoint(medium) {
+        display: inline;
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  span {
+    line-height: 1.5em;
+  }
+}
+
+
+@mixin alkaline-social-share-menu {
+  @include button-group(li, 0.5rem);
+
+  a {
+    height: 2rem;
+    width: 2rem;
+    padding: 20%;
+
+    svg.icon {
+      height: 100%;
+      width: 100%;
+
+      & + span {
+        display: none;
+      }
+    }
+  }
+
+  li {
+    @include brand-colors(background-color);
+    fill: $white;
+  }
+}
+
+
+@include foundation-menu;
+@include foundation-drilldown-menu;
+@include foundation-dropdown-menu;
+
+@include alkaline-menu;
+@include alkaline-drilldown-menu;
+@include alkaline-dropdown-menu;
+
+
+div.menu-wrapper {
+  background: inherit;
+}
+
+
+button[data-toggle="navbar"] {
+  @include alkaline-menu-button;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  line-height: 1;
+  text-decoration: none;
+  display: block;
+  padding: $menu-items-padding;
+  cursor: pointer;
+
+  @include breakpoint(large) {
+    display: none;
+  }
+}

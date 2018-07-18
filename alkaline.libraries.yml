@@ -1,0 +1,89 @@
+
+global:
+  css:
+    base:
+      css/base/base.css: {}
+      css/base/motion-ui.min.css: {}
+      css/print.css: { media: print }
+    layout:
+      css/layout/layout.css: {}
+    component:
+      css/components/action-links.css: {}
+      css/components/address.css: {}
+      css/components/admin-toolbar.css: {}
+      css/components/ajax.css: {}
+      css/components/branding.css: {}
+      css/components/breadcrumbs.css: {}
+      css/components/button.css: {}
+      css/components/card.css: {}
+      css/components/form.css: {}
+      css/components/icon.css: {}
+      css/components/local-tasks.css: {}
+      css/components/menu.css: {}
+      css/components/table.css: {}
+      css/components/tabs.css: {}
+      css/components/text-formatted.css: {}
+  js:
+    js/alkaline.js: {}
+    js/foundation.min.js: { weight: -1 }
+    js/motion-ui.min.js: { weight: -2 }
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+article:
+  css:
+    component:
+      css/components/article.css: {}
+
+carousel:
+  css:
+    component:
+      css/components/carousel.css: {}
+
+cart_block:
+  css:
+    component:
+      css/components/commerce-cart.css: {}
+
+comment:
+  css:
+    component:
+      css/components/comment.css: {}
+
+hero_banner:
+  css:
+    component:
+      css/components/hero-banner.css: {}
+
+media_object:
+  css:
+    component:
+      css/components/media-object.css: {}
+
+messages:
+  css:
+    component:
+      css/components/messages.css: {}
+
+product:
+  css:
+    component:
+      css/components/product.css: {}
+      css/components/product-thumbs.css: {}
+      css/components/form--commerce-atc.css: {}
+  js:
+    js/lightbox.js: {}
+    js/productThumbs.js: {}
+    js/cart.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - alkaline/global
+
+tags:
+  css:
+    component:
+      css/components/tags.css: {}

@@ -1,0 +1,15 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+<figure class="user-picture">
+  {% for item in items %}
+    <picture{{ attributes.addClass('field__item') }}>
+      {{ item.content }}
+    </picture>
+  {% endfor %}
+</figure>

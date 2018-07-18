@@ -1,0 +1,237 @@
+@import 'alkaline';
+
+.region.content form {
+  $FORM_ELEMENT_HEIGHT: 32px;
+  
+  .form-item {
+    margin: 16px 0;
+    position: relative;  }
+    
+  .form-actions {
+    clear: both;
+    margin: 16px 0;
+  }
+
+  // @todo Replace with element selector.
+  .description {
+    font-size: 85%;
+    margin: 8px 0 0;
+    line-height: 1.15;
+
+    ul {
+      margin: 4px 0;
+    }
+
+    li {
+      list-style: square;
+      margin-left: 16px;
+    }
+  }
+
+  fieldset {
+    margin: 24px 0;
+
+    legend {
+      // match h3
+      color: color(default, heading);
+      font-size: 150%;
+      font-weight: 300;
+      line-height: 1.25;
+      margin: 16px 0 16px 0;
+    }
+  }
+
+  label {
+    display: block;
+    font-size: 120%;
+    margin: 0 0 12px;
+  }
+
+  input,
+  textarea {
+    background-color: bgcolor(form, input);
+    color: color(form, input);
+    border: solid 1px border(form, input);
+    padding: 4px 8px;
+    width: 100%;
+    
+    &.error {
+      border: solid 1px border(form, 'input.error');
+    }
+  }
+
+  .form-type-select {
+    position: relative;
+    //height: $FORM_ELEMENT_HEIGHT;
+
+    select {
+      background-color: bgcolor(form, input);
+      color: color(form, input);
+      border: solid 1px border(form, input);
+      box-shadow: none;
+      height: $FORM_ELEMENT_HEIGHT;
+      line-height: $FORM_ELEMENT_HEIGHT;
+      display: block;
+      padding: 0 $FORM_ELEMENT_HEIGHT 0 8px;
+      width: 100%;
+  
+      // Hide the ugly dropdown button.
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+
+      &[disabled] {
+        background-color: bgcolor(form, 'input:disabled');
+        color: color(form, 'input:disabled');
+      }
+    }
+
+    // Add a custom dropdown button.
+    &:after {
+      $size: $FORM_ELEMENT_HEIGHT / 1.5;
+
+      background-image: icon('caret-down', border(form, input));
+      background-size: $size $size;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: $FORM_ELEMENT_HEIGHT;
+      height: $FORM_ELEMENT_HEIGHT;
+      pointer-events: none;
+    }
+  }
+  
+  input[type="radio"],
+  input[type="checkbox"] {
+    display: inline-block;
+    margin: 16px 0;
+    margin-right: 8px;
+    padding: 4px 8px;
+    vertical-align: middle;
+    width: auto;
+
+    & ~ label {
+      display: inline-block;
+      margin: 16px 0;
+      vertical-align: middle;
+    }
+  }
+  
+  input[type="submit"] {
+    @include button;
+    height: $FORM_ELEMENT_HEIGHT;
+    line-height: $FORM_ELEMENT_HEIGHT;
+    padding: 0 24px;
+  }
+
+  #edit-preview {
+    display: none;
+  }
+
+  a {
+    color: color(default, 'a');
+    text-decoration: none;
+
+    &:hover  {	
+      color: color(default, 'a:hover');
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: color(default, 'a:active');
+      text-decoration: underline;
+    }
+  }
+
+  div.password-strength {
+    float: right;
+    position: relative;
+    height: 24px;
+    width: 120px;
+    text-align: center;
+  }
+
+  div.password-strength-text {
+    display: block;
+    font-size: 85%;
+    padding: 4px;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+  }
+
+  div.password-strength-title {
+    display: none;
+  }
+
+  div.password-indicator {
+    border-bottom: solid 1px border(form, input);
+    position: absolute;
+    height: 100%;
+    width: 100% !important;
+    top: 0;
+    z-index: 0;
+
+    .indicator {
+      height: 100%;
+      background-color: lightpink;
+      width: 0;
+      
+      &[style*="width: 6"] {
+        background-color: rgb(235, 235, 108);
+      }
+      
+      &[style*="width: 7"] {
+        background-color: lightblue;
+      }
+      
+      &[style*="width: 8"],
+      &[style*="width: 9"],
+      &[style*="width: 100"] {
+        background-color: lightgreen;
+      }
+    }
+  }
+
+  div.password-confirm {
+    display: none;
+  }
+}
+
+.toboggan-unified {
+  #login-message {
+    display: none;
+  }
+
+  #login-links {
+    // @todo
+    // @extend .layer.main .block;
+    display: flex;
+    margin-top: 16px;
+
+    a {
+      background-color: transparent;
+      border: solid 1px transparent;
+      border-bottom: solid 1px border(tabs, section);
+      border-top-width: 3px;
+      color: inherit;
+      display: inline-block;
+      flex-grow: 1;
+      margin: 0 0 -1px;
+      padding: 12px 16px;
+      position: relative;
+      top: 0;
+
+      &.lt-active {
+        border-color: border(tabs, section);
+        border-bottom-color: white;
+        border-top-color: border(tabs, active);
+      }
+    }
+  }
+}

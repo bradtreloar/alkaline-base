@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ * 
+ */
+#}
+{%
+  set menu_classes = [
+    'menu',
+    'social-share',
+  ]
+%}
+{% if items %}
+  <ul{{ attributes.addClass(menu_classes) }}>
+  {% for item in items %}
+    {%
+      set classes = [
+        'menu-item',
+        'social-share-button',
+      ]
+    %}
+    <li{{ item.attributes.addClass(classes) }}>
+      <a href="{{ item.url }}">
+        {% if item.icon %}
+          <svg class="icon">
+            <use xlink:href="#{{ item.icon }}" />
+          </svg>
+        {% endif %}
+        <span>{{ item.title }}</span>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+{% endif %}

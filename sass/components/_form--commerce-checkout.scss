@@ -1,0 +1,81 @@
+@import 'alkaline';
+
+.region.content
+form[id^="commerce-checkout-form"] {
+
+  div[id^="addressfield-wrapper"] {
+    margin: 0 -8px;
+
+    div.form-item {
+      margin: 8px;
+    }
+  
+    .addressfield-container-inline {
+      display: flex;
+      flex-wrap: wrap;
+  
+      > div {
+        &[class*="name"] {
+          flex-grow: 1;
+        }
+  
+        &[class*="locality"] {
+          flex-grow: 1;
+        }
+      }
+    }
+  }
+
+  .checkout-help {
+    line-height: 1.75;
+    margin: 0 0 16px 0;
+  }
+
+  .commerce-order-handler-area-order-total {
+    @include clearfix;
+  }
+
+  table.checkout-review {
+
+    // this should not actually be a table
+    display: block;
+    > tbody { 
+      display: block;
+      
+      > tr {
+        @include clearfix;
+        display: block;
+        
+        > td {
+          display: block;
+        }
+      }
+    }
+
+    tr.pane-title {
+      color: color(default, heading);
+      font-size: 150%;
+      font-weight: 300;
+      line-height: 1.25;
+      margin: 16px 0 16px 0;
+    }
+  }
+
+  fieldset.checkout-buttons {
+    @include clearfix;
+
+    input {
+      display: block;
+      float: left;
+      margin: 0 8px 0 0;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
+
+#commerce-paypal-ec-order-form {
+  display: none;
+}

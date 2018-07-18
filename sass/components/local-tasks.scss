@@ -1,0 +1,16 @@
+@import 'alkaline';
+
+.local-tasks {
+  ul {
+    @include tabs-container;
+  }
+
+  li {
+    @include tabs-title;
+
+    > a.is-active {
+      background: $tab-background-active;
+      color: $tab-active-color;
+    }
+  }
+}

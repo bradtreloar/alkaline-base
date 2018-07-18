@@ -1,0 +1,15 @@
+
+{{ attach_library('alkaline/product') }}
+<article{{ attributes.addClass('product') }}>
+  {{ product.field_product_image }}
+  <div>
+    {{ product.variation_price }}
+    {{ product.variations }}
+    {{ product|without(
+      'field_product_image',
+      'variation_attributes',
+      'variation_price',
+      'variations')
+    }}
+  </div>
+</article>

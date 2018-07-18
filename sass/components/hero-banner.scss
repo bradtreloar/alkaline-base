@@ -1,0 +1,46 @@
+@import 'alkaline';
+
+figure.hero-banner {
+  @include alkaline-background-image;
+
+  &:after {
+    // Dim the background image to make the overlay easier to read.
+    filter: brightness(50%);
+  }
+
+  > figcaption {
+    margin: 0 auto;
+    max-width: $global-width;
+    padding: ($top-bar-height + 48px) 24px 48px;
+
+    > div:first-of-type {
+      @include alkaline-shadow-text;
+      color: $white;
+      font-size: 120%;
+      font-weight: bold;
+      text-align: center;
+    }
+  
+    @include breakpoint(720px) {
+      padding: ($top-bar-height + 96px) 96px 96px;
+
+      > div:first-of-type {
+        font-size: 140%;
+      }
+    }
+
+    > div:last-of-type {
+      @include button-group(div, 0.5rem);
+      justify-content: center;
+      margin: 0;
+
+      a {
+        @include alkaline-shadow-button;
+        font-weight: bold;
+        font-size: 120%;
+        margin: 0;
+        min-width: 8em;
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+
+div.page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: $top-bar-height 0 0 0;
+
+  main {
+    flex-grow: 1;
+  }
+}

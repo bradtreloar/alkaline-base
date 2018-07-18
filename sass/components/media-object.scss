@@ -1,0 +1,64 @@
+@import 'alkaline';
+
+@include foundation-media-object;
+
+@mixin alkaline-media-object-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &, & > li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  > li {
+    width: 100%;
+
+    @include breakpoint(large) {
+      margin-right: $global-margin;
+      max-width: ($global-width / 2) - (2 * $global-margin);
+      width: 100%;
+    }
+  }
+}
+
+
+@mixin alkaline-media-object {
+  @include media-object-container;
+
+  > * {
+    @include media-object-section;
+  }
+
+  figure {
+    flex: none;
+
+    figcaption {
+      display: none;
+    }
+
+    picture {
+      display: block;
+      // Make the figure as tall as 3 lines of text.
+      max-width: 3rem * $global-lineheight;
+    }
+
+    a, img {
+      display: block;
+      max-width: 100%;
+    }
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+}
+
+.media-object-list {
+  @include alkaline-media-object-list;
+}
+
+.media-object {
+  @include alkaline-media-object;
+}

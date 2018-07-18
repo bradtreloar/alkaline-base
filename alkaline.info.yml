@@ -1,0 +1,19 @@
+name: Alkaline
+type: theme
+description: Base theme
+package: Treloar
+core: 8.x
+
+base theme: classy
+
+libraries-override:
+  classy/base: alkaline/global
+  classy/messages: alkaline/messages
+  commerce/cart_block: alkaline/cart_block
+
+regions:
+  header: Header
+  navbar: Navbar
+  content: Content
+  footer: Footer
+  boilerplate: Boilerplate

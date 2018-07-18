@@ -1,0 +1,51 @@
+@import 'alkaline';
+
+.region.navbar form {
+
+  &.user-login {
+    min-width: 280px;
+    
+    input[type='submit'] {
+      @include button;
+      width: auto;
+      margin: 0;
+      padding: 0 12px;
+    }
+  
+    // links
+    ul {
+      li {
+        font-size: 85%;
+        margin: 12px 0;
+      }
+    }
+  
+    h2 {
+      display: none;
+    }
+  
+    label {
+      display: none;
+    }
+    
+    .form-item,
+    .form-actions {
+      @include clearfix;
+      margin: 4px 0;
+    }
+  
+    input,
+    select, 
+    textarea {
+      @include colors('form', 'input');
+      border: solid 1px transparent;
+      font-size: 85%;
+      padding: 8px 4px;
+      width: 100%;
+      
+      &.error {
+        border-color: border('form', 'input.error');
+      }
+    }
+  }
+}

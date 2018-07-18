@@ -1,0 +1,9 @@
+@import 'alkaline';
+
+.button {
+  @include button;
+
+  &[data-drupal-selector="edit-preview"] {
+    @include button($style: hollow);
+  }
+}

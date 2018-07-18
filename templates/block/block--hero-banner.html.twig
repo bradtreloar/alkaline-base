@@ -1,0 +1,19 @@
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block--hero-banner',
+  ]
+%}
+{{ attach_library('alkaline/hero_banner') }}
+<header{{ attributes.addClass(classes) }}>
+  <figure class="hero-banner">
+    <figcaption>
+      {% block content %}
+        {{ content|without('field_hero_background_image') }}
+      {% endblock %}
+    </figcaption>
+  </figure>
+</header>
+{{ background_css|raw }}
+

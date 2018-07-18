@@ -1,0 +1,24 @@
+@import 'alkaline';
+
+.js-form-wrapper,
+.js-form-item {
+  position: relative;
+}
+
+.ajax-progress-throbber {
+  background: rgba(white, 0.5);
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  .message {
+    display: none;
+  }
+  
+  .throbber {
+    display: none;
+  }
+}

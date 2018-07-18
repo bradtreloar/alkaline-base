@@ -1,0 +1,23 @@
+@import 'alkaline';
+
+.region.content
+form.commerce-order-item-add-to-cart-form {
+  margin: 0;
+  padding: 0;
+  
+  .form-item {
+    //margin: 0;
+  }
+    
+  .form-actions {
+    margin: 16px 0 0;
+  }
+
+  label {
+    //display: none;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
+}

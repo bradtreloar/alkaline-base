@@ -1,0 +1,29 @@
+<div class="page">
+
+  {% include '@alkaline/layout/includes/header.html.twig' %}
+
+  <main class="layer main" role="main">
+  
+    <a id="main-content" tabindex="-1"></a>
+
+    {% if page.sidebar_first %}
+      <section id="sidebar-first" class="region sidebar sidebar-first">
+        {{ page.sidebar_first }}
+      </section>
+    {% endif %}
+
+    <section id="content" class="region content">
+      {{ page.content }}
+    </section>
+
+    {% if page.sidebar_second %}
+      <section id="sidebar-second" class="region sidebar sidebar-second">
+        {{ page.sidebar_second }}
+      </section>
+    {% endif %}
+
+  </main>
+
+  {% include '@alkaline/layout/includes/footer.html.twig' %}
+
+</div>

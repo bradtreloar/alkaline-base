@@ -1,0 +1,19 @@
+@import 'alkaline';
+
+.breadcrumb {
+
+  ol {
+    @include breadcrumbs-container;
+    
+    // Disable margin here because margins are set on the block.
+    margin: 0;
+
+    // Browser default Padding must be removed.
+    padding: 0;
+
+    // Before pseudo-element is not needed.
+    &::before {
+      display: none;
+    }
+  }
+}

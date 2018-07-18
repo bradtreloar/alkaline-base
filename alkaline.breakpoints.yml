@@ -1,0 +1,30 @@
+alkaline.small:
+  label: small
+  mediaQuery: 'only screen and (min-width: 0em)'
+  weight: 0
+  multipliers:
+    - 1x
+alkaline.medium:
+  label: medium
+  mediaQuery: 'only screen and (min-width: 45em)'
+  weight: 1
+  multipliers:
+    - 1x
+alkaline.large:
+  label: large
+  mediaQuery: 'only screen and (min-width: 67.5em)'
+  weight: 2
+  multipliers:
+    - 1x
+alkaline.xlarge:
+  label: xlarge
+  mediaQuery: 'only screen and (min-width: 75em)'
+  weight: 3
+  multipliers:
+    - 1x
+alkaline.xxlarge:
+  label: xxlarge
+  mediaQuery: 'only screen and (min-width: 90em)'
+  weight: 4
+  multipliers:
+    - 1x

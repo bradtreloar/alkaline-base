@@ -1,0 +1,40 @@
+
+@import 'colors';
+
+$breakpoints: (
+  small: 0,
+  medium: 720px,
+  large: 1080px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+);
+
+$global-button-cursor: auto;
+$global-color-pick-contrast-tolerance: 0;
+$global-flexbox: true;
+$global-font-size: 100%;
+$global-lineheight: 1.5;
+$global-margin: 1rem;
+$global-menu-nested-margin: 1rem;
+$global-menu-padding: 0.7rem 1rem;
+$global-padding: 1rem;
+$global-position: 1rem;
+$global-prototype-breakpoints: false;
+$global-radius: 2px;
+$global-text-direction: ltr;
+$global-width: rem-calc(960);
+$global-weight-bold: bold;
+$global-weight-normal: normal;
+
+// Body
+$body-background: $white;
+$body-font-color: $black;
+$body-font-family: 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', 'sans-serif';
+$body-antialiased: true;
+
+// Top Bar
+$top-bar-height: 48px;
+
+// Internal variables used for text direction
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
