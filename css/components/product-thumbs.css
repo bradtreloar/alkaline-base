@@ -1,0 +1,27 @@
+.product-thumbs a {
+  display: block; }
+
+.product-thumbs img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+@media screen and (min-width: 45em) {
+  .product-thumbs {
+    flex: none;
+    margin: 0 48px 0 0;
+    max-height: none;
+    max-width: 240px; }
+    .product-thumbs ul {
+      display: flex;
+      margin: 16px -4px 0;
+      flex-direction: row;
+      width: 100%; }
+    .product-thumbs li {
+      display: block;
+      height: auto;
+      padding: 0 1px; } }
+
+@media screen and (min-width: 60em) {
+  .product-thumbs {
+    max-width: 360px; } }

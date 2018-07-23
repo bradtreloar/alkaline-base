@@ -1,0 +1,42 @@
+.card {
+  height: 100%;
+  margin: 24px; }
+  .card img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  .card > a {
+    display: block;
+    margin: 0 auto 24px;
+    max-width: 240px; }
+  .card figcaption div {
+    margin: 16px 0 0 0; }
+  .card figcaption > a:not(:first-child) {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #1779ba;
+    color: #fefefe;
+    float: left; }
+    [data-whatinput='mouse'] .card figcaption > a:not(:first-child) {
+      outline: 0; }
+    .card figcaption > a:not(:first-child):hover, .card figcaption > a:not(:first-child):focus {
+      background-color: #14679e;
+      color: #fefefe; }
+  @media screen and (min-width: 60em) {
+    .card {
+      display: flex; }
+      .card > a {
+        display: block;
+        margin: 0 24px 0 0;
+        width: 240px; } }

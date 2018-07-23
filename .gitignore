@@ -1,8 +1,6 @@
 
-css/
-
 # Node
 # Node modules are only used during development
-.node_modules
-.npm-debug.log
+node_modules/
+npm-debug.log
 

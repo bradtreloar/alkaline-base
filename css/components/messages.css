@@ -1,0 +1,22 @@
+.messages {
+  position: relative;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(10, 10, 10, 0.25);
+  border-radius: 2px; }
+  .messages > :first-child {
+    margin-top: 0; }
+  .messages > :last-child {
+    margin-bottom: 0; }
+
+.messages--status {
+  background-color: #e1faea;
+  color: #0a0a0a; }
+
+.messages--warning {
+  background-color: #fff3d9;
+  color: #0a0a0a; }
+
+.messages--error {
+  background-color: #f7e4e1;
+  color: #0a0a0a; }

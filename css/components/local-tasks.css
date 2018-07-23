@@ -1,0 +1,30 @@
+.local-tasks ul {
+  margin: 0;
+  border: 1px solid #e6e6e6;
+  background: #fefefe;
+  list-style-type: none; }
+  .local-tasks ul::before, .local-tasks ul::after {
+    display: table;
+    content: ' ';
+    flex-basis: 0;
+    order: 1; }
+  .local-tasks ul::after {
+    clear: both; }
+
+.local-tasks li {
+  float: left; }
+  .local-tasks li > a {
+    display: block;
+    padding: 1.25rem 1.5rem;
+    font-size: 0.75rem;
+    line-height: 1;
+    color: #1779ba; }
+    .local-tasks li > a:hover {
+      background: #fefefe;
+      color: #1468a0; }
+    .local-tasks li > a:focus, .local-tasks li > a[aria-selected='true'] {
+      background: #e6e6e6;
+      color: #1779ba; }
+  .local-tasks li > a.is-active {
+    background: #e6e6e6;
+    color: #1779ba; }

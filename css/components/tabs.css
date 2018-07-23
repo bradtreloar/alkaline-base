@@ -1,0 +1,27 @@
+.tabs {
+  margin: 0;
+  border: 1px solid #e6e6e6;
+  background: #fefefe;
+  list-style-type: none;
+  padding: 0; }
+  .tabs::before, .tabs::after {
+    display: table;
+    content: ' ';
+    flex-basis: 0;
+    order: 1; }
+  .tabs::after {
+    clear: both; }
+  .tabs > li {
+    float: left; }
+    .tabs > li > a {
+      display: block;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.75rem;
+      line-height: 1;
+      color: #1779ba; }
+      .tabs > li > a:hover {
+        background: #fefefe;
+        color: #1468a0; }
+      .tabs > li > a:focus, .tabs > li > a[aria-selected='true'] {
+        background: #e6e6e6;
+        color: #1779ba; }

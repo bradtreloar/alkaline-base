@@ -1,0 +1,30 @@
+body {
+  font-family: 'Arial', 'Helvetica Neue', 'Helvetica', 'sans-serif'; }
+
+p, li, td,
+h1, h2, h3, h4, h5, h5 {
+  line-height: 1.25; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 8px 0 16px 0;
+  width: 100%; }
+  table th, table td {
+    border-bottom: dotted 1px border("rich-text", "table");
+    padding: 8px; }
+  table thead {
+    font-weight: bold; }
+
+#nav,
+#header,
+#footer,
+#boilerplate {
+  display: none; }
+
+.slideshow {
+  display: none; }
+
+.element-invisible,
+.hidden {
+  display: none; }

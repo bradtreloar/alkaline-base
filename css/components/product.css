@@ -1,0 +1,19 @@
+.product {
+  display: flex; }
+  .product .field--name-price p {
+    margin: 0 0 16px; }
+  .product .field--name-price strong {
+    font-size: 140%;
+    font-weight: bold; }
+  .product .field--name-variations {
+    margin: 16px 0; }
+    .product .field--name-variations::before, .product .field--name-variations::after {
+      display: table;
+      content: ' ';
+      flex-basis: 0;
+      order: 1; }
+    .product .field--name-variations::after {
+      clear: both; }
+    .product .field--name-variations form {
+      float: left;
+      min-width: 200px; }

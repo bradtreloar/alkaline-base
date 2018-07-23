@@ -1,0 +1,16 @@
+.popup {
+  position: relative; }
+  @media (max-width: 1079px) {
+    .popup > button {
+      margin-left: 12px !important; }
+      .popup > button.active {
+        display: none; } }
+  .popup > *:nth-child(2) {
+    padding: 8px; }
+    @media (min-width: large) {
+      .popup > *:nth-child(2) {
+        position: absolute;
+        top: 48px;
+        right: 0; } }
+    .popup > *:nth-child(2):not(.active) {
+      display: none; }
