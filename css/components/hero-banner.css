@@ -1,5 +1,6 @@
 figure.hero-banner {
-  position: relative; }
+  position: relative;
+  margin: 0 0 2rem; }
   figure.hero-banner:after {
     background-image: none;
     background-position: center;
@@ -14,24 +15,24 @@ figure.hero-banner {
     left: 0;
     right: 0;
     z-index: -1; }
+  @media print, screen and (min-width: 40em) {
+    figure.hero-banner {
+      margin: 0 0 4rem; } }
   figure.hero-banner:after {
-    filter: brightness(50%); }
+    opacity: 0.40; }
   figure.hero-banner > figcaption {
     margin: 0 auto;
     max-width: 60rem;
-    padding: 96px 24px 48px; }
+    padding: 48px 24px 48px; }
     figure.hero-banner > figcaption > div:first-of-type {
-      letter-spacing: 0.05em;
-      text-shadow: 0em 0.1em 0.1em #0a0a0a;
       color: #fefefe;
-      font-size: 120%;
-      font-weight: bold;
-      text-align: center; }
-    @media screen and (min-width: 45em) {
+      color: #0a0a0a;
+      font-size: 120%; }
+    @media print, screen and (min-width: 40em) {
       figure.hero-banner > figcaption {
         padding: 144px 96px 96px; }
         figure.hero-banner > figcaption > div:first-of-type {
-          font-size: 140%; } }
+          font-size: 150%; } }
     figure.hero-banner > figcaption > div:last-of-type {
       margin-bottom: 1rem;
       display: flex;
@@ -55,29 +56,7 @@ figure.hero-banner {
         figure.hero-banner > figcaption > div:last-of-type div:last-child {
           margin-right: 0; }
       figure.hero-banner > figcaption > div:last-of-type a {
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0 0 1rem 0;
-        font-family: inherit;
-        padding: 0.85em 1em;
-        -webkit-appearance: none;
-        border: 1px solid transparent;
-        border-radius: 2px;
-        transition: background-color 0.25s ease-out, color 0.25s ease-out;
-        font-size: 0.9rem;
-        line-height: 1;
-        text-align: center;
-        cursor: pointer;
-        background-color: #1779ba;
-        color: #fefefe;
-        box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2) inset;
-        border: none;
         font-weight: bold;
         font-size: 120%;
         margin: 0;
         min-width: 8em; }
-        [data-whatinput='mouse'] figure.hero-banner > figcaption > div:last-of-type a {
-          outline: 0; }
-        figure.hero-banner > figcaption > div:last-of-type a:hover, figure.hero-banner > figcaption > div:last-of-type a:focus {
-          background-color: #14679e;
-          color: #fefefe; }

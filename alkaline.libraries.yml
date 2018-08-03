@@ -1,5 +1,5 @@
 
-global:
+base:
   css:
     base:
       css/base/base.css: {}
@@ -7,40 +7,68 @@ global:
       css/print.css: { media: print }
     layout:
       css/layout/layout.css: {}
-    component:
-      css/components/action-links.css: {}
-      css/components/address.css: {}
-      css/components/admin-toolbar.css: {}
-      css/components/ajax.css: {}
-      css/components/branding.css: {}
-      css/components/breadcrumbs.css: {}
-      css/components/button.css: {}
-      css/components/card.css: {}
-      css/components/form.css: {}
-      css/components/icon.css: {}
-      css/components/local-tasks.css: {}
-      css/components/menu.css: {}
-      css/components/table.css: {}
-      css/components/tabs.css: {}
-      css/components/text-formatted.css: {}
   js:
-    js/alkaline.js: {}
-    js/foundation.min.js: { weight: -1 }
-    js/motion-ui.min.js: { weight: -2 }
+    js/lib/foundation.min.js: { weight: -1 }
+    js/lib/motion-ui.min.js: { weight: -2 }
   dependencies:
     - core/jquery
     - core/jquery.once
     - core/drupal
+
+action_links:
+  css:
+    component:
+      css/components/action-links.css: {}
 
 article:
   css:
     component:
       css/components/article.css: {}
 
+button:
+  css:
+    component:
+      css/components/button.css: {}
+
 carousel:
   css:
     component:
       css/components/carousel.css: {}
+
+address:
+  css:
+    component:
+      css/components/address.css: {}
+
+admin_toolbar:
+  css:
+    component:
+      css/components/admin-toolbar.css: {}
+
+ajax:
+  css:
+    component:
+      css/components/ajax.css: {}
+
+banner:
+  css:
+    component:
+      css/components/banner.css: {}
+
+branding:
+  css:
+    component:
+      css/components/branding.css: {}
+
+breadcrumbs:
+  css:
+    component:
+      css/components/breadcrumbs.css: {}
+
+card:
+  css:
+    component:
+      css/components/card.css: {}
 
 cart_block:
   css:
@@ -52,15 +80,40 @@ comment:
     component:
       css/components/comment.css: {}
 
+form:
+  css:
+    component:
+      css/components/form.css: {}
+
 hero_banner:
   css:
     component:
       css/components/hero-banner.css: {}
 
+icon:
+  css:
+    component:
+      css/components/icon.css: {}
+
+local_tasks:
+  css:
+    component:
+      css/components/local-tasks.css: {}
+
 media_object:
   css:
     component:
       css/components/media-object.css: {}
+
+menu:
+  css:
+    component:
+      css/components/menu.css: {}
+  js:
+    js/responsiveMenu.js:
+  dependencies:
+    - alkaline/base
+
 
 messages:
   css:
@@ -83,7 +136,22 @@ product:
     - core/drupal
     - alkaline/global
 
+table:
+  css:
+    component:
+      css/components/table.css: {}
+
+tabs:
+  css:
+    component:
+      css/components/tabs.css: {}
+
 tags:
   css:
     component:
       css/components/tags.css: {}
+
+text_formatted:
+  css:
+    component:
+      css/components/text-formatted.css: {}

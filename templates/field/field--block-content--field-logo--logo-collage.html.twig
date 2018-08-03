@@ -1,0 +1,8 @@
+
+<ul class="logo-collage grid small-2 medium-3 large-4">
+  {% for item in items %}
+  <li {{ item.attributes }}>
+    {{ item.content }}
+  </li>
+  {% endfor %}
+</ul>

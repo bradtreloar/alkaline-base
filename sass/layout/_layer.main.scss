@@ -9,11 +9,14 @@
     > h2 {
       margin: $global-margin 0;
     }
+
+    &.full-width {
+      max-width: none;
+      padding: 0;
+    }
   }
 
   .block--hero-banner {
     margin: 0 auto $global-margin;
-    max-width: none;
-    padding: 0;
   }
 }

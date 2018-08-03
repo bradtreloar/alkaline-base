@@ -1,12 +1,25 @@
 
 // Foundation dependencies
-@import 'dependencies';
+@import 'foundation-sites/_vendor/normalize-scss/sass/normalize';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/helpers/true';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/contain';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/purge';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/remove';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/replace';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/to-list';
 
 // Foundation utilities.
 @import 'foundation-sites/scss/util/util';
 
-// Global variables
+// Alkaline utilities
+@import 'util/mixins';
+
+// Alkaline default globals.
 @import 'globals';
+
+// Foundation default globals.
+@import 'foundation-sites/scss/global';
 
 // Foundation components.
 @import 'foundation-sites/scss/grid/grid';
@@ -25,8 +38,8 @@
 @import 'foundation-sites/scss/components/card';
 @import 'foundation-sites/scss/components/close-button';
 @import 'foundation-sites/scss/components/drilldown';
-@import 'foundation-sites/scss/components/dropdown-menu';
 @import 'foundation-sites/scss/components/dropdown';
+@import 'foundation-sites/scss/components/dropdown-menu';
 @import 'foundation-sites/scss/components/flex';
 @import 'foundation-sites/scss/components/responsive-embed';
 @import 'foundation-sites/scss/components/label';
@@ -48,7 +61,3 @@
 @import 'foundation-sites/scss/components/thumbnail';
 @import 'foundation-sites/scss/components/tooltip';
 @import 'foundation-sites/scss/prototype/prototype';
-
-
-// Extra mixins
-@import 'util/mixins';

@@ -34,7 +34,7 @@
       margin-left: 1rem; }
     .menu.simple a {
       padding: 0; }
-  @media print, screen and (min-width: 45em) {
+  @media print, screen and (min-width: 40em) {
     .menu.medium-horizontal {
       flex-wrap: wrap;
       flex-direction: row; }
@@ -45,7 +45,7 @@
       flex: 1 1 0px; }
     .menu.medium-simple li {
       flex: 1 1 0px; } }
-  @media print, screen and (min-width: 67.5em) {
+  @media print, screen and (min-width: 64em) {
     .menu.large-horizontal {
       flex-wrap: wrap;
       flex-direction: row; }
@@ -133,6 +133,86 @@
 
 .no-js [data-responsive-menu] ul {
   display: none; }
+
+.menu, .menu li, .menu a {
+  background: inherit; }
+
+.menu a {
+  color: inherit;
+  display: block; }
+  .menu a svg.icon {
+    height: 1.5em;
+    width: 1.5em;
+    vertical-align: middle; }
+    .menu a svg.icon + span {
+      display: none; }
+      @media print, screen and (min-width: 40em) {
+        .menu a svg.icon + span {
+          display: inline;
+          margin-left: 0.5em; } }
+  .menu a span {
+    line-height: 1.5em; }
+
+.menu.social-share {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch; }
+  .menu.social-share::before, .menu.social-share::after {
+    display: table;
+    content: ' ';
+    flex-basis: 0;
+    order: 1; }
+  .menu.social-share::after {
+    clear: both; }
+  .menu.social-share li {
+    margin: 0;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    flex: 0 0 auto; }
+    .menu.social-share li:last-child {
+      margin-right: 0; }
+  .menu.social-share a {
+    height: 2rem;
+    width: 2rem;
+    padding: 20%; }
+    .menu.social-share a svg.icon {
+      height: 100%;
+      width: 100%; }
+      .menu.social-share a svg.icon + span {
+        display: none; }
+  .menu.social-share li {
+    fill: #fefefe; }
+    .menu.social-share li.facebook {
+      background-color: #3b5998; }
+    .menu.social-share li.github {
+      background-color: #000000; }
+    .menu.social-share li.google-plus {
+      background-color: #db3236; }
+    .menu.social-share li.instagram {
+      background-color: #8a3ab9; }
+    .menu.social-share li.linkedin {
+      background-color: #0077b5; }
+    .menu.social-share li.pinterest {
+      background-color: #bd081c; }
+    .menu.social-share li.rss {
+      background-color: #ff6600; }
+    .menu.social-share li.snapchat {
+      background-color: #fffc00; }
+    .menu.social-share li.snapchat {
+      background-color: #fffc00; }
+    .menu.social-share li.tumblr {
+      background-color: #32506d; }
+    .menu.social-share li.twitter {
+      background-color: #00aced; }
+    .menu.social-share li.whatsapp {
+      background-color: #4dc247; }
+    .menu.social-share li.youtube {
+      background-color: #bb0000; }
+
+.menu-wrapper {
+  background: inherit; }
 
 .is-drilldown {
   position: relative;
@@ -305,7 +385,7 @@
   border-left-style: solid;
   border-color: transparent transparent transparent #1779ba; }
 
-@media print, screen and (min-width: 45em) {
+@media print, screen and (min-width: 40em) {
   .dropdown.menu.medium-horizontal > li.opens-left > .is-dropdown-submenu {
     top: 100%;
     right: 0;
@@ -361,7 +441,7 @@
     border-left-style: solid;
     border-color: transparent transparent transparent #1779ba; } }
 
-@media print, screen and (min-width: 67.5em) {
+@media print, screen and (min-width: 64em) {
   .dropdown.menu.large-horizontal > li.opens-left > .is-dropdown-submenu {
     top: 100%;
     right: 0;
@@ -485,86 +565,6 @@
   .is-dropdown-submenu.js-dropdown-active {
     display: block; }
 
-.menu, .menu li, .menu a {
-  background: inherit; }
-
-.menu a {
-  color: inherit;
-  display: block; }
-  .menu a svg.icon {
-    height: 1.5em;
-    width: 1.5em;
-    vertical-align: middle; }
-    .menu a svg.icon + span {
-      display: none; }
-      @media print, screen and (min-width: 45em) {
-        .menu a svg.icon + span {
-          display: inline;
-          margin-left: 0.5em; } }
-  .menu a span {
-    line-height: 1.5em; }
-
-.menu.social-share {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: stretch; }
-  .menu.social-share::before, .menu.social-share::after {
-    display: table;
-    content: ' ';
-    flex-basis: 0;
-    order: 1; }
-  .menu.social-share::after {
-    clear: both; }
-  .menu.social-share li {
-    margin: 0;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    flex: 0 0 auto; }
-    .menu.social-share li:last-child {
-      margin-right: 0; }
-  .menu.social-share a {
-    height: 2rem;
-    width: 2rem;
-    padding: 20%; }
-    .menu.social-share a svg.icon {
-      height: 100%;
-      width: 100%; }
-      .menu.social-share a svg.icon + span {
-        display: none; }
-  .menu.social-share li {
-    fill: #fefefe; }
-    .menu.social-share li.facebook {
-      background-color: #3b5998; }
-    .menu.social-share li.github {
-      background-color: #000000; }
-    .menu.social-share li.google-plus {
-      background-color: #db3236; }
-    .menu.social-share li.instagram {
-      background-color: #8a3ab9; }
-    .menu.social-share li.linkedin {
-      background-color: #0077b5; }
-    .menu.social-share li.pinterest {
-      background-color: #bd081c; }
-    .menu.social-share li.rss {
-      background-color: #ff6600; }
-    .menu.social-share li.snapchat {
-      background-color: #fffc00; }
-    .menu.social-share li.snapchat {
-      background-color: #fffc00; }
-    .menu.social-share li.tumblr {
-      background-color: #32506d; }
-    .menu.social-share li.twitter {
-      background-color: #00aced; }
-    .menu.social-share li.whatsapp {
-      background-color: #4dc247; }
-    .menu.social-share li.youtube {
-      background-color: #bb0000; }
-
-div.menu-wrapper {
-  background: inherit; }
-
 button[data-toggle="navbar"] {
   color: inherit;
   display: block;
@@ -582,12 +582,12 @@ button[data-toggle="navbar"] {
     vertical-align: middle; }
     button[data-toggle="navbar"] svg.icon + span {
       display: none; }
-      @media print, screen and (min-width: 45em) {
+      @media print, screen and (min-width: 40em) {
         button[data-toggle="navbar"] svg.icon + span {
           display: inline;
           margin-left: 0.5em; } }
   button[data-toggle="navbar"] span {
     line-height: 1.5em; }
-  @media print, screen and (min-width: 67.5em) {
+  @media print, screen and (min-width: 64em) {
     button[data-toggle="navbar"] {
       display: none; } }

@@ -1,9 +1,15 @@
 @import 'alkaline';
 
-.button {
-  @include button;
+@mixin alkaline-button {
+  .button {
+    @include button;
 
-  &[data-drupal-selector="edit-preview"] {
-    @include button($style: hollow);
+    &[data-drupal-selector="edit-preview"] {
+      @include button($style: hollow);
+    }
   }
+}
+
+@if $theme == alkaline {
+  @include alkaline-button;
 }

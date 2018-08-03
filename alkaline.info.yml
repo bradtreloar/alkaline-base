@@ -1,15 +1,32 @@
 name: Alkaline
 type: theme
-description: Base theme
+description: Base theme by Treloar Digital
 package: Treloar
 core: 8.x
 
 base theme: classy
 
 libraries-override:
-  classy/base: alkaline/global
+  classy/base: alkaline/base
   classy/messages: alkaline/messages
   commerce/cart_block: alkaline/cart_block
+
+libraries:
+  - alkaline/button
+  - alkaline/menu
+  - alkaline/action_links
+  - alkaline/address
+  - alkaline/admin_toolbar
+  - alkaline/ajax
+  - alkaline/branding
+  - alkaline/breadcrumbs
+  - alkaline/card
+  - alkaline/form
+  - alkaline/icon
+  - alkaline/local_tasks
+  - alkaline/table
+  - alkaline/tabs
+  - alkaline/text_formatted
 
 regions:
   header: Header

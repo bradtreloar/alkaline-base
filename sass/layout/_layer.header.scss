@@ -2,8 +2,8 @@
 // Defaults
 $header-layer-background: $black !default;
 $header-layer-color: $white !default;
-$navbar-background: $black !default;
-$navbar-color: $white !default;
+$navbar-background: $header-layer-background !default;
+$navbar-color: $header-layer-color !default;
 $admin-toolbar-height: 39px !default;
 $admin-toolbar-tray-height: 40px !default;
 

@@ -39,6 +39,11 @@
     }
   }
 
+  // Fill any spare space by growing the input fields
+  .form-item {
+    flex-grow: 1;
+  }
+
   .form-actions {
     // @todo replace with custom code?
     input[type="submit"] {
@@ -63,3 +68,10 @@ form {
   }
 }
 
+.contact-message-form {
+
+  // @todo remove preview button using form alteration hook
+  #edit-preview {
+    display: none;
+  }
+}

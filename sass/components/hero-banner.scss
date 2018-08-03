@@ -2,30 +2,35 @@
 
 figure.hero-banner {
   @include alkaline-background-image;
+  margin: 0 0 2rem;
+  
+  @include breakpoint(medium) {
+    margin: 0 0 4rem;
+  }
 
   &:after {
     // Dim the background image to make the overlay easier to read.
-    filter: brightness(50%);
+    // filter: opacity(25%);
+    opacity: 0.40;
   }
 
   > figcaption {
     margin: 0 auto;
     max-width: $global-width;
-    padding: ($top-bar-height + 48px) 24px 48px;
+    padding: 48px 24px 48px;
 
     > div:first-of-type {
-      @include alkaline-shadow-text;
+      // @include alkaline-shadow-text;
       color: $white;
+      color: $black;
       font-size: 120%;
-      font-weight: bold;
-      text-align: center;
     }
   
-    @include breakpoint(720px) {
+    @include breakpoint(medium) {
       padding: ($top-bar-height + 96px) 96px 96px;
 
       > div:first-of-type {
-        font-size: 140%;
+        font-size: 150%;
       }
     }
 
@@ -35,7 +40,7 @@ figure.hero-banner {
       margin: 0;
 
       a {
-        @include alkaline-shadow-button;
+        // @include alkaline-shadow-button;
         font-weight: bold;
         font-size: 120%;
         margin: 0;

@@ -2,6 +2,41 @@
 use Drupal\Component\Utility\Html;
 use Drupal\image\Entity\ImageStyle;
 
+
+function alkaline_responsive_background_css($imageStyleClass, $htmlId, $imageUri) {
+  // Fetch this theme's breakpoints.
+  $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('alkaline');
+
+  // Prepare an array of CSS media queries and URLs to be 
+  // assembled into background-image rules.
+  $cssRules = [];
+  foreach ($breakpoints as $name => $breakpoint) {
+    // Derive the image style name from the breakpoint name.
+    $imageStyleName = str_replace('alkaline.', 'alkaline_' . $imageStyleClass . '_', $name);
+
+    // Try to load the image style
+    if ($imageStyle = ImageStyle::load($imageStyleName)) {
+      // Save the cssRule components
+      $cssRules[] = [
+        'mediaQuery' => $breakpoint->getMediaQuery(),
+        'url' => $imageStyle->buildUrl($imageUri),
+      ];
+    }
+  }
+
+  // Generate CSS to provide a background-image rule for each
+  // of this theme's breakpoints that have a matching image style.
+  // Use block's HTML ID as the selector.
+  $css = '';
+  foreach ($cssRules as $rule) {
+    $mediaQuery = $rule['mediaQuery'];
+    $url = $rule['url'];
+    $css .= "@media $mediaQuery { #$htmlId > figure::after { background-image: url('$url'); }}\n";
+  }
+
+  return '<style>' . $css . '</style>';
+}
+
 /**
  * Extracts SVG symbols from a collection of SVG files
  *
@@ -87,53 +122,24 @@ function alkaline_preprocess_block(&$vars) {
 
 
 /**
- * Preprocessor for hero_banner block type
+ * Preprocessor for alkaline_hero_banner block type
  *
  * @param [type] $vars
  * @return void
  */
-function alkaline_preprocess_block_hero_banner(&$vars) {
-  // Fetch this theme's breakpoints.
-  $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('alkaline');
+function alkaline_preprocess_block_alkaline_hero_banner(&$vars) {
 
-  // Fetch the background image URI.
   $uuid = $vars['derivative_plugin_id'];
   $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
   if ($block_content) {
+    // Fetch the background image URI.
     $uri = $block_content->field_hero_background_image->entity->getFileUri();
+    $blockHtmlId = $vars['attributes']['id'];
+
+    // Add style element to vars.
+    $vars['background_css'] = alkaline_responsive_background_css('hero', $blockHtmlId, $uri);
   }
 
-  // Prepare an array of CSS media queries and URLs to be 
-  // assembled into background-image rules.
-  $cssRules = [];
-  foreach ($breakpoints as $name => $breakpoint) {
-    // Derive the image style name from the breakpoint name.
-    $imageStyleName = str_replace('alkaline.', 'alkaline_hero_', $name);
-    $imageStyleName = str_replace('alkaline.', 'hero_', $name); // @debug
-
-    // Try to load the image style
-    if ($imageStyle = ImageStyle::load($imageStyleName)) {
-      // Save the cssRule components
-      $cssRules[] = [
-        'mediaQuery' => $breakpoint->getMediaQuery(),
-        'url' => $imageStyle->buildUrl($uri),
-      ];
-    }
-  }
-
-  // Generate CSS to provide a background-image rule for each
-  // of this theme's breakpoints that have a matching image style.
-  // Use block's HTML ID as the selector.
-  $blockHtmlId = $vars['attributes']['id'];
-  $css = '';
-  foreach ($cssRules as $rule) {
-    $mediaQuery = $rule['mediaQuery'];
-    $url = $rule['url'];
-    $css .= "@media $mediaQuery { #$blockHtmlId > figure::after { background-image: url('$url'); }}\n";
-  }
-
-  // Add style element to vars for template to use.
-  $vars['background_css'] = '<style>' . $css . '</style>';
 }
 
 
@@ -153,11 +159,18 @@ function alkaline_preprocess_commerce_product_variation(&$vars) {
  * Implements template_preprocess_field()
  */
 function alkaline_preprocess_field(&$vars) {
+  // Call the type-specific preprocessor.
+  $fieldTypePreprocessor = __FUNCTION__ . '_type_' . $vars['field_type'];
+  if (function_exists($fieldTypePreprocessor)) {
+    $fieldTypePreprocessor($vars);
+  }
+
   // Call the name-specific preprocessor.
   $fieldNamePreprocessor = __FUNCTION__ . '_' . str_replace("field_", "" ,$vars['field_name']);
   if (function_exists($fieldNamePreprocessor)) {
     $fieldNamePreprocessor($vars);
   }
+  
 }
 
 
@@ -169,6 +182,19 @@ function alkaline_preprocess_field_image(&$vars) {
   foreach ($vars['items'] as &$item) {
     $image = $item['content']['#item']->getValue();
     $item['caption'] = $image['alt'];
+  }
+}
+
+
+/**
+ * Preprocessor for field_type_link
+ */
+function alkaline_preprocess_field_type_link(&$vars) {
+  // Supply the url and title to the template as vars.
+  // So we can construct our own anchor tags.
+  foreach ($vars['items'] as &$item) {
+    $item['title'] = $item['content']['#title'];
+    $item['url'] = $item['content']['#url'];
   }
 }
 
@@ -278,7 +304,6 @@ function alkaline_preprocess_node_page(&$vars) {
       unset($vars['content']['social_share_buttons']);
   }
 }
-
 
 /**
  * Implements template_preprocess_page()

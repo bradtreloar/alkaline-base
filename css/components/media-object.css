@@ -4,10 +4,10 @@
   flex-wrap: nowrap; }
   .media-object img {
     max-width: none; }
-  @media screen and (max-width: 44.9375em) {
+  @media screen and (max-width: 39.9375em) {
     .media-object.stack-for-small {
       flex-wrap: wrap; } }
-  @media screen and (max-width: 44.9375em) {
+  @media screen and (max-width: 39.9375em) {
     .media-object.stack-for-small .media-object-section {
       padding: 0;
       padding-bottom: 1rem;
@@ -36,7 +36,7 @@
     padding: 0; }
   .media-object-list > li {
     width: 100%; }
-    @media print, screen and (min-width: 67.5em) {
+    @media print, screen and (min-width: 64em) {
       .media-object-list > li {
         margin-right: 1rem;
         max-width: 28rem;
