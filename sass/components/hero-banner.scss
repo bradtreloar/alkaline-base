@@ -1,51 +1,54 @@
 @import 'alkaline';
 
-figure.hero-banner {
-  @include alkaline-background-image;
-  margin: 0 0 2rem;
+@mixin alkaline-hero-banner {
+
+  figure.hero-banner {
+    @include alkaline-background-image;
   
-  @include breakpoint(medium) {
-    margin: 0 0 4rem;
-  }
-
-  &:after {
-    // Dim the background image to make the overlay easier to read.
-    // filter: opacity(25%);
-    opacity: 0.40;
-  }
-
-  > figcaption {
-    margin: 0 auto;
-    max-width: $global-width;
-    padding: 48px 24px 48px;
-
-    > div:first-of-type {
-      // @include alkaline-shadow-text;
-      color: $white;
-      color: $black;
-      font-size: 120%;
+    &:after {
+      // Dim the background image to make the overlay easier to read.
+      // filter: opacity(25%);
+      opacity: 0.40;
     }
   
-    @include breakpoint(medium) {
-      padding: ($top-bar-height + 96px) 96px 96px;
-
+    > figcaption {
+      margin: 0 auto;
+      max-width: $global-width;
+      padding: 48px 24px 48px;
+  
       > div:first-of-type {
-        font-size: 150%;
-      }
-    }
-
-    > div:last-of-type {
-      @include button-group(div, 0.5rem);
-      justify-content: center;
-      margin: 0;
-
-      a {
-        // @include alkaline-shadow-button;
-        font-weight: bold;
+        // @include alkaline-shadow-text;
+        color: $white;
+        color: $black;
         font-size: 120%;
+      }
+    
+      @include breakpoint(medium) {
+        padding: ($top-bar-height + 96px) 96px 96px;
+  
+        > div:first-of-type {
+          font-size: 150%;
+        }
+      }
+  
+      > div:last-of-type {
+        @include button-group(div, 0.5rem);
+        justify-content: center;
         margin: 0;
-        min-width: 8em;
+  
+        a {
+          // @include alkaline-shadow-button;
+          font-weight: bold;
+          font-size: 120%;
+          margin: 0;
+          min-width: 8em;
+        }
       }
     }
   }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-hero-banner;
 }

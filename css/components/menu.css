@@ -139,7 +139,8 @@
 
 .menu a {
   color: inherit;
-  display: block; }
+  display: block;
+  font-size: 0.875em; }
   .menu a svg.icon {
     height: 1.5em;
     width: 1.5em;

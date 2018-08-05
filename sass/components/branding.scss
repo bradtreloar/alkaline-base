@@ -1,23 +1,31 @@
 @import 'alkaline';
 
-.branding {
-  display: flex;
-  height: 100%;
 
-  a {
-    align-items: center;
+@mixin alkaline-branding {
+  .branding {
     display: flex;
     height: 100%;
-    padding: 8px 16px;
   
-    // the image size is constrained 
-    // by the size of the header
-    img {
-      display: block;
-      height: auto;
-      width: auto;
-      max-width: 100%;
-      max-height: 100%;
+    a {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      padding: 8px 16px;
+    
+      // the image size is constrained 
+      // by the size of the header
+      img {
+        display: block;
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
   }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-branding;
 }

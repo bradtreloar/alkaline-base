@@ -1,19 +1,25 @@
 @import 'alkaline';
 
-// @todo Implement foundation callouts
 
-.messages {
-  @include callout-base;
+@mixin alkaline-messages {
+  .messages {
+    @include callout-base;
+  }
+  
+  .messages--status {
+    @include callout-style($success-color);
+  }
+  
+  .messages--warning {
+    @include callout-style($warning-color);
+  }
+  
+  .messages--error {
+    @include callout-style($alert-color);
+  }
 }
 
-.messages--status {
-  @include callout-style($success-color);
-}
 
-.messages--warning {
-  @include callout-style($warning-color);
-}
-
-.messages--error {
-  @include callout-style($alert-color);
+@if $theme is alkaline {
+  @include alkaline-messages;
 }

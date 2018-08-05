@@ -1,15 +1,24 @@
 @import 'alkaline';
 
-table {
-  .region.content & {
-    @include table;
+@mixin alkaline-table {
 
-    // Explicitly unset cell borders in case table's border attribute is set.
-    th, td {
-      border: none;
+  table {
+    .region.content & {
+      @include table;
+  
+      // Explicitly unset cell borders in case table's border attribute is set.
+      th, td {
+        border: none;
+      }
     }
   }
 }
+
+
+@if $theme is alkaline {
+  @include alkaline-table;
+}
+
 
 // table {
 

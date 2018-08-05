@@ -1,4 +1,44 @@
-.banner {
+figure.banner {
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover; }
+  background-position: center right;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 1.5rem 1.5rem;
+  width: 100%; }
+  figure.banner figcaption {
+    padding: 2rem 1rem 1rem;
+    background: rgba(33, 33, 33, 0.85);
+    color: white;
+    max-width: 240px; }
+    figure.banner figcaption h2 {
+      font-size: 1.5rem;
+      font-weight: bold; }
+      figure.banner figcaption h2 a {
+        color: inherit; }
+    figure.banner figcaption ul {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none; }
+      figure.banner figcaption ul a {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 0 1rem 0;
+        font-family: inherit;
+        padding: 0.85em 1em;
+        -webkit-appearance: none;
+        border: 1px solid transparent;
+        border-radius: 2px;
+        transition: background-color 0.25s ease-out, color 0.25s ease-out;
+        font-size: 0.9rem;
+        line-height: 1;
+        text-align: center;
+        cursor: pointer;
+        background-color: #1779ba;
+        color: #fefefe;
+        margin: 0; }
+        [data-whatinput='mouse'] figure.banner figcaption ul a {
+          outline: 0; }
+        figure.banner figcaption ul a:hover, figure.banner figcaption ul a:focus {
+          background-color: #14679e;
+          color: #fefefe; }

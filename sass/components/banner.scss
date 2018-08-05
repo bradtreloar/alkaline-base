@@ -1,7 +1,48 @@
 @import 'alkaline';
 
-.banner {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+// @todo turn this into a full set of banner varients
+
+@mixin alkaline-banner {
+  figure.banner {
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 ($global-margin * 1.5) ($global-margin * 1.5);
+    width: 100%;
+
+    figcaption {
+      padding: ($global-margin * 2) $global-margin $global-margin;
+      background: rgba(33, 33, 33, .85);
+      color: white;
+      max-width: 240px;
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+
+        a {
+          color: inherit;
+        }
+      }
+
+      ul {
+        // @todo convert to button group
+        margin: $global-margin 0 0;
+        padding: 0;
+        list-style: none;
+        
+        a {
+          @include button;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-banner;
 }

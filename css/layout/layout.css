@@ -119,7 +119,7 @@ div.page {
   justify-content: center;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0.625rem;
   display: flex;
   flex-flow: row wrap; }
   .grid.small-1 > li {
@@ -410,6 +410,8 @@ div.page {
       width: calc(8.33333% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  .grid li {
+  .grid > li {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    margin-bottom: 0.625rem;
+    margin-top: 0.625rem; }

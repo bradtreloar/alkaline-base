@@ -56,22 +56,30 @@
 }
 
 
-form {
-  .form-item,
-  .form-actions {
-    // Add global form-spacing margins to the element wrappers.
-    margin: 0 0 $form-spacing;
-  }
 
-  .region.navbar & {
-    @include alkaline-form-inline;
+@mixin alkaline-form {
+  form {
+    .form-item,
+    .form-actions {
+      // Add global form-spacing margins to the element wrappers.
+      margin: 0 0 $form-spacing;
+    }
+  
+    .region.navbar & {
+      @include alkaline-form-inline;
+    }
+  }
+  
+  .contact-message-form {
+  
+    // @todo remove preview button using form alteration hook
+    #edit-preview {
+      display: none;
+    }
   }
 }
 
-.contact-message-form {
 
-  // @todo remove preview button using form alteration hook
-  #edit-preview {
-    display: none;
-  }
+@if $theme is alkaline {
+  @include alkaline-form;
 }

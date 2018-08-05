@@ -1,16 +1,25 @@
 @import 'alkaline';
 
-.local-tasks {
-  ul {
-    @include tabs-container;
-  }
 
-  li {
-    @include tabs-title;
+@mixin alkaline-local-tasks {
 
-    > a.is-active {
-      background: $tab-background-active;
-      color: $tab-active-color;
+  .local-tasks {
+    ul {
+      @include tabs-container;
+    }
+  
+    li {
+      @include tabs-title;
+  
+      > a.is-active {
+        background: $tab-background-active;
+        color: $tab-active-color;
+      }
     }
   }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-local-tasks;
 }

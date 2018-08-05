@@ -41,6 +41,7 @@ $dropdownmenu-border: 0 solid transparent;
   
     a {
       @include menu-button;
+      font-size: 0.875em;
     }
   
     &.social-share {

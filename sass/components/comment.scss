@@ -1,38 +1,46 @@
 @import 'alkaline';
 
-.comment {
-  .links {
-    list-style: none;
-    margin: 0;
-    @include button-group(li);
+@mixin alkaline-comment {
 
-    a {
-      @include button-base;
-      padding: 0.33rem 0.5rem;
-    }
-  }
-
-  footer {
-    @include media-object-container;
-
-    > * {
-      @include media-object-section;
-    }
-
-    figure {
-      // Make the author picture the same height as two lines of text.
-      height: $global-lineheight * 2em;
-
-      // Shrink img to fit figure.
-      img {
-        height: 100%;
-        width: auto;
+  .comment {
+    .links {
+      list-style: none;
+      margin: 0;
+      @include button-group(li);
+  
+      a {
+        @include button-base;
+        padding: 0.33rem 0.5rem;
       }
     }
-
-    // Stack author name and date.
-    span {
-      display: block;
+  
+    footer {
+      @include media-object-container;
+  
+      > * {
+        @include media-object-section;
+      }
+  
+      figure {
+        // Make the author picture the same height as two lines of text.
+        height: $global-lineheight * 2em;
+  
+        // Shrink img to fit figure.
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+  
+      // Stack author name and date.
+      span {
+        display: block;
+      }
     }
   }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-comment;
 }

@@ -1,9 +1,16 @@
 @import 'alkaline';
 
-// Make the mobile admin menu fixed.
-#toolbar-administration {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1002;
+@mixin alkaline-admin-toolbar {
+  // Make the mobile admin menu fixed.
+  #toolbar-administration {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1002;
+  }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-admin-toolbar;
 }

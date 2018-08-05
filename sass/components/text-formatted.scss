@@ -1,19 +1,25 @@
 @import 'alkaline';
-@include foundation-typography-base;
 
-$icon-color: inherit !default;
+@mixin alkaline-text-formatted {
+  @include foundation-typography-base;
 
-
-// compatible with CKEditor
-.text-formatted {
+  $icon-color: inherit !default;
   
-  h1, h2, h3, h4, h5, h6,
-  p, li, blockquote,
-  ul, ol, dl, table,
-  figure, img   {
-    // alignment classes set by CKEditor
-    &.rtecenter { text-align: center; }
-    &.rtejustify { text-align: justify; }
-    &.rteright { text-align: right; }
+  // compatible with CKEditor
+  .text-formatted {
+    h1, h2, h3, h4, h5, h6,
+    p, li, blockquote,
+    ul, ol, dl, table,
+    figure, img   {
+      // alignment classes set by CKEditor
+      &.rtecenter { text-align: center; }
+      &.rtejustify { text-align: justify; }
+      &.rteright { text-align: right; }
+    }
   }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-text-formatted;
 }

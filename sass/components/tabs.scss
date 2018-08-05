@@ -2,11 +2,18 @@
 
 // @todo tabs-content
 
-.tabs {
-  @include tabs-container;
-  padding: 0;
-
-  > li {
-    @include tabs-title;
+@mixin alkaline-tabs {
+  .tabs {
+    @include tabs-container;
+    padding: 0;
+  
+    > li {
+      @include tabs-title;
+    }
   }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-tabs;
 }

@@ -1,6 +1,5 @@
 figure.hero-banner {
-  position: relative;
-  margin: 0 0 2rem; }
+  position: relative; }
   figure.hero-banner:after {
     background-image: none;
     background-position: center;
@@ -15,9 +14,6 @@ figure.hero-banner {
     left: 0;
     right: 0;
     z-index: -1; }
-  @media print, screen and (min-width: 40em) {
-    figure.hero-banner {
-      margin: 0 0 4rem; } }
   figure.hero-banner:after {
     opacity: 0.40; }
   figure.hero-banner > figcaption {

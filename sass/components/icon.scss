@@ -1,6 +1,14 @@
 @import 'alkaline';
 
-.icon {
-  max-width: 100%;
-  max-height: 100%;
+@mixin alkaline-icon {
+
+  .icon {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-icon;
 }

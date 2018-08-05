@@ -12,6 +12,7 @@ libraries-override:
   commerce/cart_block: alkaline/cart_block
 
 libraries:
+  - alkaline/text_formatted
   - alkaline/button
   - alkaline/menu
   - alkaline/action_links
@@ -26,7 +27,6 @@ libraries:
   - alkaline/local_tasks
   - alkaline/table
   - alkaline/tabs
-  - alkaline/text_formatted
 
 regions:
   header: Header

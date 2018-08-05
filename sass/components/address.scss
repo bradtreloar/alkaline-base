@@ -1,7 +1,14 @@
 @import 'alkaline';
 
-.address {
-  //@extend %rich-text;
-  clear: both;
-  margin: 24px 0;
+@mixin alkaline-address {
+  .address {
+    //@extend %rich-text;
+    clear: both;
+    margin: 24px 0;
+  }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-address;
 }
