@@ -34,7 +34,7 @@
       margin-left: 1rem; }
     .menu.simple a {
       padding: 0; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .menu.medium-horizontal {
       flex-wrap: wrap;
       flex-direction: row; }
@@ -45,7 +45,7 @@
       flex: 1 1 0px; }
     .menu.medium-simple li {
       flex: 1 1 0px; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .menu.large-horizontal {
       flex-wrap: wrap;
       flex-direction: row; }
@@ -139,19 +139,21 @@
 
 .menu a {
   color: inherit;
-  display: block;
+  display: flex;
+  align-items: center;
   font-size: 0.875em; }
   .menu a svg.icon {
+    display: block;
     height: 1.5em;
-    width: 1.5em;
-    vertical-align: middle; }
+    width: 1.5em; }
     .menu a svg.icon + span {
       display: none; }
-      @media print, screen and (min-width: 40em) {
+      @media print, screen and (min-width: 45em) {
         .menu a svg.icon + span {
-          display: inline;
+          display: inline-block;
           margin-left: 0.5em; } }
   .menu a span {
+    display: block;
     line-height: 1.5em; }
 
 .menu.social-share {
@@ -386,7 +388,7 @@
   border-left-style: solid;
   border-color: transparent transparent transparent #1779ba; }
 
-@media print, screen and (min-width: 40em) {
+@media print, screen and (min-width: 45em) {
   .dropdown.menu.medium-horizontal > li.opens-left > .is-dropdown-submenu {
     top: 100%;
     right: 0;
@@ -442,7 +444,7 @@
     border-left-style: solid;
     border-color: transparent transparent transparent #1779ba; } }
 
-@media print, screen and (min-width: 64em) {
+@media print, screen and (min-width: 67.5em) {
   .dropdown.menu.large-horizontal > li.opens-left > .is-dropdown-submenu {
     top: 100%;
     right: 0;
@@ -568,9 +570,8 @@
 
 button[data-toggle="navbar"] {
   color: inherit;
-  display: block;
-  align-items: center;
   display: flex;
+  align-items: center;
   height: 100%;
   line-height: 1;
   text-decoration: none;
@@ -578,17 +579,18 @@ button[data-toggle="navbar"] {
   padding: 0.7rem 1rem;
   cursor: pointer; }
   button[data-toggle="navbar"] svg.icon {
+    display: block;
     height: 1.5em;
-    width: 1.5em;
-    vertical-align: middle; }
+    width: 1.5em; }
     button[data-toggle="navbar"] svg.icon + span {
       display: none; }
-      @media print, screen and (min-width: 40em) {
+      @media print, screen and (min-width: 45em) {
         button[data-toggle="navbar"] svg.icon + span {
-          display: inline;
+          display: inline-block;
           margin-left: 0.5em; } }
   button[data-toggle="navbar"] span {
+    display: block;
     line-height: 1.5em; }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     button[data-toggle="navbar"] {
       display: none; } }

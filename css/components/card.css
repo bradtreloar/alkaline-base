@@ -1,42 +1,35 @@
 figure.card {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  margin: 24px; }
-  figure.card img {
+  width: 100%; }
+  figure.card picture {
     display: block;
-    width: 100%;
-    height: auto; }
+    flex: none; }
+    figure.card picture a {
+      display: block; }
+    figure.card picture img {
+      display: block;
+      width: 100%;
+      height: auto; }
   figure.card > a {
     display: block;
     margin: 0 auto 24px;
     max-width: 240px; }
-  figure.card figcaption div {
-    margin: 16px 0 0 0; }
-  figure.card figcaption > a:not(:first-child) {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0 1rem 0;
-    font-family: inherit;
-    padding: 0.85em 1em;
-    -webkit-appearance: none;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    transition: background-color 0.25s ease-out, color 0.25s ease-out;
-    font-size: 0.9rem;
-    line-height: 1;
-    text-align: center;
-    cursor: pointer;
-    background-color: #1779ba;
-    color: #fefefe;
-    float: left; }
-    [data-whatinput='mouse'] figure.card figcaption > a:not(:first-child) {
-      outline: 0; }
-    figure.card figcaption > a:not(:first-child):hover, figure.card figcaption > a:not(:first-child):focus {
-      background-color: #14679e;
-      color: #fefefe; }
+  figure.card figcaption {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between; }
+    figure.card figcaption h2 {
+      width: 100%;
+      font-size: 1.5em;
+      margin: 0.5rem 0; }
+      figure.card figcaption h2 a {
+        color: inherit; }
   @media screen and (min-width: 60em) {
-    figure.card {
-      display: flex; }
-      figure.card > a {
-        display: block;
-        margin: 0 24px 0 0;
-        width: 240px; } }
+    figure.card > a {
+      display: block;
+      margin: 0 24px 0 0;
+      width: 240px; } }

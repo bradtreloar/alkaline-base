@@ -1,4 +1,6 @@
 <?php
+
+use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
 use Drupal\image\Entity\ImageStyle;
 
@@ -36,6 +38,7 @@ function alkaline_responsive_background_css($imageStyleClass, $htmlId, $imageUri
 
   return '<style>' . $css . '</style>';
 }
+
 
 /**
  * Extracts SVG symbols from a collection of SVG files
@@ -108,14 +111,37 @@ function alkaline_preprocess_block(&$vars) {
   if ($vars['base_plugin_id'] == 'block_content') {
     // Get the machine name of the custom block type.
     $connection = \Drupal::service('database');
-    $customBlockType = $connection->query("SELECT type FROM block_content WHERE uuid = :uuid", [
+    $custom_block_type = $connection->query("SELECT type FROM block_content WHERE uuid = :uuid", [
       ':uuid' => $vars['derivative_plugin_id'],
     ])->fetchField();
 
     // Call the block-type-specific preprocessor.
-    $blockTypePreprocessor = __FUNCTION__ . '_' . $customBlockType;
-    if (function_exists($blockTypePreprocessor)) {
-      $blockTypePreprocessor($vars);
+    $block_type_preprocessor = __FUNCTION__ . '_' . $custom_block_type;
+    if (function_exists($block_type_preprocessor)) {
+      $block_type_preprocessor($vars);
+    }
+  }
+
+  if(isset($vars['content']['#type']) && $vars['content']['#type'] == 'view') {
+    $view = $vars['content']['#view'];
+    $display = $view->getDisplay('default');
+
+    if ($display->isMoreEnabled() && $display->usesLinkDisplay()) {
+      $link_display_option = $display->getOption('link_display');
+
+      if ($link_display_option == 'custom_url') {
+        $title = $display->getOption('use_more_text');
+        $url = $display->getOption('link_url');
+      }
+    
+      $vars['more_link'] = [
+        '#type' => 'link',
+        '#title' => $title,
+        '#url' => Url::fromUserInput('/' . $url),
+        '#attributes' => [
+          'class' => 'button',
+        ]
+      ];
     }
   }
 }
@@ -147,7 +173,7 @@ function alkaline_preprocess_block_alkaline_hero_banner(&$vars) {
  * Implements template_preprocess_commerce_product_variation()
  */
 function alkaline_preprocess_commerce_product_variation(&$vars) {
-  //kint($vars);
+  // kint($vars);
   // // Get the commerce product.
   // $product = $vars['elements']['#commerce_product'];
   // // Pass the price.
@@ -160,15 +186,15 @@ function alkaline_preprocess_commerce_product_variation(&$vars) {
  */
 function alkaline_preprocess_field(&$vars) {
   // Call the type-specific preprocessor.
-  $fieldTypePreprocessor = __FUNCTION__ . '_type_' . $vars['field_type'];
-  if (function_exists($fieldTypePreprocessor)) {
-    $fieldTypePreprocessor($vars);
+  $field_type_preprocessor = __FUNCTION__ . '_type_' . $vars['field_type'];
+  if (function_exists($field_type_preprocessor)) {
+    $field_type_preprocessor($vars);
   }
 
   // Call the name-specific preprocessor.
-  $fieldNamePreprocessor = __FUNCTION__ . '_' . str_replace("field_", "" ,$vars['field_name']);
-  if (function_exists($fieldNamePreprocessor)) {
-    $fieldNamePreprocessor($vars);
+  $field_name_preprocessor = __FUNCTION__ . '_' . str_replace("field_", "" ,$vars['field_name']);
+  if (function_exists($field_name_preprocessor)) {
+    $field_name_preprocessor($vars);
   }
   
 }
@@ -217,12 +243,17 @@ function alkaline_preprocess_html(&$vars) {
       'twitter',
     ],
     'fa-solid' => [
+      'backward',
       'bars',
       'caret-down',
       'caret-left',
       'caret-right',
       'download',
+      'ellipsis-h',
+      'fast-backward',
+      'fast-forward',
       'fax',
+      'forward',
       'map-marker',
       'phone',
       'shopping-cart',
@@ -304,6 +335,7 @@ function alkaline_preprocess_node_page(&$vars) {
       unset($vars['content']['social_share_buttons']);
   }
 }
+
 
 /**
  * Implements template_preprocess_page()

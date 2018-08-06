@@ -114,11 +114,15 @@ menu:
   dependencies:
     - alkaline/base
 
-
 messages:
   css:
     component:
       css/components/messages.css: {}
+
+pagination:
+  css:
+    component:
+      css/components/pagination.css: {}
 
 product:
   css:

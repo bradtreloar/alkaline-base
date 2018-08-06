@@ -1,15 +1,25 @@
 @import 'alkaline';
 
 @mixin alkaline-card {
-
   figure.card {
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    margin: 24px;
-  
-    img {
+    width: 100%;
+
+    picture {
       display: block;
-      width: 100%;
-      height: auto;
+      flex: none;
+
+      a {
+        display: block;
+      }
+  
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
     }
   
     > a {
@@ -19,18 +29,24 @@
     }
   
     figcaption {
-      div {
-        margin: 16px 0 0 0;
-      }
-  
-      > a:not(:first-child) {
-        @include button;
-        float: left;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: space-between;
+
+      h2 {
+        width: 100%;
+        font-size: 1.5em;
+        margin: 0.5rem 0;
+
+        a {
+          color: inherit;
+        }
       }
     }
   
     @include breakpoint(960px) {
-      display: flex;
   
       > a {
         display: block;

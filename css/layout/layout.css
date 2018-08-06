@@ -37,7 +37,7 @@ div.page {
         align-items: center;
         display: flex;
         height: 100%; }
-      @media print, screen and (min-width: 64em) {
+      @media print, screen and (min-width: 67.5em) {
         .layer.header > div .region.header {
           justify-content: flex-start; } }
     .layer.header > div .region.navbar {
@@ -60,7 +60,7 @@ div.page {
         padding-top: 87px; }
       body.toolbar-horizontal.toolbar-tray-open .layer.header > div .region.navbar {
         padding-top: 127px; }
-      @media print, screen and (min-width: 64em) {
+      @media print, screen and (min-width: 67.5em) {
         .layer.header > div .region.navbar {
           display: flex;
           flex-direction: row;
@@ -98,9 +98,25 @@ div.page {
   .layer.main .block.full-width {
     max-width: none;
     padding: 0; }
+  .layer.main .block > .title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .layer.main .block > .title-bar a.button {
+      display: block;
+      margin: 0; }
 
 .layer.main .block--hero-banner {
   margin: 0 auto 1rem; }
+
+@media print, screen and (min-width: 45em) {
+  .layer.main .block--contact > div {
+    display: flex; }
+    .layer.main .block--contact > div > section:first-child {
+      flex: none;
+      padding-right: 3rem; }
+    .layer.main .block--contact > div > section:last-child {
+      flex-grow: 1; } }
 
 .layer.footer {
   color: #0a0a0a;
@@ -126,12 +142,12 @@ div.page {
     width: calc(100% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-1 > li {
       width: calc(100% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-1 > li {
       width: calc(100% - 1.25rem);
       margin-right: 0.625rem;
@@ -150,12 +166,12 @@ div.page {
     width: calc(50% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-2 > li {
       width: calc(50% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-2 > li {
       width: calc(50% - 1.25rem);
       margin-right: 0.625rem;
@@ -174,12 +190,12 @@ div.page {
     width: calc(33.33333% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-3 > li {
       width: calc(33.33333% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-3 > li {
       width: calc(33.33333% - 1.25rem);
       margin-right: 0.625rem;
@@ -198,12 +214,12 @@ div.page {
     width: calc(25% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-4 > li {
       width: calc(25% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-4 > li {
       width: calc(25% - 1.25rem);
       margin-right: 0.625rem;
@@ -222,12 +238,12 @@ div.page {
     width: calc(20% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-5 > li {
       width: calc(20% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-5 > li {
       width: calc(20% - 1.25rem);
       margin-right: 0.625rem;
@@ -246,12 +262,12 @@ div.page {
     width: calc(16.66667% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-6 > li {
       width: calc(16.66667% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-6 > li {
       width: calc(16.66667% - 1.25rem);
       margin-right: 0.625rem;
@@ -270,12 +286,12 @@ div.page {
     width: calc(14.28571% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-7 > li {
       width: calc(14.28571% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-7 > li {
       width: calc(14.28571% - 1.25rem);
       margin-right: 0.625rem;
@@ -294,12 +310,12 @@ div.page {
     width: calc(12.5% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-8 > li {
       width: calc(12.5% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-8 > li {
       width: calc(12.5% - 1.25rem);
       margin-right: 0.625rem;
@@ -318,12 +334,12 @@ div.page {
     width: calc(11.11111% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-9 > li {
       width: calc(11.11111% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-9 > li {
       width: calc(11.11111% - 1.25rem);
       margin-right: 0.625rem;
@@ -342,12 +358,12 @@ div.page {
     width: calc(10% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-10 > li {
       width: calc(10% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-10 > li {
       width: calc(10% - 1.25rem);
       margin-right: 0.625rem;
@@ -366,12 +382,12 @@ div.page {
     width: calc(9.09091% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-11 > li {
       width: calc(9.09091% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-11 > li {
       width: calc(9.09091% - 1.25rem);
       margin-right: 0.625rem;
@@ -390,12 +406,12 @@ div.page {
     width: calc(8.33333% - 1.25rem);
     margin-right: 0.625rem;
     margin-left: 0.625rem; }
-  @media print, screen and (min-width: 40em) {
+  @media print, screen and (min-width: 45em) {
     .grid.medium-12 > li {
       width: calc(8.33333% - 1.25rem);
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
-  @media print, screen and (min-width: 64em) {
+  @media print, screen and (min-width: 67.5em) {
     .grid.large-12 > li {
       width: calc(8.33333% - 1.25rem);
       margin-right: 0.625rem;

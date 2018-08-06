@@ -2,6 +2,14 @@
 /// @file
 /// Supplemetary mixins available to all components
 
+@mixin alkaline-icons($size) {
+  .icon {
+    height: $size;
+    width: $size;
+  }
+}
+
+
 @mixin alkaline-shadow-button {
   @include button;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;

@@ -1,10 +1,9 @@
 @import 'alkaline';
 
 @mixin alkaline-address {
-  .address {
-    //@extend %rich-text;
+  div.address {
     clear: both;
-    margin: 24px 0;
+    margin: $global-margin 0;
   }
 }
 

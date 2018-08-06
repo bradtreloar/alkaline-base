@@ -14,9 +14,39 @@
       max-width: none;
       padding: 0;
     }
+
+    > .title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      a.button {
+        display: block;
+        margin: 0;
+      }
+    }
   }
 
   .block--hero-banner {
     margin: 0 auto $global-margin;
+  }
+
+  .block--contact {
+    @include breakpoint(medium) {
+      > div {
+        display: flex;
+  
+        > section {
+          &:first-child {
+            flex: none;
+            padding-right: ($global-margin * 3);
+          }
+  
+          &:last-child {
+            flex-grow: 1;
+          }
+        }
+      }
+    }
   }
 }

@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ */
+#}
+{{ attach_library('alkaline/card') }}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'card',
+  ]
+%}
+<figure{{ attributes.addClass(classes) }}>
+
+  {{ content.field_hero_image }}
+
+  <figcaption>
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+
+    {# <a class="button" href="{{ url }}">View</a> #}
+  </figcaption>
+
+</figure>

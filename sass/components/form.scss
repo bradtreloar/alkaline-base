@@ -1,5 +1,36 @@
 @import 'alkaline';
-@include foundation-forms;
+
+@mixin alkaline-form {
+  @include foundation-form-text;
+  @include foundation-form-checkbox;
+  @include foundation-form-label;
+  @include foundation-form-helptext;
+  @include foundation-form-prepostfix;
+  @include foundation-form-fieldset;
+  @include foundation-form-select;
+  @include foundation-form-error;
+  
+  form {
+    .form-item,
+    .form-actions {
+      // Add global form-spacing margins to the element wrappers.
+      margin: 0 0 $form-spacing;
+    }
+  
+    .region.navbar & {
+      @include alkaline-form-inline;
+    }
+  }
+  
+  .contact-message-form {
+  
+    // @todo remove preview button using form alteration hook
+    #edit-preview {
+      display: none;
+    }
+  }
+}
+
 
 // Places all form elements in a row and sets
 // an explicit height on the wrapper
@@ -51,30 +82,6 @@
       // element has explicit height.
       padding-top: 0;
       padding-bottom: 0;
-    }
-  }
-}
-
-
-
-@mixin alkaline-form {
-  form {
-    .form-item,
-    .form-actions {
-      // Add global form-spacing margins to the element wrappers.
-      margin: 0 0 $form-spacing;
-    }
-  
-    .region.navbar & {
-      @include alkaline-form-inline;
-    }
-  }
-  
-  .contact-message-form {
-  
-    // @todo remove preview button using form alteration hook
-    #edit-preview {
-      display: none;
     }
   }
 }

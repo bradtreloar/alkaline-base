@@ -15,7 +15,7 @@ figure.hero-banner {
     right: 0;
     z-index: -1; }
   figure.hero-banner:after {
-    opacity: 0.40; }
+    opacity: 0.25; }
   figure.hero-banner > figcaption {
     margin: 0 auto;
     max-width: 60rem;
@@ -24,7 +24,7 @@ figure.hero-banner {
       color: #fefefe;
       color: #0a0a0a;
       font-size: 120%; }
-    @media print, screen and (min-width: 40em) {
+    @media print, screen and (min-width: 45em) {
       figure.hero-banner > figcaption {
         padding: 144px 96px 96px; }
         figure.hero-banner > figcaption > div:first-of-type {

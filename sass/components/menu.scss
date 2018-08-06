@@ -5,14 +5,15 @@ $drilldown-background: inherit;
 $drilldown-submenu-background: inherit;
 $dropdownmenu-border: 0 solid transparent;
 
-@mixin menu-button {
+@mixin alkaline-menu-button {
   color: inherit;
-  display: block;
+  display: flex;
+  align-items: center;
     
   svg.icon {
+    display: block;
     height: 1.5em;
     width: 1.5em;
-    vertical-align: middle;
     
     // If the menu item has an icon then hide the
     // text labal until there is ample horizontal space.
@@ -20,13 +21,14 @@ $dropdownmenu-border: 0 solid transparent;
       display: none;
       
       @include breakpoint(medium) {
-        display: inline;
+        display: inline-block;
         margin-left: 0.5em;
       }
     }
   }
 
   span {
+    display: block;
     line-height: 1.5em;
   }
 }
@@ -40,7 +42,7 @@ $dropdownmenu-border: 0 solid transparent;
     }
   
     a {
-      @include menu-button;
+      @include alkaline-menu-button;
       font-size: 0.875em;
     }
   
@@ -85,9 +87,7 @@ $dropdownmenu-border: 0 solid transparent;
 
 @mixin alkaline-navbar-toggle-button {
   button[data-toggle="navbar"] {
-    @include menu-button;
-    align-items: center;
-    display: flex;
+    @include alkaline-menu-button;
     height: 100%;
     line-height: 1;
     text-decoration: none;
