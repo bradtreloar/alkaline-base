@@ -20,6 +20,10 @@
     .region.navbar & {
       @include alkaline-form-inline;
     }
+  
+    .region.content & {
+      padding: 0 $global-margin;
+    }
   }
   
   .contact-message-form {

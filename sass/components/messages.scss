@@ -2,8 +2,10 @@
 
 
 @mixin alkaline-messages {
+
   .messages {
     @include callout-base;
+    margin: $global-margin;
   }
   
   .messages--status {

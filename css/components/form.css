@@ -242,5 +242,8 @@ form .form-actions {
     padding-top: 0;
     padding-bottom: 0; }
 
+.region.content form {
+  padding: 0 1rem; }
+
 .contact-message-form #edit-preview {
   display: none; }

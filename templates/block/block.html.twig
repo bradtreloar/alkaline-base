@@ -9,22 +9,22 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
+    plugin_id|clean_class,
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
 
-  {% if label and more_link %}
+  {% if label or more_link %}
     <div class="title-bar">
-    {{ title_prefix }}
-    {% if label %}
-      <h2{{ title_attributes }}>{{ label }}</h2>
-    {% endif %}
-    {{ title_suffix }}
-    {% if more_link %}
-      {{ more_link }}
-    {% endif %}
+      {% if label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
+      {% endif %}
+      {% if more_link %}
+        {{ more_link }}
+      {% endif %}
     </div>
   {% endif %}
+
   {% block content %}
     {{ content }}
   {% endblock %}

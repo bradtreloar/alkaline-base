@@ -1,8 +1,7 @@
 @import 'alkaline';
 
-@mixin alkaline-text-formatted {
-  @include foundation-typography-base;
 
+@mixin alkaline-text-formatted {
   $icon-color: inherit !default;
   
   // compatible with CKEditor

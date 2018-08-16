@@ -1,16 +1,24 @@
 
+foundation:
+  js:
+    js/motion-ui.min.js: {}
+    js/foundation.min.js: {}
+
 base:
   css:
     base:
       css/base/base.css: {}
+      css/base/drupal.css: {}
       css/base/motion-ui.min.css: {}
       css/print.css: { media: print }
     layout:
       css/layout/layout.css: {}
+    component:
+      css/components/page-title.css: {}
   js:
-    js/lib/foundation.min.js: { weight: -1 }
-    js/lib/motion-ui.min.js: { weight: -2 }
+    js/alkaline.js: {}
   dependencies:
+    - alkaline/foundation
     - core/jquery
     - core/jquery.once
     - core/drupal
@@ -24,16 +32,6 @@ article:
   css:
     component:
       css/components/article.css: {}
-
-button:
-  css:
-    component:
-      css/components/button.css: {}
-
-carousel:
-  css:
-    component:
-      css/components/carousel.css: {}
 
 address:
   css:
@@ -54,6 +52,16 @@ banner:
   css:
     component:
       css/components/banner.css: {}
+
+button:
+  css:
+    component:
+      css/components/button.css: {}
+
+carousel:
+  css:
+    component:
+      css/components/carousel.css: {}
 
 branding:
   css:
@@ -84,11 +92,6 @@ form:
   css:
     component:
       css/components/form.css: {}
-
-hero_banner:
-  css:
-    component:
-      css/components/hero-banner.css: {}
 
 icon:
   css:
@@ -159,3 +162,8 @@ text_formatted:
   css:
     component:
       css/components/text-formatted.css: {}
+
+typography:
+  css:
+    component:
+      css/base/typography.css: {}

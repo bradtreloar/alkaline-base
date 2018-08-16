@@ -3,45 +3,129 @@
 // @todo turn this into a full set of banner varients
 
 @mixin alkaline-banner {
-  figure.banner {
-    background-repeat: no-repeat;
-    background-position: center right;
-    background-size: cover;
-    display: flex;
-    justify-content: flex-start;
-    padding: 0 ($global-margin * 1.5) ($global-margin * 1.5);
+  .banner {
+    @include alkaline-background-image;
+    color: $white;
+    height: 100%;
+    padding: 3rem 1rem;
     width: 100%;
+    position: relative;
 
-    figcaption {
-      padding: ($global-margin * 2) $global-margin $global-margin;
-      background: rgba(33, 33, 33, .85);
-      color: white;
-      max-width: 240px;
+    &.light-bg {
+      color: $black;
+      background: rgba(white, 0.75);
+    }
 
-      h2 {
-        font-size: 1.5rem;
-        font-weight: bold;
+    &.tinted-bg {
+      color: $black;
+      background: rgba($primary-color, 0.50);
+    }
 
-        a {
-          color: inherit;
-        }
+    &.dark-bg {
+      color: $white;
+      background: rgba(33,33,33, 0.75);
+    }
+
+    > * {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 auto;
+      max-width: $global-width;
+  
+      > div:last-of-type:not(:first-of-type) {
+        @include button-group(div, 0.5rem);
+        margin: 0;
+      }
+    }
+  
+    h1, h2 {
+      line-height: 1.2em;
+    }
+  
+    h2 {
+      line-height: 1.2em;
+      font-size: 1.5rem;
+
+      @include breakpoint(medium) {
+        font-size: 1.75rem;
       }
 
-      ul {
-        // @todo convert to button group
-        margin: $global-margin 0 0;
-        padding: 0;
-        list-style: none;
-        
-        a {
-          @include button;
-          margin: 0;
+      a {
+        color: inherit;
+      }
+    }
+  
+    .button {
+      margin-top: 0;
+      min-width: 8em;
+    }
+
+    &.hero {
+      padding: 3rem 1rem 3rem;
+      text-align: center;
+  
+      @include breakpoint(medium) {
+        padding: 6rem;
+      }
+
+      > * {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+
+      p {
+        font-size: 1.2em;
+
+        @include breakpoint(medium) {
+          font-size: 1.5em;
+        }
+      }
+  
+      .button {
+        font-weight: bold;
+
+        @include breakpoint(medium) {
+          font-size: 1.2em;
+        }
+      }
+    }
+
+    &.callout {
+      color: inherit;
+  
+      @include breakpoint(medium) {
+        padding: 6rem;
+      }
+
+      > * {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+
+      p {
+        font-size: 1.2em;
+
+        @include breakpoint(medium) {
+          font-size: 1.5em;
+        }
+      }
+  
+      .button {
+        font-weight: bold;
+
+        @include breakpoint(medium) {
+          font-size: 1.2em;
         }
       }
     }
   }
 }
-
 
 @if $theme is alkaline {
   @include alkaline-banner;

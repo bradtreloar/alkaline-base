@@ -1,0 +1,16 @@
+@import 'alkaline';
+
+
+@mixin alkaline-page-title {
+  .page-title {
+    margin: $global-margin auto;
+    max-width: $global-width;
+    padding: 0 $global-margin;
+    width: 100%;
+  }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-page-title;
+}

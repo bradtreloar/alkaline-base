@@ -1,3 +1,4 @@
+@import 'alkaline';
 
 $footer-layer-background: $medium-gray !default;
 $footer-layer-color: $black !default;
@@ -5,17 +6,39 @@ $footer-layer-color: $black !default;
 .layer.footer {
   color: $footer-layer-color;
   background-color: $footer-layer-background;
-  margin: 96px 0 0 0;
+  margin: $global-margin 0 0 0;
+
+  > div {
+    margin: 0 auto;
+    max-width: 1080px;
+  }
+
+  .block {
+    margin: $global-margin auto;
+    padding: 0 $global-margin;
+    
+    h2 {
+      margin: $global-margin 0;
+    }
+  }
 }
 
 .layer.boilerplate {
+  color: $footer-layer-color;
+  background-color: $footer-layer-background;
+
+  .region {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
   .block {
     // @todo move this to component stylesheet
     text-align: center;
-    font-size: 85%;
+    font-size: 0.85em;
     font-weight: bold;
-    padding: 16px 24px;
+    padding: $global-margin;
     text-transform: uppercase;
-    opacity: 0.5;
   }
 }

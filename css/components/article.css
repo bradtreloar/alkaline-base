@@ -1,21 +1,27 @@
 article {
-  margin: 1rem 0; }
+  margin: 1rem auto;
+  max-width: 60rem;
+  padding: 0 1rem; }
   article.contact-details span {
     display: inline-block;
     vertical-align: top; }
   article header p {
     font-size: 125%;
     line-height: 1.6; }
-  article header figure {
+  article figure {
     margin: 1rem 0; }
-    article header figure a {
+    article figure a {
       display: flex;
       height: 100%;
       justify-content: center; }
-  article header figcaption {
-    padding: 1rem; }
-  article header img {
-    display: block; }
+    article figure figcaption {
+      padding: 1rem; }
+    article figure img {
+      display: block; }
+  article header figure a {
+    display: flex;
+    height: 100%;
+    justify-content: center; }
   article footer {
     display: flex;
     margin-bottom: 1rem;

@@ -1,44 +1,112 @@
-figure.banner {
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: cover;
-  display: flex;
-  justify-content: flex-start;
-  padding: 0 1.5rem 1.5rem;
-  width: 100%; }
-  figure.banner figcaption {
-    padding: 2rem 1rem 1rem;
-    background: rgba(33, 33, 33, 0.85);
-    color: white;
-    max-width: 240px; }
-    figure.banner figcaption h2 {
-      font-size: 1.5rem;
-      font-weight: bold; }
-      figure.banner figcaption h2 a {
-        color: inherit; }
-    figure.banner figcaption ul {
-      margin: 1rem 0 0;
-      padding: 0;
-      list-style: none; }
-      figure.banner figcaption ul a {
-        display: inline-block;
-        vertical-align: middle;
-        margin: 0 0 1rem 0;
-        font-family: inherit;
-        padding: 0.85em 1em;
-        -webkit-appearance: none;
-        border: 1px solid transparent;
-        border-radius: 2px;
-        transition: background-color 0.25s ease-out, color 0.25s ease-out;
+.banner {
+  position: relative;
+  color: #fefefe;
+  height: 100%;
+  padding: 3rem 1rem;
+  width: 100%;
+  position: relative; }
+  .banner:after {
+    background-image: none;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1; }
+  .banner.light-bg {
+    color: #0a0a0a;
+    background: rgba(255, 255, 255, 0.75); }
+  .banner.tinted-bg {
+    color: #0a0a0a;
+    background: rgba(23, 121, 186, 0.5); }
+  .banner.dark-bg {
+    color: #fefefe;
+    background: rgba(33, 33, 33, 0.75); }
+  .banner > * {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 60rem; }
+    .banner > * > div:last-of-type:not(:first-of-type) {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      margin: 0; }
+      .banner > * > div:last-of-type:not(:first-of-type)::before, .banner > * > div:last-of-type:not(:first-of-type)::after {
+        display: table;
+        content: ' ';
+        flex-basis: 0;
+        order: 1; }
+      .banner > * > div:last-of-type:not(:first-of-type)::after {
+        clear: both; }
+      .banner > * > div:last-of-type:not(:first-of-type) div {
+        margin: 0;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
         font-size: 0.9rem;
-        line-height: 1;
-        text-align: center;
-        cursor: pointer;
-        background-color: #1779ba;
-        color: #fefefe;
-        margin: 0; }
-        [data-whatinput='mouse'] figure.banner figcaption ul a {
-          outline: 0; }
-        figure.banner figcaption ul a:hover, figure.banner figcaption ul a:focus {
-          background-color: #14679e;
-          color: #fefefe; }
+        flex: 0 0 auto; }
+        .banner > * > div:last-of-type:not(:first-of-type) div:last-child {
+          margin-right: 0; }
+  .banner h1, .banner h2 {
+    line-height: 1.2em; }
+  .banner h2 {
+    line-height: 1.2em;
+    font-size: 1.5rem; }
+    @media print, screen and (min-width: 45em) {
+      .banner h2 {
+        font-size: 1.75rem; } }
+    .banner h2 a {
+      color: inherit; }
+  .banner .button {
+    margin-top: 0;
+    min-width: 8em; }
+  .banner.hero {
+    padding: 3rem 1rem 3rem;
+    text-align: center; }
+    @media print, screen and (min-width: 45em) {
+      .banner.hero {
+        padding: 6rem; } }
+    .banner.hero > * {
+      text-align: center;
+      align-items: center;
+      justify-content: center; }
+    .banner.hero p {
+      font-size: 1.2em; }
+      @media print, screen and (min-width: 45em) {
+        .banner.hero p {
+          font-size: 1.5em; } }
+    .banner.hero .button {
+      font-weight: bold; }
+      @media print, screen and (min-width: 45em) {
+        .banner.hero .button {
+          font-size: 1.2em; } }
+  .banner.callout {
+    color: inherit; }
+    @media print, screen and (min-width: 45em) {
+      .banner.callout {
+        padding: 6rem; } }
+    .banner.callout > * {
+      text-align: center;
+      align-items: center;
+      justify-content: center; }
+    .banner.callout p {
+      font-size: 1.2em; }
+      @media print, screen and (min-width: 45em) {
+        .banner.callout p {
+          font-size: 1.5em; } }
+    .banner.callout .button {
+      font-weight: bold; }
+      @media print, screen and (min-width: 45em) {
+        .banner.callout .button {
+          font-size: 1.2em; } }

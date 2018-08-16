@@ -1,6 +1,6 @@
 
 # Node
 # Node modules are only used during development
-node_modules/
+/node_modules/
 npm-debug.log
 

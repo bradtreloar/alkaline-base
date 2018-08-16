@@ -3,10 +3,31 @@
 @mixin alkaline-button {
   .button {
     @include button;
+    display: flex;
+    justify-content: center;
+    
+    svg.icon {
+      display: block;
+      fill: $button-color;
+      height: 1em;
+      width: 1em;
+
+      & + span {
+        display: block;
+        margin-left: 0.5em;
+        height: 1em;
+        line-height: 1em;
+      }
+    }
 
     &[data-drupal-selector="edit-preview"] {
       @include button($style: hollow);
     }
+  }
+
+  .button-group {
+    $spacing: ($global-margin / 2);
+    @include button-group('.button', $spacing);
   }
 }
 

@@ -1,23 +1,26 @@
 @import 'alkaline';
 
-article {
-  margin: $global-margin 0;
-  
-  &.contact-details {
-    span {
-      display: inline-block;
-      vertical-align: top;
-    }
-  }
 
-  header {
-    p {
-      font-size: $lead-font-size;
-      line-height: $lead-lineheight;
+@mixin alkaline-article {
+  article {
+    margin: $global-margin auto;
+    max-width: $global-width;
+    padding: 0 $global-margin;
+    
+    &.contact-details {
+      span {
+        display: inline-block;
+        vertical-align: top;
+      }
     }
-  }
 
-  header {
+    header {
+      p {
+        font-size: $lead-font-size;
+        line-height: $lead-lineheight;
+      }
+    }
+
     figure {
       margin: $global-margin 0;
 
@@ -26,68 +29,87 @@ article {
         height: 100%;
         justify-content: center;
       }
-    }
 
-    figcaption {
-      padding: 1rem;
-    }
-      
-    img {
-      display: block;
-    }
-  }
-
-  footer {
-    @include media-object-container;
-
-    > * {
-      @include media-object-section;
-    }
-
-    figure {
-      // Make the author picture the same height as two lines of text.
-      height: $global-lineheight * 2em;
-
-      // Shrink img to fit figure.
+      figcaption {
+        padding: 1rem;
+      }
+        
       img {
-        height: 100%;
-        width: auto;
+        display: block;
       }
     }
 
-    // Stack author name and date.
-    span {
-      display: block;
+    header {
+      figure {
+        a {
+          display: flex;
+          height: 100%;
+          justify-content: center;
+        }
+      }
     }
-  }
-  
-  .links {
-    list-style: none;
-    margin: 0;
-    @include button-group(li);
 
-    a {
-      @include button-base;
-      padding: 0.33rem 0.5rem;
+    footer {
+      @include media-object-container;
+
+      > * {
+        @include media-object-section;
+      }
+
+      figure {
+        // Make the author picture the same height as two lines of text.
+        height: $global-lineheight * 2em;
+
+        // Shrink img to fit figure.
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+
+      // Stack author name and date.
+      span {
+        display: block;
+      }
+    }
+    
+    .links {
+      list-style: none;
+      margin: 0;
+      @include button-group(li);
+
+      a {
+        @include button-base;
+        padding: 0.33rem 0.5rem;
+      }
     }
   }
 }
 
-article.teaser {
-  @include breakpoint(medium) {
-    @include media-object-container;
 
-    > * {
-      @include media-object-section;
+@mixin alkaline-article-teaser {
+  article.teaser {
+    @include breakpoint(medium) {
+      @include media-object-container;
+
+      > * {
+        @include media-object-section;
+      }
+    }
+
+    header {
+      min-width: 33%;
+      
+      // Don't show the image field's caption on teaser.
+      figcaption {
+        display: none;
+      }
     }
   }
+}
 
-  header {
-    min-width: 33%;
-    
-    // Don't show the image field's caption on teaser.
-    figcaption {
-      display: none;
-    }
-  }
+
+@if $theme is alkaline {
+  @include alkaline-article;
+  @include alkaline-article-teaser;
 }

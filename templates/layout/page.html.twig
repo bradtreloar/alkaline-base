@@ -2,9 +2,13 @@
 
   {% include '@alkaline/layout/includes/header.html.twig' %}
 
+  {% if page.lead %}
+    <section class="layer lead">
+      {{ page.lead }}
+    </section>
+  {% endif %}
+
   <main class="layer main" role="main">
-  
-    <a id="main-content" tabindex="-1"></a>
 
     {% if page.sidebar_first %}
       <section id="sidebar-first" class="region sidebar sidebar-first">
@@ -13,6 +17,7 @@
     {% endif %}
 
     <section id="content" class="region content">
+      <a id="main-content" tabindex="-1"></a>
       {{ page.content }}
     </section>
 

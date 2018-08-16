@@ -141,7 +141,7 @@
   color: inherit;
   display: flex;
   align-items: center;
-  font-size: 0.875em; }
+  font-family: inherit; }
   .menu a svg.icon {
     display: block;
     height: 1.5em;
@@ -213,6 +213,25 @@
       background-color: #4dc247; }
     .menu.social-share li.youtube {
       background-color: #bb0000; }
+
+.region.header .menu a,
+.region.navbar .menu a {
+  font-size: 0.875em; }
+
+.region.navbar .menu {
+  flex-wrap: nowrap;
+  flex-direction: column; }
+  @media print, screen and (min-width: 67.5em) {
+    .region.navbar .menu {
+      flex-wrap: wrap;
+      flex-direction: row; } }
+
+.region.footer .menu {
+  flex-wrap: nowrap;
+  flex-direction: column; }
+  .region.footer .menu a {
+    padding-left: 0;
+    padding-right: 0; }
 
 .menu-wrapper {
   background: inherit; }
@@ -572,6 +591,7 @@ button[data-toggle="navbar"] {
   color: inherit;
   display: flex;
   align-items: center;
+  font-family: inherit;
   height: 100%;
   line-height: 1;
   text-decoration: none;

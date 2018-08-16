@@ -2,6 +2,6 @@ langcode: en
 status: true
 dependencies: {  }
 id: alkaline_contact
-label: Alkaline Contact
+label: Contact
 revision: 0
 description: 'Displays contact and location details'

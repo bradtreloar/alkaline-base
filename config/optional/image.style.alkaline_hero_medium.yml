@@ -1,12 +1,12 @@
 langcode: en
 status: true
 dependencies: {}
-name: alkaline_hero_small
-label: 'Hero Small (720x600)'
+name: alkaline_hero_medium
+label: 'Hero Medium (1080x900)'
 effects:
   -
     id: image_scale_and_crop
     weight: 2
     data:
-      width: 720
-      height: 600
+      width: 1080
+      height: 900

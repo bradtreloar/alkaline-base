@@ -23,12 +23,12 @@ figure.hero-banner {
     figure.hero-banner > figcaption > div:first-of-type {
       color: #fefefe;
       color: #0a0a0a;
-      font-size: 120%; }
+      font-size: 150%; }
     @media print, screen and (min-width: 45em) {
       figure.hero-banner > figcaption {
         padding: 144px 96px 96px; }
         figure.hero-banner > figcaption > div:first-of-type {
-          font-size: 150%; } }
+          font-size: 200%; } }
     figure.hero-banner > figcaption > div:last-of-type {
       margin-bottom: 1rem;
       display: flex;

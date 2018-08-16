@@ -1,7 +1,10 @@
 @import 'alkaline';
 
 @mixin alkaline-breadcrumbs {
+
   .breadcrumb {
+    margin: $global-margin 0;
+    padding: 0 $global-margin;
 
     ol {
       @include breadcrumbs-container;

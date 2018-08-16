@@ -1,0 +1,11 @@
+.visually-hidden {
+  display: none; }
+
+.clearfix::before, .clearfix::after {
+  display: table;
+  content: ' ';
+  flex-basis: 0;
+  order: 1; }
+
+.clearfix::after {
+  clear: both; }

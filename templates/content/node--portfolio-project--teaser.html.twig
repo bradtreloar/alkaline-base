@@ -16,16 +16,16 @@
     'card',
   ]
 %}
-<figure{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(classes) }}>
 
-  {{ content.field_hero_image }}
+  {{ content.field_image }}
 
-  <figcaption>
-    <h2{{ title_attributes }}>
+  <section>
+    <h3{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
+    </h3>
 
     {# <a class="button" href="{{ url }}">View</a> #}
-  </figcaption>
+  </section>
 
-</figure>
+</div>

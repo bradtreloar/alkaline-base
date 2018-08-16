@@ -1,35 +1,37 @@
-figure.card {
+.card {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%; }
-  figure.card picture {
-    display: block;
+  .card > figure {
     flex: none; }
-    figure.card picture a {
-      display: block; }
-    figure.card picture img {
-      display: block;
-      width: 100%;
-      height: auto; }
-  figure.card > a {
-    display: block;
-    margin: 0 auto 24px;
-    max-width: 240px; }
-  figure.card figcaption {
+    .card > figure picture {
+      flex: none; }
+      .card > figure picture a {
+        display: block; }
+      .card > figure picture img {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto; }
+    .card > figure figcaption {
+      display: none; }
+  .card > section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     align-items: center;
-    justify-content: space-between; }
-    figure.card figcaption h2 {
+    justify-content: space-between;
+    margin: 1rem 0; }
+    .card > section h3 {
       width: 100%;
-      font-size: 1.5em;
-      margin: 0.5rem 0; }
-      figure.card figcaption h2 a {
+      font-size: 1.25em; }
+      .card > section h3 a {
         color: inherit; }
-  @media screen and (min-width: 60em) {
-    figure.card > a {
-      display: block;
-      margin: 0 24px 0 0;
-      width: 240px; } }
+  @media print, screen and (min-width: 45em) {
+    .card.wide {
+      flex-direction: row; }
+      .card.wide > section {
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0 0 0 1rem; } }

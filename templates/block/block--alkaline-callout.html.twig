@@ -2,18 +2,17 @@
   set classes = [
     'block',
     'block-' ~ configuration.provider|clean_class,
-    'block--hero-banner',
+    'block--callout',
   ]
 %}
-{{ attach_library('alkaline/hero_banner') }}
+{{ attach_library('alkaline/banner') }}
 <header{{ attributes.addClass(classes) }}>
-  <figure class="hero-banner">
+  <figure class="banner callout">
     <figcaption>
       {% block content %}
-        {{ content|without('field_hero_background_image') }}
+        {{ content }}
       {% endblock %}
     </figcaption>
   </figure>
 </header>
-{{ background_css|raw }}
 

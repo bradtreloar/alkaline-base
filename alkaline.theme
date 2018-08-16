@@ -5,7 +5,27 @@ use Drupal\Component\Utility\Html;
 use Drupal\image\Entity\ImageStyle;
 
 
-function alkaline_responsive_background_css($imageStyleClass, $htmlId, $imageUri) {
+function alkaline_article_header(&$vars) {
+  // Create a header
+  $vars['header'] = [];
+
+  // Move some fields to the header section.
+  $header_fields = [
+    'social_share_buttons',
+    'field_lead_section',
+    'field_image',
+  ];
+
+  foreach ($header_fields as $field_name) {
+    if(isset($vars['content'][$field_name])) {
+      $vars['header'][$field_name] = $vars['content'][$field_name];
+      unset($vars['content'][$field_name]);
+    }
+  }
+}
+
+
+function alkaline_responsive_background_css($imageStyleClass, $selector, $imageUri) {
   // Fetch this theme's breakpoints.
   $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('alkaline');
 
@@ -33,10 +53,14 @@ function alkaline_responsive_background_css($imageStyleClass, $htmlId, $imageUri
   foreach ($cssRules as $rule) {
     $mediaQuery = $rule['mediaQuery'];
     $url = $rule['url'];
-    $css .= "@media $mediaQuery { #$htmlId > figure::after { background-image: url('$url'); }}\n";
+    $css .= "@media $mediaQuery { $selector { background-image: url('$url'); }}\n";
   }
 
-  return '<style>' . $css . '</style>';
+  return [
+    '#type' => 'html_tag',
+    '#tag' => 'style',
+    '#value' => $css,
+  ];
 }
 
 
@@ -93,6 +117,8 @@ function alkaline_get_svg_icons(array $icons) {
 
 /**
  * Generates SVG icon render array.
+ * 
+ * @todo Replace with a render plugin
  */
 function alkaline_icon($name) {
   return [
@@ -122,36 +148,16 @@ function alkaline_preprocess_block(&$vars) {
     }
   }
 
+  // If this is a views block and it has a more link
+  // then add the link to the block as a button.
   if(isset($vars['content']['#type']) && $vars['content']['#type'] == 'view') {
-    $view = $vars['content']['#view'];
-    $display = $view->getDisplay('default');
-
-    if ($display->isMoreEnabled() && $display->usesLinkDisplay()) {
-      $link_display_option = $display->getOption('link_display');
-
-      if ($link_display_option == 'custom_url') {
-        $title = $display->getOption('use_more_text');
-        $url = $display->getOption('link_url');
-      }
-    
-      $vars['more_link'] = [
-        '#type' => 'link',
-        '#title' => $title,
-        '#url' => Url::fromUserInput('/' . $url),
-        '#attributes' => [
-          'class' => 'button',
-        ]
-      ];
-    }
+    alkaline_preprocess_block_views($vars);
   }
 }
 
 
 /**
  * Preprocessor for alkaline_hero_banner block type
- *
- * @param [type] $vars
- * @return void
  */
 function alkaline_preprocess_block_alkaline_hero_banner(&$vars) {
 
@@ -159,13 +165,45 @@ function alkaline_preprocess_block_alkaline_hero_banner(&$vars) {
   $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
   if ($block_content) {
     // Fetch the background image URI.
-    $uri = $block_content->field_hero_background_image->entity->getFileUri();
-    $blockHtmlId = $vars['attributes']['id'];
+    $file = $block_content->field_hero_background_image->entity;
+    if($file) {
+      $uri = $file->getFileUri();
+      $htmlId = $vars['attributes']['id'];
 
-    // Add style element to vars.
-    $vars['background_css'] = alkaline_responsive_background_css('hero', $blockHtmlId, $uri);
+      // Add style element to vars.
+      $vars['css'] = alkaline_responsive_background_css('hero', "#$htmlId figure::after", $uri);
+    }
   }
+}
 
+
+/**
+ * Preprocessor for views blocks
+ */
+function alkaline_preprocess_block_views(&$vars) {
+  $view = $vars['content']['#view'];
+
+  // @todo Handle setting "use_more_always: false"
+  $display = $view->getDisplay('default');
+  if ($display->isMoreEnabled() && $display->usesLinkDisplay()) {
+    $link_display_option = $display->getOption('link_display');
+
+    if ($link_display_option == 'custom_url') {
+      $title = $display->getOption('use_more_text');
+      $url = $display->getOption('link_url');
+    }
+    // @todo Handle link provided by other view displays (e.g. page)
+  
+    // Prepare the link element.
+    $vars['more_link'] = [
+      '#type' => 'link',
+      '#title' => $title,
+      '#url' => Url::fromUserInput('/' . $url),
+      '#attributes' => [
+        'class' => 'button',
+      ]
+    ];
+  }
 }
 
 
@@ -203,7 +241,7 @@ function alkaline_preprocess_field(&$vars) {
 /**
  * Preprocessor for field_image
  */
-function alkaline_preprocess_field_image(&$vars) {
+function alkaline_preprocess_field_type_image(&$vars) {
   // Supply the alt text to the template as the caption.
   foreach ($vars['items'] as &$item) {
     $image = $item['content']['#item']->getValue();
@@ -227,6 +265,9 @@ function alkaline_preprocess_field_type_link(&$vars) {
 
 /**
  * Implements template_preprocess_form()
+ *
+ * @param array $vars
+ * @return void
  */
 function alkaline_preprocess_form(&$vars) {
 
@@ -243,11 +284,11 @@ function alkaline_preprocess_html(&$vars) {
       'twitter',
     ],
     'fa-solid' => [
+      'arrow-down', 'arrow-left', 'arrow-right', 'arrow-up',
       'backward',
       'bars',
-      'caret-down',
-      'caret-left',
-      'caret-right',
+      'caret-down', 'caret-left', 'caret-right', 'caret-up',
+      'chevron-down', 'chevron-left', 'chevron-right', 'chevron-up',
       'download',
       'ellipsis-h',
       'fast-backward',
@@ -307,20 +348,17 @@ function alkaline_preprocess_node(&$vars) {
  */
 function alkaline_preprocess_node_article(&$vars) {
   if ($vars['view_mode'] == 'full') {
-    // Create a header
-    $vars['header'] = [];
+    alkaline_article_header($vars);
+  }
+}
 
-    // Move some fields to the header section.
-    $header_fields = [
-      'social_share_buttons',
-      'field_lead_section',
-      'field_image',
-    ];
 
-    foreach ($header_fields as $field_name) {
-      $vars['header'][$field_name] = $vars['content'][$field_name];
-      unset($vars['content'][$field_name]);
-    }
+/**
+ * Preprocessor for portfolio_project content type
+ */
+function alkaline_preprocess_node_portfolio_project(&$vars) {
+  if ($vars['view_mode'] == 'full') {
+    alkaline_article_header($vars);
   }
 }
 

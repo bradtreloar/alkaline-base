@@ -1,0 +1,13 @@
+
+.layer.lead {
+  position: relative;
+  height: 100%;
+
+  .block {
+    height: 100%;
+
+    > div {
+      height: 100%;
+    }
+  }
+}

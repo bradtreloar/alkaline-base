@@ -3,7 +3,13 @@
 
 @mixin alkaline-local-tasks {
 
-  .local-tasks {
+  nav.local-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+
     ul {
       @include tabs-container;
     }

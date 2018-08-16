@@ -1,6 +1,13 @@
+{%
+  set classes = [
+    'field',
+    field_name|clean_class,
+    field_type|clean_class,
+  ]
+%}
 {% for item in items %}
-<figure>
-  <picture{{ attributes }}>
+<figure {{ attributes.addClass(classes) }}>
+  <picture>
     {{ item.content }}
   </picture>
   {% if item.caption %}
