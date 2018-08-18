@@ -2,6 +2,8 @@ div.page {
   height: 100%;
   padding: 48px 0 0 0; }
   div.page main {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1; }
 
 .layer.header {
@@ -12,6 +14,7 @@ div.page {
   .layer.header.fixed {
     position: fixed;
     top: 0;
+    -webkit-transition: top 300ms ease;
     transition: top 300ms ease;
     z-index: 1; }
     body.toolbar-horizontal .layer.header.fixed,
@@ -21,23 +24,42 @@ div.page {
       padding-top: 79px; }
   .layer.header > div {
     height: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 0 auto;
     max-width: 1080px;
     position: relative; }
     .layer.header > div .region.header {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
       flex-grow: 1;
       height: 100%;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
       justify-content: space-between; }
       .layer.header > div .region.header .block {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         height: 100%; }
       @media print, screen and (min-width: 67.5em) {
         .layer.header > div .region.header {
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
           justify-content: flex-start; } }
     .layer.header > div .region.navbar {
       background: #0a0a0a;
@@ -61,10 +83,19 @@ div.page {
         padding-top: 127px; }
       @media print, screen and (min-width: 67.5em) {
         .layer.header > div .region.navbar {
+          display: -webkit-box;
+          display: -ms-flexbox;
           display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
           flex-direction: row;
+          -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
           flex-grow: 1;
           height: 100%;
+          -webkit-box-pack: end;
+          -ms-flex-pack: end;
           justify-content: flex-end;
           pointer-events: all;
           position: static;
@@ -72,17 +103,34 @@ div.page {
           z-index: 1;
           padding-top: 0 !important; }
           .layer.header > div .region.navbar .block {
+            -webkit-box-align: center;
+            -ms-flex-align: center;
             align-items: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             height: 100%; } }
     .layer.header > div .region.buttons {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
       flex-grow: 1;
       height: 100%;
+      -webkit-box-flex: 0;
+      -ms-flex: none;
       flex: none; }
       .layer.header > div .region.buttons .block {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         height: 100%; }
     .layer.header > div .region > .block {
@@ -105,8 +153,14 @@ div.page {
     .layer.main .block.full-width {
       max-width: none; }
     .layer.main .block > .title-bar {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
       justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
       margin: 1rem 0;
       padding: 0 1rem; }
@@ -122,11 +176,17 @@ div.page {
       padding: 0; }
     @media print, screen and (min-width: 45em) {
       .layer.main .block--contact > div {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex; }
         .layer.main .block--contact > div > section:first-child {
+          -webkit-box-flex: 0;
+          -ms-flex: none;
           flex: none;
           padding-right: 3rem; }
         .layer.main .block--contact > div > section:last-child {
+          -webkit-box-flex: 1;
+          -ms-flex-positive: 1;
           flex-grow: 1; } }
 
 #main-content {
@@ -155,8 +215,13 @@ div.page {
   color: #0a0a0a;
   background-color: #cacaca; }
   .layer.boilerplate .region {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between; }
   .layer.boilerplate .block {
     text-align: center;
@@ -166,11 +231,18 @@ div.page {
     text-transform: uppercase; }
 
 .grid {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap; }
   .grid.small-1 > li {
     width: calc(100% - 1.25rem);
@@ -461,17 +533,28 @@ div.page {
       margin-right: 0.625rem;
       margin-left: 0.625rem; } }
   .grid > li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-bottom: 0.625rem;
     margin-top: 0.625rem; }
 
 .grid.region {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap; }
   .grid.region.small-1 > .block {
     width: calc(100% - 1.25rem);

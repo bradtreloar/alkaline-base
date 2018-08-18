@@ -34,6 +34,7 @@
 .orbit-previous, .orbit-next {
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 10;
   padding: 1rem;
@@ -109,6 +110,7 @@
 .orbit-previous, .orbit-next {
   position: absolute;
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   z-index: 10;
   padding: 1rem;

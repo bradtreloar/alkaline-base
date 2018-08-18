@@ -7,6 +7,7 @@
   -webkit-appearance: none;
   border: 1px solid transparent;
   border-radius: 2px;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
   font-size: 0.9rem;
   line-height: 1;
@@ -14,7 +15,11 @@
   cursor: pointer;
   background-color: #1779ba;
   color: #fefefe;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center; }
   [data-whatinput='mouse'] .button {
     outline: 0; }
@@ -40,6 +45,7 @@
     -webkit-appearance: none;
     border: 1px solid transparent;
     border-radius: 2px;
+    -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
     transition: background-color 0.25s ease-out, color 0.25s ease-out;
     font-size: 0.9rem;
     line-height: 1;
@@ -62,13 +68,21 @@
 
 .button-group {
   margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
   align-items: stretch; }
   .button-group::before, .button-group::after {
     display: table;
     content: ' ';
+    -ms-flex-preferred-size: 0;
     flex-basis: 0;
+    -webkit-box-ordinal-group: 2;
+    -ms-flex-order: 1;
     order: 1; }
   .button-group::after {
     clear: both; }
@@ -77,6 +91,8 @@
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
     flex: 0 0 auto; }
     .button-group .button:last-child {
       margin-right: 0; }

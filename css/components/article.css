@@ -11,22 +11,35 @@ article {
   article figure {
     margin: 1rem 0; }
     article figure a {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       height: 100%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center; }
     article figure figcaption {
       padding: 1rem; }
     article figure img {
       display: block; }
   article header figure a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center; }
   article footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 1rem;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     article footer > * {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
       flex: 0 1 auto; }
       article footer > *:first-child {
         padding-right: 1rem; }
@@ -45,13 +58,21 @@ article {
     list-style: none;
     margin: 0;
     margin-bottom: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch; }
     article .links::before, article .links::after {
       display: table;
       content: ' ';
+      -ms-flex-preferred-size: 0;
       flex-basis: 0;
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
       order: 1; }
     article .links::after {
       clear: both; }
@@ -60,6 +81,8 @@ article {
       margin-right: 1px;
       margin-bottom: 1px;
       font-size: 0.9rem;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
       flex: 0 0 auto; }
       article .links li:last-child {
         margin-right: 0; }
@@ -72,6 +95,7 @@ article {
       -webkit-appearance: none;
       border: 1px solid transparent;
       border-radius: 2px;
+      -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
       transition: background-color 0.25s ease-out, color 0.25s ease-out;
       font-size: 0.9rem;
       line-height: 1;
@@ -83,10 +107,15 @@ article {
 
 @media print, screen and (min-width: 45em) {
   article.teaser {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 1rem;
+    -ms-flex-wrap: nowrap;
     flex-wrap: nowrap; }
     article.teaser > * {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
       flex: 0 1 auto; }
       article.teaser > *:first-child {
         padding-right: 1rem; }

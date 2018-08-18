@@ -1,11 +1,20 @@
 .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
   width: 100%; }
   .card > figure {
+    -webkit-box-flex: 0;
+    -ms-flex: none;
     flex: none; }
     .card > figure picture {
+      -webkit-box-flex: 0;
+      -ms-flex: none;
       flex: none; }
       .card > figure picture a {
         display: block; }
@@ -17,10 +26,21 @@
     .card > figure figcaption {
       display: none; }
   .card > section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
     flex-grow: 1;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 1rem 0; }
     .card > section h3 {
@@ -30,8 +50,15 @@
         color: inherit; }
   @media print, screen and (min-width: 45em) {
     .card.wide {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
       flex-direction: row; }
       .card.wide > section {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
         align-items: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
         justify-content: flex-start;
         margin: 0 0 0 1rem; } }

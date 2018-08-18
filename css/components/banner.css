@@ -29,24 +29,41 @@
     color: #fefefe;
     background: rgba(33, 33, 33, 0.75); }
   .banner > * {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     height: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
     max-width: 60rem; }
     .banner > * > div:last-of-type:not(:first-of-type) {
       margin-bottom: 1rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
+      -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
       align-items: stretch;
       margin: 0; }
       .banner > * > div:last-of-type:not(:first-of-type)::before, .banner > * > div:last-of-type:not(:first-of-type)::after {
         display: table;
         content: ' ';
+        -ms-flex-preferred-size: 0;
         flex-basis: 0;
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
         order: 1; }
       .banner > * > div:last-of-type:not(:first-of-type)::after {
         clear: both; }
@@ -55,6 +72,8 @@
         margin-right: 0.5rem;
         margin-bottom: 0.5rem;
         font-size: 0.9rem;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
         flex: 0 0 auto; }
         .banner > * > div:last-of-type:not(:first-of-type) div:last-child {
           margin-right: 0; }
@@ -79,7 +98,11 @@
         padding: 6rem; } }
     .banner.hero > * {
       text-align: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center; }
     .banner.hero p {
       font-size: 1.2em; }
@@ -98,7 +121,11 @@
         padding: 6rem; } }
     .banner.callout > * {
       text-align: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
       align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
       justify-content: center; }
     .banner.callout p {
       font-size: 1.2em; }
