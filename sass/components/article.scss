@@ -87,8 +87,8 @@
 }
 
 
-@mixin alkaline-article-teaser {
-  article.teaser {
+@mixin alkaline-blog-article-teaser {
+  .blog-article.teaser {
     @include breakpoint(medium) {
       @include media-object-container;
 
@@ -111,5 +111,5 @@
 
 @if $theme is alkaline {
   @include alkaline-article;
-  @include alkaline-article-teaser;
+  @include alkaline-blog-article-teaser;
 }
