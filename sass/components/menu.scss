@@ -8,6 +8,7 @@ $dropdownmenu-border: 0 solid transparent;
 // Alkaline defaults
 $menu-button-font-family: inherit !default;
 
+
 @mixin alkaline-menu-button {
   color: inherit;
   display: flex;
@@ -37,11 +38,15 @@ $menu-button-font-family: inherit !default;
   }
 }
 
+
 @mixin alkaline-menu {
   @include foundation-menu;
 
   .menu {
-    &, li, a {
+    // @todo remove this !important decorator
+    background: inherit !important;
+
+    li, a {
       background: inherit;
     }
   
