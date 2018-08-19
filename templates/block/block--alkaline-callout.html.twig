@@ -7,6 +7,10 @@
 %}
 {{ attach_library('alkaline/banner') }}
 <div{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
   <figure class="banner callout">
     <figcaption>
       {% block content %}
