@@ -140,6 +140,8 @@ div.page {
   position: relative; }
   .layer.lead.full-page {
     height: 100%; }
+    .layer.lead.full-page .region {
+      height: 100%; }
     .layer.lead.full-page .block {
       height: 100%; }
       .layer.lead.full-page .block > div {

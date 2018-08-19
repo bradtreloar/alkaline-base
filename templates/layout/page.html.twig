@@ -3,9 +3,11 @@
   {% include '@alkaline/layout/includes/header.html.twig' %}
 
   {% if page.lead %}
-    <section class="layer lead full-page">
-      {{ page.lead }}
-    </section>
+    <div class="layer lead full-page">
+      <section class="region lead">
+        {{ page.lead }}
+      </section>
+    </div>
   {% endif %}
 
   <main class="layer main" role="main">
