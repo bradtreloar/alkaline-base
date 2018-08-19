@@ -37,24 +37,8 @@
       height: 1em;
       line-height: 1em; }
   .button[data-drupal-selector="edit-preview"] {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 0 1rem 0;
-    font-family: inherit;
-    padding: 0.85em 1em;
-    -webkit-appearance: none;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
-    transition: background-color 0.25s ease-out, color 0.25s ease-out;
-    font-size: 0.9rem;
-    line-height: 1;
-    text-align: center;
-    cursor: pointer;
     border: 1px solid #1779ba;
     color: #1779ba; }
-    [data-whatinput='mouse'] .button[data-drupal-selector="edit-preview"] {
-      outline: 0; }
     .button[data-drupal-selector="edit-preview"], .button[data-drupal-selector="edit-preview"]:hover, .button[data-drupal-selector="edit-preview"]:focus {
       background-color: transparent; }
     .button[data-drupal-selector="edit-preview"].disabled, .button[data-drupal-selector="edit-preview"].disabled:hover, .button[data-drupal-selector="edit-preview"].disabled:focus, .button[data-drupal-selector="edit-preview"][disabled], .button[data-drupal-selector="edit-preview"][disabled]:hover, .button[data-drupal-selector="edit-preview"][disabled]:focus {
@@ -63,6 +47,19 @@
       border-color: #0c3d5d;
       color: #0c3d5d; }
       .button[data-drupal-selector="edit-preview"]:hover.disabled, .button[data-drupal-selector="edit-preview"]:hover[disabled], .button[data-drupal-selector="edit-preview"]:focus.disabled, .button[data-drupal-selector="edit-preview"]:focus[disabled] {
+        border: 1px solid #1779ba;
+        color: #1779ba; }
+  .button.hollow {
+    border: 1px solid #1779ba;
+    color: #1779ba; }
+    .button.hollow, .button.hollow:hover, .button.hollow:focus {
+      background-color: transparent; }
+    .button.hollow.disabled, .button.hollow.disabled:hover, .button.hollow.disabled:focus, .button.hollow[disabled], .button.hollow[disabled]:hover, .button.hollow[disabled]:focus {
+      background-color: transparent; }
+    .button.hollow:hover, .button.hollow:focus {
+      border-color: #0c3d5d;
+      color: #0c3d5d; }
+      .button.hollow:hover.disabled, .button.hollow:hover[disabled], .button.hollow:focus.disabled, .button.hollow:focus[disabled] {
         border: 1px solid #1779ba;
         color: #1779ba; }
 

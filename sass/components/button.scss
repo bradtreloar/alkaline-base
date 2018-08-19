@@ -21,7 +21,13 @@
     }
 
     &[data-drupal-selector="edit-preview"] {
-      @include button($style: hollow);
+      @include button-hollow;
+      @include button-hollow-style;
+    }
+
+    &.hollow {
+      @include button-hollow;
+      @include button-hollow-style;
     }
   }
 
