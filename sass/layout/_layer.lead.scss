@@ -1,13 +1,16 @@
 
 .layer.lead {
   position: relative;
-  height: 100%;
 
-  .block {
+  &.full-page {
     height: 100%;
 
-    > div {
+    .block {
       height: 100%;
+  
+      > div {
+        height: 100%;
+      }
     }
   }
 }

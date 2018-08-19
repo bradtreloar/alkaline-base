@@ -137,12 +137,13 @@ div.page {
       background: inherit; }
 
 .layer.lead {
-  position: relative;
-  height: 100%; }
-  .layer.lead .block {
+  position: relative; }
+  .layer.lead.full-page {
     height: 100%; }
-    .layer.lead .block > div {
+    .layer.lead.full-page .block {
       height: 100%; }
+      .layer.lead.full-page .block > div {
+        height: 100%; }
 
 .layer.main {
   margin: 0 0 2rem; }
