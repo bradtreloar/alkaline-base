@@ -17,4 +17,11 @@
       }
     }
   }
+
+  .region {
+    &.content-width {
+      margin: 0 auto;
+      max-width: $global-width;
+    }
+  }
 }

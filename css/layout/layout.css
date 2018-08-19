@@ -146,6 +146,9 @@ div.page {
       height: 100%; }
       .layer.lead.full-page .block > div {
         height: 100%; }
+  .layer.lead .region.content-width {
+    margin: 0 auto;
+    max-width: 60rem; }
 
 .layer.main {
   margin: 0 0 2rem; }
