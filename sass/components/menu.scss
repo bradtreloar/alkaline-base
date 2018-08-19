@@ -53,30 +53,6 @@ $menu-button-font-family: inherit !default;
     a {
       @include alkaline-menu-button;
     }
-  
-    &.social-share {
-      @include button-group(li, 0.5rem);
-    
-      a {
-        height: 2rem;
-        width: 2rem;
-        padding: 20%;
-    
-        svg.icon {
-          height: 100%;
-          width: 100%;
-    
-          & + span {
-            display: none;
-          }
-        }
-      }
-    
-      li {
-        @include brand-colors(background-color);
-        fill: $white;
-      }
-    }
 
     .region.header &, 
     .region.navbar & {
@@ -109,13 +85,42 @@ $menu-button-font-family: inherit !default;
 }
 
 
+@mixin alkaline-social-share-menu {
+  .menu.social-share {
+    @include button-group(li, 0.5rem);
+      
+    a {
+      height: 2rem;
+      width: 2rem;
+      padding: 20%;
+
+      svg.icon {
+        height: 100%;
+        width: 100%;
+
+        & + span {
+          display: none;
+        }
+      }
+    }
+
+    li {
+      @include brand-colors(background-color);
+      fill: $white;
+    }
+  }
+}
+
+
 @mixin alkaline-drilldown-menu {
   @include foundation-drilldown-menu;
 }
 
+
 @mixin alkaline-dropdown-menu {
   @include foundation-dropdown-menu;
 }
+
 
 @mixin alkaline-navbar-toggle-button {
   button[data-toggle="navbar"] {
@@ -133,9 +138,11 @@ $menu-button-font-family: inherit !default;
   }
 }
 
+
 @if $theme is alkaline {
   @include alkaline-menu;
   @include alkaline-drilldown-menu;
   @include alkaline-dropdown-menu;
   @include alkaline-navbar-toggle-button;
+  @include alkaline-social-share-menu;
 }
