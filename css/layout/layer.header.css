@@ -25,7 +25,7 @@
     margin: 0 auto;
     max-width: 1080px;
     position: relative; }
-    .layer.header > div .region.header {
+    .layer.header > div .super-region.header {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -40,51 +40,56 @@
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
       justify-content: space-between; }
-      .layer.header > div .region.header .block {
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
+      .layer.header > div .super-region.header > .region {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
         height: 100%; }
-      @media print, screen and (min-width: 67.5em) {
-        .layer.header > div .region.header {
-          -webkit-box-pack: start;
-          -ms-flex-pack: start;
-          justify-content: flex-start; } }
-    .layer.header > div .region.navbar {
+        .layer.header > div .super-region.header > .region .block {
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          height: 100%; }
+    .layer.header > div .super-region.navbar {
       background: #0a0a0a;
       color: #fefefe;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
       height: 100%;
       padding-top: 48px;
       position: fixed;
       right: 0;
       top: 0;
       z-index: -1; }
-      .layer.header > div .region.navbar {
+      .layer.header > div .super-region.navbar {
         width: 0;
         pointer-events: none; }
-      .layer.header > div .region.navbar.active {
+      .layer.header > div .super-region.navbar.active {
         width: 320px;
         pointer-events: all; }
-      body.toolbar-horizontal .layer.header > div .region.navbar,
-      body.toolbar-vertical .layer.header > div .region.navbar {
+      body.toolbar-horizontal .layer.header > div .super-region.navbar,
+      body.toolbar-vertical .layer.header > div .super-region.navbar {
         padding-top: 87px; }
-      body.toolbar-horizontal.toolbar-tray-open .layer.header > div .region.navbar {
+      body.toolbar-horizontal.toolbar-tray-open .layer.header > div .super-region.navbar {
         padding-top: 127px; }
       @media print, screen and (min-width: 67.5em) {
-        .layer.header > div .region.navbar {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
+        .layer.header > div .super-region.navbar {
           -webkit-box-orient: horizontal;
           -webkit-box-direction: normal;
           -ms-flex-direction: row;
           flex-direction: row;
-          -webkit-box-flex: 1;
-          -ms-flex-positive: 1;
-          flex-grow: 1;
           height: 100%;
           -webkit-box-pack: end;
           -ms-flex-pack: end;
@@ -93,15 +98,32 @@
           position: static;
           width: auto;
           z-index: 1;
-          padding-top: 0 !important; }
-          .layer.header > div .region.navbar .block {
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
+          padding-top: 0 !important; } }
+      .layer.header > div .super-region.navbar > .region {
+        background: inherit; }
+        @media print, screen and (min-width: 67.5em) {
+          .layer.header > div .super-region.navbar > .region {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            height: 100%; } }
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            height: 100%;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end; }
+            .layer.header > div .super-region.navbar > .region .block {
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              height: 100%; } }
+        .layer.header > div .super-region.navbar > .region > .block {
+          background: inherit; }
     .layer.header > div .region.buttons {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -110,9 +132,6 @@
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
       flex-direction: row;
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
       height: 100%;
       -webkit-box-flex: 0;
       -ms-flex: none;
@@ -125,5 +144,3 @@
         display: -ms-flexbox;
         display: flex;
         height: 100%; }
-    .layer.header > div .region > .block {
-      background: inherit; }

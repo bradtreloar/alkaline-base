@@ -10,10 +10,18 @@ $admin-toolbar-height: 39px !default;
 $admin-toolbar-tray-height: 40px !default;
 
 
-@mixin alkaline-header-region {
+@mixin alkaline-header-super-region {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
+  height: 100%;
+  justify-content: space-between;
+}
+
+
+@mixin alkaline-header-region {
+  display: flex;
+  flex-direction: row;
   height: 100%;
         
   .block {
@@ -22,6 +30,66 @@ $admin-toolbar-tray-height: 40px !default;
     height: 100%;
   }
 }
+
+
+@mixin alkaline-navbar-super-region {
+  background: $navbar-background;
+  color: $navbar-color;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // overflow-x: hidden; // @bug this rule causes dropdown submenus to be hidden
+  padding-top: $top-bar-height;
+  position: fixed;
+  right: 0;
+  // transition: width 300ms;
+  top: 0;
+  z-index: -1; // under the header
+        
+  & {
+    width: 0;
+    pointer-events: none;
+  }
+
+  &.active {
+    width: 320px;
+    pointer-events: all;
+  }
+
+  body.toolbar-horizontal &,
+  body.toolbar-vertical & {
+    padding-top: $top-bar-height + $admin-toolbar-height;
+  }
+
+  body.toolbar-horizontal.toolbar-tray-open & {
+    padding-top: $top-bar-height + $admin-toolbar-height + $admin-toolbar-tray-height;
+  }
+  
+  // Convert to a header region.
+  @include breakpoint(large) {
+    flex-direction: row;
+    height: 100%;
+    justify-content: flex-end;
+    pointer-events: all;
+    position: static;
+    width: auto;
+    z-index: 1; // above the header
+
+    // Forcefully override toolbar padding.
+    padding-top: 0 !important;
+  }
+}
+
+
+@mixin alkaline-navbar-region {
+
+  @include breakpoint(large) {
+    // Convert to a header region.
+    @include alkaline-header-region;
+    justify-content: flex-end;
+  }
+}
+
 
 .layer.header {
   color: $header-layer-color;
@@ -55,69 +123,35 @@ $admin-toolbar-tray-height: 40px !default;
     max-width: 1080px;
     position: relative;
 
-    .region {
+    .super-region {
+
       &.header {
-        @include alkaline-header-region;
-        justify-content: space-between;
-        
-        @include breakpoint(large) {
-          justify-content: flex-start;
+        @include alkaline-header-super-region;
+
+        > .region {
+          @include alkaline-header-region;
         }
       }
 
       &.navbar {
-        background: $navbar-background;
-        color: $navbar-color;
-        height: 100%;
-        // overflow-x: hidden; // @bug this rule causes dropdown submenus to be hidden
-        padding-top: $top-bar-height;
-        position: fixed;
-        right: 0;
-        // transition: width 300ms;
-        top: 0;
-        z-index: -1; // under the header
-        
-        & {
-          width: 0;
-          pointer-events: none;
-        }
+        @include alkaline-navbar-super-region;
 
-        &.active {
-          width: 320px;
-          pointer-events: all;
-        }
+        > .region {
+          background: inherit;
+          @include alkaline-navbar-region;
 
-        body.toolbar-horizontal &,
-        body.toolbar-vertical & {
-          padding-top: $top-bar-height + $admin-toolbar-height;
-        }
-    
-        body.toolbar-horizontal.toolbar-tray-open & {
-          padding-top: $top-bar-height + $admin-toolbar-height + $admin-toolbar-tray-height;
-        }
-        
-        // Convert to a header region.
-        @include breakpoint(large) {
-          @include alkaline-header-region;
-          justify-content: flex-end;
-          pointer-events: all;
-          position: static;
-          width: auto;
-          z-index: 1; // above the header
-
-          // Forcefully override toolbar padding.
-          padding-top: 0 !important;
+          // Navbar blocks need to inherit the super-region's background color
+          > .block {
+            background: inherit;
+          }
         }
       }
-      
+    }
+
+    .region {
       &.buttons {
         @include alkaline-header-region;
         flex: none;
-      }
-
-      // Navbar blocks need to inherit the region's background color
-      > .block {
-        background: inherit;
       }
     }
   }
