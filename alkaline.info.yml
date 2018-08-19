@@ -30,8 +30,11 @@ libraries:
   - alkaline/text_formatted
 
 regions:
-  header: Header
-  navbar: Navbar
+  header_left: Header (Left)
+  header_right: Header (Right)
+  navbar_top: Navbar (Top)
+  navbar_bottom: Navbar (Bottom)
+  admin: Admin
   lead: Lead
   content: Content
   footer: Footer

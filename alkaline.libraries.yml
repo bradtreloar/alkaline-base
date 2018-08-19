@@ -15,6 +15,7 @@ base:
       css/layout/grid.css: {}
       css/layout/page.css: {}
       css/layout/layer.header.css: {}
+      css/layout/layer.admin.css: {}
       css/layout/layer.lead.css: {}
       css/layout/layer.main.css: {}
       css/layout/layer.footer.css: {}

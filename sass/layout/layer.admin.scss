@@ -1,0 +1,13 @@
+@import 'alkaline';
+
+
+.layer.admin {
+  position: relative;
+
+  .region {
+    &.content-width {
+      margin: 0 auto;
+      max-width: $global-width;
+    }
+  }
+}

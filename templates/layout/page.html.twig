@@ -2,6 +2,14 @@
 
   {% include '@alkaline/layout/includes/header.html.twig' %}
 
+  {% if page.admin %}
+    <div class="layer admin">
+      <section class="region admin content-width">
+        {{ page.admin }}
+      </section>
+    </div>
+  {% endif %}
+
   {% if page.lead %}
     <div class="layer lead full-page">
       <section class="region lead">

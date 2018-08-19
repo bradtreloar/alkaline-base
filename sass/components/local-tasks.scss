@@ -6,9 +6,9 @@
   nav.local-tasks {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
-    padding: 0;
+    padding: $global-padding;
 
     ul {
       @include tabs-container;
