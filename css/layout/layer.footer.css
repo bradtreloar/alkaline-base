@@ -5,11 +5,8 @@
   .layer.footer > div {
     margin: 0 auto;
     max-width: 1080px; }
-  .layer.footer .block {
-    margin: 1rem auto;
-    padding: 0 1rem; }
-    .layer.footer .block h2 {
-      margin: 1rem 0; }
+  .layer.footer .block h2 {
+    margin: 1rem 0; }
 
 .layer.boilerplate {
   color: #0a0a0a;
