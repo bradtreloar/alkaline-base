@@ -297,6 +297,7 @@ function alkaline_preprocess_html(&$vars) {
       'forward',
       'map-marker',
       'phone',
+      'search', 'search-minus', 'search-plus',
       'shopping-cart',
       'times',
       'times-circle', // @todo Remove this icon
