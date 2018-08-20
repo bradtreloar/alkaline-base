@@ -69,82 +69,81 @@
     .orbit-bullets button.is-active {
       background-color: #8a8a8a; }
 
-.orbit {
+.carousel {
   position: relative; }
-
-.orbit-container {
-  position: relative;
-  height: 0;
-  margin: 0;
-  list-style: none;
-  overflow: hidden; }
-
-.orbit-slide {
-  width: 100%; }
-  .orbit-slide.no-motionui.is-active {
-    top: 0;
-    left: 0; }
-
-.orbit-figure {
-  margin: 0;
-  background: #0a0a0a; }
-  .orbit-figure img {
-    display: block;
-    margin: 0 auto;
-    max-width: 100%; }
-
-.orbit-image {
-  width: 100%;
-  max-width: 100%;
-  margin: 0; }
-
-.orbit-caption {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 1rem;
-  background-color: rgba(10, 10, 10, 0.5);
-  color: #fefefe; }
-
-.orbit-previous, .orbit-next {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 10;
-  padding: 1rem;
-  color: #fefefe; }
-  [data-whatinput='mouse'] .orbit-previous, [data-whatinput='mouse'] .orbit-next {
-    outline: 0; }
-  .orbit-previous:hover, .orbit-next:hover, .orbit-previous:active, .orbit-next:active, .orbit-previous:focus, .orbit-next:focus {
-    background-color: rgba(10, 10, 10, 0.5); }
-  .orbit-previous svg, .orbit-next svg {
-    fill: #fefefe;
-    height: 1.5em;
-    width: 1.5em; }
-
-.orbit-previous {
-  left: 0; }
-
-.orbit-next {
-  left: auto;
-  right: 0; }
-
-.orbit-bullets {
-  position: relative;
-  margin-top: 0.8rem;
-  margin-bottom: 0.8rem;
-  text-align: center; }
-  [data-whatinput='mouse'] .orbit-bullets {
-    outline: 0; }
-  .orbit-bullets button {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin: 0.1rem;
-    border-radius: 50%;
-    background-color: #cacaca; }
-    .orbit-bullets button:hover {
-      background-color: #8a8a8a; }
-    .orbit-bullets button.is-active {
-      background-color: #8a8a8a; }
+  .carousel ul {
+    position: relative;
+    height: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    background: #0a0a0a; }
+  .carousel li {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 100%; }
+    .carousel li.no-motionui.is-active {
+      top: 0;
+      left: 0; }
+  .carousel figure {
+    margin: 0; }
+    .carousel figure img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%; }
+  .carousel figcaption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 1rem;
+    background-color: rgba(10, 10, 10, 0.5);
+    color: #fefefe; }
+  .carousel .controls button {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 1rem;
+    color: #fefefe;
+    cursor: pointer; }
+    [data-whatinput='mouse'] .carousel .controls button {
+      outline: 0; }
+    .carousel .controls button:hover, .carousel .controls button:active, .carousel .controls button:focus {
+      background-color: rgba(10, 10, 10, 0.5); }
+    .carousel .controls button svg {
+      fill: #fefefe;
+      height: 1.5em;
+      width: 1.5em; }
+    .carousel .controls button.previous {
+      left: 0; }
+    .carousel .controls button.next {
+      left: auto;
+      right: 0; }
+  .carousel nav {
+    position: relative;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    text-align: center; }
+    [data-whatinput='mouse'] .carousel nav {
+      outline: 0; }
+    .carousel nav button {
+      width: 1.2rem;
+      height: 1.2rem;
+      margin: 0.1rem;
+      border-radius: 50%;
+      background-color: #cacaca; }
+      .carousel nav button:hover {
+        background-color: #8a8a8a; }
+      .carousel nav button.is-active {
+        background-color: #8a8a8a; }

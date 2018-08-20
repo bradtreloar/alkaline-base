@@ -2,9 +2,9 @@
 (function ($, Drupal) {
 "use strict";
 
-Drupal.behaviors.alkalineFixedHeader = {
+Drupal.behaviors.alkalineStickyHeader = {
   attach: function (context, settings) {
-    $('.layer.header.fixed').once('alkalineFixedHeader').each(function (header) {
+    $('.layer.header.sticky').once('alkalineStickyHeader').each(function (header) {
       var $h = $(header);
       $h.css({top: '0'});
       var didScroll = false;

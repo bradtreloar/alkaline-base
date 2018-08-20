@@ -1,40 +1,34 @@
 
 {{ attach_library('alkaline/carousel') }}
-<div class="orbit" aria-label="{{ label }}" data-orbit data-use-m-u-i="false">
-  <div class="orbit-wrapper">
-    <div class="orbit-controls">
-      <button class="orbit-previous">
+<div class="carousel {# orbit #}" aria-label="{{ label }}" data-orbit data-use-m-u-i="false">
+  <div>
+
+    <div class="controls">
+      <button class="previous orbit-previous">
         <svg aria-hidden="true" class="icon">
           <use xlink:href="#caret-left" />
         </svg>
       </button>
-      <button class="orbit-next">
+      <button class="next orbit-next">
         <svg aria-hidden="true" class="icon">
           <use xlink:href="#caret-right" />
         </svg>
       </button>
     </div>
-    <ul class="orbit-container">
 
+    <ul class="orbit-container">
     {% for item in items %}
-      {% if loop.index == 1 %}
-        <li class="orbit-slide is-active">
-      {% else %}
-        <li class="orbit-slide">
-      {% endif %}
-        <figure class="orbit-figure">
+      <li class="orbit-slide{{ loop.index == 1 ? ' is-active' }}">
+        <figure>
           {{ item.content }}
-          
           {% if item.caption %}
-            <figcaption class="orbit-caption">
+            <figcaption>
               {{ item.caption }}
             </figcaption>
           {% endif %}
-
         </figure>
       </li>
     {% endfor %}
-
     </ul>
 
   </div>
