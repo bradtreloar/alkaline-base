@@ -27,8 +27,6 @@ body {
   -moz-osx-font-smoothing: grayscale; }
   body.freeze {
     overflow-y: hidden; }
-  body > div:not(.toolbar) {
-    height: 100%; }
 
 img {
   display: inline-block;
