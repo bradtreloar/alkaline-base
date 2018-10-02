@@ -58,6 +58,10 @@
           align-items: flex-start;
           justify-content: flex-start;
           margin: 0 0 0 $global-margin;
+
+          &:first-child {
+            margin: 0;
+          }
         }
       }
     }
