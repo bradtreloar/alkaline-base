@@ -37,6 +37,17 @@
       img {
         display: block;
       }
+
+      &.align-center {
+        picture {
+          display: flex;
+          justify-content: center;
+        }
+        
+        figcaption {
+          text-align: center;
+        }
+      }
     }
 
     header {

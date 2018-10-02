@@ -22,6 +22,15 @@ article {
       padding: 1rem; }
     article figure img {
       display: block; }
+    article figure.align-center picture {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+    article figure.align-center figcaption {
+      text-align: center; }
   article header figure a {
     display: -webkit-box;
     display: -ms-flexbox;
