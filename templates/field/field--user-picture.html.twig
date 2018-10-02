@@ -1,14 +1,14 @@
-{%
-  set classes = [
-    'field',
-    'field--name-' ~ field_name|clean_class,
-    'field--type-' ~ field_type|clean_class,
-    'field--label-' ~ label_display,
-  ]
-%}
+{#
+/**
+ * @file
+ * Theme override for a user picture.
+ *
+ * The user's picture is rendered as a figure without a caption.
+ */
+#}
 <figure class="user-picture">
   {% for item in items %}
-    <picture{{ attributes.addClass('field__item') }}>
+    <picture>
       {{ item.content }}
     </picture>
   {% endfor %}

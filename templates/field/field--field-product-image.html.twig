@@ -1,3 +1,13 @@
+{#
+/**
+ * @file
+ * Theme override for a Commerce Product image field.
+ *
+ * Images are rendered as a list of thumbnails.
+ *
+ * The Classy classes have been preserved so that AJAX can update this field
+ */
+#}
 {%
   set classes = [
     'field',
@@ -6,7 +16,6 @@
     'field--label-' ~ label_display,
   ]
 %}
-{{ attach_library('alkaline/tags') }}
 <figure class="product-thumbs">
   <ul{{ attributes.addClass(classes, 'field__items') }}>
     {% for item in items %}

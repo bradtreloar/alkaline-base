@@ -1,4 +1,14 @@
-
+{#
+/**
+ * @file
+ * Theme override for a Gallery image.
+ *
+ * The image items are rendered as a Carousel, with Next and Previous buttons
+ * only.
+ *
+ * @todo Add support for optional slide selector controls.
+ */
+#}
 {{ attach_library('alkaline/carousel') }}
 <div class="carousel {# orbit #}" aria-label="{{ label }}" data-orbit data-use-m-u-i="false">
   <div>

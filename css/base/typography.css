@@ -196,3 +196,6 @@ kbd {
   font-family: Consolas, "Liberation Mono", Courier, monospace;
   color: #0a0a0a;
   border-radius: 2px; }
+
+ul.grid ul, ul.grid ol, ol.grid ul, ol.grid ol {
+  margin-bottom: 1rem; }

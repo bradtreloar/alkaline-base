@@ -1,13 +1,16 @@
-{%
-  set classes = [
-    'field',
-    'field--name-' ~ field_name|clean_class,
-    'field--type-' ~ field_type|clean_class,
-    'field--label-' ~ label_display,
-  ]
-%}
+{#
+/**
+ * @file
+ * Theme override for the lead section of an article
+ *
+ * Since this field is input as plain text, the item content is wrapped in a
+ * paragraph element.
+ *
+ * @todo Move the paragraph wrapper logic to a preprocessor.
+ */
+#}
 {% for item in items %}
-  <div{{ attributes.addClass(classes, 'field__item') }}>
+  <div>
     <p>{{ item.content }}</p>
   </div>
 {% endfor %}

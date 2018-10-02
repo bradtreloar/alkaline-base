@@ -5,6 +5,18 @@
 
 @mixin alkaline-typography {
   @include foundation-typography-base;
+
+  // Override foundation-typography-base rule that
+  // remove bottom margin on child lists
+  // when the parent list is a grid.
+  ul, ol {
+    &.grid {
+      ul, ol {
+        margin-left: 1.25 * $global-margin;
+        margin-bottom: $global-margin; 
+      }
+    }
+  }
 }
 
 
