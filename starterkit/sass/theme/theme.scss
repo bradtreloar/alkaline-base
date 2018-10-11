@@ -1,13 +1,13 @@
 @import 'global';
 
 
-$header-layer-background: ;
-$header-layer-color: ;
+$header-layer-background: $white;
+$header-layer-color: $black;
 $navbar-background: $header-layer-background;
 $navbar-color: $header-layer-color;
 
-$footer-layer-background: ;
-$footer-layer-color: ;
+$footer-layer-background: $light-gray;
+$footer-layer-color: $black;
 
 
 // Apply subtheme colours to header layer.
