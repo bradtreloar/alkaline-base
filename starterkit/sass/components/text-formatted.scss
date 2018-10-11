@@ -1,0 +1,5 @@
+@import 'global';
+@import '../../alkaline/sass/components/text-formatted';
+
+// Call Alkaline components with subtheme's vars.
+@include alkaline-text-formatted;

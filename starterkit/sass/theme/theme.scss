@@ -1,0 +1,38 @@
+@import 'global';
+
+
+$header-layer-background: ;
+$header-layer-color: ;
+$navbar-background: $header-layer-background;
+$navbar-color: $header-layer-color;
+
+$footer-layer-background: ;
+$footer-layer-color: ;
+
+
+// Apply subtheme colours to header layer.
+.layer.header {
+  color: $header-layer-color;
+  background-color: $header-layer-background;
+  fill: $header-layer-color; // for SVG icons
+
+  // wrapper
+  > div {
+    .region {
+      &.navbar {
+        background: $navbar-background;
+        color: $navbar-color;
+      }
+    }
+  }
+}
+
+.layer.footer {
+  color: $footer-layer-color;
+  background-color: $footer-layer-background;
+}
+
+.layer.boilerplate {
+  color: $footer-layer-color;
+  background-color: $footer-layer-background;
+}

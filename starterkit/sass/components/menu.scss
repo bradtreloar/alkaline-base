@@ -1,0 +1,10 @@
+@import 'global';
+@import '../../alkaline/sass/components/menu';
+
+// $menu-button-font-family: <Custom Font>, Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+
+// Call Alkaline components with subtheme's vars.
+@include alkaline-menu;
+@include alkaline-drilldown-menu;
+@include alkaline-dropdown-menu;
+@include alkaline-navbar-toggle-button;
