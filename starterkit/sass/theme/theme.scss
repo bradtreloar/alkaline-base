@@ -18,7 +18,7 @@ $footer-layer-color: $black;
 
   // wrapper
   > div {
-    .region {
+    .super-region {
       &.navbar {
         background: $navbar-background;
         color: $navbar-color;
