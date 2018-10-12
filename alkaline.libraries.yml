@@ -13,7 +13,6 @@ base:
       css/print.css: { media: print }
     layout:
       css/layout/grid.css: {}
-      css/layout/page.css: {}
     component:
       css/components/page-title.css: {}
   js:
@@ -127,6 +126,11 @@ modal:
   css:
     component:
       css/components/modal.css: {}
+
+page:
+  css:
+    layout:
+      css/layout/page.css: {}
 
 pagination:
   css:
