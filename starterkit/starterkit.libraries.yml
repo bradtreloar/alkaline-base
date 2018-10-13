@@ -1,0 +1,32 @@
+
+base:
+  css:
+    theme:
+      css/theme/theme.css: {}
+  dependencies:
+    - alkaline/global
+
+banner:
+  css:
+    component:
+      css/components/banner.css: {}
+
+button:
+  css:
+    component:
+      css/components/button.css: {}
+
+menu:
+  css:
+    component:
+      css/components/menu.css: {}
+
+text_formatted:
+  css:
+    component:
+      css/components/text-formatted.css: {}
+
+typography:
+  css:
+    base:
+      css/base/typography.css: {}

@@ -1,0 +1,20 @@
+
+$theme: starterkit;
+
+// Company colors
+// ...
+
+// Semantic colors
+$theme-palette: (
+  primary: #1779ba, // Required.
+  secondary: #ccb6b6,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #cc4b37,
+);
+
+$global-width: rem-calc(1200);
+
+$top-bar-height: 48px;
+
+@import '../../alkaline/sass/global';

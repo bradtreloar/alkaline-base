@@ -1,0 +1,36 @@
+<?php
+
+use Drupal\Core\Url;
+
+/**
+ * Implements template_preprocess_node()
+ */
+function starterkit_preprocess_node(&$vars) {
+  // Call the type-specific preprocessor.
+  $node_type_preprocessor = __FUNCTION__ . '_' . $vars['node']->getType();
+  if (function_exists($node_type_preprocessor)) {
+    $node_type_preprocessor($vars);
+  }
+}
+
+
+/**
+ * Preprocessor for service_page content type
+ */
+function starterkit_preprocess_node_service_page(&$vars) {
+  $node = $vars['node'];
+
+  // Get the file's public filesystem URI
+  $uri = $node->field_hero_image->entity->getFileUri();
+
+  // Add responsive background image to page.
+  $css_selector = '.banner::after';
+  if (in_array($vars['view_mode'], ['teaser', 'hero_banner'])) {
+    // set ID = service-page--VIEW_MODE--NODE_ID
+    $id = 'service-page--' . $vars['view_mode'] . '--' . $node->id();
+    $css_selector = "#$id::after";
+    $vars['attributes']['id'] = $id;
+  }
+
+  $vars['css'] = alkaline_responsive_background_css('hero', $css_selector, $uri);
+}

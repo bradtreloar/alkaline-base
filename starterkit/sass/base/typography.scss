@@ -1,0 +1,7 @@
+@import 'global';
+@import '../../alkaline/sass/base/typography';
+
+// $header-font-family: <Custom Font>, Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+
+// Call Alkaline components with subtheme's vars.
+@include alkaline-typography;
