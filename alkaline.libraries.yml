@@ -109,6 +109,11 @@ local_tasks:
     component:
       css/components/local-tasks.css: {}
 
+logo_collage:
+  css:
+    component:
+      css/components/logo-collage.css: {}
+
 media_object:
   css:
     component:

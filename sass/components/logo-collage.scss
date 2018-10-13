@@ -1,0 +1,16 @@
+@import 'global';
+
+
+@mixin alkaline-logo-collage {
+
+  ul.logo-collage {  
+    li {
+      padding: $global-margin;
+    }
+  }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-logo-collage;
+}
