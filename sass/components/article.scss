@@ -14,11 +14,8 @@
       }
     }
 
-    header {
-      p {
-        font-size: $lead-font-size;
-        line-height: $lead-lineheight;
-      }
+    div > img {
+      margin-bottom: $global-margin;
     }
 
     figure {
@@ -51,6 +48,11 @@
     }
 
     header {
+      p {
+        font-size: $lead-font-size;
+        line-height: $lead-lineheight;
+      }
+
       figure {
         a {
           display: flex;

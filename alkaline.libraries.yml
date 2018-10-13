@@ -174,11 +174,6 @@ tags:
     component:
       css/components/tags.css: {}
 
-text_formatted:
-  css:
-    component:
-      css/components/text-formatted.css: {}
-
 typography:
   css:
     component:

@@ -5,9 +5,8 @@ article {
   article.contact-details span {
     display: inline-block;
     vertical-align: top; }
-  article header p {
-    font-size: 125%;
-    line-height: 1.6; }
+  article div > img {
+    margin-bottom: 1rem; }
   article figure {
     margin: 1rem 0; }
     article figure a {
@@ -31,6 +30,9 @@ article {
       justify-content: center; }
     article figure.align-center figcaption {
       text-align: center; }
+  article header p {
+    font-size: 125%;
+    line-height: 1.6; }
   article header figure a {
     display: -webkit-box;
     display: -ms-flexbox;

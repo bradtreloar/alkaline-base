@@ -27,7 +27,6 @@ libraries:
   - alkaline/local_tasks
   - alkaline/table
   - alkaline/tabs
-  - alkaline/text_formatted
 
 regions:
   header_left: Header (Left)
