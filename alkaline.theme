@@ -278,6 +278,12 @@ function alkaline_preprocess_form(&$vars) {
  * Implements template_preprocess_html()
  */
 function alkaline_preprocess_html(&$vars) {
+  // Get the favicon directory.
+  global $base_url;
+  $theme = \Drupal::theme()->getActiveTheme();
+  $vars['favicon_dir'] = $base_url.'/'. $theme->getPath() .'/images/favicon';;
+
+  // Get the SVG icons.
   $vars['icons'] = alkaline_get_svg_icons([
     'fa-brands' => [
       'facebook-f',
