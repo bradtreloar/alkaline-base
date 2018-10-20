@@ -41,7 +41,7 @@ function alkaline_responsive_background_css($imageStyleClass, $selector, $imageU
       // Save the cssRule components
       $cssRules[] = [
         'mediaQuery' => $breakpoint->getMediaQuery(),
-        'url' => $imageStyle->buildUrl($imageUri),
+        'url' => file_url_transform_relative($imageStyle->buildUrl($imageUri)),
       ];
     }
   }
