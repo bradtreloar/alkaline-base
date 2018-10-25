@@ -331,6 +331,7 @@ $boilerplate-layer-background: $footer-layer-background !default;
   .layer.boilerplate {
     color: $boilerplate-layer-color;
     background-color: $boilerplate-layer-background;
+    padding: (2 * $global-margin) 0 $global-margin;
 
     .region {
       display: flex;
@@ -343,7 +344,7 @@ $boilerplate-layer-background: $footer-layer-background !default;
       text-align: center;
       font-size: 0.85em;
       font-weight: bold;
-      padding: $global-margin;
+      padding: 0 $global-margin;
       text-transform: uppercase;
     }
   }

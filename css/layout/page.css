@@ -242,7 +242,8 @@ div.page {
 
 .layer.boilerplate {
   color: #0a0a0a;
-  background-color: #cacaca; }
+  background-color: #cacaca;
+  padding: 2rem 0 1rem; }
   .layer.boilerplate .region {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -256,5 +257,5 @@ div.page {
     text-align: center;
     font-size: 0.85em;
     font-weight: bold;
-    padding: 1rem;
+    padding: 0 1rem;
     text-transform: uppercase; }
