@@ -9,7 +9,7 @@ dependencies:
     - alkaline
 id: alkaline_main_navigation
 theme: alkaline
-region: navbar
+region: navbar_top
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'
