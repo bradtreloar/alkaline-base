@@ -4,4 +4,4 @@ dependencies: {  }
 id: alkaline_callout
 label: 'Callout'
 revision: 0
-description: ''
+description: 'Displays a callout with button links.'

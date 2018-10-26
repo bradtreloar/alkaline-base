@@ -4,4 +4,4 @@ dependencies: {  }
 id: alkaline_hero_banner
 label: 'Hero Banner'
 revision: 0
-description: ''
+description: 'Displays text and button links on top of a banner image.'

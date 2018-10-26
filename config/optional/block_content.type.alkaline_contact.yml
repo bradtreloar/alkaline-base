@@ -4,4 +4,4 @@ dependencies: {  }
 id: alkaline_contact
 label: Contact
 revision: 0
-description: 'Displays contact and location details'
+description: 'Displays contact and location details.'
