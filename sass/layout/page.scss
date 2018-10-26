@@ -159,7 +159,7 @@ $boilerplate-layer-background: $footer-layer-background !default;
       display: flex;
       justify-content: space-between;
       margin: 0 auto;
-      max-width: 1080px;
+      max-width: map-get($breakpoints, large);
       position: relative;
 
       .super-region {
@@ -312,7 +312,7 @@ $boilerplate-layer-background: $footer-layer-background !default;
 
     > div {
       margin: 0 auto;
-      max-width: 1080px;
+      max-width: map-get($breakpoints, large);
     }
 
     .block {
@@ -332,6 +332,11 @@ $boilerplate-layer-background: $footer-layer-background !default;
     color: $boilerplate-layer-color;
     background-color: $boilerplate-layer-background;
     padding: (2 * $global-margin) 0 $global-margin;
+
+    > div {
+      margin: 0 auto;
+      max-width: map-get($breakpoints, large);
+    }
 
     .region {
       display: flex;
