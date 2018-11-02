@@ -315,6 +315,10 @@ $boilerplate-layer-background: $footer-layer-background !default;
       max-width: map-get($breakpoints, large);
     }
 
+    .region {
+      justify-content: space-between;
+    }
+
     .block {
       // margin: $global-margin auto;
       // padding: 0 $global-margin;

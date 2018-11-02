@@ -237,6 +237,10 @@ div.page {
   .layer.footer > div {
     margin: 0 auto;
     max-width: 1080px; }
+  .layer.footer .region {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
   .layer.footer .block h2 {
     margin: 1rem 0; }
 
