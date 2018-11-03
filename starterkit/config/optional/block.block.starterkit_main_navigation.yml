@@ -9,7 +9,7 @@ dependencies:
     - starterkit
 id: starterkit_main_navigation
 theme: starterkit
-region: navbar
+region: navbar_top
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'
