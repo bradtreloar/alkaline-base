@@ -83,6 +83,11 @@ cart_block:
     component:
       css/components/commerce-cart.css: {}
 
+collage:
+  css:
+    component:
+      css/components/collage.css: {}
+
 comment:
   css:
     component:
@@ -107,11 +112,6 @@ location:
   css:
     component:
       css/components/location.css: {}
-
-logo_collage:
-  css:
-    component:
-      css/components/logo-collage.css: {}
 
 media_object:
   css:

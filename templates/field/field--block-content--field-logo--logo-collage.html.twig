@@ -6,8 +6,8 @@
  * Image items are rendered in a grid.
  */
 #}
-{{ attach_library('alkaline/logo_collage') }}
-<ul class="logo-collage grid small-2 medium-3 large-4">
+{{ attach_library('alkaline/collage') }}
+<ul class="collage grid small-2 medium-3 large-4">
   {% for item in items %}
   <li {{ item.attributes }}>
     {{ item.content }}

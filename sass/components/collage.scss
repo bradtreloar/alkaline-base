@@ -1,9 +1,11 @@
 @import 'global';
 
 
-@mixin alkaline-logo-collage {
+@mixin alkaline-collage {
 
-  ul.logo-collage {  
+  .collage {
+    max-width: $global-width;
+
     li {
       padding: $global-margin;
     }
@@ -12,5 +14,5 @@
 
 
 @if $theme is alkaline {
-  @include alkaline-logo-collage;
+  @include alkaline-collage;
 }

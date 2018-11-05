@@ -1,4 +1,4 @@
-.title-bar {
+.region.content .title-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,6 +11,6 @@
   margin: 1rem auto;
   max-width: 60rem;
   padding: 0 1rem; }
-  .title-bar a.button {
+  .region.content .title-bar a.button {
     display: block;
     margin: 0; }
