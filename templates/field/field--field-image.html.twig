@@ -19,14 +19,7 @@
   ]
 %}
 {% for item in items %}
-<figure {{ attributes.addClass(classes) }}>
-  <picture>
+  <picture {{ attributes.addClass(classes) }}>
     {{ item.content }}
   </picture>
-  {% if item.caption %}
-    <figcaption>
-      {{ item.caption }}
-    </figcaption>
-  {% endif %}
-</figure>
 {% endfor %}

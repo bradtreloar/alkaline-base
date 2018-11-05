@@ -3,7 +3,8 @@
 @mixin alkaline-breadcrumbs {
 
   .breadcrumb {
-    margin: $global-margin 0;
+    margin: $global-margin auto;
+    max-width: $global-width;
     padding: 0 $global-margin;
 
     ol {

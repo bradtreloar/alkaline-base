@@ -1,0 +1,19 @@
+{% extends "paragraph.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for a paragraph type.
+#}
+{%
+  set classes = [
+    'grid',
+    'small-1',
+  ]
+%}
+{% block content %}
+  <div {{ attributes.addClass(classes) }}>
+    <div class="cell">
+      {{ content.field_text }}
+    </div>
+  </div>
+{% endblock %}

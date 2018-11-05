@@ -1,6 +1,5 @@
 .banner {
   position: relative;
-  color: #fefefe;
   height: 100%;
   padding: 3rem 1rem;
   width: 100%;
@@ -19,15 +18,6 @@
     left: 0;
     right: 0;
     z-index: -1; }
-  .banner.light-bg {
-    color: #0a0a0a;
-    background: rgba(255, 255, 255, 0.75); }
-  .banner.tinted-bg {
-    color: #0a0a0a;
-    background: rgba(23, 121, 186, 0.5); }
-  .banner.dark-bg {
-    color: #fefefe;
-    background: rgba(33, 33, 33, 0.75); }
   .banner > * {
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -90,50 +80,57 @@
   .banner .button {
     margin-top: 0;
     min-width: 8em; }
-  .banner.hero {
-    padding: 3rem 1rem 3rem;
-    text-align: center; }
+  .banner figure {
+    max-width: 50%;
+    padding: 0 0.5rem 0 0; }
+
+.banner.hero {
+  padding: 3rem 1rem 3rem;
+  text-align: center;
+  background-color: transparent;
+  color: #0a0a0a; }
+  @media print, screen and (min-width: 45em) {
+    .banner.hero {
+      padding: 6rem; } }
+  .banner.hero > * {
+    text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .banner.hero p {
+    font-size: 1.2em; }
     @media print, screen and (min-width: 45em) {
-      .banner.hero {
-        padding: 6rem; } }
-    .banner.hero > * {
-      text-align: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center; }
-    .banner.hero p {
-      font-size: 1.2em; }
-      @media print, screen and (min-width: 45em) {
-        .banner.hero p {
-          font-size: 1.5em; } }
-    .banner.hero .button {
-      font-weight: bold; }
-      @media print, screen and (min-width: 45em) {
-        .banner.hero .button {
-          font-size: 1.2em; } }
-  .banner.callout {
-    color: inherit; }
+      .banner.hero p {
+        font-size: 1.5em; } }
+  .banner.hero .button {
+    font-weight: bold; }
     @media print, screen and (min-width: 45em) {
-      .banner.callout {
-        padding: 6rem; } }
-    .banner.callout > * {
-      text-align: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center; }
-    .banner.callout p {
-      font-size: 1.2em; }
-      @media print, screen and (min-width: 45em) {
-        .banner.callout p {
-          font-size: 1.5em; } }
-    .banner.callout .button {
-      font-weight: bold; }
-      @media print, screen and (min-width: 45em) {
-        .banner.callout .button {
-          font-size: 1.2em; } }
+      .banner.hero .button {
+        font-size: 1.2em; } }
+
+.banner.callout {
+  color: inherit; }
+  @media print, screen and (min-width: 45em) {
+    .banner.callout {
+      padding: 6rem; } }
+  .banner.callout > * {
+    text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .banner.callout p {
+    font-size: 1.2em; }
+    @media print, screen and (min-width: 45em) {
+      .banner.callout p {
+        font-size: 1.5em; } }
+  .banner.callout .button {
+    font-weight: bold; }
+    @media print, screen and (min-width: 45em) {
+      .banner.callout .button {
+        font-size: 1.2em; } }

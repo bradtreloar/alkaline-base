@@ -165,7 +165,7 @@ function alkaline_preprocess_block_alkaline_hero_banner(&$vars) {
   $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
   if ($block_content) {
     // Fetch the background image URI.
-    $file = $block_content->field_hero_background_image->entity;
+    $file = $block_content->field_background_image->entity;
     if($file) {
       $uri = $file->getFileUri();
       $htmlId = $vars['attributes']['id'];
@@ -239,15 +239,39 @@ function alkaline_preprocess_field(&$vars) {
 
 
 /**
- * Preprocessor for field_image
+ * Preprocessor for field_feature
  */
-function alkaline_preprocess_field_type_image(&$vars) {
-  // Supply the alt text to the template as the caption.
-  foreach ($vars['items'] as &$item) {
-    $image = $item['content']['#item']->getValue();
-    $item['caption'] = $image['alt'];
+function alkaline_preprocess_field_feature(&$vars) {
+  // Get the existing classes
+  $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
+
+  // Get the number of features.
+  $feature_count = count($vars['items']);
+
+  // Set the grid classes based on the number of items.
+  switch($feature_count) {
+    case 1: $grid_classes = ['grid', 'small-1']; break;
+    case 2: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
+    case 3: $grid_classes = ['grid', 'small-1', 'medium-3']; break;
+    case 4: $grid_classes = ['grid', 'small-2', 'medium-4']; break;
+    default: $grid_classes = [];
   }
+
+  // Add the grid classes to the class array.
+  $vars['attributes']['class'] = array_merge($classes, $grid_classes);
 }
+
+
+// /**
+//  * Preprocessor for field_image
+//  */
+// function alkaline_preprocess_field_type_image(&$vars) {
+//   // Supply the alt text to the template as the caption.
+//   foreach ($vars['items'] as &$item) {
+//     $image = $item['content']['#item']->getValue();
+//     $item['caption'] = $image['alt'];
+//   }
+// }
 
 
 /**

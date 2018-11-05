@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Custom theme implementation to display a paragraph.
+ */
+#}
+{{ attach_library('alkaline/banner') }}
+{% block content %}
+{%
+  set classes = [
+    'grid',
+    'small-1',
+    'medium-2',
+    'align-center',
+  ]
+%}
+<figure {{ attributes.addClass(classes) }}>
+  {{ content.field_image }}
+  <figcaption>
+    {{ content|without('field_image') }}
+  </figcaption>
+</figure>
+{{ css }}
+{% endblock %}
+

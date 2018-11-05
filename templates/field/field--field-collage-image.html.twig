@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override for a Logo Collage image field
+ *
+ * Image items are rendered in a grid.
+ */
+#}
+{%
+  set classes = [
+    'grid',
+    'small-2',
+    'medium-3',
+    'large-4'
+  ]
+%}
+{{ attach_library('alkaline/logo_collage') }}
+<ul {{ attributes.addClass(classes) }}>
+  {% for item in items %}
+  <li {{ item.attributes }}>
+    {{ item.content }}
+  </li>
+  {% endfor %}
+</ul>

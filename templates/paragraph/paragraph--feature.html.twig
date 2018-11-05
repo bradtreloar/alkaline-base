@@ -1,0 +1,14 @@
+{% extends "paragraph.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for a paragraph type.
+#}
+{% block content %}
+<figure {{ attributes.addClass(classes) }}>
+  {{ content.field_image }}
+  <figcaption>
+    {{ content|without('field_image') }}
+  </figcaption>
+</figure>
+{% endblock %}

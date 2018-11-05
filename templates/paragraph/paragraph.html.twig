@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Custom theme implementation to display a paragraph.
+ */
+#}
+{%
+  set classes = [
+    paragraph.bundle|clean_class,
+  ]
+%}
+{% block paragraph %}
+  {% block content %}
+    <div {{ attributes.addClass(classes) }}>
+      {{ content }}
+    </div>
+  {% endblock %}
+{% endblock paragraph %}

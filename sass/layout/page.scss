@@ -233,13 +233,13 @@ $boilerplate-layer-background: $footer-layer-background !default;
     margin: 0 0 (2 * $global-margin);
 
     .block {
-      margin: 0 auto;
+      // margin: 0 auto;
+      // max-width: $global-width;
       padding: 0;
-      max-width: $global-width;
 
-      &.full-width {
-        max-width: none;
-      }
+      // &.full-width {
+      //   max-width: none;
+      // }
 
       > .title-bar {
         display: flex;

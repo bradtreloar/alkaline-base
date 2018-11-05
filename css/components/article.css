@@ -1,35 +1,59 @@
 article {
-  margin: 1rem auto;
-  max-width: 60rem;
-  padding: 0 1rem; }
+  margin: 1rem 0;
+  padding: 0; }
   article.contact-details span {
     display: inline-block;
     vertical-align: top; }
-  article div > img {
-    margin-bottom: 1rem; }
-  article figure {
-    margin: 1rem 0; }
-    article figure a {
+  article .body section > * {
+    max-width: 60rem;
+    margin: 1rem auto; }
+  article .body section > figure {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    article .body section > figure picture {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      height: 100%;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
-    article figure figcaption {
+      article .body section > figure picture img {
+        display: block; }
+    article .body section > figure.image figcaption {
       padding: 1rem; }
-    article figure img {
-      display: block; }
-    article figure.align-center picture {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center; }
-    article figure.align-center figcaption {
-      text-align: center; }
+    article .body section > figure.feature {
+      padding: 0.625rem;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      article .body section > figure.feature figcaption,
+      article .body section > figure.feature picture {
+        margin: 0.625rem; }
+      article .body section > figure.feature a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center; }
+      @media print, screen and (min-width: 45em) {
+        article .body section > figure.feature {
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+          flex-direction: row; }
+          article .body section > figure.feature picture {
+            max-width: 50%; } }
+  article .collage li {
+    padding: 1rem; }
+  article *:not(figure) img {
+    margin-bottom: 1rem; }
   article header p {
     font-size: 125%;
     line-height: 1.6; }

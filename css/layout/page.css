@@ -179,11 +179,7 @@ div.page {
 .layer.main {
   margin: 0 0 2rem; }
   .layer.main .block {
-    margin: 0 auto;
-    padding: 0;
-    max-width: 60rem; }
-    .layer.main .block.full-width {
-      max-width: none; }
+    padding: 0; }
     .layer.main .block > .title-bar {
       display: -webkit-box;
       display: -ms-flexbox;
