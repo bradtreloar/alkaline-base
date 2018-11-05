@@ -4,12 +4,11 @@
  * Theme override to display a block.
  */
 #}
+{{ attach_library('alkaline/location') }}
 {%
   set classes = [
     'block',
-    'block-' ~ configuration.provider|clean_class,
-    'block-' ~ plugin_id|clean_class,
-    'block--contact',
+    'location',
   ]
 %}
 <div{{ attributes.addClass(classes) }}>

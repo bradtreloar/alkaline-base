@@ -23,6 +23,8 @@
   
     .region.content & {
       padding: 0 $global-margin;
+      margin: 0 auto;
+      max-width: $global-width;
     }
   }
   

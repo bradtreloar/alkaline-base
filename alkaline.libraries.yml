@@ -14,7 +14,7 @@ base:
     layout:
       css/layout/grid.css: {}
     component:
-      css/components/page-title.css: {}
+      css/components/title-bar.css: {}
   js:
     js/alkaline.js: {}
   dependencies:
@@ -102,6 +102,11 @@ local_tasks:
   css:
     component:
       css/components/local-tasks.css: {}
+
+location:
+  css:
+    component:
+      css/components/location.css: {}
 
 logo_collage:
   css:

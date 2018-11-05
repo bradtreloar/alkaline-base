@@ -7,6 +7,8 @@ article {
   article .body section > * {
     max-width: 60rem;
     margin: 1rem auto; }
+  article .body section .text {
+    padding: 0 1rem; }
   article .body section > figure {
     display: -webkit-box;
     display: -ms-flexbox;

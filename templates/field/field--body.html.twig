@@ -7,6 +7,12 @@
  * assumed to be block elements.
  */
 #}
+<div class="body">
 {% for item in items %}
-  {{ item.content }}
+  <section>
+    <div class="text">
+      {{ item.content }}
+    </div>
+  </section>
 {% endfor %}
+</div>

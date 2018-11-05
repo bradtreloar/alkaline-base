@@ -1,11 +1,11 @@
 {{ attach_library('alkaline/banner') }}
-<header class="block">
+<header{{ attributes.addClass('block') }}>
   {{ title_prefix }}
   {{ title_suffix }}
   <figure class="banner hero full-page">
     <figcaption>
       {% block content %}
-        {{ content|without('field_hero_background_image') }}
+        {{ content }}
       {% endblock %}
     </figcaption>
   </figure>

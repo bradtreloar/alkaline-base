@@ -45,6 +45,10 @@ input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #cacaca; }
 
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #cacaca; }
+
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
   color: #cacaca; }
@@ -251,6 +255,8 @@ select {
   background-color: #f9ecea; }
   .is-invalid-input:not(:focus)::-webkit-input-placeholder {
     color: #cc4b37; }
+  .is-invalid-input:not(:focus):-ms-input-placeholder {
+    color: #cc4b37; }
   .is-invalid-input:not(:focus)::-ms-input-placeholder {
     color: #cc4b37; }
   .is-invalid-input:not(:focus)::placeholder {
@@ -299,7 +305,9 @@ form .form-actions {
     padding-bottom: 0; }
 
 .region.content form {
-  padding: 0 1rem; }
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 60rem; }
 
 .contact-message-form #edit-preview {
   display: none; }

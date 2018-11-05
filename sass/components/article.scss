@@ -6,6 +6,7 @@
     margin: $global-margin 0;
     padding: 0;
     
+    // @todo Review this block.
     &.contact-details {
       span {
         display: inline-block;
@@ -17,6 +18,10 @@
       > * {
         max-width: $global-width;
         margin: $global-margin auto;
+      }
+
+      .text {
+        padding: 0 $global-margin;
       }
 
       > figure {

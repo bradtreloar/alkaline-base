@@ -1,0 +1,16 @@
+.title-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 1rem auto;
+  max-width: 60rem;
+  padding: 0 1rem; }
+  .title-bar a.button {
+    display: block;
+    margin: 0; }

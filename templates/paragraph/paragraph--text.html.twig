@@ -12,8 +12,6 @@
 %}
 {% block content %}
   <div {{ attributes.addClass(classes) }}>
-    <div class="cell">
-      {{ content.field_text }}
-    </div>
+    {{ content }}
   </div>
 {% endblock %}

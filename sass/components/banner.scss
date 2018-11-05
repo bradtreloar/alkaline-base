@@ -12,6 +12,21 @@ $hero-banner-color: $black !default;
     padding: 3rem 1rem;
     width: 100%;
     position: relative;
+    
+    &.light-bg {
+      color: $black;
+      background: rgba(white, 0.75);
+    }
+
+    &.tinted-bg {
+      color: $black;
+      background: rgba($primary-color, 0.50);
+    }
+
+    &.dark-bg {
+      color: $white;
+      background: rgba(33,33,33, 0.75);
+    }
 
     > * {
       align-items: flex-start;
@@ -66,10 +81,6 @@ $hero-banner-color: $black !default;
     text-align: center;
     background-color: $hero-banner-background;
     color: $hero-banner-color;
-
-    @include breakpoint(medium) {
-      padding: 6rem;
-    }
     
     &.light-bg {
       color: $black;
@@ -84,6 +95,10 @@ $hero-banner-color: $black !default;
     &.dark-bg {
       color: $white;
       background: rgba(33,33,33, 0.75);
+    }
+
+    @include breakpoint(medium) {
+      padding: 6rem;
     }
 
     > * {
@@ -114,9 +129,11 @@ $hero-banner-color: $black !default;
 @mixin alkaline-callout-banner {
   .banner.callout {
     color: inherit;
+    margin: 0 auto;
+    max-width: $global-width;
 
     @include breakpoint(medium) {
-      padding: 6rem;
+      padding: 6rem $global-margin;
     }
 
     > * {
