@@ -23,12 +23,25 @@
     <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
   {% endfor %}
 {% else %}
+  {# 
+    Display the label and field value as block elements if label is above,
+    or display the label and field value as inline elements if label is inline.
+  #}
   <div{{ attributes.addClass(classes) }}>
-    <h3{{ label_attributes.addClass(label_classes) }}>
-      {{ label }}
-    </h3>
-    {% for item in items %}
-      <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-    {% endfor %}
+    {% if label_display == 'above' %}
+      <h3{{ label_attributes.addClass(label_classes) }}>
+        {{ label }}
+      </h3>
+      {% for item in items %}
+        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+      {% endfor %}
+    {% else %}
+      <span{{ label_attributes.addClass(label_classes) }}>
+        {{ label }}:
+      </span>
+      {% for item in items %}
+        <span{{ item.attributes.addClass('field__item') }}>{{ item.content }}</span>
+      {% endfor %}
+    {% endif %}
   </div>
 {% endif %}
