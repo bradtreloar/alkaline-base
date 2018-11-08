@@ -1,5 +1,7 @@
 .banner {
   position: relative;
+  background-color: transparent;
+  color: #0a0a0a;
   height: 100%;
   padding: 3rem 1rem;
   width: 100%;
@@ -18,15 +20,6 @@
     left: 0;
     right: 0;
     z-index: -1; }
-  .banner.light-bg {
-    color: #0a0a0a;
-    background: rgba(255, 255, 255, 0.75); }
-  .banner.tinted-bg {
-    color: #0a0a0a;
-    background: rgba(23, 121, 186, 0.5); }
-  .banner.dark-bg {
-    color: #fefefe;
-    background: rgba(33, 33, 33, 0.75); }
   .banner > * {
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -98,15 +91,6 @@
   text-align: center;
   background-color: transparent;
   color: #0a0a0a; }
-  .banner.hero.light-bg {
-    color: #0a0a0a;
-    background: rgba(255, 255, 255, 0.75); }
-  .banner.hero.tinted-bg {
-    color: #0a0a0a;
-    background: rgba(23, 121, 186, 0.5); }
-  .banner.hero.dark-bg {
-    color: #fefefe;
-    background: rgba(33, 33, 33, 0.75); }
   @media print, screen and (min-width: 45em) {
     .banner.hero {
       padding: 6rem; } }
