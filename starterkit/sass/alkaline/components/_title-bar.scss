@@ -1,0 +1,22 @@
+
+
+
+@mixin alkaline-title-bar {
+  .title-bar {
+    .region.content & {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: $global-margin auto;
+      max-width: $global-width;
+      padding: 0 $global-margin;
+      
+      a.button {
+        display: block;
+        margin: 0;
+      }
+    }
+  }
+}
+
+

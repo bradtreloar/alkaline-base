@@ -1,0 +1,316 @@
+
+
+
+// Defaults
+$admin-toolbar-height: 39px !default;
+$admin-toolbar-tray-height: 40px !default;
+
+$header-layer-background: $black !default;
+$header-layer-color: $white !default;
+
+$navbar-background: $header-layer-background !default;
+$navbar-color: $header-layer-color !default;
+
+$footer-layer-background: $medium-gray !default;
+$footer-layer-color: $black !default;
+
+$boilerplate-layer-color: $footer-layer-color !default;
+$boilerplate-layer-background: $footer-layer-background !default;
+
+
+@mixin alkaline-page {
+  .dialog-off-canvas-main-canvas {
+    height: 100%;
+  }
+
+  div.page {
+    height: 100%;
+    padding: $top-bar-height 0 0 0;
+
+    main {
+      flex-grow: 1;
+    }
+  }
+}
+
+
+@mixin alkaline-admin-layer {
+  .layer.admin {
+    position: relative;
+
+    .region {
+      &.content-width {
+        margin: 0 auto;
+        max-width: $global-width;
+      }
+    }
+  }
+}
+
+
+@mixin alkaline-header-super-region {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: space-between;
+}
+
+
+@mixin alkaline-header-region {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+        
+  .block {
+    align-items: center;
+    display: flex;
+    height: 100%;
+  }
+}
+
+
+@mixin alkaline-navbar-super-region {
+  background: $navbar-background;
+  color: $navbar-color;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  // overflow-x: hidden; // @bug this rule causes dropdown submenus to be hidden
+  padding-top: $top-bar-height;
+  position: fixed;
+  right: 0;
+  // transition: width 300ms;
+  top: 0;
+  z-index: -1; // under the header
+        
+  & {
+    width: 0;
+    pointer-events: none;
+  }
+
+  &.active {
+    width: 320px;
+    pointer-events: all;
+  }
+
+  body.toolbar-horizontal &,
+  body.toolbar-vertical & {
+    padding-top: $top-bar-height + $admin-toolbar-height;
+  }
+
+  body.toolbar-horizontal.toolbar-tray-open & {
+    padding-top: $top-bar-height + $admin-toolbar-height + $admin-toolbar-tray-height;
+  }
+  
+  // Convert to a header region.
+  @include breakpoint(large) {
+    flex-direction: row;
+    height: 100%;
+    justify-content: flex-end;
+    pointer-events: all;
+    position: static;
+    width: auto;
+    z-index: 1; // above the header
+
+    // Forcefully override toolbar padding.
+    padding-top: 0 !important;
+  }
+}
+
+
+@mixin alkaline-navbar-region {
+
+  @include breakpoint(large) {
+    // Convert to a header region.
+    @include alkaline-header-region;
+    justify-content: flex-end;
+  }
+}
+
+
+@mixin alkaline-header-layer {
+  .layer.header {
+    color: $header-layer-color;
+    background-color: $header-layer-background;
+    fill: $header-layer-color; // for SVG icons
+    width: 100%;
+
+    &.fixed {
+      position: fixed;
+      // position: absolute; //@debug
+      top: 0;
+      transition: top 300ms ease;
+      z-index: 1;
+
+      body.toolbar-horizontal &,
+      body.toolbar-vertical & {
+        padding-top: 39px;
+      }
+
+      body.toolbar-horizontal.toolbar-tray-open & {
+        padding-top: 79px;
+      }
+    }
+
+    // wrapper
+    > div {
+      height: $top-bar-height;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: map-get($breakpoints, large);
+      position: relative;
+
+      .super-region {
+
+        &.header {
+          @include alkaline-header-super-region;
+
+          > .region {
+            @include alkaline-header-region;
+          }
+        }
+
+        &.navbar {
+          @include alkaline-navbar-super-region;
+
+          > .region {
+            background: inherit;
+            @include alkaline-navbar-region;
+
+            // Navbar blocks need to inherit the super-region's background color
+            > .block {
+              background: inherit;
+            }
+          }
+        }
+      }
+
+      .region {
+        &.buttons {
+          @include alkaline-header-region;
+          flex: none;
+        }
+      }
+    }
+  }
+}
+
+
+@mixin alkaline-lead-layer {
+  .layer.lead {
+    position: relative;
+
+    &.full-page {
+      height: 100%;
+
+      .region {
+        height: 100%;
+      }
+
+      .block {
+        height: 100%;
+    
+        > div {
+          height: 100%;
+        }
+      }
+    }
+
+    .region {
+      &.content-width {
+        margin: 0 auto;
+        max-width: $global-width;
+      }
+    }
+  }
+}
+
+
+@mixin alkaline-main-layer {
+  .layer.main {
+    margin: 0 0 (2 * $global-margin);
+
+    .block {
+      padding: 0;
+    }
+
+    .page-title-block {
+      margin-top: (3 * $global-margin);
+      margin-bottom: (3 * $global-margin);
+    }
+  }
+
+  #main-content {
+    position: relative;
+    top: -$top-bar-height;
+
+    body.toolbar-horizontal &,
+    body.toolbar-vertical & {
+      top: -($top-bar-height + 39px);
+    }
+
+    body.toolbar-horizontal.toolbar-tray-open & {
+      top: -($top-bar-height + 79px);
+    }
+  }
+}
+
+
+@mixin alkaline-footer-layer {
+  .layer.footer {
+    color: $footer-layer-color;
+    background-color: $footer-layer-background;
+    margin: $global-margin 0 0 0;
+
+    > div {
+      margin: 0 auto;
+      max-width: map-get($breakpoints, large);
+    }
+
+    .region {
+      justify-content: space-between;
+    }
+
+    .block {
+      // margin: $global-margin auto;
+      // padding: 0 $global-margin;
+      
+      h2 {
+        margin: $global-margin 0;
+      }
+    }
+  }
+}
+
+
+@mixin alkaline-boilerplate-layer {
+  .layer.boilerplate {
+    color: $boilerplate-layer-color;
+    background-color: $boilerplate-layer-background;
+    padding: (2 * $global-margin) 0 $global-margin;
+
+    > div {
+      margin: 0 auto;
+      max-width: map-get($breakpoints, large);
+    }
+
+    .region {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .block {
+      // @todo move this to component stylesheet
+      text-align: center;
+      font-size: 0.85em;
+      font-weight: bold;
+      padding: 0 $global-margin;
+      text-transform: uppercase;
+    }
+  }
+}
+
+

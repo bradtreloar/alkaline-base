@@ -1,0 +1,82 @@
+
+
+
+@mixin alkaline-card {
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    > figure {
+      flex: none;
+
+      picture {
+        flex: none;
+
+        a {
+          display: block;
+        }
+    
+        img {
+          display: block;
+          max-width: 100%;
+          margin: 0 auto;
+          height: auto;
+        }
+      }
+
+      // Hide captions for image fields.
+      figcaption {
+        display: none;
+      }
+    }
+  
+    > section {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: space-between;
+      margin: $global-margin 0;
+
+      h3 {
+        width: 100%;
+        font-size: 1.25em;
+
+        a {
+          color: inherit;
+        }
+      }
+    }
+
+    &.wide {
+      @include breakpoint(medium) {
+        flex-direction: row;
+
+        > section {
+          align-items: flex-start;
+          justify-content: flex-start;
+          margin: 0 0 0 $global-margin;
+
+          &:first-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+  
+    // > a {
+    //   display: block;
+    //   margin: 0 auto 24px;
+    //   max-width: 240px;
+
+    //   @include breakpoint(960px) {
+    //     margin: 0 24px 0 0;
+    //     width: 240px;
+    //   }
+    // }
+  }
+}
+
+

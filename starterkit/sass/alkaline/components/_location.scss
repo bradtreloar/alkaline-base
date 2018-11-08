@@ -1,0 +1,32 @@
+
+
+
+@mixin alkaline-location {
+  .location {
+    margin: 0 auto;
+    max-width: $global-width;
+    
+    > div {
+      padding: 0 $global-margin;
+    }
+
+    @include breakpoint(medium) {
+      > div {
+        display: flex;
+  
+        > section {
+          &:first-child {
+            flex: none;
+            padding-right: ($global-margin * 3);
+          }
+  
+          &:last-child {
+            flex-grow: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+

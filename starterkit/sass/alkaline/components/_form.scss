@@ -1,0 +1,95 @@
+
+
+@mixin alkaline-form {
+  @include foundation-form-text;
+  @include foundation-form-checkbox;
+  @include foundation-form-label;
+  @include foundation-form-helptext;
+  @include foundation-form-prepostfix;
+  @include foundation-form-fieldset;
+  @include foundation-form-select;
+  @include foundation-form-error;
+  
+  form {
+    .form-item,
+    .form-actions {
+      // Add global form-spacing margins to the element wrappers.
+      margin: 0 0 $form-spacing;
+    }
+  
+    .region.navbar & {
+      @include alkaline-form-inline;
+    }
+  
+    .region.content & {
+      padding: 0 $global-margin;
+      margin: 0 auto;
+      max-width: $global-width;
+    }
+  }
+  
+  .contact-message-form {
+  
+    // @todo remove preview button using form alteration hook
+    #edit-preview {
+      display: none;
+    }
+  }
+}
+
+
+// Places all form elements in a row and sets
+// an explicit height on the wrapper
+@mixin alkaline-form-inline {
+  // Make children inline.
+  display: flex;
+
+  // 2em is a safe bet.
+  height: 2em;
+
+  // Add global form-spacing margins to entire form,
+  // as if it were a single form item.
+  margin: $global-margin 0;
+
+  // Put a gap either side of the form because it's
+  // Probably alongside other inline elements.
+  padding: 0 $global-margin;
+
+  .form-item,
+  .form-actions {
+    // Remove global form-spacing margins.
+    margin: 0;
+    
+    // Add small gap between form elements
+    &:not(:last-child) {
+      margin: 0 0.5rem 0 0;
+    }
+
+    > * {
+      // Make all form items fill their wrappers' height.
+      // The wrappers are flex children and are set to
+      // height: 100% by default. 
+      height: 100%;
+
+      // Remove global form-spacing margins.
+      margin: 0;
+    }
+  }
+
+  // Fill any spare space by growing the input fields
+  .form-item {
+    flex-grow: 1;
+  }
+
+  .form-actions {
+    // @todo replace with custom code?
+    input[type="submit"] {
+      // Don't need top/bottom padding because
+      // element has explicit height.
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+

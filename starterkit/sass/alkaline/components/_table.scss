@@ -1,0 +1,17 @@
+
+
+@mixin alkaline-table {
+
+  table {
+    .region.content & {
+      @include table;
+  
+      // Explicitly unset cell borders in case table's border attribute is set.
+      th, td {
+        border: none;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,27 @@
+
+
+@mixin alkaline-breadcrumbs {
+
+  .breadcrumb {
+    margin: $global-margin auto;
+    max-width: $global-width;
+    padding: 0 $global-margin;
+
+    ol {
+      @include breadcrumbs-container;
+      
+      // Disable margin here because margins are set on the block.
+      margin: 0;
+  
+      // Browser default Padding must be removed.
+      padding: 0;
+  
+      // Before pseudo-element is not needed.
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+

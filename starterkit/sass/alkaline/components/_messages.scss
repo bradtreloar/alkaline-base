@@ -1,0 +1,24 @@
+
+
+
+@mixin alkaline-messages {
+
+  .messages {
+    @include callout-base;
+    margin: $global-margin;
+  }
+  
+  .messages--status {
+    @include callout-style($success-color);
+  }
+  
+  .messages--warning {
+    @include callout-style($warning-color);
+  }
+  
+  .messages--error {
+    @include callout-style($alert-color);
+  }
+}
+
+

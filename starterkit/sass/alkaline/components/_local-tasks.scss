@@ -1,0 +1,28 @@
+
+
+
+@mixin alkaline-local-tasks {
+
+  nav.local-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    padding: $global-padding;
+
+    ul {
+      @include tabs-container;
+    }
+  
+    li {
+      @include tabs-title;
+  
+      > a.is-active {
+        background: $tab-background-active;
+        color: $tab-active-color;
+      }
+    }
+  }
+}
+
+

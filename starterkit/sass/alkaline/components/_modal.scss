@@ -1,0 +1,18 @@
+
+
+
+@mixin alkaline-modal {
+  .reveal-overlay {
+    @include reveal-overlay;
+  }
+
+  .modal {
+    @include reveal-modal-base;
+
+    .fullscreen {
+      @include reveal-modal-fullscreen;
+    }
+  }
+}
+
+

@@ -1,14 +1,1 @@
 <?php
-
-use Drupal\Core\Url;
-
-/**
- * Implements template_preprocess_node()
- */
-function starterkit_preprocess_node(&$vars) {
-  // Call the type-specific preprocessor.
-  $node_type_preprocessor = __FUNCTION__ . '_' . $vars['node']->getType();
-  if (function_exists($node_type_preprocessor)) {
-    $node_type_preprocessor($vars);
-  }
-}

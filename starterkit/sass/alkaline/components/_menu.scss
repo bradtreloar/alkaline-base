@@ -1,0 +1,141 @@
+
+
+// Foundation overrides
+$drilldown-background: inherit;
+$drilldown-submenu-background: inherit;
+$dropdownmenu-border: 0 solid transparent;
+
+// Alkaline defaults
+$menu-button-font-family: inherit !default;
+
+
+@mixin alkaline-menu-button {
+  color: inherit;
+  display: flex;
+  align-items: center;
+  font-family: $menu-button-font-family;
+    
+  svg.icon {
+    display: block;
+    height: 1.5em;
+    width: 1.5em;
+    
+    // If the menu item has an icon then hide the
+    // text labal until there is ample horizontal space.
+    & + span {
+      display: none;
+      
+      @include breakpoint(medium) {
+        display: inline-block;
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  span {
+    display: block;
+    line-height: 1.5em;
+  }
+}
+
+
+@mixin alkaline-menu {
+  @include foundation-menu;
+
+  .menu {
+    // @todo remove this !important decorator
+    background: inherit !important;
+
+    li, a {
+      background: inherit;
+    }
+  
+    a {
+      @include alkaline-menu-button;
+    }
+
+    .region.header &, 
+    .region.navbar & {
+      a {
+        font-size: 0.875em;
+      }
+    }
+
+    .region.navbar & {
+      @include menu-direction(vertical);
+
+      @include breakpoint(large) {
+        @include menu-direction(horizontal);
+      }
+    }
+
+    .region.footer & {
+      @include menu-direction(vertical);
+
+      a {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  .menu-wrapper {
+    background: inherit;
+  }
+}
+
+
+@mixin alkaline-social-share-menu {
+  .menu.social-share {
+    @include button-group(li, 0.5rem);
+      
+    a {
+      height: 2rem;
+      width: 2rem;
+      padding: 20%;
+
+      svg.icon {
+        height: 100%;
+        width: 100%;
+
+        & + span {
+          display: none;
+        }
+      }
+    }
+
+    li {
+      @include brand-colors(background-color);
+      fill: $white;
+    }
+  }
+}
+
+
+@mixin alkaline-drilldown-menu {
+  @include foundation-drilldown-menu;
+}
+
+
+@mixin alkaline-dropdown-menu {
+  @include foundation-dropdown-menu;
+}
+
+
+@mixin alkaline-navbar-toggle-button {
+  button[data-toggle="navbar"] {
+    @include alkaline-menu-button;
+    height: 100%;
+    line-height: 1;
+    text-decoration: none;
+    display: block;
+    padding: $menu-items-padding;
+    cursor: pointer;
+
+    @include breakpoint(large) {
+      display: none;
+    }
+  }
+}
+
+

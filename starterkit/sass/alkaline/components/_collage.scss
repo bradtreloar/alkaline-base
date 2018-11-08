@@ -1,0 +1,15 @@
+
+
+
+@mixin alkaline-collage {
+
+  .collage {
+    max-width: $global-width;
+
+    li {
+      padding: $global-margin;
+    }
+  }
+}
+
+
