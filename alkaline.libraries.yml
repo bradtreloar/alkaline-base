@@ -103,6 +103,12 @@ icon:
     component:
       css/components/icon.css: {}
 
+lightbox:
+  js:
+    js/lightbox.js:
+  dependencies:
+    - alkaline/base
+
 local_tasks:
   css:
     component:
@@ -146,22 +152,6 @@ pagination:
   css:
     component:
       css/components/pagination.css: {}
-
-product:
-  css:
-    component:
-      css/components/product.css: {}
-      css/components/product-thumbs.css: {}
-      css/components/form--commerce-atc.css: {}
-  js:
-    js/lightbox.js: {}
-    js/productThumbs.js: {}
-    js/cart.js: {}
-  dependencies:
-    - core/jquery
-    - core/jquery.once
-    - core/drupal
-    - alkaline/global
 
 table:
   css:
