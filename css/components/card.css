@@ -7,7 +7,9 @@
   -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  margin: 0 auto;
+  max-width: 60rem; }
   .card > figure {
     -webkit-box-flex: 0;
     -ms-flex: none;
@@ -43,6 +45,9 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 1rem 0; }
+    .card > section > h2,
+    .card > section > h3 {
+      padding: 0 1rem; }
     .card > section h3 {
       width: 100%;
       font-size: 1.25em; }

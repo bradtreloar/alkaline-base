@@ -19,7 +19,11 @@
 {{ attach_library('alkaline/article') }}
 <article{{ attributes.addClass(classes) }}>
 
-  {{ content.field_image }}
+  {% if content.field_image.value %}
+    <figure>
+      {{ content.field_image }}
+    </figure>
+  {% endif %}
 
   <section>
 

@@ -6,8 +6,8 @@
     .region.content & {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin: $global-margin auto;
+      align-items: flex-start;
+      margin: $global-margin 0;
       max-width: $global-width;
       padding: 0 $global-margin;
       

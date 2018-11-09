@@ -7,6 +7,8 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
+    margin: 0 auto;
+    max-width: $global-width;
 
     > figure {
       flex: none;
@@ -40,6 +42,11 @@
       justify-content: space-between;
       margin: $global-margin 0;
 
+      > h2,
+      > h3 {
+        padding: 0 $global-margin;
+      }
+
       h3 {
         width: 100%;
         font-size: 1.25em;
@@ -65,17 +72,6 @@
         }
       }
     }
-  
-    // > a {
-    //   display: block;
-    //   margin: 0 auto 24px;
-    //   max-width: 240px;
-
-    //   @include breakpoint(960px) {
-    //     margin: 0 24px 0 0;
-    //     width: 240px;
-    //   }
-    // }
   }
 }
 

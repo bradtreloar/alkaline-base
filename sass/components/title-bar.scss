@@ -6,7 +6,7 @@
     .region.content & {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       margin: $global-margin auto;
       max-width: $global-width;
       padding: 0 $global-margin;
