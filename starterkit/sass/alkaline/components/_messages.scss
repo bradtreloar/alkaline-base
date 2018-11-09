@@ -3,9 +3,16 @@
 
 @mixin alkaline-messages {
 
+  .messages-wrapper {
+    margin: 0 auto;
+    max-width: $global-width;
+    padding: 0 $global-margin;
+  }
+
   .messages {
     @include callout-base;
-    margin: $global-margin;
+    margin: $global-margin 0;
+    max-width: $global-width;
   }
   
   .messages--status {
