@@ -9,7 +9,6 @@ base theme: alkaline
 libraries-override:
   alkaline/button: starterkit/button
   alkaline/menu: starterkit/menu
-  alkaline/text_formatted: starterkit/text_formatted
   alkaline/typography: starterkit/typography
 
 libraries:
