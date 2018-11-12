@@ -153,6 +153,16 @@ function alkaline_preprocess_block(&$vars) {
   if(isset($vars['content']['#type']) && $vars['content']['#type'] == 'view') {
     alkaline_preprocess_block_views($vars);
   }
+
+  if ($vars['plugin_id'] == 'system_main_block') {
+    // If this is a 404 block then wrap the system block content.
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    if ($route_name == 'system.404') {
+      // dpm($vars['content']);
+      $vars['content']['#prefix'] = '<article><div class="body"><section><div class="text">';
+      $vars['content']['#suffix'] = '</div></section></div></article>';
+    }
+  }
 }
 
 
@@ -454,6 +464,25 @@ function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
 
     // Add a template suggestion for the block type.
     $suggestions[] = 'block__' . $block_type;
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_page_alter() to set 4xx template suggestions.
+ */
+function alkaline_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // get the route
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  $route_parts = explode('.', $route_name);
+
+  // is it system.4xx ? 
+  if (count($route_parts) == 2 && $route_parts[0] === 'system') {
+    $code = $route_parts[1];
+    if (is_numeric($code) && $code >= 400 and $code < 500) {
+      // suggest template page--4xx.html.twig (e.g., page--404.html.twig)
+      $suggestions[] = 'page__' . $route_parts[1];
+    }
   }
 }
 
