@@ -7,6 +7,15 @@ article {
   article .body section > * {
     max-width: 60rem;
     margin: 1rem auto; }
+  article .body section picture {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    article .body section picture img {
+      display: block; }
   article .body section .text {
     padding: 0 1rem; }
   article .body section > figure {
@@ -17,15 +26,6 @@ article {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
-    article .body section > figure picture {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center; }
-      article .body section > figure picture img {
-        display: block; }
     article .body section > figure.image figcaption {
       padding: 1rem; }
     article .body section > figure.feature {

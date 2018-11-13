@@ -20,6 +20,15 @@
         margin: $global-margin auto;
       }
 
+      picture {
+        display: flex;
+        justify-content: center;
+        
+        img {
+          display: block;
+        }
+      }
+
       .text {
         padding: 0 $global-margin;
       }
@@ -27,15 +36,6 @@
       > figure {
         display: flex;
         flex-direction: column;
-
-        picture {
-          display: flex;
-          justify-content: center;
-          
-          img {
-            display: block;
-          }
-        }
 
         &.image {
           figcaption {
