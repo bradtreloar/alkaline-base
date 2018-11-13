@@ -1,35 +1,36 @@
 <div class="page maintenance">
 
-  <div class="layer header fixed" role="banner">
-    <div>
-  
-      <div class="region header">
-        <div class="block">
-          <div class="branding">
-            <a href="/" title="Home" rel="home" class="site-logo">
-              <img src="/themes/custom/metcalf/logo.svg" alt="Home">
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
   <main class="layer main" role="main">
 
     <section id="content" class="region content">
-      <a id="main-content" tabindex="-1"></a>
-      
-      <div class="block" style="margin: 2rem auto">
-        <h1 style="padding: 0 1rem">Under Maintenance</h1>
-      </div>
-      
-      <div class="block" style="margin: 2rem auto">
-        <p style="padding: 0 1rem">{{ page.content }}</p>
+
+      <div class="block">
+        <div class="branding">
+          <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo">
+            <img src="{{ logo }}" alt="{{ 'Home'|t }}" />
+          </a>
+        </div>
       </div>
 
-    </section>
+      <div class="block">
+        <div class="title-bar">
+          <h1 class="page-title">Meet the Team</h1>
+        </div>
+      </div>
+
+      <a id="main-content" tabindex="-1"></a>
+
+      <div class="block">
+        <article>
+          <div class="body">
+            <section>
+              <div class="text">
+                <p>{{ page.content }}</p>
+              </div>
+            </section>
+          </div>
+        </article>
+      </div>
 
   </main>
 
