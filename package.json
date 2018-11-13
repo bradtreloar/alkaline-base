@@ -2,6 +2,7 @@
   "private": true,
   "dependencies": {
     "foundation-sites": "~6.4.3",
+    "jquery": "^3.3.1",
     "motion-ui": "^2.0.3"
   },
   "scripts": {
