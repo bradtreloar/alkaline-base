@@ -1,12 +1,5 @@
-{%
-  set classes = [
-    'block',
-    'block-' ~ configuration.provider|clean_class,
-    'block--callout',
-  ]
-%}
 {{ attach_library('alkaline/banner') }}
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass('block') }}>
 
   {{ title_prefix }}
   {{ title_suffix }}

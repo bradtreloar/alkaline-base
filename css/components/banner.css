@@ -112,6 +112,8 @@
     @media print, screen and (min-width: 45em) {
       .banner.hero .button {
         font-size: 1.2em; } }
+  .banner.hero figcaption {
+    max-width: 60rem; }
 
 .banner.callout {
   color: inherit;

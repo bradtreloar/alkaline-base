@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+#}
+{{ attach_library('alkaline/article') }}
+<article{{ attributes.addClass('profile') }}>
+  {% if content %}
+    <div class="body">
+      <section>
+        {{- content -}}
+      </div>
+    </section>
+  {% endif %}
+</article>

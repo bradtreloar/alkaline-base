@@ -97,6 +97,10 @@ $hero-banner-color: $banner-color!default;
         font-size: 1.2em;
       }
     }
+
+    figcaption {
+      max-width: $global-width;
+    }
   }
 }
 
