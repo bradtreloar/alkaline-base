@@ -94,6 +94,17 @@
           justify-content: center;
         }
       }
+
+      picture {
+        display: flex;
+        justify-content: center;
+        max-width: $global-width;
+        margin: $global-margin auto;
+        
+        img {
+          display: block;
+        }
+      }
     }
 
     footer {

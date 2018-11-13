@@ -70,6 +70,17 @@ article {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
+  article header picture {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    max-width: 60rem;
+    margin: 1rem auto; }
+    article header picture img {
+      display: block; }
   article footer {
     display: -webkit-box;
     display: -ms-flexbox;
