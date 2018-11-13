@@ -8,6 +8,10 @@
   padding: 0.625rem;
   @include xy-grid;
 
+  &.content-width {
+    max-width: $global-width;
+  }
+
   @for $c from 1 through 12 {
     @each $name, $width in $breakpoints {
       &.#{$name}-#{$c} {

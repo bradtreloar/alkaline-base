@@ -12,6 +12,8 @@
   -webkit-box-direction: normal;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap; }
+  .grid.content-width {
+    max-width: 60rem; }
   .grid.small-1 > li {
     width: calc(100% - 1.25rem);
     margin-right: 0.625rem;
