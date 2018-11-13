@@ -304,8 +304,8 @@ function alkaline_preprocess_form(&$vars) {
 function alkaline_preprocess_html(&$vars) {
   // Get the favicon directory.
   global $base_url;
-  $theme = \Drupal::theme()->getActiveTheme();
-  $vars['favicon_dir'] = $base_url.'/'. $theme->getPath() .'/images/favicon';;
+  $theme = \Drupal::service('theme.manager')->getActiveTheme();
+  $vars['favicon_dir'] = $base_url.'/'. $theme->getPath() .'/images/favicon';
 
   // Get the SVG icons.
   $vars['icons'] = alkaline_get_svg_icons([
