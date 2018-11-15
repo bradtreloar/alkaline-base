@@ -5,7 +5,7 @@
   article {
     margin: $global-margin 0;
     padding: 0;
-    
+
     // @todo Review this block.
     &.contact-details {
       span {
@@ -23,7 +23,7 @@
       picture {
         display: flex;
         justify-content: center;
-        
+
         img {
           display: block;
         }
@@ -44,12 +44,12 @@
         }
 
         &.feature {
-          padding: 0.625rem;
+          padding: 1.5rem 0.625rem;
           align-items: center;
 
           figcaption,
           picture {
-            margin: 0.625rem;
+            padding: 0 0.625rem;
           }
 
           a {
@@ -60,7 +60,7 @@
 
           @include breakpoint(medium) {
             flex-direction: row;
-  
+
             picture {
               flex: none;
               width: 50%;
@@ -70,7 +70,7 @@
       }
     }
 
-    .collage {  
+    .collage {
       li {
         padding: $global-margin;
       }
@@ -100,7 +100,7 @@
         justify-content: center;
         max-width: $global-width;
         margin: $global-margin auto;
-        
+
         img {
           display: block;
         }
@@ -130,7 +130,7 @@
         display: block;
       }
     }
-    
+
     .links {
       list-style: none;
       margin: 0;
@@ -157,7 +157,7 @@
 
     header {
       min-width: 33%;
-      
+
       // Don't show the image field's caption on teaser.
       figcaption {
         display: none;

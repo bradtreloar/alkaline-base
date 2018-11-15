@@ -29,13 +29,13 @@ article {
     article .body section > figure.image figcaption {
       padding: 1rem; }
     article .body section > figure.feature {
-      padding: 0.625rem;
+      padding: 1.5rem 0.625rem;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; }
       article .body section > figure.feature figcaption,
       article .body section > figure.feature picture {
-        margin: 0.625rem; }
+        padding: 0 0.625rem; }
       article .body section > figure.feature a {
         display: -webkit-box;
         display: -ms-flexbox;
