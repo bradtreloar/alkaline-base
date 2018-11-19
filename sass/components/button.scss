@@ -1,33 +1,34 @@
 @import 'global';
 
+
+$button-icon-size: 1em;
+
+
 @mixin alkaline-button {
   .button {
     @include button;
     display: flex;
     justify-content: center;
-    
+
     svg.icon {
       display: block;
-      fill: $button-color;
-      height: 1em;
-      width: 1em;
+      height: $button-icon-size;
+      width: $button-icon-size;
 
       & + span {
         display: block;
         margin-left: 0.5em;
-        height: 1em;
-        line-height: 1em;
+        height: $button-icon-size;
+        line-height: $button-icon-size;
       }
     }
 
     &[data-drupal-selector="edit-preview"] {
       @include button-hollow;
-      @include button-hollow-style;
     }
 
     &.hollow {
       @include button-hollow;
-      @include button-hollow-style;
     }
   }
 
@@ -37,6 +38,6 @@
   }
 }
 
-@if $theme == alkaline {
+@if $theme is alkaline {
   @include alkaline-button;
 }

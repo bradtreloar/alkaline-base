@@ -13,7 +13,6 @@ libraries-override:
 
 libraries:
   - alkaline/page
-  - alkaline/typography
   - alkaline/button
   - alkaline/menu
   - alkaline/action_links
@@ -28,6 +27,7 @@ libraries:
   - alkaline/local_tasks
   - alkaline/table
   - alkaline/tabs
+  - alkaline/theme
 
 regions:
   header_left: Header (Left)

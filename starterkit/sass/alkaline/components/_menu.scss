@@ -1,30 +1,31 @@
 
 
+
 // Foundation overrides
 $drilldown-background: inherit;
 $drilldown-submenu-background: inherit;
 $dropdownmenu-border: 0 solid transparent;
 
 // Alkaline defaults
-$menu-button-font-family: inherit !default;
+$menu-button-icon-size: 1.5em;
+$header-menu-button-font-size: 0.875em;
+$share-menu-button-size: 2em;
 
 
 @mixin alkaline-menu-button {
-  color: inherit;
   display: flex;
   align-items: center;
-  font-family: $menu-button-font-family;
-    
+
   svg.icon {
     display: block;
-    height: 1.5em;
-    width: 1.5em;
-    
+    height: $menu-button-icon-size;
+    width: $menu-button-icon-size;
+
     // If the menu item has an icon then hide the
     // text labal until there is ample horizontal space.
     & + span {
       display: none;
-      
+
       @include breakpoint(medium) {
         display: inline-block;
         margin-left: 0.5em;
@@ -34,7 +35,7 @@ $menu-button-font-family: inherit !default;
 
   span {
     display: block;
-    line-height: 1.5em;
+    line-height: $menu-button-icon-size;
   }
 }
 
@@ -43,20 +44,10 @@ $menu-button-font-family: inherit !default;
   @include foundation-menu;
 
   .menu {
-    // @todo remove this !important decorator
-    background: inherit !important;
-
-    li, a {
-      background: inherit;
-    }
-  
     a {
       @include alkaline-menu-button;
-    }
 
-    .region.header &, 
-    .region.navbar & {
-      a {
+      .layer.header & {
         font-size: 0.875em;
       }
     }
@@ -78,20 +69,16 @@ $menu-button-font-family: inherit !default;
       }
     }
   }
-
-  .menu-wrapper {
-    background: inherit;
-  }
 }
 
 
-@mixin alkaline-social-share-menu {
+@mixin alkaline-share-menu {
   .menu.social-share {
     @include button-group(li, 0.5rem);
-      
+
     a {
-      height: 2rem;
-      width: 2rem;
+      height: $share-menu-button-size;
+      width: $share-menu-button-size;
       padding: 20%;
 
       svg.icon {
@@ -102,11 +89,6 @@ $menu-button-font-family: inherit !default;
           display: none;
         }
       }
-    }
-
-    li {
-      @include brand-colors(background-color);
-      fill: $white;
     }
   }
 }

@@ -1,0 +1,24 @@
+@import 'global';
+
+
+@mixin alkaline-button-theme {
+  .button {
+    @include button;
+
+    svg.icon {
+      fill: $button-color;
+    }
+
+    &[data-drupal-selector="edit-preview"] {
+      @include button-hollow-style;
+    }
+
+    &.hollow {
+      @include button-hollow-style;
+    }
+  }
+}
+
+@if $theme is alkaline {
+  @include alkaline-button-theme;
+}

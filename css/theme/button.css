@@ -1,0 +1,42 @@
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  font-family: inherit;
+  padding: 0.85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-color: #1779ba;
+  color: #fefefe; }
+  [data-whatinput='mouse'] .button {
+    outline: 0; }
+  .button:hover, .button:focus {
+    background-color: #14679e;
+    color: #fefefe; }
+  .button svg.icon {
+    fill: #fefefe; }
+  .button[data-drupal-selector="edit-preview"] {
+    border: 1px solid #1779ba;
+    color: #1779ba; }
+    .button[data-drupal-selector="edit-preview"]:hover, .button[data-drupal-selector="edit-preview"]:focus {
+      border-color: #0c3d5d;
+      color: #0c3d5d; }
+      .button[data-drupal-selector="edit-preview"]:hover.disabled, .button[data-drupal-selector="edit-preview"]:hover[disabled], .button[data-drupal-selector="edit-preview"]:focus.disabled, .button[data-drupal-selector="edit-preview"]:focus[disabled] {
+        border: 1px solid #1779ba;
+        color: #1779ba; }
+  .button.hollow {
+    border: 1px solid #1779ba;
+    color: #1779ba; }
+    .button.hollow:hover, .button.hollow:focus {
+      border-color: #0c3d5d;
+      color: #0c3d5d; }
+      .button.hollow:hover.disabled, .button.hollow:hover[disabled], .button.hollow:focus.disabled, .button.hollow:focus[disabled] {
+        border: 1px solid #1779ba;
+        color: #1779ba; }

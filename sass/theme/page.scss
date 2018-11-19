@@ -1,0 +1,37 @@
+@import 'global';
+
+
+$header-layer-background: $black;
+$header-layer-color: $white;
+
+$footer-layer-background: $medium-gray;
+$footer-layer-color: $black;
+
+$boilerplate-layer-color: $footer-layer-color;
+$boilerplate-layer-background: $footer-layer-background;
+
+
+@mixin alkaline-page-theme {
+  .layer {
+    &.header {
+      color: $header-layer-color;
+      background-color: $header-layer-background;
+      fill: $header-layer-color; // for SVG icons
+    }
+
+    &.footer {
+      color: $footer-layer-color;
+      background-color: $footer-layer-background;
+    }
+
+    &.boilerplate {
+      color: $boilerplate-layer-color;
+      background-color: $boilerplate-layer-background;
+    }
+  }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-page-theme;
+}

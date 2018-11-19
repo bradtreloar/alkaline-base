@@ -1,21 +1,8 @@
 
 
 
-// Defaults
-$admin-toolbar-height: 39px !default;
-$admin-toolbar-tray-height: 40px !default;
-
-$header-layer-background: $black !default;
-$header-layer-color: $white !default;
-
-$navbar-background: $header-layer-background !default;
-$navbar-color: $header-layer-color !default;
-
-$footer-layer-background: $medium-gray !default;
-$footer-layer-color: $black !default;
-
-$boilerplate-layer-color: $footer-layer-color !default;
-$boilerplate-layer-background: $footer-layer-background !default;
+$admin-toolbar-height: 39px;
+$admin-toolbar-tray-height: 40px;
 
 
 @mixin alkaline-page {
@@ -31,6 +18,13 @@ $boilerplate-layer-background: $footer-layer-background !default;
       flex-grow: 1;
     }
   }
+
+  @include alkaline-admin-layer;
+  @include alkaline-header-layer;
+  @include alkaline-lead-layer;
+  @include alkaline-main-layer;
+  @include alkaline-footer-layer;
+  @include alkaline-boilerplate-layer;
 }
 
 
@@ -71,8 +65,8 @@ $boilerplate-layer-background: $footer-layer-background !default;
 
 
 @mixin alkaline-navbar-super-region {
-  background: $navbar-background;
-  color: $navbar-color;
+  background: inherit;
+  color: inherit;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -131,9 +125,6 @@ $boilerplate-layer-background: $footer-layer-background !default;
 
 @mixin alkaline-header-layer {
   .layer.header {
-    color: $header-layer-color;
-    background-color: $header-layer-background;
-    fill: $header-layer-color; // for SVG icons
     width: 100%;
 
     &.fixed {
@@ -155,6 +146,7 @@ $boilerplate-layer-background: $footer-layer-background !default;
 
     // wrapper
     > div {
+      background: inherit;
       height: $top-bar-height;
       display: flex;
       justify-content: space-between;
@@ -266,8 +258,6 @@ $boilerplate-layer-background: $footer-layer-background !default;
 
 @mixin alkaline-footer-layer {
   .layer.footer {
-    color: $footer-layer-color;
-    background-color: $footer-layer-background;
     margin: $global-margin 0 0 0;
 
     > div {
@@ -293,8 +283,6 @@ $boilerplate-layer-background: $footer-layer-background !default;
 
 @mixin alkaline-boilerplate-layer {
   .layer.boilerplate {
-    color: $boilerplate-layer-color;
-    background-color: $boilerplate-layer-background;
     padding: (2 * $global-margin) 0 $global-margin;
 
     > div {

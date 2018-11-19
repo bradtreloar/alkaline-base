@@ -213,63 +213,55 @@
 .no-js [data-responsive-menu] ul {
   display: none; }
 
-.menu {
-  background: inherit !important; }
-  .menu li, .menu a {
-    background: inherit; }
-  .menu a {
-    color: inherit;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    font-family: inherit; }
-    .menu a svg.icon {
-      display: block;
-      height: 1.5em;
-      width: 1.5em; }
-      .menu a svg.icon + span {
-        display: none; }
-        @media print, screen and (min-width: 45em) {
-          .menu a svg.icon + span {
-            display: inline-block;
-            margin-left: 0.5em; } }
-    .menu a span {
-      display: block;
-      line-height: 1.5em; }
-  .region.header .menu a,
-  .region.navbar .menu a {
+.menu a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .menu a svg.icon {
+    display: block;
+    height: 1.5em;
+    width: 1.5em; }
+    .menu a svg.icon + span {
+      display: none; }
+      @media print, screen and (min-width: 45em) {
+        .menu a svg.icon + span {
+          display: inline-block;
+          margin-left: 0.5em; } }
+  .menu a span {
+    display: block;
+    line-height: 1.5em; }
+  .layer.header .menu a {
     font-size: 0.875em; }
-  .region.navbar .menu {
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column; }
-    @media print, screen and (min-width: 67.5em) {
-      .region.navbar .menu {
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row; } }
-  .region.footer .menu {
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column; }
-    .region.footer .menu a {
-      padding-left: 0;
-      padding-right: 0; }
 
-.menu-wrapper {
-  background: inherit; }
+.region.navbar .menu {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  @media print, screen and (min-width: 67.5em) {
+    .region.navbar .menu {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; } }
+
+.region.footer .menu {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .region.footer .menu a {
+    padding-left: 0;
+    padding-right: 0; }
 
 .is-drilldown {
   position: relative;
@@ -629,14 +621,12 @@
     display: block; }
 
 button[data-toggle="navbar"] {
-  color: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: inherit;
   height: 100%;
   line-height: 1;
   text-decoration: none;
@@ -691,39 +681,11 @@ button[data-toggle="navbar"] {
     .menu.social-share li:last-child {
       margin-right: 0; }
   .menu.social-share a {
-    height: 2rem;
-    width: 2rem;
+    height: 2em;
+    width: 2em;
     padding: 20%; }
     .menu.social-share a svg.icon {
       height: 100%;
       width: 100%; }
       .menu.social-share a svg.icon + span {
         display: none; }
-  .menu.social-share li {
-    fill: #fefefe; }
-    .menu.social-share li.facebook {
-      background-color: #3b5998; }
-    .menu.social-share li.github {
-      background-color: #000000; }
-    .menu.social-share li.google-plus {
-      background-color: #db3236; }
-    .menu.social-share li.instagram {
-      background-color: #8a3ab9; }
-    .menu.social-share li.linkedin {
-      background-color: #0077b5; }
-    .menu.social-share li.pinterest {
-      background-color: #bd081c; }
-    .menu.social-share li.rss {
-      background-color: #ff6600; }
-    .menu.social-share li.snapchat {
-      background-color: #fffc00; }
-    .menu.social-share li.snapchat {
-      background-color: #fffc00; }
-    .menu.social-share li.tumblr {
-      background-color: #32506d; }
-    .menu.social-share li.twitter {
-      background-color: #00aced; }
-    .menu.social-share li.whatsapp {
-      background-color: #4dc247; }
-    .menu.social-share li.youtube {
-      background-color: #bb0000; }

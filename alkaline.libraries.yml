@@ -23,6 +23,14 @@ base:
     - core/jquery.once
     - core/drupal
 
+theme:
+  css:
+    theme:
+      css/theme/button.css: {}
+      css/theme/menu.css: {}
+      css/theme/page.css: {}
+      css/theme/typography.css: {}
+
 action_links:
   css:
     component:
@@ -167,8 +175,3 @@ tags:
   css:
     component:
       css/components/tags.css: {}
-
-typography:
-  css:
-    component:
-      css/base/typography.css: {}

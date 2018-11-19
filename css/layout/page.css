@@ -16,9 +16,6 @@ div.page {
     max-width: 60rem; }
 
 .layer.header {
-  color: #fefefe;
-  background-color: #0a0a0a;
-  fill: #fefefe;
   width: 100%; }
   .layer.header.fixed {
     position: fixed;
@@ -32,6 +29,7 @@ div.page {
     body.toolbar-horizontal.toolbar-tray-open .layer.header.fixed {
       padding-top: 79px; }
   .layer.header > div {
+    background: inherit;
     height: 48px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -58,8 +56,8 @@ div.page {
     -ms-flex-pack: justify;
     justify-content: space-between; }
   .layer.header .super-region.navbar {
-    background: #0a0a0a;
-    color: #fefefe;
+    background: inherit;
+    color: inherit;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -197,8 +195,6 @@ div.page {
     top: -127px; }
 
 .layer.footer {
-  color: #0a0a0a;
-  background-color: #cacaca;
   margin: 1rem 0 0 0; }
   .layer.footer > div {
     margin: 0 auto;
@@ -211,8 +207,6 @@ div.page {
     margin: 1rem 0; }
 
 .layer.boilerplate {
-  color: #0a0a0a;
-  background-color: #cacaca;
   padding: 2rem 0 1rem; }
   .layer.boilerplate > div {
     margin: 0 auto;

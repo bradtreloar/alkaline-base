@@ -1,0 +1,46 @@
+
+
+
+$menu-button-font-family: inherit;
+$menu-button-background: inherit;
+$menu-button-color: inherit;
+
+
+@mixin alkaline-menu-button-theme {
+  background: inherit;
+  color: inherit;
+  font-family: $menu-button-font-family;
+}
+
+
+@mixin alkaline-menu-theme {
+
+  .menu {
+    // @todo remove this !important decorator
+    background: inherit !important;
+
+    li {
+      background: inherit;
+    }
+
+    a {
+      @include alkaline-menu-button-theme;
+    }
+  }
+
+  .menu-wrapper {
+    background: inherit;
+  }
+}
+
+
+@mixin alkaline-share-menu-theme {
+  .menu.social-share {
+    li {
+      @include brand-colors(background-color);
+      fill: $white;
+    }
+  }
+}
+
+

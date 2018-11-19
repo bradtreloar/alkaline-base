@@ -1,0 +1,40 @@
+.menu {
+  background: inherit !important; }
+  .menu li {
+    background: inherit; }
+  .menu a {
+    background: inherit;
+    color: inherit;
+    font-family: inherit; }
+
+.menu-wrapper {
+  background: inherit; }
+
+.menu.social-share li {
+  fill: #fefefe; }
+  .menu.social-share li.facebook {
+    background-color: #3b5998; }
+  .menu.social-share li.github {
+    background-color: #000000; }
+  .menu.social-share li.google-plus {
+    background-color: #db3236; }
+  .menu.social-share li.instagram {
+    background-color: #8a3ab9; }
+  .menu.social-share li.linkedin {
+    background-color: #0077b5; }
+  .menu.social-share li.pinterest {
+    background-color: #bd081c; }
+  .menu.social-share li.rss {
+    background-color: #ff6600; }
+  .menu.social-share li.snapchat {
+    background-color: #fffc00; }
+  .menu.social-share li.snapchat {
+    background-color: #fffc00; }
+  .menu.social-share li.tumblr {
+    background-color: #32506d; }
+  .menu.social-share li.twitter {
+    background-color: #00aced; }
+  .menu.social-share li.whatsapp {
+    background-color: #4dc247; }
+  .menu.social-share li.youtube {
+    background-color: #bb0000; }

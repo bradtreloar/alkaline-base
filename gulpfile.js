@@ -25,6 +25,7 @@ gulp.task('starterkit', () => {
       "./sass/base/typography.scss",
       "./sass/components/*.scss",
       "./sass/layout/*.scss",
+      "./sass/theme/*.scss",
       "./sass/util/*.scss",
       "./sass/_global.scss"
     ], {
@@ -60,5 +61,5 @@ gulp.task('sass', () => {
 
 // Compile .scss files to .css when .scss files are updated.
 gulp.task('watch', () => {
-  gulp.watch("./sass/**/*.scss", ['sass']) 
+  gulp.watch("./sass/**/*.scss", ['sass'])
 })

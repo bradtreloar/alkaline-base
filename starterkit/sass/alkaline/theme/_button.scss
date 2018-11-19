@@ -1,0 +1,21 @@
+
+
+
+@mixin alkaline-button-theme {
+  .button {
+    @include button;
+
+    svg.icon {
+      fill: $button-color;
+    }
+
+    &[data-drupal-selector="edit-preview"] {
+      @include button-hollow-style;
+    }
+
+    &.hollow {
+      @include button-hollow-style;
+    }
+  }
+}
+
