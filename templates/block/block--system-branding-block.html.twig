@@ -4,10 +4,11 @@
  * @file
  * Theme override for a branding block.
  *
- * Ignores site_name and site_slogan and 
+ * Ignores site_name and site_slogan and
  * always shows site_logo
 #}
 {% block content %}
+  {{ attach_library('alkaline/branding') }}
   <div class="branding">
     <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo">
       <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />

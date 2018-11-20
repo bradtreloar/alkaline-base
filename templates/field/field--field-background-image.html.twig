@@ -1,11 +1,25 @@
 {#
 /**
  * @file
- * Theme override for a Hero Banner Background image.
+ * Theme override for image fields
  *
- * The image item is rendered without a wrapper.
+ * Wraps image in a figure and adds an optional caption, whch is created by a
+ * field template preprocessor.
+ *
+ * The Classy classes have been preserved so that AJAX can update this field
  */
 #}
+{%
+  set classes = [
+    'field',
+    field_name|clean_class,
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
 {% for item in items %}
-  {{ item.content|raw }}
+  <picture {{ attributes.addClass(classes) }}>
+    {{ item.content }}
+  </picture>
 {% endfor %}

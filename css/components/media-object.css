@@ -4,45 +4,8 @@
   display: flex;
   margin-bottom: 1rem;
   -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap; }
-  .media-object img {
-    max-width: none; }
-  @media screen and (max-width: 44.9375em) {
-    .media-object.stack-for-small {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap; } }
-  @media screen and (max-width: 44.9375em) {
-    .media-object.stack-for-small .media-object-section {
-      padding: 0;
-      padding-bottom: 1rem;
-      -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-      max-width: 100%; }
-      .media-object.stack-for-small .media-object-section img {
-        width: 100%; } }
-
-.media-object-section {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto; }
-  .media-object-section:first-child {
-    padding-right: 1rem; }
-  .media-object-section:last-child:not(:nth-child(2)) {
-    padding-left: 1rem; }
-  .media-object-section > :last-child {
-    margin-bottom: 0; }
-  .media-object-section.main-section {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 0px;
-    flex: 1 1 0px; }
-
-.media-object {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 1rem;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap; }
+  flex-wrap: nowrap;
+  width: 100%; }
   .media-object > * {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
@@ -56,32 +19,12 @@
   .media-object figure {
     -webkit-box-flex: 0;
     -ms-flex: none;
-    flex: none; }
-    .media-object figure figcaption {
-      display: none; }
-    .media-object figure picture {
-      display: block;
+    flex: none;
+    max-width: 30vw; }
+    .media-object figure.thumbnail {
       max-width: 4.5rem; }
     .media-object figure a, .media-object figure img {
       display: block;
       max-width: 100%; }
   .media-object h2 {
     font-size: 1em; }
-
-.media-object-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-  .media-object-list, .media-object-list > li {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-  .media-object-list > li {
-    width: 100%; }
-    @media print, screen and (min-width: 67.5em) {
-      .media-object-list > li {
-        margin-right: 1rem;
-        max-width: 28rem;
-        width: 100%; } }

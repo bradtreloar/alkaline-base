@@ -187,6 +187,14 @@ function alkaline_preprocess_block(&$vars) {
  * Preprocessor for alkaline_hero_banner block type
  */
 function alkaline_preprocess_block_alkaline_hero_banner(&$vars) {
+  alkaline_preprocess_block_hero_banner($vars);
+}
+
+
+/**
+ * Preprocessor for alkaline_hero_banner block type
+ */
+function alkaline_preprocess_block_hero_banner(&$vars) {
 
   $uuid = $vars['derivative_plugin_id'];
   $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);

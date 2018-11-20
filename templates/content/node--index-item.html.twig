@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ */
+#}
+{{ attach_library('alkaline/media_object') }}
+{%
+  set classes = [
+    'media-object',
+  ]
+%}
+<div {{ attributes.addClass(classes) }}>
+  <figure>
+    {{ content.field_image ? content.field_image : content.field_background_image }}
+  </figure>
+  <div>
+    <h3{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h3>
+
+    <p>
+      {{ content|without('field_image', 'field_background_image') }}
+    </p>
+
+    <a href="{{ url }}">
+      View More
+    </a>
+  </div>
+</div>
+{{ css }}

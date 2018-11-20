@@ -19,8 +19,6 @@ libraries:
   - alkaline/address
   - alkaline/admin_toolbar
   - alkaline/ajax
-  - alkaline/branding
-  - alkaline/breadcrumbs
   - alkaline/card
   - alkaline/form
   - alkaline/icon
