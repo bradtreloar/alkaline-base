@@ -1,0 +1,15 @@
+@import 'global';
+@import 'alkaline/theme/page';
+
+
+$header-layer-background: $black;
+$header-layer-color: $white;
+
+$footer-layer-background: $medium-gray;
+$footer-layer-color: $black;
+
+$boilerplate-layer-color: $footer-layer-color;
+$boilerplate-layer-background: $footer-layer-background;
+
+
+@include alkaline-page-theme;

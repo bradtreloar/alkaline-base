@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'banner',
+    'hero',
+  ]
+%}
+{{ attach_library('alkaline/banner') }}
+<figure{{ attributes.addClass(classes) }}>
+  <figcaption>
+
+    <h1 class="page-title">{{ label }}</h1>
+
+    <p>
+      {{ content.field_summary }}
+    </p>
+
+  </figcaption>
+</figure>
+{{ css }}

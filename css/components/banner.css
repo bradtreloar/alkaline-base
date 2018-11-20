@@ -1,7 +1,5 @@
 .banner {
   position: relative;
-  background-color: transparent;
-  color: #0a0a0a;
   height: 100%;
   padding: 3rem 1rem;
   width: 100%;
@@ -88,9 +86,7 @@
 
 .banner.hero {
   padding: 3rem 1rem 3rem;
-  text-align: center;
-  background-color: transparent;
-  color: #0a0a0a; }
+  text-align: center; }
   @media print, screen and (min-width: 45em) {
     .banner.hero {
       padding: 6rem; } }

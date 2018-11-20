@@ -25,6 +25,23 @@ function _alkaline_article_header(&$vars) {
 }
 
 
+function _alkaline_lead_section(&$vars) {
+  $node = $vars['node'];
+  $vars['attributes']['id'] = "lead--" . $node->id();
+  if ($node->field_background_image) {
+    // Fetch the background image URI.
+    $file = $node->field_background_image->entity;
+    if($file) {
+      $uri = $file->getFileUri();
+      $htmlId = $vars['attributes']['id'];
+
+      // Add style element to vars.
+      $vars['css'] = _alkaline_responsive_background_css('hero', "#$htmlId::after", $uri);
+    }
+  }
+}
+
+
 function _alkaline_responsive_background_css($imageStyleClass, $selector, $imageUri) {
   // Fetch this theme's breakpoints.
   $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('alkaline');

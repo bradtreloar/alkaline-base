@@ -1,0 +1,11 @@
+@import 'global';
+@import 'alkaline/theme/menu';
+
+
+$menu-button-font-family: inherit;
+$menu-button-background: inherit;
+$menu-button-color: inherit;
+
+
+@include alkaline-menu-theme;
+@include alkaline-share-menu-theme;

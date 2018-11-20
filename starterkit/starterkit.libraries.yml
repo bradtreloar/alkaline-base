@@ -1,15 +1,10 @@
 
-button:
+theme:
   css:
-    component:
-      css/components/button.css: {}
-
-menu:
-  css:
-    component:
-      css/components/menu.css: {}
-
-typography:
-  css:
-    base:
-      css/base/typography.css: {}
+    theme:
+      css/theme/banner.css: {}
+      css/theme/breadcrumbs.css: {}
+      css/theme/button.css: {}
+      css/theme/menu.css: {}
+      css/theme/page.css: {}
+      css/theme/typography.css: {}

@@ -1,18 +1,9 @@
 
 
 
-$banner-background: transparent;
-$banner-color: $black;
-
-$hero-banner-background: $banner-background;
-$hero-banner-color: $banner-color!default;
-
-
 @mixin alkaline-banner {
   .banner {
     @include alkaline-background-image;
-    background-color: $banner-background;
-    color: $banner-color;
     height: 100%;
     padding: 3rem 1rem;
     width: 100%;
@@ -33,7 +24,7 @@ $hero-banner-color: $banner-color!default;
         margin: 0;
       }
     }
-    
+
     h1, h2 {
       line-height: 1.2em;
     }
@@ -69,8 +60,6 @@ $hero-banner-color: $banner-color!default;
   .banner.hero {
     padding: 3rem 1rem 3rem;
     text-align: center;
-    background-color: $hero-banner-background;
-    color: $hero-banner-color;
 
     @include breakpoint(medium) {
       padding: 6rem;
