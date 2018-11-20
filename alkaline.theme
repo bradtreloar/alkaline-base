@@ -29,7 +29,7 @@ function alkaline_responsive_background_css($imageStyleClass, $selector, $imageU
   // Fetch this theme's breakpoints.
   $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('alkaline');
 
-  // Prepare an array of CSS media queries and URLs to be 
+  // Prepare an array of CSS media queries and URLs to be
   // assembled into background-image rules.
   $cssRules = [];
   foreach ($breakpoints as $name => $breakpoint) {
@@ -70,18 +70,18 @@ function alkaline_responsive_background_css($imageStyleClass, $selector, $imageU
  * @param array $icons
  *   An array of arrays of icons names, keyed by the file name
  *   without the .svg extension.
- * 
+ *
  * @return string
  *   an <svg> element containing <symbol> elements
  */
 function alkaline_get_svg_icons(array $icons) {
   $selected_nodes = [];
-  
+
   // load the selected icons into an array
   foreach ($icons as $set => $selected_ids) {
     $svgDoc = new DOMDocument();
     $svgDoc->load(drupal_get_path('theme', 'alkaline') . "/icons/$set.svg");
-    
+
     foreach ($svgDoc->getElementsByTagName('symbol') as $node) {
       $id = $node->getAttribute('id');
       if (in_array($id, $selected_ids)) {
@@ -117,7 +117,7 @@ function alkaline_get_svg_icons(array $icons) {
 
 /**
  * Generates SVG icon render array.
- * 
+ *
  * @todo Replace with a render plugin
  */
 function alkaline_icon($name) {
@@ -203,7 +203,7 @@ function alkaline_preprocess_block_views(&$vars) {
       $url = $display->getOption('link_url');
     }
     // @todo Handle link provided by other view displays (e.g. page)
-  
+
     // Prepare the link element.
     $vars['more_link'] = [
       '#type' => 'link',
@@ -214,18 +214,6 @@ function alkaline_preprocess_block_views(&$vars) {
       ]
     ];
   }
-}
-
-
-/**
- * Implements template_preprocess_commerce_product_variation()
- */
-function alkaline_preprocess_commerce_product_variation(&$vars) {
-  // kint($vars);
-  // // Get the commerce product.
-  // $product = $vars['elements']['#commerce_product'];
-  // // Pass the price.
-  // $vars['price'] = $product->variations->entity->getPrice();
 }
 
 
@@ -244,7 +232,7 @@ function alkaline_preprocess_field(&$vars) {
   if (function_exists($field_name_preprocessor)) {
     $field_name_preprocessor($vars);
   }
-  
+
 }
 
 
@@ -270,18 +258,6 @@ function alkaline_preprocess_field_feature(&$vars) {
   // Add the grid classes to the class array.
   $vars['attributes']['class'] = array_merge($classes, $grid_classes);
 }
-
-
-// /**
-//  * Preprocessor for field_image
-//  */
-// function alkaline_preprocess_field_type_image(&$vars) {
-//   // Supply the alt text to the template as the caption.
-//   foreach ($vars['items'] as &$item) {
-//     $image = $item['content']['#item']->getValue();
-//     $item['caption'] = $image['alt'];
-//   }
-// }
 
 
 /**
@@ -375,11 +351,15 @@ function alkaline_preprocess_node(&$vars) {
   // Change the submission date format
   $vars['date'] = \Drupal::service('date.formatter')
     ->format($vars['node']->getCreatedTime(), 'custom', 'j M Y');
-  
+
   // Call the type-specific preprocessor.
   $node_type_preprocessor = __FUNCTION__ . '_' . $vars['node']->getType();
   if (function_exists($node_type_preprocessor)) {
     $node_type_preprocessor($vars);
+  }
+
+  if ($vars['view_mode'] == 'lead') {
+    alkaline_lead_section($vars);
   }
 }
 
@@ -426,26 +406,6 @@ function alkaline_preprocess_page(&$vars) {
 
 
 /**
- * Implements template_preprocess_user()
- */
-function alkaline_preprocess_user(&$vars) {
-  // dpm(array_keys($vars));
-  //dpm($vars['theme_hook_original']);
-}
-
-
-// /**
-//  * Implements hook_theme_suggestions_alter()
-//  */
-// function alkaline_theme_suggestions_alter(&$suggestions, $vars) {
-//   // add view mode template suggestion for Users
-//   if ($vars['theme_hook_original'] == 'user') {
-//     $suggestions[] = 'user__' . $vars['elements']['#view_mode'];
-//   }
-// }
-
-
-/**
  * Implements hook_theme_suggestions_block_alter()
  */
 function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
@@ -454,7 +414,7 @@ function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
   if ($vars['elements']['#base_plugin_id'] == 'block_content') {
 
     // Get the block type from the database.
-    $uuid = $vars['elements']['#derivative_plugin_id'];    
+    $uuid = $vars['elements']['#derivative_plugin_id'];
     $block_type = \Drupal::database()
     ->select('block_content','bc')
     ->fields('bc', ['type'])
@@ -476,7 +436,7 @@ function alkaline_theme_suggestions_page_alter(array &$suggestions, array $varia
   $route_name = \Drupal::routeMatch()->getRouteName();
   $route_parts = explode('.', $route_name);
 
-  // is it system.4xx ? 
+  // is it system.4xx ?
   if (count($route_parts) == 2 && $route_parts[0] === 'system') {
     $code = $route_parts[1];
     if (is_numeric($code) && $code >= 400 and $code < 500) {
