@@ -5,7 +5,7 @@ use Drupal\Component\Utility\Html;
 use Drupal\image\Entity\ImageStyle;
 
 
-function alkaline_article_header(&$vars) {
+function _alkaline_article_header(&$vars) {
   // Create a header
   $vars['header'] = [];
 
@@ -25,7 +25,7 @@ function alkaline_article_header(&$vars) {
 }
 
 
-function alkaline_responsive_background_css($imageStyleClass, $selector, $imageUri) {
+function _alkaline_responsive_background_css($imageStyleClass, $selector, $imageUri) {
   // Fetch this theme's breakpoints.
   $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('alkaline');
 
@@ -74,7 +74,7 @@ function alkaline_responsive_background_css($imageStyleClass, $selector, $imageU
  * @return string
  *   an <svg> element containing <symbol> elements
  */
-function alkaline_get_svg_icons(array $icons) {
+function _alkaline_get_svg_icons(array $icons) {
   $selected_nodes = [];
 
   // load the selected icons into an array
@@ -120,7 +120,7 @@ function alkaline_get_svg_icons(array $icons) {
  *
  * @todo Replace with a render plugin
  */
-function alkaline_icon($name) {
+function _alkaline_icon($name) {
   return [
     '#prefix' => '<svg class="icon">',
     '#markup' => '<use xlink:href="#' . $name . '" />',
@@ -181,7 +181,7 @@ function alkaline_preprocess_block_alkaline_hero_banner(&$vars) {
       $htmlId = $vars['attributes']['id'];
 
       // Add style element to vars.
-      $vars['css'] = alkaline_responsive_background_css('hero', "#$htmlId figure::after", $uri);
+      $vars['css'] = _alkaline_responsive_background_css('hero', "#$htmlId figure::after", $uri);
     }
   }
 }
@@ -294,7 +294,7 @@ function alkaline_preprocess_html(&$vars) {
   $vars['favicon_dir'] = $base_url.'/'. $theme->getPath() .'/images/favicon';
 
   // Get the SVG icons.
-  $vars['icons'] = alkaline_get_svg_icons([
+  $vars['icons'] = _alkaline_get_svg_icons([
     'fa-brands' => [
       'facebook-f',
       'twitter',
@@ -359,7 +359,7 @@ function alkaline_preprocess_node(&$vars) {
   }
 
   if ($vars['view_mode'] == 'lead') {
-    alkaline_lead_section($vars);
+    _alkaline_lead_section($vars);
   }
 }
 
@@ -369,7 +369,7 @@ function alkaline_preprocess_node(&$vars) {
  */
 function alkaline_preprocess_node_article(&$vars) {
   if ($vars['view_mode'] == 'full') {
-    alkaline_article_header($vars);
+    _alkaline_article_header($vars);
   }
 }
 
@@ -379,7 +379,7 @@ function alkaline_preprocess_node_article(&$vars) {
  */
 function alkaline_preprocess_node_portfolio_project(&$vars) {
   if ($vars['view_mode'] == 'full') {
-    alkaline_article_header($vars);
+    _alkaline_article_header($vars);
   }
 }
 
