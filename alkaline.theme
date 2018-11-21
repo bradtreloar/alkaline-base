@@ -12,7 +12,7 @@ function _alkaline_article_header(&$vars) {
   // Move some fields to the header section.
   $header_fields = [
     'social_share_buttons',
-    'field_lead_section',
+    'field_summary',
     'field_image',
   ];
 

@@ -7,25 +7,22 @@
 {{ attach_library('alkaline/article') }}
 {%
   set classes = [
-    'node',
-    node.bundle|clean_class,
-    node.isPromoted() ? 'promoted',
-    node.isSticky() ? 'sticky',
-    not node.isPublished() ? 'unpublished',
-    view_mode|clean_class,
+    'teaser',
   ]
 %}
 <article{{ attributes.addClass(classes) }}>
 
   <header>
     {{ content.field_image }}
+
+    <div class="title-bar">
+      <h2{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    </div>
   </header>
 
   <section>
-
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
 
     {% if display_submitted %}
       <footer class="node__meta">

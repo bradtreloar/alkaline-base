@@ -82,6 +82,9 @@
     }
 
     header {
+      max-width: $global-width;
+      margin: $global-margin auto;
+
       p {
         font-size: $lead-font-size;
         line-height: $lead-lineheight;
@@ -109,6 +112,8 @@
 
     footer {
       @include media-object-container;
+      max-width: $global-width;
+      margin: $global-margin auto;
 
       > * {
         @include media-object-section;
@@ -133,34 +138,15 @@
 
     .links {
       list-style: none;
-      margin: 0;
       @include button-group(li);
+      max-width: $global-width;
+      margin: $global-margin auto;
+      padding: 0 $global-margin;
 
       a {
         @include button-base;
         padding: 0.33rem 0.5rem;
-      }
-    }
-  }
-}
-
-
-@mixin alkaline-blog-article-teaser {
-  .blog-article.teaser {
-    @include breakpoint(medium) {
-      @include media-object-container;
-
-      > * {
-        @include media-object-section;
-      }
-    }
-
-    header {
-      min-width: 33%;
-
-      // Don't show the image field's caption on teaser.
-      figcaption {
-        display: none;
+        margin: 0;
       }
     }
   }
@@ -169,5 +155,4 @@
 
 @if $theme is alkaline {
   @include alkaline-article;
-  @include alkaline-blog-article-teaser;
 }

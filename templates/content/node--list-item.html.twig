@@ -7,13 +7,7 @@
 {{ attach_library('alkaline/media_object') }}
 {%
   set classes = [
-    'node',
     'media-object',
-    node.bundle|clean_class,
-    node.isPromoted() ? 'promoted',
-    node.isSticky() ? 'sticky',
-    not node.isPublished() ? 'unpublished',
-    view_mode|clean_class,
   ]
 %}
 <article{{ attributes.addClass(classes) }}>

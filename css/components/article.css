@@ -59,35 +59,40 @@ article {
     padding: 1rem; }
   article *:not(figure) img {
     margin-bottom: 1rem; }
-  article header p {
-    font-size: 125%;
-    line-height: 1.6; }
-  article header figure a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 100%;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-  article header picture {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+  article header {
     max-width: 60rem;
     margin: 1rem auto; }
-    article header picture img {
-      display: block; }
+    article header p {
+      font-size: 125%;
+      line-height: 1.6; }
+    article header figure a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+    article header picture {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      max-width: 60rem;
+      margin: 1rem auto; }
+      article header picture img {
+        display: block; }
   article footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin-bottom: 1rem;
     -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap; }
+    flex-wrap: nowrap;
+    max-width: 60rem;
+    margin: 1rem auto; }
     article footer > * {
       -webkit-box-flex: 0;
       -ms-flex: 0 1 auto;
@@ -107,7 +112,6 @@ article {
       display: block; }
   article .links {
     list-style: none;
-    margin: 0;
     margin-bottom: 1rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -116,7 +120,10 @@ article {
     flex-wrap: nowrap;
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
-    align-items: stretch; }
+    align-items: stretch;
+    max-width: 60rem;
+    margin: 1rem auto;
+    padding: 0 1rem; }
     article .links::before, article .links::after {
       display: table;
       content: ' ';
@@ -152,30 +159,7 @@ article {
       line-height: 1;
       text-align: center;
       cursor: pointer;
-      padding: 0.33rem 0.5rem; }
+      padding: 0.33rem 0.5rem;
+      margin: 0; }
       [data-whatinput='mouse'] article .links a {
         outline: 0; }
-
-@media print, screen and (min-width: 45em) {
-  .blog-article.teaser {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 1rem;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap; }
-    .blog-article.teaser > * {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-      flex: 0 1 auto; }
-      .blog-article.teaser > *:first-child {
-        padding-right: 1rem; }
-      .blog-article.teaser > *:last-child:not(:nth-child(2)) {
-        padding-left: 1rem; }
-      .blog-article.teaser > * > :last-child {
-        margin-bottom: 0; } }
-
-.blog-article.teaser header {
-  min-width: 33%; }
-  .blog-article.teaser header figcaption {
-    display: none; }
