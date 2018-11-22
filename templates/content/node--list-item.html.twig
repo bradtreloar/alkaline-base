@@ -10,16 +10,15 @@
     'media-object',
   ]
 %}
-<article{{ attributes.addClass(classes) }}>
+<div {{ attributes.addClass(classes) }}>
+  <figure>
+    {{ content.field_image ? content.field_image : content.field_background_image }}
+  </figure>
+  <div>
+    <h3{{ title_attributes }}>
+      {{ label }}
+    </h3>
 
-  {{ content.field_image }}
-
-  <header>
-    {{ title_prefix }}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-    {{ title_suffix }}
-  </header>
-
-</article>
+    {{ content|without('field_image', 'field_background_image') }}
+  </div>
+</div>

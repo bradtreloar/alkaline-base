@@ -1,21 +1,23 @@
 article {
   margin: 1rem 0;
   padding: 0; }
+  article.teaser {
+    margin: 2rem 0; }
   article.contact-details span {
     display: inline-block;
     vertical-align: top; }
-  article .body section > * {
-    max-width: 60rem;
-    margin: 1rem auto; }
-  article .body section picture {
+  article picture {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
-    article .body section picture img {
+    article picture img {
       display: block; }
+  article .body section > * {
+    max-width: 60rem;
+    margin: 1rem auto; }
   article .body section .text {
     padding: 0 1rem; }
   article .body section > figure {

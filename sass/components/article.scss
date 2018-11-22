@@ -6,6 +6,10 @@
     margin: $global-margin 0;
     padding: 0;
 
+    &.teaser {
+      margin: (2 * $global-margin) 0;
+    }
+
     // @todo Review this block.
     &.contact-details {
       span {
@@ -14,19 +18,19 @@
       }
     }
 
+    picture {
+      display: flex;
+      justify-content: center;
+
+      img {
+        display: block;
+      }
+    }
+
     .body section {
       > * {
         max-width: $global-width;
         margin: $global-margin auto;
-      }
-
-      picture {
-        display: flex;
-        justify-content: center;
-
-        img {
-          display: block;
-        }
       }
 
       .text {

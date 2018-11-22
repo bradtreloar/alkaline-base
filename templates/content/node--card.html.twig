@@ -20,5 +20,7 @@
     <h3{{ title_attributes }}>
       <a href="{{ url }}" rel="bookmark">{{ label }}</a>
     </h3>
+
+    {{ content.without('content.field_image', 'content.field_background_image') }}
   </div>
 </div>

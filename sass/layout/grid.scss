@@ -2,6 +2,7 @@
 
 
 .grid {
+  display: flex;
   justify-content: center;
   list-style: none;
   margin: 0 auto; // Let the grid centre itself.
@@ -32,12 +33,6 @@
 
 // Regions use .block instead of li
 .grid.region {
-  // justify-content: center;
-  // list-style: none;
-  // margin: 0;
-  // padding: 0;
-  // @include xy-grid;
-
   @for $c from 1 through 12 {
     @each $name, $width in $breakpoints {
       &.#{$name}-#{$c} {
