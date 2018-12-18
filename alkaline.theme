@@ -427,7 +427,7 @@ function alkaline_preprocess_node_page(&$vars) {
 function alkaline_preprocess_paragraph(&$vars) {
 	$paragraph = $vars['paragraph'];
   $vars['emphasise'] = false;
-  if (!$paragraph->field_emphasis->isEmpty()) {
+  if ($paragraph->field_emphasis && !$paragraph->field_emphasis->isEmpty()) {
     $vars['emphasised'] = $paragraph->field_emphasis->get(0)->getValue()['value'];
   }
 }

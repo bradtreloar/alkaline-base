@@ -5,6 +5,12 @@
  * Theme override for a paragraph type.
 #}
 {% block content %}
+{{ attach_library('alkaline/card') }}
+{%
+  set classes = [
+    'card',
+  ]
+%}
 <figure {{ attributes.addClass(classes) }}>
   {{ content.field_image }}
   <figcaption>
