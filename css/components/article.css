@@ -15,12 +15,16 @@ article {
     justify-content: center; }
     article picture img {
       display: block; }
-  article .body section > * {
-    max-width: 60rem;
+  article .body-section > div {
+    max-width: 45rem;
     margin: 1rem auto; }
-  article .body section .text {
+  article .body-section.emphasised {
+    font-size: 120%; }
+    article .body-section.emphasised > div {
+      padding-top: 1rem; }
+  article .body-section .text {
     padding: 0 1rem; }
-  article .body section > figure {
+  article .body-section > figure {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -28,17 +32,17 @@ article {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
-    article .body section > figure.image figcaption {
+    article .body-section > figure.image figcaption {
       padding: 1rem; }
-    article .body section > figure.feature {
+    article .body-section > figure.feature {
       padding: 1.5rem 0.625rem;
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; }
-      article .body section > figure.feature figcaption,
-      article .body section > figure.feature picture {
+      article .body-section > figure.feature figcaption,
+      article .body-section > figure.feature picture {
         padding: 0 0.625rem; }
-      article .body section > figure.feature a {
+      article .body-section > figure.feature a {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -47,12 +51,12 @@ article {
         -ms-flex-pack: center;
         justify-content: center; }
       @media print, screen and (min-width: 45em) {
-        article .body section > figure.feature {
+        article .body-section > figure.feature {
           -webkit-box-orient: horizontal;
           -webkit-box-direction: normal;
           -ms-flex-direction: row;
           flex-direction: row; }
-          article .body section > figure.feature picture {
+          article .body-section > figure.feature picture {
             -webkit-box-flex: 0;
             -ms-flex: none;
             flex: none;
@@ -62,7 +66,7 @@ article {
   article *:not(figure) img {
     margin-bottom: 1rem; }
   article header {
-    max-width: 60rem;
+    max-width: 45rem;
     margin: 1rem auto; }
     article header p {
       font-size: 125%;
@@ -82,7 +86,7 @@ article {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
-      max-width: 60rem;
+      max-width: 45rem;
       margin: 1rem auto; }
       article header picture img {
         display: block; }
@@ -93,7 +97,7 @@ article {
     margin-bottom: 1rem;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    max-width: 60rem;
+    max-width: 45rem;
     margin: 1rem auto; }
     article footer > * {
       -webkit-box-flex: 0;
@@ -123,7 +127,7 @@ article {
     -webkit-box-align: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
-    max-width: 60rem;
+    max-width: 45rem;
     margin: 1rem auto;
     padding: 0 1rem; }
     article .links::before, article .links::after {

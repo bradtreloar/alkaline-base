@@ -26,6 +26,7 @@ base:
 theme:
   css:
     theme:
+      css/theme/article.css: {}
       css/theme/banner.css: {}
       css/theme/button.css: {}
       css/theme/menu.css: {}

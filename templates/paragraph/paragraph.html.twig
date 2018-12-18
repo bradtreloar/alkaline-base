@@ -10,9 +10,21 @@
   ]
 %}
 {% block paragraph %}
+
+  {% if emphasised %}
+    <div class="body-section emphasised">
+  {% else %}
+    <div class="body-section">
+  {% endif %}
+
   {% block content %}
-    <div {{ attributes.addClass(classes) }}>
-      {{ content }}
+    <div>
+      <div {{ attributes.addClass(classes) }}>
+        {{ content }}
+      </div>
     </div>
   {% endblock %}
+
+  </div>
+
 {% endblock paragraph %}

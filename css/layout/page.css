@@ -13,7 +13,7 @@ div.page {
   position: relative; }
   .layer.admin .region.content-width {
     margin: 0 auto;
-    max-width: 60rem; }
+    max-width: 45rem; }
 
 .layer.header {
   width: 100%; }
@@ -175,7 +175,7 @@ div.page {
         height: 100%; }
   .layer.lead .region.content-width {
     margin: 0 auto;
-    max-width: 60rem; }
+    max-width: 45rem; }
 
 .layer.main {
   margin: 0 0 2rem; }

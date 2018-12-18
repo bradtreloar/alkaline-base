@@ -1,6 +1,4 @@
 @import 'global';
-// @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,700i');
-// $OpenSans: 'Open Sans', 'Calibri', 'Tahoma', 'Arial', 'sans-serif';
 
 
 @mixin alkaline-typography {
@@ -13,7 +11,7 @@
     &.grid {
       ul, ol {
         margin-left: 1.25 * $global-margin;
-        margin-bottom: $global-margin; 
+        margin-bottom: $global-margin;
       }
     }
   }

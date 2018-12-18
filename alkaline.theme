@@ -422,6 +422,19 @@ function alkaline_preprocess_node_page(&$vars) {
 
 
 /**
+ * Preprocessor for article content type
+ */
+function alkaline_preprocess_paragraph(&$vars) {
+	$paragraph = $vars['paragraph'];
+  $vars['emphasise'] = false;
+  if (!$paragraph->field_emphasis->isEmpty()) {
+    $vars['emphasised'] = $paragraph->field_emphasis->get(0)->getValue()['value'];
+  }
+}
+
+
+
+/**
  * Implements template_preprocess_page()
  */
 function alkaline_preprocess_page(&$vars) {
@@ -456,7 +469,7 @@ function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
 /**
  * Implements hook_theme_suggestions_page_alter() to set 4xx template suggestions.
  */
-function alkaline_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+function alkaline_theme_suggestions_page_alter(array &$suggestions, array $vars) {
   // get the route
   $route_name = \Drupal::routeMatch()->getRouteName();
   $route_parts = explode('.', $route_name);

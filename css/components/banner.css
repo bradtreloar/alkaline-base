@@ -35,7 +35,7 @@
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
-    max-width: 60rem; }
+    max-width: 45rem; }
     .banner > * > div:last-of-type:not(:first-of-type) {
       margin-bottom: 1rem;
       display: -webkit-box;
@@ -109,12 +109,12 @@
       .banner.hero .button {
         font-size: 1.2em; } }
   .banner.hero figcaption {
-    max-width: 60rem; }
+    max-width: 45rem; }
 
 .banner.callout {
   color: inherit;
   margin: 0 auto;
-  max-width: 60rem; }
+  max-width: 45rem; }
   @media print, screen and (min-width: 45em) {
     .banner.callout {
       padding: 6rem 1rem; } }

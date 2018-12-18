@@ -3,16 +3,16 @@
  * @file
  * Theme override for the Body field.
  *
- * The body is rendered without any wrapper because all of its content can be 
+ * The body is rendered without any wrapper because all of its content can be
  * assumed to be block elements.
  */
 #}
 <div class="body">
 {% for item in items %}
-  <section>
+  <div class="body-section">
     <div class="text">
       {{ item.content }}
     </div>
-  </section>
+  </div>
 {% endfor %}
 </div>

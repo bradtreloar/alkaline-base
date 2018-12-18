@@ -27,10 +27,18 @@
       }
     }
 
-    .body section {
-      > * {
+    .body-section {
+      > div {
         max-width: $global-width;
         margin: $global-margin auto;
+      }
+
+      &.emphasised {
+        font-size: 120%;
+
+        > div {
+          padding-top: $global-margin;
+        }
       }
 
       .text {
