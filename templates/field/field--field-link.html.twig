@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Theme override for links in a Hero Banner.
+ *
+ * Links are rendered as a group of buttons.
+ */
+#}
+{{ attach_library('alkaline/links') }}
+<div class="links">
+  {% for item in items %}
+    <a href="{{ item.url }}">
+      <span>{{ item.title }}</span>
+    </a>
+  {% endfor %}
+</div>

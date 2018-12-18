@@ -8,7 +8,7 @@ $article-emphasis-color: $white !default;
 
 @mixin alkaline-article-theme {
   article {
-    .body-section {
+    .section {
       &.emphasised {
         background-color: $article-emphasis-background;
         background-image: $article-emphasis-background-image;

@@ -21,6 +21,9 @@
     -ms-flex: none;
     flex: none;
     max-width: 30vw; }
+    @media print, screen and (min-width: 45em) {
+      .media-object figure {
+        max-width: 50%; } }
     .media-object figure.thumbnail {
       max-width: 4.5rem; }
     .media-object figure a, .media-object figure img {

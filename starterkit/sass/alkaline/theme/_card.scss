@@ -1,0 +1,13 @@
+
+
+
+$card-border: solid 1px $medium-gray;
+
+
+@mixin alkaline-card-theme {
+  .card {
+    border: $card-border;
+  }
+}
+
+

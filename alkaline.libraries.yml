@@ -28,7 +28,9 @@ theme:
     theme:
       css/theme/article.css: {}
       css/theme/banner.css: {}
+      css/theme/breadcrumbs.css: {}
       css/theme/button.css: {}
+      css/theme/card.css: {}
       css/theme/menu.css: {}
       css/theme/page.css: {}
       css/theme/typography.css: {}
@@ -118,6 +120,11 @@ lightbox:
     js/lightbox.js:
   dependencies:
     - alkaline/base
+
+links:
+  css:
+    component:
+      css/components/links.css: {}
 
 local_tasks:
   css:

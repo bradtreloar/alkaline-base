@@ -27,22 +27,21 @@
       }
     }
 
-    .body-section {
-      > div {
+    .text-formatted {
+      width: 100%;
+    }
+
+    .section {
+      > .row {
         max-width: $global-width;
-        margin: $global-margin auto;
+        margin: ($global-margin * 2) auto;
       }
 
       &.emphasised {
-        font-size: 120%;
-
-        > div {
+        > .row {
+          font-size: 120%;
           padding-top: $global-margin;
         }
-      }
-
-      .text {
-        padding: 0 $global-margin;
       }
 
       > figure {
@@ -88,8 +87,8 @@
       }
     }
 
-    // Put bottom margin on img if not inside figure, which already has margins.
-    *:not(figure) img {
+    // Put bottom margin on img if not inside picture.
+    *:not(picture) > img {
       margin-bottom: $global-margin;
     }
 
@@ -148,19 +147,19 @@
       }
     }
 
-    .links {
-      list-style: none;
-      @include button-group(li);
-      max-width: $global-width;
-      margin: $global-margin auto;
-      padding: 0 $global-margin;
+    // .links {
+    //   list-style: none;
+    //   @include button-group(li);
+    //   max-width: $global-width;
+    //   margin: $global-margin auto;
+    //   padding: 0 $global-margin;
 
-      a {
-        @include button-base;
-        padding: 0.33rem 0.5rem;
-        margin: 0;
-      }
-    }
+    //   a {
+    //     @include button-base;
+    //     padding: 0.33rem 0.5rem;
+    //     margin: 0;
+    //   }
+    // }
   }
 }
 

@@ -1,0 +1,16 @@
+@import 'global';
+
+@mixin alkaline-links {
+  .links {
+    margin: 0 0 $global-margin 0;
+
+    a {
+      font-size: 120%;
+    }
+  }
+}
+
+
+@if $theme is alkaline {
+  @include alkaline-links;
+}

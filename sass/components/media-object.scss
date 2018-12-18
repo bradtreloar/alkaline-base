@@ -14,6 +14,10 @@
       flex: none;
       max-width: 30vw;
 
+      @include breakpoint(medium) {
+        max-width: 50%;
+      }
+
       &.thumbnail {
         max-width: 3rem * $global-lineheight;
       }
@@ -23,10 +27,6 @@
         max-width: 100%;
       }
     }
-
-    // h2 {
-    //   font-size: 1em;
-    // }
   }
 }
 

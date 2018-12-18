@@ -262,22 +262,22 @@ function alkaline_preprocess_field(&$vars) {
 
 
 /**
- * Preprocessor for field_feature
+ * Preprocessor for field_card
  */
-function alkaline_preprocess_field_feature(&$vars) {
+function alkaline_preprocess_field_card(&$vars) {
   // Get the existing classes
   $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
 
-  // Get the number of features.
-  $feature_count = count($vars['items']);
+  // Get the number of cards.
+  $card_count = count($vars['items']);
 
   // Set the grid classes based on the number of items.
-  switch($feature_count) {
+  switch($card_count) {
     case 1: $grid_classes = ['grid', 'small-1']; break;
     case 2: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
     case 3: $grid_classes = ['grid', 'small-1', 'medium-3']; break;
     case 4: $grid_classes = ['grid', 'small-2', 'medium-4']; break;
-    default: $grid_classes = [];
+    default: $grid_classes = ['grid', 'small-2', 'medium-4'];
   }
 
   // Add the grid classes to the class array.
@@ -426,7 +426,7 @@ function alkaline_preprocess_node_page(&$vars) {
  */
 function alkaline_preprocess_paragraph(&$vars) {
 	$paragraph = $vars['paragraph'];
-  $vars['emphasise'] = false;
+  $vars['emphasised'] = false;
   if ($paragraph->field_emphasis && !$paragraph->field_emphasis->isEmpty()) {
     $vars['emphasised'] = $paragraph->field_emphasis->get(0)->getValue()['value'];
   }

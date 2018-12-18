@@ -4,27 +4,18 @@
  * Custom theme implementation to display a paragraph.
  */
 #}
-{%
-  set classes = [
-    paragraph.bundle|clean_class,
-  ]
-%}
 {% block paragraph %}
-
-  {% if emphasised %}
-    <div class="body-section emphasised">
-  {% else %}
-    <div class="body-section">
-  {% endif %}
-
   {% block content %}
-    <div>
-      <div {{ attributes.addClass(classes) }}>
+    {% if emphasised %}
+      <div class="section emphasised">
+    {% else %}
+      <div class="section">
+    {% endif %}
+
+      <div class="row">
         {{ content }}
       </div>
+
     </div>
-  {% endblock %}
-
-  </div>
-
+  {% endblock content %}
 {% endblock paragraph %}

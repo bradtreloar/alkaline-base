@@ -5,16 +5,25 @@
  * Theme override for a paragraph type.
 #}
 {% block content %}
-{{ attach_library('alkaline/card') }}
-{%
-  set classes = [
-    'card',
-  ]
-%}
-<figure {{ attributes.addClass(classes) }}>
-  {{ content.field_image }}
-  <figcaption>
-    {{ content|without('field_image') }}
-  </figcaption>
-</figure>
+  {{ attach_library('alkaline/media_object') }}
+  {% if emphasised %}
+    <div class="section emphasised">
+  {% else %}
+    <div class="section">
+  {% endif %}
+
+    <div class="row">
+      <div class="media-object">
+        {% if content.field_image %}
+          <figure>
+            {{ content.field_image }}
+          </figure>
+        {% endif %}
+        <div>
+          {{ content|without('field_image') }}
+        </div>
+      </div>
+    </div>
+
+  </div>
 {% endblock %}

@@ -5,18 +5,19 @@
  * Theme override for a paragraph type.
 #}
 {% block content %}
-{%
-  set classes = [
-    'grid',
-    'small-1',
-  ]
-%}
-<figure {{ attributes.addClass(classes) }}>
-  {{ content.field_image }}
-  {% if content.field_caption %}
-    <figcaption>
-      {{ content.field_caption }}
-    </figcaption>
+  {% if emphasised %}
+    <div class="section emphasised">
+  {% else %}
+    <div class="section">
   {% endif %}
-</figure>
+  <div class="row">
+    <figure {{ attributes }}>
+      {{ content.field_image }}
+      {% if content.field_caption %}
+        <figcaption>
+          {{ content.field_caption }}
+        </figcaption>
+      {% endif %}
+    </figure>
+  </div>
 {% endblock %}

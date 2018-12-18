@@ -1,13 +1,12 @@
 {#
 /**
  * @file
- * Theme override for a feature field.
+ * Theme override for a cards field.
  *
  * Classes are set in preprocessor.
  */
 #}
-{{ attach_library('alkaline/logo_collage') }}
-<ul {{ attributes.addClass(classes) }}>
+<ul {{ attributes }}>
   {% for item in items %}
   <li {{ item.attributes }}>
     {{ item.content }}
