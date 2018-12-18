@@ -7,12 +7,6 @@
 {{ attach_library('alkaline/card') }}
 {%
   set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'card',
   ]
 %}
@@ -22,7 +16,7 @@
 
   <section>
     <h3{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      {{ label }}
     </h3>
 
     {# <a class="button" href="{{ url }}">View</a> #}
