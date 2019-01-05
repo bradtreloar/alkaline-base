@@ -38,6 +38,5 @@ $button-icon-size: 1em;
   }
 }
 
-@if $theme is alkaline {
-  @include alkaline-button;
-}
+
+@include alkaline-button;

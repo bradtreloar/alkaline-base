@@ -16,6 +16,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-modal;
-}
+@include alkaline-modal;

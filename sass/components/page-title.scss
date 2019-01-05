@@ -11,6 +11,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-page-title;
-}
+@include alkaline-page-title;

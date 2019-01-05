@@ -1,5 +1,6 @@
 @import 'global';
 
+
 @mixin alkaline-admin-toolbar {
   // Make the mobile admin menu fixed.
   #toolbar-administration {
@@ -11,6 +12,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-admin-toolbar;
-}
+@include alkaline-admin-toolbar;

@@ -1,16 +1,17 @@
 
 
+
 @mixin alkaline-carousel {
   @include foundation-orbit;
 
   .carousel {
     @include orbit-wrapper;
-  
+
     ul {
       @include orbit-container;
       background: $black;
     }
-    
+
     li {
       @include orbit-slide;
       display: flex;
@@ -18,46 +19,47 @@
       justify-content: center;
       min-height: 100%;
     }
-    
+
     figure {
       @include orbit-figure;
-    
+
       img {
         display: block;
         margin: 0 auto;
         max-width: 100%;
       }
     }
-    
+
     figcaption {
       @include orbit-caption;
     }
-  
+
     .controls {
       button {
         @include orbit-control;
         cursor: pointer;
 
-        svg { 
+        svg {
           fill: $white;
           height: 1.5em;
           width: 1.5em;
         }
-        
+
         &.previous {
           @include orbit-previous;
         }
-        
+
         &.next {
           @include orbit-next;
         }
       }
     }
-    
+
     nav {
       @include orbit-bullets;
     }
   }
 }
+
 
 

@@ -32,6 +32,4 @@ $boilerplate-layer-background: $footer-layer-background;
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-page-theme;
-}
+@include alkaline-page-theme;

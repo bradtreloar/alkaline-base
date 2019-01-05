@@ -3,7 +3,7 @@
 
 @mixin alkaline-banner {
   .banner {
-    @include alkaline-background-image;
+    @include tda-background-image;
     height: 100%;
     padding: 3rem 1rem;
     width: 100%;
@@ -129,8 +129,6 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-banner;
-  @include alkaline-hero-banner;
-  @include alkaline-callout-banner;
-}
+@include alkaline-banner;
+@include alkaline-hero-banner;
+@include alkaline-callout-banner;

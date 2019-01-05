@@ -2,7 +2,7 @@
 /**
  * @file
  * Theme override to display a menu.
- * 
+ *
  */
 #}
 {% import _self as menus %}
@@ -17,9 +17,9 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu') }}>
-    {% else %}
       <ul class="menu">
+    {% else %}
+      <ul class="menu nested">
     {% endif %}
     {% for item in items %}
       {%

@@ -1,11 +1,12 @@
 
 
+
 $button-color: $black;
 $button-background: $white;
 $button-background-hover: scale-color($button-background, $lightness: -25%);
 
-@mixin alkaline-pagination {
 
+@mixin alkaline-pagination {
   ul.pagination {
     display: flex;
     align-items: center;
@@ -47,5 +48,6 @@ $button-background-hover: scale-color($button-background, $lightness: -25%);
     }
   }
 }
+
 
 

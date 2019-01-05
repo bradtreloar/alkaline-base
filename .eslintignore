@@ -1,0 +1,4 @@
+foundation-sites/*
+node_modules/**/*
+*.js
+!*.es6.js

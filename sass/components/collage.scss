@@ -13,6 +13,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-collage;
-}
+@include alkaline-collage;

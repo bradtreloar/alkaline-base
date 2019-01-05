@@ -5,17 +5,30 @@ $menu-button-font-family: inherit;
 $menu-button-background: inherit;
 $menu-button-color: inherit;
 
+$dropdownmenu-active-button-background: inherit;
+$dropdownmenu-active-button-color: inherit;
+$dropdownmenu-arrow-color: $white;
+$dropdownmenu-arrow-size: 6px;
+$dropdownmenu-arrow-padding: 1.5rem;
 
-@mixin alkaline-menu-button-theme {
-  background: inherit;
-  color: inherit;
-  font-family: $menu-button-font-family;
+
+@mixin tda-dropdown-menu-theme-direction($dir: horizontal) {
+  > li {
+    @if $dir == horizontal {
+      &.is-dropdown-submenu-parent > a::after {
+        @include css-triangle($dropdownmenu-arrow-size, $dropdownmenu-arrow-color, down);
+      }
+    }
+    @else if $dir == vertical {
+      @include zf-dropdown-left-right-arrows;
+    }
+  }
 }
 
 
 @mixin alkaline-menu-theme {
 
-  .menu {
+  ul.menu {
     // @todo remove this !important decorator
     background: inherit !important;
 
@@ -24,11 +37,16 @@ $menu-button-color: inherit;
     }
 
     a {
-      @include alkaline-menu-button-theme;
+      background: $menu-button-background;
+      color: $menu-button-color;
+      font-family: $menu-button-font-family;
     }
   }
+}
 
-  .menu-wrapper {
+
+@mixin alkaline-drilldown-menu-theme {
+  .is-drilldown {
     background: inherit;
   }
 }
@@ -44,7 +62,47 @@ $menu-button-color: inherit;
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-menu-theme;
-  @include alkaline-share-menu-theme;
+@mixin alkaline-dropdown-menu-theme {
+  .is-dropdown {
+    background: inherit;
+  }
+
+  ul.menu.dropdown {
+    li {
+      &.is-active {
+        a {
+          background: $dropdownmenu-active-button-background;
+          color: $dropdownmenu-active-button-color;
+        }
+      }
+    }
+
+    &.horizontal {
+      @include tda-dropdown-menu-theme-direction(vertical);
+    }
+
+    &.vertical {
+      @include tda-dropdown-menu-theme-direction(vertical);
+    }
+
+    @each $size in $breakpoint-classes {
+      @if $size != $-zf-zero-breakpoint {
+        @include breakpoint($size) {
+          &.#{$size}-horizontal {
+            @include dropdown-menu-direction(horizontal);
+          }
+
+          &.#{$size}-vertical {
+            @include dropdown-menu-direction(vertical);
+          }
+        }
+      }
+    }
+  }
 }
+
+
+@include alkaline-menu-theme;
+@include alkaline-drilldown-menu-theme;
+@include alkaline-dropdown-menu-theme;
+@include alkaline-share-menu-theme;

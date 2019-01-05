@@ -1,5 +1,6 @@
 @import 'global';
 
+
 @mixin alkaline-form {
   @include foundation-form-text;
   @include foundation-form-checkbox;
@@ -9,27 +10,27 @@
   @include foundation-form-fieldset;
   @include foundation-form-select;
   @include foundation-form-error;
-  
+
   form {
     .form-item,
     .form-actions {
       // Add global form-spacing margins to the element wrappers.
       margin: 0 0 $form-spacing;
     }
-  
+
     .region.navbar & {
       @include alkaline-form-inline;
     }
-  
+
     .region.content & {
       padding: 0 $global-margin;
       margin: 0 auto;
       max-width: $global-width;
     }
   }
-  
+
   .contact-message-form {
-  
+
     // @todo remove preview button using form alteration hook
     #edit-preview {
       display: none;
@@ -59,7 +60,7 @@
   .form-actions {
     // Remove global form-spacing margins.
     margin: 0;
-    
+
     // Add small gap between form elements
     &:not(:last-child) {
       margin: 0 0.5rem 0 0;
@@ -68,7 +69,7 @@
     > * {
       // Make all form items fill their wrappers' height.
       // The wrappers are flex children and are set to
-      // height: 100% by default. 
+      // height: 100% by default.
       height: 100%;
 
       // Remove global form-spacing margins.
@@ -93,6 +94,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-form;
-}
+@include alkaline-form;

@@ -1,11 +1,10 @@
 
 
 @mixin alkaline-table {
-
   table {
     .region.content & {
       @include table;
-  
+
       // Explicitly unset cell borders in case table's border attribute is set.
       th, td {
         border: none;
@@ -15,3 +14,139 @@
 }
 
 
+
+
+
+// table {
+
+//   .commerce-cart-summary &:first-of-type // View: Shopping Cart Summary
+//   .commerce-cart-form &:first-of-type,   // View: Shopping Cart Form
+//   {
+//     // @todo convert to mobile-first pattern
+//     @include media(0, 720px) {
+//       thead {
+//         display: none;
+//       }
+
+//       tr {
+//         display: flex;
+//         flex-wrap: wrap;
+//         padding: 0 8px;
+//       }
+
+//       td {
+//         display: block;
+//         padding: 0;
+//         line-height: 40px;
+
+//         // product title
+//         &:first-child {
+//           font-weight: bold;
+//           margin: 16px 0 0 0;
+//           width: 100%;
+//         }
+
+//         // labels
+//         &:before {
+//           display: block;
+//           font-size: 12px;
+//           line-height: 15px;
+//           margin: 0 0 4px 0;
+//           text-transform: uppercase;
+//         }
+
+//         // unit price
+//         &:nth-child(2) {
+//           display: block;
+//           flex-grow: 1;
+//           margin: 16px 16px 16px 0;
+
+//           &:before {
+//             content: 'Price';
+//           }
+//         }
+
+//         // quantity
+//         &:nth-child(3) {
+//           display: block;
+//           flex: none;
+//           margin: 16px 8px 0 0;
+//           max-width: 20%;
+//           width: 80px;
+
+//           &:before {
+//             content: 'Quantity';
+//           }
+//         }
+
+//         // remove button
+//         &:nth-child(4):not(:last-child) {
+//           display: block;
+//           flex: none;
+//           margin: (16px + 4px + 15px) 0 16px;
+
+//           input {
+//             font-size: 12px;
+//             height: 40px;
+//             line-height: 40px;
+//             text-transform: uppercase;
+//           }
+//         }
+
+//         // line total
+//         &:last-child {
+//           display: block;
+//           flex-grow: 1;
+//           margin: 16px 0 16px 16px;
+//           text-align: right;
+
+//           &:before {
+//             content: 'Total';
+//           }
+//         }
+//       }
+//     }
+
+//     @include breakpoint(720px) {
+//       // title
+//       td:first-child {
+//         min-width: 40%;
+//       }
+//       // quantity
+//       td:nth-child(3) {
+//         width: 80px;
+//       }
+//     }
+//   }
+
+//   &.commerce-price-formatted-components,
+//   &.line-item-summary {
+//     margin: 24px 0;
+
+//     tr {
+//       th, td:first-child {
+//         background-color: $table-heading-background;
+//         font-size: 115%;
+//         font-weight: 300;
+//         text-align: left;
+//         padding: 12px 16px 12px 8px;
+//       }
+
+//       // value
+//       td:last-child {
+//         text-align: right;
+//         padding: 12px 8px 12px 16px;
+//       }
+//     }
+
+//     // @todo convert to mobile-first pattern
+//     @include media(0, 600px) {
+//       width: 100%;
+//     }
+
+//     @include breakpoint(600px) {
+//       width: auto;
+//       float: right;
+//     }
+//   }
+// }

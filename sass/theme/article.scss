@@ -19,6 +19,4 @@ $article-emphasis-color: $white;
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-article-theme;
-}
+@include alkaline-article-theme;

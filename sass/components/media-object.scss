@@ -31,6 +31,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-media-object;
-}
+@include alkaline-media-object;

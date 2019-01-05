@@ -1,5 +1,6 @@
 @import 'global';
 
+
 @mixin alkaline-address {
   div.address {
     clear: both;
@@ -8,6 +9,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-address;
-}
+@include alkaline-address;

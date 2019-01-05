@@ -19,6 +19,4 @@
   }
 }
 
-@if $theme is alkaline {
-  @include alkaline-breadcrumbs-theme;
-}
+@include alkaline-breadcrumbs-theme;

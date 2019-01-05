@@ -1,7 +1,7 @@
 @import 'global';
 
-@mixin alkaline-icon {
 
+@mixin alkaline-icon {
   .icon {
     max-width: 100%;
     max-height: 100%;
@@ -9,6 +9,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-icon;
-}
+@include alkaline-icon;

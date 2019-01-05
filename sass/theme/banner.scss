@@ -24,8 +24,5 @@ $hero-banner-color: $banner-color!default;
 }
 
 
-
-@if $theme is alkaline {
-  @include alkaline-banner-theme;
-  @include alkaline-hero-banner-theme;
-}
+@include alkaline-banner-theme;
+@include alkaline-hero-banner-theme;

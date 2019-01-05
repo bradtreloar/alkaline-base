@@ -19,6 +19,5 @@
   }
 }
 
-@if $theme is alkaline {
-  @include alkaline-button-theme;
-}
+
+@include alkaline-button-theme;

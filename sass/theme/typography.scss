@@ -18,6 +18,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-typography;
-}
+@include alkaline-typography;

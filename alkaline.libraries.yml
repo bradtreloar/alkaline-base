@@ -3,6 +3,10 @@ foundation:
   js:
     js/motion-ui.min.js: {}
     js/foundation.min.js: {}
+    js/behaviors/foundation.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
 
 base:
   css:
@@ -15,13 +19,6 @@ base:
       css/layout/grid.css: {}
     component:
       css/components/title-bar.css: {}
-  js:
-    js/alkaline.js: {}
-  dependencies:
-    - alkaline/foundation
-    - core/jquery
-    - core/jquery.once
-    - core/drupal
 
 theme:
   css:
@@ -119,7 +116,7 @@ lightbox:
   js:
     js/lightbox.js:
   dependencies:
-    - alkaline/base
+    - alkaline/foundation
 
 links:
   css:
@@ -146,9 +143,9 @@ menu:
     component:
       css/components/menu.css: {}
   js:
-    js/responsiveMenu.js:
+    js/behaviors/menu.js:
   dependencies:
-    - alkaline/base
+    - alkaline/foundation
 
 messages:
   css:

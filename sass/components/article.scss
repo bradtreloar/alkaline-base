@@ -164,6 +164,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-article;
-}
+@include alkaline-article;

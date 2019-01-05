@@ -12,6 +12,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-card;
-}
+@include alkaline-card;

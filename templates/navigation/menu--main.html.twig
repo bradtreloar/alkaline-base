@@ -2,7 +2,7 @@
 /**
  * @file
  * Theme override to display a menu.
- * 
+ *
  */
 #}
 {% import _self as menus %}
@@ -11,7 +11,7 @@
   We call a macro which calls itself to render the full tree.
   @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{% 
+{%
   set menuAttributes = {
     'data-drilldown': 'true',
     'data-auto-height': 'true',
@@ -24,14 +24,9 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      {%
-        set menu_classes = [
-          'menu',
-        ]
-      %}
-      <ul{{ attributes.addClass(menu_classes) }}>
-    {% else %}
       <ul class="menu">
+    {% else %}
+      <ul class="menu nested">
     {% endif %}
     {% for item in items %}
       {%

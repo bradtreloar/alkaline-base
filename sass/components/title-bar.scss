@@ -10,7 +10,7 @@
       margin: $global-margin auto;
       max-width: $global-width;
       padding: 0 $global-margin;
-      
+
       a.button {
         display: block;
         margin: 0;
@@ -20,6 +20,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-title-bar;
-}
+@include alkaline-title-bar;

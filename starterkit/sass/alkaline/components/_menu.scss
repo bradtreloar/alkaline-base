@@ -12,7 +12,7 @@ $header-menu-button-font-size: 0.875em;
 $share-menu-button-size: 2em;
 
 
-@mixin alkaline-menu-button {
+@mixin tda-menu-button {
   display: flex;
   align-items: center;
 
@@ -43,9 +43,9 @@ $share-menu-button-size: 2em;
 @mixin alkaline-menu {
   @include foundation-menu;
 
-  .menu {
+  ul.menu {
     a {
-      @include alkaline-menu-button;
+      @include tda-menu-button;
 
       .layer.header & {
         font-size: 0.875em;
@@ -73,7 +73,7 @@ $share-menu-button-size: 2em;
 
 
 @mixin alkaline-share-menu {
-  .menu.social-share {
+  ul.menu.social-share {
     @include button-group(li, 0.5rem);
 
     a {
@@ -106,7 +106,7 @@ $share-menu-button-size: 2em;
 
 @mixin alkaline-navbar-toggle-button {
   button[data-toggle="navbar"] {
-    @include alkaline-menu-button;
+    @include tda-menu-button;
     height: 100%;
     line-height: 1;
     text-decoration: none;
@@ -121,3 +121,8 @@ $share-menu-button-size: 2em;
 }
 
 
+
+@include alkaline-drilldown-menu;
+@include alkaline-dropdown-menu;
+@include alkaline-navbar-toggle-button;
+@include alkaline-share-menu;

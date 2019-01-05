@@ -18,13 +18,6 @@ $admin-toolbar-tray-height: 40px;
       flex-grow: 1;
     }
   }
-
-  @include alkaline-admin-layer;
-  @include alkaline-header-layer;
-  @include alkaline-lead-layer;
-  @include alkaline-main-layer;
-  @include alkaline-footer-layer;
-  @include alkaline-boilerplate-layer;
 }
 
 
@@ -117,7 +110,7 @@ $admin-toolbar-tray-height: 40px;
 
   @include breakpoint(large) {
     // Convert to a header region.
-    @include alkaline-header-region;
+    
     justify-content: flex-end;
   }
 }
@@ -308,3 +301,10 @@ $admin-toolbar-tray-height: 40px;
 }
 
 
+@include alkaline-page;
+@include alkaline-admin-layer;
+@include alkaline-header-layer;
+@include alkaline-lead-layer;
+@include alkaline-main-layer;
+@include alkaline-footer-layer;
+@include alkaline-boilerplate-layer;

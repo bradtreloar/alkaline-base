@@ -1,9 +1,9 @@
 
 
 
-$article-emphasis-background: $black !default;
-$article-emphasis-background-image: none !default;
-$article-emphasis-color: $white !default;
+$article-emphasis-background: $black;
+$article-emphasis-background-image: none;
+$article-emphasis-color: $white;
 
 
 @mixin alkaline-article-theme {
@@ -17,5 +17,6 @@ $article-emphasis-color: $white !default;
     }
   }
 }
+
 
 

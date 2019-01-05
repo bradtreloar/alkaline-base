@@ -1,19 +1,21 @@
 
 
+
 $branding-padding: 8px 16px;
+
 
 @mixin alkaline-branding {
   .branding {
     display: flex;
     height: 100%;
-  
+
     a {
       align-items: center;
       display: flex;
       height: 100%;
       padding: $branding-padding;
-    
-      // the image size is constrained 
+
+      // the image size is constrained
       // by the size of the header
       img {
         display: block;
@@ -25,5 +27,6 @@ $branding-padding: 8px 16px;
     }
   }
 }
+
 
 

@@ -2,7 +2,6 @@
 
 
 @mixin alkaline-local-tasks {
-
   nav.local-tasks {
     display: flex;
     flex-wrap: wrap;
@@ -13,10 +12,10 @@
     ul {
       @include tabs-container;
     }
-  
+
     li {
       @include tabs-title;
-  
+
       > a.is-active {
         background: $tab-background-active;
         color: $tab-active-color;
@@ -26,6 +25,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-local-tasks;
-}
+@include alkaline-local-tasks;

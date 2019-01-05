@@ -1,9 +1,11 @@
 @import 'global';
 
+
 .js-form-wrapper,
 .js-form-item {
   position: relative;
 }
+
 
 .ajax-progress-throbber {
   background: rgba(white, 0.5);
@@ -17,8 +19,10 @@
   .message {
     display: none;
   }
-  
+
   .throbber {
     display: none;
   }
 }
+
+

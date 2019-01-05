@@ -11,6 +11,4 @@ $card-border: solid 1px $medium-gray;
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-card-theme;
-}
+@include alkaline-card-theme;

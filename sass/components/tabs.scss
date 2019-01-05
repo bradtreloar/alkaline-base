@@ -1,12 +1,14 @@
 @import 'global';
 
+
 // @todo tabs-content
+
 
 @mixin alkaline-tabs {
   .tabs {
     @include tabs-container;
     padding: 0;
-  
+
     > li {
       @include tabs-title;
     }
@@ -14,6 +16,4 @@
 }
 
 
-@if $theme is alkaline {
-  @include alkaline-tabs;
-}
+@include alkaline-tabs;
