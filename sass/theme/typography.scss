@@ -1,6 +1,9 @@
 @import 'global';
 
 
+$article-font-size: 1.25rem;
+
+
 @mixin alkaline-typography {
   @include foundation-typography-base;
 
@@ -14,6 +17,10 @@
         margin-bottom: $global-margin;
       }
     }
+  }
+
+  article {
+    font-size: $article-font-size;
   }
 }
 

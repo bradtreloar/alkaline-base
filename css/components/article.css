@@ -1,5 +1,5 @@
 article {
-  margin: 1rem 0;
+  margin: 0 0 1rem;
   padding: 0; }
   article.teaser {
     margin: 2rem 0; }
@@ -17,78 +17,15 @@ article {
       display: block; }
   article .text-formatted {
     width: 100%; }
-  article .section > .row {
-    max-width: 45rem;
+  article .row > div {
+    max-width: 60rem;
     margin: 2rem auto; }
-  article .section.emphasised > .row {
-    font-size: 120%;
-    padding-top: 1rem; }
-  article .section > figure {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column; }
-    article .section > figure.image figcaption {
+    article .row > div.image figcaption {
       padding: 1rem; }
-    article .section > figure.feature {
-      padding: 1.5rem 0.625rem;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center; }
-      article .section > figure.feature figcaption,
-      article .section > figure.feature picture {
-        padding: 0 0.625rem; }
-      article .section > figure.feature a {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        height: 100%;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center; }
-      @media print, screen and (min-width: 45em) {
-        article .section > figure.feature {
-          -webkit-box-orient: horizontal;
-          -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-          flex-direction: row; }
-          article .section > figure.feature picture {
-            -webkit-box-flex: 0;
-            -ms-flex: none;
-            flex: none;
-            width: 50%; } }
   article .collage li {
     padding: 1rem; }
   article *:not(picture) > img {
     margin-bottom: 1rem; }
-  article header {
-    max-width: 45rem;
-    margin: 1rem auto; }
-    article header p {
-      font-size: 125%;
-      line-height: 1.6; }
-    article header figure a {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      height: 100%;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center; }
-    article header picture {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      max-width: 45rem;
-      margin: 1rem auto; }
-      article header picture img {
-        display: block; }
   article footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -96,7 +33,7 @@ article {
     margin-bottom: 1rem;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
-    max-width: 45rem;
+    max-width: 60rem;
     margin: 1rem auto; }
     article footer > * {
       -webkit-box-flex: 0;

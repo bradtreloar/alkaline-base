@@ -35,7 +35,7 @@
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
-    max-width: 45rem; }
+    max-width: 60rem; }
     .banner > * > div:last-of-type:not(:first-of-type) {
       margin-bottom: 1rem;
       display: -webkit-box;
@@ -98,23 +98,18 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
-  .banner.hero p {
-    font-size: 1.2em; }
-    @media print, screen and (min-width: 45em) {
-      .banner.hero p {
-        font-size: 1.5em; } }
   .banner.hero .button {
     font-weight: bold; }
     @media print, screen and (min-width: 45em) {
       .banner.hero .button {
         font-size: 1.2em; } }
   .banner.hero figcaption {
-    max-width: 45rem; }
+    max-width: 60rem; }
 
 .banner.callout {
   color: inherit;
   margin: 0 auto;
-  max-width: 45rem; }
+  max-width: 60rem; }
   @media print, screen and (min-width: 45em) {
     .banner.callout {
       padding: 6rem 1rem; } }

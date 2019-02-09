@@ -1,8 +1,10 @@
 @import 'global';
 
-
 $admin-toolbar-height: 39px;
 $admin-toolbar-tray-height: 40px;
+
+
+$top-bar-height: 48px;
 
 
 @mixin alkaline-page {
@@ -35,7 +37,7 @@ $admin-toolbar-tray-height: 40px;
 }
 
 
-@mixin alkaline-header-super-region {
+@mixin tda-header-super-region {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
@@ -44,7 +46,7 @@ $admin-toolbar-tray-height: 40px;
 }
 
 
-@mixin alkaline-header-region {
+@mixin tda-header-region {
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -57,7 +59,7 @@ $admin-toolbar-tray-height: 40px;
 }
 
 
-@mixin alkaline-navbar-super-region {
+@mixin tda-navbar-super-region {
   background: inherit;
   color: inherit;
   display: flex;
@@ -106,11 +108,11 @@ $admin-toolbar-tray-height: 40px;
 }
 
 
-@mixin alkaline-navbar-region {
+@mixin tda-navbar-region {
 
   @include breakpoint(large) {
     // Convert to a header region.
-    @include alkaline-header-region;
+    @include tda-header-region;
     justify-content: flex-end;
   }
 }
@@ -150,11 +152,11 @@ $admin-toolbar-tray-height: 40px;
 
     .super-region {
       &.header {
-        @include alkaline-header-super-region;
+        @include tda-header-super-region;
       }
 
       &.navbar {
-        @include alkaline-navbar-super-region;
+        @include tda-navbar-super-region;
 
         > .region {
           background: inherit;
@@ -169,15 +171,15 @@ $admin-toolbar-tray-height: 40px;
 
     .region {
       &.header {
-        @include alkaline-header-region;
+        @include tda-header-region;
       }
 
       &.navbar {
-        @include alkaline-navbar-region;
+        @include tda-navbar-region;
       }
 
       &.buttons {
-        @include alkaline-header-region;
+        @include tda-header-region;
         flex: none;
 
         @include breakpoint (large) {

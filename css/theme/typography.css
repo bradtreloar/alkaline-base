@@ -68,31 +68,31 @@ h1, .h1 {
   margin-bottom: 0.5rem; }
 
 h2, .h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h3, .h3 {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h4, .h4 {
-  font-size: 1.2rem;
+  font-size: 1.32rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h5, .h5 {
-  font-size: 1.15rem;
+  font-size: 1.28rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
 h6, .h6 {
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 0.5rem; }
@@ -105,11 +105,11 @@ h6, .h6 {
   h3, .h3 {
     font-size: 2rem; }
   h4, .h4 {
-    font-size: 1.5rem; }
+    font-size: 1.75rem; }
   h5, .h5 {
-    font-size: 1.25rem; }
+    font-size: 1.5rem; }
   h6, .h6 {
-    font-size: 1rem; } }
+    font-size: 1.25rem; } }
 
 a {
   line-height: inherit;
@@ -123,7 +123,7 @@ a {
 
 hr {
   clear: both;
-  max-width: 45rem;
+  max-width: 60rem;
   height: 0;
   margin: 1.25rem auto;
   border-top: 0;
@@ -200,3 +200,6 @@ kbd {
 ul.grid ul, ul.grid ol, ol.grid ul, ol.grid ol {
   margin-left: 1.25rem;
   margin-bottom: 1rem; }
+
+article {
+  font-size: 1.25rem; }

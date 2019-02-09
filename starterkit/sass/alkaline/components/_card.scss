@@ -5,11 +5,19 @@
   .card {
     @include card-container;
 
-    > figcaption {
+    > section {
       @include card-section;
+
+      > *:first-child {
+        margin-top: 0;
+      }
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
 
 
-
+// @include alkaline-card;

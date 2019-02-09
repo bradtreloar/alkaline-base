@@ -1,6 +1,9 @@
 
 
 
+$article-font-size: 1.25rem;
+
+
 @mixin alkaline-typography {
   @include foundation-typography-base;
 
@@ -15,7 +18,11 @@
       }
     }
   }
+
+  article {
+    font-size: $article-font-size;
+  }
 }
 
 
-
+// @include alkaline-typography;

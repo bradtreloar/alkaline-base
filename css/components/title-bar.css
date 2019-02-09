@@ -5,12 +5,15 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 1rem auto;
-  max-width: 45rem;
-  padding: 0 1rem; }
+  max-width: 60rem; }
   .region.content .title-bar a.button {
     display: block;
     margin: 0; }
+
+.region.lead .title-bar {
+  margin: 1rem auto;
+  max-width: 60rem; }

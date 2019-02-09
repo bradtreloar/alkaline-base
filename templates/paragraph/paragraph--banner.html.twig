@@ -1,3 +1,4 @@
+{% extends "paragraph.html.twig" %}
 {#
 /**
  * @file
@@ -6,13 +7,8 @@
 #}
 {% block content %}
   {{ attach_library('alkaline/banner') }}
-  {% if emphasised %}
-    <div class="section emphasised">
-  {% else %}
-    <div class="section">
-  {% endif %}
-
-    <div class="row" }}>
+  <div {{ attribute.addClass("row") }}>
+    <div>
       <figure class="grid small-1 medium-2">
         {{ content.field_image }}
         <figcaption>
@@ -20,8 +16,7 @@
         </figcaption>
       </figure>
     </div>
-    {{ css }}
-
   </div>
+  {{ css }}
 {% endblock %}
 

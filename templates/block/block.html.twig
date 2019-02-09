@@ -16,13 +16,15 @@
 
   {{ title_prefix }}
   {% if label or more_link %}
-    <div class="title-bar">
-      {% if label %}
-        <h2{{ title_attributes }}>{{ label }}</h2>
-      {% endif %}
-      {% if more_link %}
-        {{ more_link }}
-      {% endif %}
+    <div class="row">
+      <div class="title-bar">
+        {% if label %}
+          <h2{{ title_attributes }}>{{ label }}</h2>
+        {% endif %}
+        {% if more_link %}
+          {{ more_link }}
+        {% endif %}
+      </div>
     </div>
   {% endif %}
   {{ title_suffix }}

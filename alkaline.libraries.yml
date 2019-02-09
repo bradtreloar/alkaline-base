@@ -17,6 +17,7 @@ base:
       css/print.css: { media: print }
     layout:
       css/layout/grid.css: {}
+      css/layout/row.css: {}
     component:
       css/components/title-bar.css: {}
 
@@ -161,6 +162,11 @@ page:
   css:
     layout:
       css/layout/page.css: {}
+
+page_title:
+  css:
+    layout:
+      css/components/page-title.css: {}
 
 pagination:
   css:

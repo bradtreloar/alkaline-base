@@ -71,14 +71,6 @@
       justify-content: center;
     }
 
-    p {
-      font-size: 1.2em;
-
-      @include breakpoint(medium) {
-        font-size: 1.5em;
-      }
-    }
-
     .button {
       font-weight: bold;
 
@@ -129,6 +121,6 @@
 }
 
 
-
-@include alkaline-hero-banner;
-@include alkaline-callout-banner;
+// @include alkaline-banner;
+// @include alkaline-hero-banner;
+// @include alkaline-callout-banner;

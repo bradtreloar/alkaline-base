@@ -3,37 +3,23 @@
 use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
 use Drupal\image\Entity\ImageStyle;
-
-
-function _alkaline_article_header(&$vars) {
-  // Create a header
-  $vars['header'] = [];
-
-  // Move some fields to the header section.
-  $header_fields = [
-    'social_share_buttons',
-    'field_summary',
-    'field_image',
-  ];
-
-  foreach ($header_fields as $field_name) {
-    if(isset($vars['content'][$field_name])) {
-      $vars['header'][$field_name] = $vars['content'][$field_name];
-      unset($vars['content'][$field_name]);
-    }
-  }
-}
+use Drupal\paragraphs\Entity\Paragraph;
 
 
 function _alkaline_lead_section(&$vars) {
   $node = $vars['node'];
-  $vars['attributes']['id'] = "lead--" . $node->id();
-  if ($node->field_background_image) {
-    // Fetch the background image URI.
-    $file = $node->field_background_image->entity;
-    if($file) {
+  // $paragraph = $node->field_lead->getValue();
+  $paragraphs = $node->field_lead->referencedEntities();
+
+  // Fetch the background image file
+  foreach ($paragraphs as $lead) {
+    if ($lead->field_background_image) {
+      $file = $lead->field_background_image->entity;
+
       $uri = $file->getFileUri();
-      $htmlId = $vars['attributes']['id'];
+      $htmlId = "lead--" . $node->id();
+      $vars['lead_id'] = $htmlId;
+      $vars['banner'] = true;
 
       // Add style element to vars.
       $vars['css'] = _alkaline_responsive_background_css('hero', "#$htmlId::after", $uri);
@@ -383,28 +369,8 @@ function alkaline_preprocess_node(&$vars) {
     $node_type_preprocessor($vars);
   }
 
-  if ($vars['view_mode'] == 'lead') {
+  if ($vars['view_mode'] == 'full') {
     _alkaline_lead_section($vars);
-  }
-}
-
-
-/**
- * Preprocessor for article content type
- */
-function alkaline_preprocess_node_article(&$vars) {
-  if ($vars['view_mode'] == 'full') {
-    _alkaline_article_header($vars);
-  }
-}
-
-
-/**
- * Preprocessor for portfolio_project content type
- */
-function alkaline_preprocess_node_portfolio_project(&$vars) {
-  if ($vars['view_mode'] == 'full') {
-    _alkaline_article_header($vars);
   }
 }
 

@@ -13,11 +13,12 @@
       max-width: $global-width;
     }
 
-    @for $c from 1 through 12 {
+    @for $col-count from 1 through 12 {
       @each $name, $width in $breakpoints {
-        &.#{$name}-#{$c} {
+        &.#{$name}-#{$col-count} {
           @include breakpoint($name) {
-            @include xy-grid-layout($c, 'li');
+            $cell-selector: 'li';
+            @include xy-grid-layout($col-count, $cell-selector);
           }
         }
       }
@@ -33,11 +34,12 @@
 
   // Regions use .block instead of li
   .grid.region {
-    @for $c from 1 through 12 {
+    @for $col-count from 1 through 12 {
       @each $name, $width in $breakpoints {
-        &.#{$name}-#{$c} {
+        &.#{$name}-#{$col-count} {
           @include breakpoint($name) {
-            @include xy-grid-layout($c, '.block');
+            $cell-selector: '.block';
+            @include xy-grid-layout($col-count, $cell-selector);
           }
         }
       }
@@ -45,14 +47,5 @@
   }
 }
 
-@mixin alkaline-row {
-  .row {
-    display: flex;
-    justify-content: center;
-    padding: 0 0.625rem;
-  }
-}
 
-
-
-@include alkaline-row;
+// @include alkaline-grid;

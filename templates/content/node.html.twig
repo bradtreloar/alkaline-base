@@ -2,15 +2,44 @@
 /**
  * @file
  * Theme override to display a node.
+ */
 #}
 {{ attach_library('alkaline/article') }}
+{{ attach_library('alkaline/page_title') }}
+{{ attach_library('alkaline/banner') }}
 <article{{ attributes }}>
+{% if page %}
+  {% if banner %}
+    <header>
+      <figure id="{{ lead_id }}" class="banner hero">
+        <figcaption>
 
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
+          <h1 class="page-title">
+            {{ label }}
+          </h1>
+
+          {{ content.field_lead }}
+
+        </figcaption>
+      </figure>
+    </header>
+    {{ css }}
+  {% else %}
+    <header class="row">
+
+      <div class="title-bar">
+        <h1 class="page-title">{{ label }}</h1>
+      </div>
+
+      {{ content.field_lead }}
+
+    </header>
   {% endif %}
+{% else %}
+  <h2{{ title_attributes }}>
+    <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+  </h2>
+{% endif %}
 
   {% if display_submitted %}
     <footer class="node__meta">
@@ -22,14 +51,8 @@
     </footer>
   {% endif %}
 
-  {% if header %}
-    <header>
-      {{ header }}
-    </header>
-  {% endif %}
-
   <section{{ content_attributes }}>
-    {{ content }}
+    {{ content|without('field_headline', 'field_lead') }}
   </section>
 
 </article>

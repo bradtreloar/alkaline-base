@@ -34,7 +34,7 @@ gulp.task("starterkit", () =>
       }
     )
     .pipe(replace("@import 'global';", ""))
-    .pipe(replace(/@include alkaline-.+;/, ""))
+    .pipe(replace("@include alkaline-", "// @include alkaline-"))
     .pipe(
       rename(path => {
         // Add leading underscore to filename to change file to SASS partial.

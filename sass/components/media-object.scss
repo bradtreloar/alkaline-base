@@ -10,18 +10,20 @@
       @include media-object-section;
     }
 
-    figure {
-      flex: none;
+    > figure {
+      // flex: none;
       max-width: 30vw;
 
       @include breakpoint(medium) {
         max-width: 50%;
       }
 
+      // .thumbnail limits the size of the figure
       &.thumbnail {
         max-width: 3rem * $global-lineheight;
       }
 
+      // If the figure is a link, make sure it still behaves like a block.
       a, img {
         display: block;
         max-width: 100%;

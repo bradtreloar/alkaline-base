@@ -106,32 +106,30 @@ $global-menu-padding: 0.7rem 1rem !default;
 $global-padding: 1rem !default;
 $global-position: 1rem !default;
 $global-radius: 2px !default;
-$global-width: rem-calc(720) !default;
+$global-width: rem-calc(960) !default;
 
 // Body
 $body-background: $white !default;
 $body-font-color: $black !default;
 $body-font-family: 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', 'sans-serif' !default;
 
-// Top Bar
-$top-bar-height: 48px !default;
 
 $header-styles: (
   'small': (
     'h1': ('font-size': 2.00rem),
-    'h2': ('font-size': 1.50rem),
-    'h3': ('font-size': 1.35rem),
-    'h4': ('font-size': 1.20rem),
-    'h5': ('font-size': 1.15rem),
-    'h6': ('font-size': 1.00rem),
+    'h2': ('font-size': 1.75rem),
+    'h3': ('font-size': 1.50rem),
+    'h4': ('font-size': 1.32rem),
+    'h5': ('font-size': 1.28rem),
+    'h6': ('font-size': 1.25rem),
   ),
   'medium': (
     'h1': ('font-size': 3.00rem),
     'h2': ('font-size': 2.50rem),
     'h3': ('font-size': 2.00rem),
-    'h4': ('font-size': 1.50rem),
-    'h5': ('font-size': 1.25rem),
-    'h6': ('font-size': 1.00rem),
+    'h4': ('font-size': 1.75rem),
+    'h5': ('font-size': 1.50rem),
+    'h6': ('font-size': 1.25rem),
   ),
 );
 

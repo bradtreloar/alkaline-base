@@ -16,16 +16,13 @@
       padding-left: 1rem; }
     .media-object > * > :last-child {
       margin-bottom: 0; }
-  .media-object figure {
-    -webkit-box-flex: 0;
-    -ms-flex: none;
-    flex: none;
+  .media-object > figure {
     max-width: 30vw; }
     @media print, screen and (min-width: 45em) {
-      .media-object figure {
+      .media-object > figure {
         max-width: 50%; } }
-    .media-object figure.thumbnail {
+    .media-object > figure.thumbnail {
       max-width: 4.5rem; }
-    .media-object figure a, .media-object figure img {
+    .media-object > figure a, .media-object > figure img {
       display: block;
       max-width: 100%; }

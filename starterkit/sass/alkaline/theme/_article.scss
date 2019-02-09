@@ -1,22 +1,20 @@
 
 
 
-$article-emphasis-background: $black;
-$article-emphasis-background-image: none;
-$article-emphasis-color: $white;
+$article-lead-font-size: 120%;
+$article-lead-line-height: 1.5;
 
 
 @mixin alkaline-article-theme {
   article {
-    .section {
-      &.emphasised {
-        background-color: $article-emphasis-background;
-        background-image: $article-emphasis-background-image;
-        color: $article-emphasis-color;
+    header {
+      p {
+        font-size: $article-lead-font-size;
+        line-height: $article-lead-line-height;
       }
     }
   }
 }
 
 
-
+// @include alkaline-article-theme;

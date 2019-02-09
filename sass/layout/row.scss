@@ -1,0 +1,17 @@
+@import 'global';
+
+
+@mixin alkaline-row {
+  .row {
+    display: flex;
+    justify-content: center;
+
+    > div {
+      padding: 0 $global-margin;
+      width: 100%;
+    }
+  }
+}
+
+
+@include alkaline-row;

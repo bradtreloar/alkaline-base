@@ -6,16 +6,6 @@
 #}
 {% block paragraph %}
   {% block content %}
-    {% if emphasised %}
-      <div class="section emphasised">
-    {% else %}
-      <div class="section">
-    {% endif %}
-
-      <div class="row">
-        {{ content }}
-      </div>
-
-    </div>
+    {{ content }}
   {% endblock content %}
 {% endblock paragraph %}
