@@ -4,12 +4,8 @@
 @mixin alkaline-row {
   .row {
     display: flex;
-    justify-content: center;
-
-    > div {
-      padding: 0 $global-margin;
-      width: 100%;
-    }
+    flex-direction: column;
+    align-items: center;
   }
 }
 

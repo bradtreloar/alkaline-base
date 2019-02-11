@@ -12,11 +12,15 @@
 %}
 <div{{ attributes.addClass(classes) }}>
 
-  {{ content.field_image }}
+  <a href="{{ url }}" rel="bookmark">
+    {{ content.field_image }}
+  </a>
 
   <section>
     <h3{{ title_attributes }}>
-      {{ label }}
+      <a href="{{ url }}" rel="bookmark">
+        {{ label }}
+        </a>
     </h3>
 
     {# <a class="button" href="{{ url }}">View</a> #}

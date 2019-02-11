@@ -1,19 +1,17 @@
-.region.content .title-bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 1rem auto;
+.title-bar {
+  width: 100%;
   max-width: 60rem; }
-  .region.content .title-bar a.button {
-    display: block;
-    margin: 0; }
-
-.region.lead .title-bar {
-  margin: 1rem auto;
-  max-width: 60rem; }
+  .region.content .title-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%; }
+    .region.content .title-bar a.button {
+      display: block;
+      margin: 0; }

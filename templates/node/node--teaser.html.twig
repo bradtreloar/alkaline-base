@@ -5,12 +5,7 @@
  */
 #}
 {{ attach_library('alkaline/article') }}
-{%
-  set classes = [
-    'teaser',
-  ]
-%}
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass("teaser") }}>
 
   <header>
     {{ content.field_image }}

@@ -80,9 +80,6 @@
   .banner .button {
     margin-top: 0;
     min-width: 8em; }
-  .banner figure {
-    max-width: 50%;
-    padding: 0 0.5rem 0 0; }
 
 .banner.hero {
   padding: 3rem 1rem 3rem;
@@ -97,14 +94,13 @@
     align-items: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+    max-width: 60rem; }
   .banner.hero .button {
     font-weight: bold; }
     @media print, screen and (min-width: 45em) {
       .banner.hero .button {
         font-size: 1.2em; } }
-  .banner.hero figcaption {
-    max-width: 60rem; }
 
 .banner.callout {
   color: inherit;

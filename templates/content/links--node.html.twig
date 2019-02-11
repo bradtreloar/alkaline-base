@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Theme override to display node links.
+ *
+ * @see template_preprocess_links()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if links %}
+  {% include "links.html.twig" %}
+{% endif %}

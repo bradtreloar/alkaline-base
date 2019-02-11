@@ -7,10 +7,10 @@
 {{ attach_library('alkaline/page_title') }}
 <div{{ attributes.addClass("block") }}>
   {% block content %}
-    <header class="row">
-      <div class="title-bar">
+    <div class="row">
+      <header class="title-bar">
         {{ content }}
-      </div>
-    </header>
+      </header>
+    </div>
   {% endblock %}
 </div>

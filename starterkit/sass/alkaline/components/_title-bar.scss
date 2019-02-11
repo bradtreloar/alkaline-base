@@ -3,22 +3,19 @@
 
 @mixin alkaline-title-bar {
   .title-bar {
+    width: 100%;
+    max-width: $global-width;
+
     .region.content & {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: $global-margin auto;
-      max-width: $global-width;
+      width: 100%;
 
       a.button {
         display: block;
         margin: 0;
       }
-    }
-
-    .region.lead & {
-      margin: $global-margin auto;
-      max-width: $global-width;
     }
   }
 }

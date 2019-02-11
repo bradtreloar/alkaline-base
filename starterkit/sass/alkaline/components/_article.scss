@@ -3,67 +3,44 @@
 
 @mixin alkaline-article {
   article {
-    margin: 0 0 $global-margin;
+    margin: 0 0 $global-margin 0;
     padding: 0;
 
-    &.teaser {
-      margin: (2 * $global-margin) 0;
+    .section {
+      margin: ($global-margin * 2) 0;
+      padding: 0 $global-margin;
     }
 
-    // @todo Review this block.
-    &.contact-details {
-      span {
-        display: inline-block;
-        vertical-align: top;
-      }
+    .row > * {
+      max-width: $global-width;
     }
 
-    picture {
-      display: flex;
-      justify-content: center;
-
-      img {
-        display: block;
+    .image {
+      figcaption {
+        padding: 1rem;
       }
     }
 
     .text-formatted {
       width: 100%;
+
+      img {
+        margin-bottom: $global-margin;
+      }
     }
 
-    .row {
-      > div {
-        max-width: $global-width;
-        margin: ($global-margin * 2) auto;
-
-        &.image {
-          figcaption {
-            padding: 1rem;
-          }
+    header {
+      &.banner {
+        .page-title {
+          margin: $global-margin 0;
         }
       }
-    }
-
-    .collage {
-      li {
-        padding: $global-margin;
+      &:not(.banner) {
+        padding: 0 $global-margin;
       }
     }
 
-    // Put bottom margin on img if not inside picture.
-    *:not(picture) > img {
-      margin-bottom: $global-margin;
-    }
-
-    footer {
-      @include media-object-container;
-      max-width: $global-width;
-      margin: $global-margin auto;
-
-      > * {
-        @include media-object-section;
-      }
-
+    footer.media-object {
       figure {
         // Make the author picture the same height as two lines of text.
         height: $global-lineheight * 2em;
@@ -78,6 +55,14 @@
       // Stack author name and date.
       span {
         display: block;
+      }
+    }
+
+    // @todo Review this block.
+    &.contact-details {
+      span {
+        display: inline-block;
+        vertical-align: top;
       }
     }
   }

@@ -8,18 +8,11 @@ use Drupal\paragraphs\Entity\Paragraph;
 
 function _alkaline_lead_section(&$vars) {
   $node = $vars['node'];
-  // $paragraph = $node->field_lead->getValue();
-  $paragraphs = $node->field_lead->referencedEntities();
-
-  // Fetch the background image file
-  foreach ($paragraphs as $lead) {
-    if ($lead->field_background_image) {
-      $file = $lead->field_background_image->entity;
-
+  if ($node->field_background_image) {
+    if ($file = $node->field_background_image->entity) {
       $uri = $file->getFileUri();
-      $htmlId = "lead--" . $node->id();
-      $vars['lead_id'] = $htmlId;
-      $vars['banner'] = true;
+      $htmlId = "banner--" . $node->id();
+      $vars['banner_id'] = $htmlId;
 
       // Add style element to vars.
       $vars['css'] = _alkaline_responsive_background_css('hero', "#$htmlId::after", $uri);
@@ -186,7 +179,7 @@ function alkaline_preprocess_block_hero_banner(&$vars) {
   $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
   if ($block_content) {
     // Fetch the background image URI.
-    $file = $block_content->field_background_image->entity;
+    $file = $block_content->field_image->entity;
     if($file) {
       $uri = $file->getFileUri();
       $htmlId = $vars['attributes']['id'];
@@ -368,10 +361,6 @@ function alkaline_preprocess_node(&$vars) {
   if (function_exists($node_type_preprocessor)) {
     $node_type_preprocessor($vars);
   }
-
-  if ($vars['view_mode'] == 'full') {
-    _alkaline_lead_section($vars);
-  }
 }
 
 
@@ -384,20 +373,12 @@ function alkaline_preprocess_node_page(&$vars) {
     if(isset($vars['content']['social_share_buttons']))
       unset($vars['content']['social_share_buttons']);
   }
-}
 
-
-/**
- * Preprocessor for article content type
- */
-function alkaline_preprocess_paragraph(&$vars) {
-	$paragraph = $vars['paragraph'];
-  $vars['emphasised'] = false;
-  if ($paragraph->field_emphasis && !$paragraph->field_emphasis->isEmpty()) {
-    $vars['emphasised'] = $paragraph->field_emphasis->get(0)->getValue()['value'];
+  // Preprocess variables for lead section.
+  if ($vars['view_mode'] == 'full') {
+    _alkaline_lead_section($vars);
   }
 }
-
 
 
 /**
@@ -428,6 +409,17 @@ function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
 
     // Add a template suggestion for the block type.
     $suggestions[] = 'block__' . $block_type;
+  }
+}
+
+
+/**
+ * Implements hook_theme_suggestions_field_alter()
+ */
+function alkaline_theme_suggestions_field_alter(array &$suggestions, array $vars) {
+  if (in_array('field__text_with_summary', $suggestions) && in_array('field__body', $suggestions)) {
+    if ($vars["element"]['#view_mode'] == 'teaser')
+      $suggestions[] = 'field__body__teaser';
   }
 }
 

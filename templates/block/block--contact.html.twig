@@ -14,14 +14,16 @@
 <div{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
-  <div class="title-bar">
-    {% if label %}
-      <h2{{ title_attributes }}>{{ label }}</h2>
-    {% endif %}
-    {% if more_link %}
-      {{ more_link }}
-    {% endif %}
-  </div>
+  {% if label or more_link %}
+    <div class="title-bar">
+      {% if label %}
+        <h2{{ title_attributes }}>{{ label }}</h2>
+      {% endif %}
+      {% if more_link %}
+        {{ more_link }}
+      {% endif %}
+    </div>
+  {% endif %}
   {{ title_suffix }}
 
   {% block content %}

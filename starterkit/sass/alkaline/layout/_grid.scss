@@ -4,7 +4,7 @@
 @mixin alkaline-grid {
   .grid {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     list-style: none;
     margin: 0 auto; // Let the grid centre itself.
     @include xy-grid;
@@ -30,16 +30,16 @@
       margin-bottom: 0.625rem;
       margin-top: 0.625rem;
     }
-  }
 
-  // Regions use .block instead of li
-  .grid.region {
-    @for $col-count from 1 through 12 {
-      @each $name, $width in $breakpoints {
-        &.#{$name}-#{$col-count} {
-          @include breakpoint($name) {
-            $cell-selector: '.block';
-            @include xy-grid-layout($col-count, $cell-selector);
+    // Regions use .block instead of li
+    &.region {
+      @for $col-count from 1 through 12 {
+        @each $name, $width in $breakpoints {
+          &.#{$name}-#{$col-count} {
+            @include breakpoint($name) {
+              $cell-selector: '.block';
+              @include xy-grid-layout($col-count, $cell-selector);
+            }
           }
         }
       }

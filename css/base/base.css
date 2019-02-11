@@ -92,4 +92,11 @@ figure {
   margin: 0; }
 
 picture {
-  display: block; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  picture img {
+    display: block; }

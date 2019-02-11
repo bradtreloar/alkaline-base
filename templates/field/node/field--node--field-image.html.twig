@@ -9,17 +9,8 @@
  * The Classy classes have been preserved so that AJAX can update this field
  */
 #}
-{%
-  set classes = [
-    'field',
-    field_name|clean_class,
-    'field--name-' ~ field_name|clean_class,
-    'field--type-' ~ field_type|clean_class,
-    'field--label-' ~ label_display,
-  ]
-%}
 {% for item in items %}
-  <picture {{ attributes.addClass(classes) }}>
+  <picture {{ attributes }}>
     {{ item.content }}
   </picture>
 {% endfor %}

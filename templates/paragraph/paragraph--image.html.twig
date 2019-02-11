@@ -6,8 +6,8 @@
 #}
 {% block content %}
   <div class="row">
-    <div class="image">
-      <figure>
+    {# <div> #}
+      <figure class="image">
         {{ content.field_image }}
         {% if content.field_caption %}
           <figcaption>
@@ -15,6 +15,6 @@
           </figcaption>
         {% endif %}
       </figure>
-    </div>
+    {# </div> #}
   </div>
 {% endblock %}

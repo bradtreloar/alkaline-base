@@ -1,54 +1,28 @@
 article {
-  margin: 0 0 1rem;
+  margin: 0 0 1rem 0;
   padding: 0; }
-  article.teaser {
-    margin: 2rem 0; }
+  article .section {
+    margin: 2rem 0;
+    padding: 0 1rem; }
+  article .row > * {
+    max-width: 60rem; }
+  article .image figcaption {
+    padding: 1rem; }
+  article .text-formatted {
+    width: 100%; }
+    article .text-formatted img {
+      margin-bottom: 1rem; }
+  article header.banner .page-title {
+    margin: 1rem 0; }
+  article header:not(.banner) {
+    padding: 0 1rem; }
+  article footer.media-object figure {
+    height: 3em; }
+    article footer.media-object figure img {
+      height: 100%;
+      width: auto; }
+  article footer.media-object span {
+    display: block; }
   article.contact-details span {
     display: inline-block;
     vertical-align: top; }
-  article picture {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-    article picture img {
-      display: block; }
-  article .text-formatted {
-    width: 100%; }
-  article .row > div {
-    max-width: 60rem;
-    margin: 2rem auto; }
-    article .row > div.image figcaption {
-      padding: 1rem; }
-  article .collage li {
-    padding: 1rem; }
-  article *:not(picture) > img {
-    margin-bottom: 1rem; }
-  article footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin-bottom: 1rem;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    max-width: 60rem;
-    margin: 1rem auto; }
-    article footer > * {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-      flex: 0 1 auto; }
-      article footer > *:first-child {
-        padding-right: 1rem; }
-      article footer > *:last-child:not(:nth-child(2)) {
-        padding-left: 1rem; }
-      article footer > * > :last-child {
-        margin-bottom: 0; }
-    article footer figure {
-      height: 3em; }
-      article footer figure img {
-        height: 100%;
-        width: auto; }
-    article footer span {
-      display: block; }

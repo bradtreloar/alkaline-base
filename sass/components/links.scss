@@ -3,10 +3,18 @@
 
 @mixin alkaline-links {
   .links {
-    margin: 0 0 $global-margin 0;
+    margin: $global-margin 0;
+    list-style: none;
 
-    a {
-      font-size: 120%;
+    li {
+      list-style: none;
+    }
+
+    &.inline {
+      a {
+        // font-size: 120%;
+        padding: 1rem;
+      }
     }
   }
 }

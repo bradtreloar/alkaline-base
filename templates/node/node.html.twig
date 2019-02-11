@@ -9,19 +9,16 @@
 {{ attach_library('alkaline/banner') }}
 <article{{ attributes }}>
 {% if page %}
-  {% if banner %}
-    <header>
-      <figure id="{{ lead_id }}" class="banner hero">
-        <figcaption>
 
-          <h1 class="page-title">
-            {{ label }}
-          </h1>
+  {% if banner_id %}
+    <header id="{{ banner_id }}" class="banner hero">
+      <div>
+        <h1 class="page-title">
+          {{ label }}
+        </h1>
 
-          {{ content.field_lead }}
-
-        </figcaption>
-      </figure>
+        {{ content.field_lead }}
+      </div>
     </header>
     {{ css }}
   {% else %}
@@ -35,24 +32,31 @@
 
     </header>
   {% endif %}
+
 {% else %}
-  <h2{{ title_attributes }}>
-    <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-  </h2>
+  <header>
+
+    <div class="title-bar">
+      <h2{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    </div>
+
+  </header>
 {% endif %}
 
   {% if display_submitted %}
-    <footer class="node__meta">
+    <footer class="media-object">
       {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
+      <address{{ author_attributes.addClass('node__submitted') }}>
         {% trans %}{{ author_name }}{{ date }}{% endtrans %}
         {{ metadata }}
-      </div>
+      </address>
     </footer>
   {% endif %}
 
-  <section{{ content_attributes }}>
-    {{ content|without('field_headline', 'field_lead') }}
-  </section>
+  <div class="body">
+    {{ content|without('field_lead') }}
+  </div>
 
 </article>

@@ -133,5 +133,10 @@ figure {
 }
 
 picture {
-  display: block;
+  display: flex;
+  justify-content: center;
+
+  img {
+    display: block;
+  }
 }

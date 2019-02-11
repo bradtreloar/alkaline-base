@@ -3,6 +3,8 @@
 
 $article-font-size: 1.25rem;
 
+$blockquote-color: lighten($black, 15%);
+
 
 @mixin alkaline-typography {
   @include foundation-typography-base;

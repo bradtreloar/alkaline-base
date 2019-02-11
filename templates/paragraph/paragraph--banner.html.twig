@@ -8,14 +8,14 @@
 {% block content %}
   {{ attach_library('alkaline/banner') }}
   <div {{ attribute.addClass("row") }}>
-    <div>
+    {# <div> #}
       <figure class="grid small-1 medium-2">
         {{ content.field_image }}
         <figcaption>
           {{ content|without('field_image') }}
         </figcaption>
       </figure>
-    </div>
+    {# </div> #}
   </div>
   {{ css }}
 {% endblock %}

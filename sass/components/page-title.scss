@@ -3,7 +3,7 @@
 
 @mixin alkaline-page-title {
   .page-title {
-    margin: $global-margin auto;
+    margin: ($global-margin * 2) auto;
     max-width: $global-width;
     width: 100%;
   }

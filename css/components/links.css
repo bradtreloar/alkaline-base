@@ -1,4 +1,7 @@
 .links {
-  margin: 0 0 1rem 0; }
-  .links a {
-    font-size: 120%; }
+  margin: 1rem 0;
+  list-style: none; }
+  .links li {
+    list-style: none; }
+  .links.inline a {
+    padding: 1rem; }
