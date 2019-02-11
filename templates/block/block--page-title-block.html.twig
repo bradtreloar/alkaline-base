@@ -5,12 +5,14 @@
  */
 #}
 {{ attach_library('alkaline/page_title') }}
-<div{{ attributes.addClass("block") }}>
+<div{{ attributes.addClass("block block-page-title") }}>
   {% block content %}
-    <div class="row">
-      <header class="title-bar">
+    <header class="row">
+
+      <div class="title-bar">
         {{ content }}
-      </header>
-    </div>
+      </div>
+
+    </header>
   {% endblock %}
 </div>

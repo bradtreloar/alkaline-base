@@ -6,6 +6,10 @@
     margin: ($global-margin * 2) auto;
     max-width: $global-width;
     width: 100%;
+
+    .block-page-title & {
+      padding: 0 $global-margin;
+    }
   }
 }
 

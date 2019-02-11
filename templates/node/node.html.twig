@@ -23,25 +23,23 @@
     {{ css }}
   {% else %}
     <header class="row">
-
       <div class="title-bar">
-        <h1 class="page-title">{{ label }}</h1>
+        <h1 class="page-title">
+          {{ label }}
+        </h1>
       </div>
 
       {{ content.field_lead }}
-
     </header>
   {% endif %}
 
 {% else %}
-  <header>
-
+  <header class="row">
     <div class="title-bar">
       <h2{{ title_attributes }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>
       </h2>
     </div>
-
   </header>
 {% endif %}
 
