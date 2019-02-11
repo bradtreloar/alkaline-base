@@ -4,46 +4,46 @@
 
   {% if page.admin %}
     <div class="layer admin">
-      <section class="region admin content-width">
+      <div class="region admin content-width">
         {{ page.admin }}
-      </section>
+      </div>
     </div>
   {% endif %}
 
   {% if page.lead %}
     <div class="layer lead full-page">
-      <section class="region lead">
+      <div class="region lead">
         {{ page.lead }}
-      </section>
+      </div>
     </div>
   {% endif %}
 
   <main class="layer main" role="main">
 
     {% if page.sidebar_first %}
-      <section id="sidebar-first" class="region sidebar sidebar-first">
+      <div id="sidebar-first" class="region sidebar sidebar-first">
         {{ page.sidebar_first }}
-      </section>
+      </div>
     {% endif %}
 
-    <section id="content" class="region content">
+    <div id="content" class="region content">
       <a id="main-content" tabindex="-1"></a>
       {{ attach_library('alkaline/article') }}
       <article>
-        <div class="body">
-          <section>
+        <div class="section">
+          <div class="row">
             <div class="text">
               <p>{{ page.content }}</p>
             </div>
-          </section>
+          </div>
         </div>
       </article>
-    </section>
+    </div>
 
     {% if page.sidebar_second %}
-      <section id="sidebar-second" class="region sidebar sidebar-second">
+      <div id="sidebar-second" class="region sidebar sidebar-second">
         {{ page.sidebar_second }}
-      </section>
+      </div>
     {% endif %}
 
   </main>

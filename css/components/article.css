@@ -2,8 +2,7 @@ article {
   margin: 0 0 1rem 0;
   padding: 0; }
   article .section {
-    margin: 2rem 0;
-    padding: 0 1rem; }
+    margin: 2rem 0; }
   article .row > * {
     max-width: 60rem; }
   article .image figcaption {

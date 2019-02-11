@@ -5,7 +5,15 @@
   .card {
     @include card-container;
 
-    > section {
+    .image {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .section {
       @include card-section;
 
       > *:first-child {

@@ -22,7 +22,9 @@ $blockquote-color: lighten($black, 15%);
   }
 
   article {
-    font-size: $article-font-size;
+    @include breakpoint(medium) {
+      font-size: $article-font-size;
+    }
   }
 }
 
