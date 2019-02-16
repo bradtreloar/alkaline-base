@@ -165,22 +165,18 @@ function alkaline_preprocess_block(&$vars) {
 /**
  * Preprocessor for alkaline_hero_banner block type
  */
-function alkaline_preprocess_block_alkaline_hero_banner(&$vars) {
-  alkaline_preprocess_block_hero_banner($vars);
-}
-
-
-/**
- * Preprocessor for alkaline_hero_banner block type
- */
 function alkaline_preprocess_block_hero_banner(&$vars) {
 
   $uuid = $vars['derivative_plugin_id'];
   $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
   if ($block_content) {
     // Fetch the background image URI.
-    $file = $block_content->field_image->entity;
-    if($file) {
+    if ($block_content->field_image)
+      $file = $block_content->field_image->entity;
+    else if ($block_content->field_background_image)
+      $file = $block_content->field_background_image->entity;
+
+    if(isset($file)) {
       $uri = $file->getFileUri();
       $htmlId = $vars['attributes']['id'];
 
@@ -264,28 +260,20 @@ function alkaline_preprocess_field_card(&$vars) {
 }
 
 
-/**
- * Preprocessor for field_type_link
- */
-function alkaline_preprocess_field_type_link(&$vars) {
-  // Supply the url and title to the template as vars.
-  // So we can construct our own anchor tags.
-  foreach ($vars['items'] as &$item) {
-    $item['title'] = $item['content']['#title'];
-    $item['url'] = $item['content']['#url'];
-  }
-}
-
-
-/**
- * Implements template_preprocess_form()
- *
- * @param array $vars
- * @return void
- */
-function alkaline_preprocess_form(&$vars) {
-
-}
+// /**
+//  * Preprocessor for field_button_link
+//  */
+// function alkaline_preprocess_field_type_link(&$vars) {
+//   dpm(array_keys($vars));
+//   // dpm(array_keys($vars['attributes']));
+//   // dpm($vars['theme_hook_original']);
+//   // dpm(array_keys($vars));
+//   // dpm(array_keys($vars));
+//   $vars['attributes'] = array_merge(
+//     $vars['attributes'],
+//     $vars['element']['attributes']
+//   );
+// }
 
 
 /**
