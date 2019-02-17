@@ -4,6 +4,7 @@
 @mixin alkaline-title-bar {
   .title-bar {
     width: 100%;
+    margin: 0 auto;
     max-width: $global-width;
 
     .region.content & {

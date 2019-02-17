@@ -1,7 +1,6 @@
 .messages-wrapper {
   margin: 0 auto;
-  max-width: 60rem;
-  padding: 0 1rem; }
+  max-width: 60rem; }
 
 .messages {
   position: relative;

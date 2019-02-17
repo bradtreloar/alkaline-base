@@ -13,28 +13,23 @@
 
   form {
 
-    .form-item,
-    .form-actions {
-      margin: 0 0 $form-spacing;
-    }
-
-    .region.content & {
-      padding: 0 $global-margin;
-
-      .form-item,
-      .form-actions {
-        margin: 0 auto $form-spacing;
-        max-width: $global-width;
-        width: 100%;
-      }
-    }
-
     .region.header & {
       @include tda-form-inline;
     }
 
     .region.navbar & {
       @include tda-form-inline;
+    }
+
+    .region.content & {
+      margin: 0 auto $form-spacing;
+      max-width: $global-width;
+      width: 100%;
+
+      .form-item,
+      .form-actions {
+        margin: 0 0 $form-spacing;
+      }
     }
   }
 

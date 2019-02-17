@@ -1,5 +1,6 @@
 .title-bar {
   width: 100%;
+  margin: 0 auto;
   max-width: 60rem; }
   .region.content .title-bar {
     display: -webkit-box;
