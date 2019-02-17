@@ -19,7 +19,6 @@ libraries:
   - alkaline/address
   - alkaline/admin_toolbar
   - alkaline/ajax
-  - alkaline/form
   - alkaline/icon
   - alkaline/local_tasks
   - alkaline/table
