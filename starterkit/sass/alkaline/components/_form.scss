@@ -12,10 +12,21 @@
   @include foundation-form-error;
 
   form {
+
     .form-item,
     .form-actions {
-      // Add global form-spacing margins to the element wrappers.
       margin: 0 0 $form-spacing;
+    }
+
+    .region.content & {
+      padding: 0 $global-margin;
+
+      .form-item,
+      .form-actions {
+        margin: 0 auto $form-spacing;
+        max-width: $global-width;
+        width: 100%;
+      }
     }
 
     .region.header & {
@@ -24,12 +35,6 @@
 
     .region.navbar & {
       @include tda-form-inline;
-    }
-
-    .region.content & {
-      padding: 0 $global-margin;
-      margin: 0 auto;
-      max-width: $global-width;
     }
   }
 

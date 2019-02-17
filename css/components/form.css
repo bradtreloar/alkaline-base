@@ -273,6 +273,14 @@ form .form-item,
 form .form-actions {
   margin: 0 0 1rem; }
 
+.region.content form {
+  padding: 0 1rem; }
+  .region.content form .form-item,
+  .region.content form .form-actions {
+    margin: 0 auto 1rem;
+    max-width: 60rem;
+    width: 100%; }
+
 .region.header form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -322,11 +330,6 @@ form .form-actions {
   .region.navbar form .form-actions input[type="submit"] {
     padding-top: 0;
     padding-bottom: 0; }
-
-.region.content form {
-  padding: 0 1rem;
-  margin: 0 auto;
-  max-width: 60rem; }
 
 .contact-message-form #edit-preview {
   display: none; }
