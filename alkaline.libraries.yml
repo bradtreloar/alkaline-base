@@ -68,6 +68,11 @@ button:
     component:
       css/components/button.css: {}
 
+call_to_action:
+  css:
+    component:
+      css/components/call-to-action.css: {}
+
 carousel:
   css:
     component:

@@ -1,0 +1,12 @@
+{{ attach_library('alkaline/call_to_action') }}
+<div{{ attributes.addClass("block") }}>
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <div class="call-to-action">
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+</div>

@@ -101,29 +101,3 @@
     @media print, screen and (min-width: 45em) {
       .banner.hero .button {
         font-size: 1.2em; } }
-
-.banner.callout {
-  color: inherit;
-  margin: 0 auto;
-  max-width: 60rem; }
-  @media print, screen and (min-width: 45em) {
-    .banner.callout {
-      padding: 6rem 1rem; } }
-  .banner.callout > * {
-    text-align: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-  .banner.callout p {
-    font-size: 1.2em; }
-    @media print, screen and (min-width: 45em) {
-      .banner.callout p {
-        font-size: 1.5em; } }
-  .banner.callout .button {
-    font-weight: bold; }
-    @media print, screen and (min-width: 45em) {
-      .banner.callout .button {
-        font-size: 1.2em; } }

@@ -1,0 +1,46 @@
+
+
+
+@mixin alkaline-call-to-action {
+  .call-to-action {
+    // CTA's only need special styling when
+    // in the main content region.
+    .region.content & {
+      // Standard content alignment.
+      margin: 0 auto;
+      max-width: $global-width;
+      width: 100%;
+
+      // Centre the body and the buttons
+      // in the CTA element.
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      // Give CTA blocks extra whitespace to
+      // give the message greater emphasis.
+      padding: 3rem 0;
+      @include breakpoint(medium) {
+        padding: 6rem 0;
+      }
+
+      // Make CTA buttons centred.
+      .button-group {
+        margin: 0 auto;
+      }
+
+      // Make CTA buttons big and bold.
+      .button {
+        font-weight: bold;
+        min-width: 8em;
+
+        @include breakpoint(medium) {
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+
+
+// @include alkaline-call-to-action;
