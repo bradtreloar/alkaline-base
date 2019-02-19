@@ -4,25 +4,29 @@
 @mixin alkaline-banner {
   .banner {
     @include tda-background-image;
-    height: 100%;
-    padding: 3rem 1rem;
-    width: 100%;
     position: relative;
 
-    > * {
-      align-items: flex-start;
+    // Extend over the padding set on .block
+    margin: 0 (-$global-margin);
+
+    // Give the banner content plenty of padding.
+    padding: 3rem $global-margin;
+    @include breakpoint(medium) {
+      padding: 6rem $global-margin;;
+    }
+
+    > div {
+      // Centre-align the banner content elements.
+      align-items: center;
       display: flex;
       flex-direction: column;
-      height: 100%;
-      justify-content: space-between;
-      width: 100%;
+      max-width: $global-width;
+      text-align: center;
+
+      // Standard content margins.
       margin: 0 auto;
       max-width: $global-width;
-
-      > div:last-of-type:not(:first-of-type) {
-        @include button-group(div, 0.5rem);
-        margin: 0;
-      }
+      width: 100%;
     }
 
     h1, h2 {
@@ -43,31 +47,8 @@
     }
 
     .button {
-      margin-top: 0;
-      min-width: 8em;
-    }
-  }
-}
-
-
-@mixin alkaline-hero-banner {
-  .banner.hero {
-    padding: 3rem 1rem 3rem;
-    text-align: center;
-
-    @include breakpoint(medium) {
-      padding: 6rem;
-    }
-
-    > * {
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      max-width: $global-width;
-    }
-
-    .button {
       font-weight: bold;
+      min-width: 8em;
 
       @include breakpoint(medium) {
         font-size: 1.2em;
@@ -78,4 +59,3 @@
 
 
 // @include alkaline-banner;
-// @include alkaline-hero-banner;
