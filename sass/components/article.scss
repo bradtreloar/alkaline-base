@@ -25,14 +25,6 @@
       }
     }
 
-    header {
-      &.banner {
-        .page-title {
-          margin: $global-margin -$global-margin;
-        }
-      }
-    }
-
     footer.media-object {
       figure {
         // Make the author picture the same height as two lines of text.

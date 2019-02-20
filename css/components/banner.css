@@ -1,9 +1,8 @@
 .banner {
   position: relative;
-  height: 100%;
-  padding: 3rem 1rem;
-  width: 100%;
-  position: relative; }
+  position: relative;
+  margin: 0 -1rem;
+  padding: 3rem 1rem; }
   .banner:after {
     background-image: none;
     background-position: center;
@@ -18,10 +17,13 @@
     left: 0;
     right: 0;
     z-index: -1; }
-  .banner > * {
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+  @media print, screen and (min-width: 45em) {
+    .banner {
+      padding: 6rem 1rem; } }
+  .banner > div {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -29,44 +31,11 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    height: 100%;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    width: 100%;
+    max-width: 60rem;
+    text-align: center;
     margin: 0 auto;
-    max-width: 60rem; }
-    .banner > * > div:last-of-type:not(:first-of-type) {
-      margin-bottom: 1rem;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-      -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-      align-items: stretch;
-      margin: 0; }
-      .banner > * > div:last-of-type:not(:first-of-type)::before, .banner > * > div:last-of-type:not(:first-of-type)::after {
-        display: table;
-        content: ' ';
-        -ms-flex-preferred-size: 0;
-        flex-basis: 0;
-        -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-        order: 1; }
-      .banner > * > div:last-of-type:not(:first-of-type)::after {
-        clear: both; }
-      .banner > * > div:last-of-type:not(:first-of-type) div {
-        margin: 0;
-        margin-right: 0.5rem;
-        margin-bottom: 0.5rem;
-        font-size: 0.9rem;
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto; }
-        .banner > * > div:last-of-type:not(:first-of-type) div:last-child {
-          margin-right: 0; }
+    max-width: 60rem;
+    width: 100%; }
   .banner h1, .banner h2 {
     line-height: 1.2em; }
   .banner h2 {
@@ -78,52 +47,8 @@
     .banner h2 a {
       color: inherit; }
   .banner .button {
-    margin-top: 0;
+    font-weight: bold;
     min-width: 8em; }
-
-.banner.hero {
-  padding: 3rem 1rem 3rem;
-  text-align: center; }
-  @media print, screen and (min-width: 45em) {
-    .banner.hero {
-      padding: 6rem; } }
-  .banner.hero > * {
-    text-align: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    max-width: 60rem; }
-  .banner.hero .button {
-    font-weight: bold; }
     @media print, screen and (min-width: 45em) {
-      .banner.hero .button {
-        font-size: 1.2em; } }
-
-.banner.callout {
-  color: inherit;
-  margin: 0 auto;
-  max-width: 60rem; }
-  @media print, screen and (min-width: 45em) {
-    .banner.callout {
-      padding: 6rem 1rem; } }
-  .banner.callout > * {
-    text-align: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-  .banner.callout p {
-    font-size: 1.2em; }
-    @media print, screen and (min-width: 45em) {
-      .banner.callout p {
-        font-size: 1.5em; } }
-  .banner.callout .button {
-    font-weight: bold; }
-    @media print, screen and (min-width: 45em) {
-      .banner.callout .button {
+      .banner .button {
         font-size: 1.2em; } }
