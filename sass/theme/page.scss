@@ -22,11 +22,13 @@ $boilerplate-layer-background: $footer-layer-background;
     &.footer {
       color: $footer-layer-color;
       background-color: $footer-layer-background;
+      fill: $footer-layer-color; // for SVG icons
     }
 
     &.boilerplate {
       color: $boilerplate-layer-color;
       background-color: $boilerplate-layer-background;
+      fill: $boilerplate-layer-color; // for SVG icons
     }
   }
 }
