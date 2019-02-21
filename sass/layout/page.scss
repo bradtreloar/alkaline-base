@@ -21,16 +21,16 @@ $top-bar-height: 48px;
     }
   }
 
-  @include alkaline-admin-layer;
-  @include alkaline-header-layer;
-  @include alkaline-lead-layer;
-  @include alkaline-main-layer;
-  @include alkaline-footer-layer;
-  @include alkaline-boilerplate-layer;
+  @include tda-admin-layer;
+  @include tda-header-layer;
+  @include tda-lead-layer;
+  @include tda-main-layer;
+  @include tda-footer-layer;
+  @include tda-boilerplate-layer;
 }
 
 
-@mixin alkaline-admin-layer {
+@mixin tda-admin-layer {
   .layer.admin {
     position: relative;
 
@@ -125,7 +125,7 @@ $top-bar-height: 48px;
 }
 
 
-@mixin alkaline-header-layer {
+@mixin tda-header-layer {
   .layer.header {
     width: 100%;
 
@@ -198,7 +198,7 @@ $top-bar-height: 48px;
 }
 
 
-@mixin alkaline-lead-layer {
+@mixin tda-lead-layer {
   .layer.lead {
     position: relative;
 
@@ -232,7 +232,7 @@ $top-bar-height: 48px;
 }
 
 
-@mixin alkaline-main-layer {
+@mixin tda-main-layer {
   .layer.main {
     margin: 0 0 (2 * $global-margin);
 
@@ -262,7 +262,7 @@ $top-bar-height: 48px;
 }
 
 
-@mixin alkaline-footer-layer {
+@mixin tda-footer-layer {
   .layer.footer {
     margin: $global-margin 0 0 0;
 
@@ -287,7 +287,7 @@ $top-bar-height: 48px;
 }
 
 
-@mixin alkaline-boilerplate-layer {
+@mixin tda-boilerplate-layer {
   .layer.boilerplate {
     padding: (2 * $global-margin) 0 $global-margin;
 
