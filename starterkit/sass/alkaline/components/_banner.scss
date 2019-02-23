@@ -11,9 +11,6 @@ $stacked-banner-image-height: 45vh;
     // Extend over the padding set on .block
     margin: 0 (-$global-margin);
 
-    // Give the banner content plenty of padding.
-    padding: 3rem $global-margin;
-
     > div {
       // Standard content margins.
       margin: 0 auto;
@@ -39,6 +36,9 @@ $stacked-banner-image-height: 45vh;
     }
 
     &.hero {
+      // Give the banner content plenty of padding.
+      padding: 3rem $global-margin;
+
       &:after {
         display: block;
       }
@@ -54,7 +54,8 @@ $stacked-banner-image-height: 45vh;
     }
 
     &.stacked {
-      padding-top: $stacked-banner-image-height;
+      // Make room for the background image at the top.
+      padding: $stacked-banner-image-height $global-margin 0;
 
       &:before {
         display: block;
