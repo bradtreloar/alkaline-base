@@ -11,47 +11,52 @@
 
     // Give the banner content plenty of padding.
     padding: 3rem $global-margin;
-    @include breakpoint(medium) {
-      padding: 6rem $global-margin;;
-    }
 
     > div {
-      // Centre-align the banner content elements.
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      max-width: $global-width;
-      text-align: center;
-
       // Standard content margins.
       margin: 0 auto;
       max-width: $global-width;
       width: 100%;
     }
 
-    h1, h2 {
-      line-height: 1.2em;
+    &:before,
+    &:after {
+      // disable display by default, and let each
+      // banner style decide when to switch it on.
+      display: none;
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: -1;
     }
 
-    h2 {
-      line-height: 1.2em;
-      font-size: 1.5rem;
-
-      @include breakpoint(medium) {
-        font-size: 1.75rem;
+    &.hero {
+      &:after {
+        display: block;
       }
 
-      a {
-        color: inherit;
+      > div {
+        // Centre-align the banner content elements.
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-width: $global-width;
+        text-align: center;
       }
     }
 
-    .button {
-      font-weight: bold;
-      min-width: 8em;
+    &.stacked {
+      padding-top: calc(45vh);
 
-      @include breakpoint(medium) {
-        font-size: 1.2em;
+      &:before {
+        display: block;
+        height: 45vh;
       }
     }
   }

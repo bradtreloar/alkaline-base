@@ -15,7 +15,7 @@ function _alkaline_lead_section(&$vars) {
       $vars['banner_id'] = $htmlId;
 
       // Add style element to vars.
-      $vars['css'] = _alkaline_responsive_background_css('hero', "#$htmlId::after", $uri);
+      $vars['css'] = _alkaline_responsive_background_css('hero', "#$htmlId", $uri);
     }
   }
 }
@@ -49,7 +49,7 @@ function _alkaline_responsive_background_css($imageStyleClass, $selector, $image
   foreach ($cssRules as $rule) {
     $mediaQuery = $rule['mediaQuery'];
     $url = $rule['url'];
-    $css .= "@media $mediaQuery { $selector { background-image: url('$url'); }}\n";
+    $css .= "@media $mediaQuery { $selector::before, $selector::after { background-image: url('$url'); }}\n";
   }
 
   return [
