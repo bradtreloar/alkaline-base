@@ -3,7 +3,6 @@
 
 @mixin alkaline-banner {
   .banner {
-    @include tda-background-image;
     position: relative;
 
     // Extend over the padding set on .block
@@ -21,7 +20,7 @@
 
     &:before,
     &:after {
-      // disable display by default, and let each
+      // Disable display by default, and let each
       // banner style decide when to switch it on.
       display: none;
 
