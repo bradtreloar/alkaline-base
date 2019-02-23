@@ -1,6 +1,9 @@
 @import 'global';
 
 
+$stacked-banner-image-height: 45vh;
+
+
 @mixin alkaline-banner {
   .banner {
     position: relative;
@@ -51,11 +54,11 @@
     }
 
     &.stacked {
-      padding-top: calc(45vh);
+      padding-top: $stacked-banner-image-height;
 
       &:before {
         display: block;
-        height: 45vh;
+        height: $stacked-banner-image-height;
       }
     }
   }
