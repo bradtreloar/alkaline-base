@@ -6,10 +6,12 @@
 #}
 {% block content %}
   {{ attach_library('alkaline/card') }}
-  <figure class="card">
-    {{ content.field_image }}
-    <figcaption>
+  <div class="card">
+    <div class="image">
+      {{ content.field_image }}
+    </div>
+    <div class="section">
       {{ content|without('field_image') }}
-    </figcaption>
+    </div>
   </figure>
 {% endblock %}

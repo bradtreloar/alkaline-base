@@ -1,7 +1,7 @@
 article {
   margin: 0 0 1rem 0;
   padding: 0; }
-  article .section {
+  article .body > .section {
     margin: 2rem auto;
     max-width: 60rem; }
   article .image figcaption {
