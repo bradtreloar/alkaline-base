@@ -20,22 +20,10 @@
 
   <main class="layer main" role="main">
 
-    {% if page.sidebar_first %}
-      <div id="sidebar-first" class="region sidebar sidebar-first">
-        {{ page.sidebar_first }}
-      </div>
-    {% endif %}
-
     <div id="content" class="region content">
       <a id="main-content" tabindex="-1"></a>
       {{ page.content }}
     </div>
-
-    {% if page.sidebar_second %}
-      <div id="sidebar-second" class="region sidebar sidebar-second">
-        {{ page.sidebar_second }}
-      </div>
-    {% endif %}
 
   </main>
 
