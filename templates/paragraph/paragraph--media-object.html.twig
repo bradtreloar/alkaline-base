@@ -6,7 +6,7 @@
 #}
 {% block content %}
   {{ attach_library('alkaline/media_object') }}
-  <div class="media-object">
+  <div{{ attributes.addClass("media-object") }}>
     {% if content.field_image %}
       <figure>
         {{ content.field_image }}

@@ -6,7 +6,7 @@
 #}
 {% block content %}
   {{ attach_library('alkaline/card') }}
-  <div class="card">
+  <div{{ attributes.addClass("card") }}>
     <div class="image">
       {{ content.field_image }}
     </div>
