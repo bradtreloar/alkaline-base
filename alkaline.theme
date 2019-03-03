@@ -181,7 +181,7 @@ function alkaline_preprocess_block_hero_banner(&$vars) {
       $htmlId = $vars['attributes']['id'];
 
       // Add style element to vars.
-      $vars['css'] = _alkaline_responsive_background_css('hero', "#$htmlId figure::after", $uri);
+      $vars['css'] = _alkaline_responsive_background_css('hero', "#$htmlId figure", $uri);
     }
   }
 }
