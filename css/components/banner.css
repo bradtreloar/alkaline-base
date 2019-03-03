@@ -19,7 +19,8 @@
   .banner.hero {
     padding: 3rem 1rem; }
     .banner.hero:after {
-      display: block; }
+      display: block;
+      height: 100%; }
     .banner.hero > div {
       -webkit-box-align: center;
       -ms-flex-align: center;
