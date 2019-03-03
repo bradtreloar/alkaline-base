@@ -30,7 +30,7 @@ function _alkaline_responsive_background_css($imageStyleClass, $selector, $image
   $cssRules = [];
   foreach ($breakpoints as $name => $breakpoint) {
     // Derive the image style name from the breakpoint name.
-    $imageStyleName = str_replace('alkaline.', 'alkaline_' . $imageStyleClass . '_', $name);
+    $imageStyleName = str_replace('alkaline.', '' . $imageStyleClass . '_', $name);
 
     // Try to load the image style
     if ($imageStyle = ImageStyle::load($imageStyleName)) {
