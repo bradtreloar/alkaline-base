@@ -6,8 +6,19 @@
  */
 #}
 {% block content %}
+<<<<<<< HEAD
   {{ attach_library('alkaline/collage') }}
   <div{{ attributes.addClass("collage") }}>
     {{ content }}
   </div>
+||||||| merged common ancestors
+  {{ content }}
+=======
+  {{ attach_library('alkaline/collage') }}
+  <div class="row">
+    <div class="collage">
+      {{ content }}
+    </div>
+  </div>
+>>>>>>> d22767d5efb7d7ba6c5f4fcb7a0056a9c261461c
 {% endblock content %}
