@@ -11,7 +11,7 @@
 {% if page %}
 
   {% if banner_id %}
-    <header id="{{ banner_id }}" class="banner hero">
+    <header id="{{ banner_id }}" class="banner stacked">
       <div>
         <h1 class="page-title">
           {{ label }}
@@ -22,7 +22,7 @@
     </header>
     {{ css }}
   {% else %}
-    <header class="row">
+    <header>
       <div class="title-bar">
         <h1 class="page-title">
           {{ label }}
@@ -34,7 +34,7 @@
   {% endif %}
 
 {% else %}
-  <header class="row">
+  <header>
     <div class="title-bar">
       <h2{{ title_attributes }}>
         <a href="{{ url }}" rel="bookmark">{{ label }}</a>

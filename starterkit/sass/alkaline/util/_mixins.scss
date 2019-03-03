@@ -31,7 +31,7 @@
 }
 
 
-@mixin tda-background-image($imageUrl: none) {
+@mixin tda-background-element($imageUrl: none) {
   position: relative;
 
   &:after {
@@ -43,12 +43,19 @@
     background-repeat: no-repeat;
     content: '';
     display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+
+@mixin tda-background-image($imageUrl: none) {
+  position: relative;
+
+  &:after {
+    @include tda-background-element($imageUrl);
     height: 100%;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
   }
 }

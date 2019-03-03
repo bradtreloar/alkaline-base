@@ -1,111 +1,65 @@
 @import 'global';
 
 
+$stacked-banner-image-height: 45vh;
+
+
 @mixin alkaline-banner {
   .banner {
-    @include tda-background-image;
-    height: 100%;
-    padding: 3rem 1rem;
-    width: 100%;
     position: relative;
 
-    > * {
-      align-items: flex-start;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      justify-content: space-between;
-      width: 100%;
+    // Extend over the padding set on .block
+    margin: 0 (-$global-margin);
+
+    > div {
+      // Standard content margins.
       margin: 0 auto;
       max-width: $global-width;
+      width: 100%;
+    }
 
-      > div:last-of-type:not(:first-of-type) {
-        @include button-group(div, 0.5rem);
-        margin: 0;
+    &:before,
+    &:after {
+      // Disable display by default, and let each
+      // banner style decide when to switch it on.
+      display: none;
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &.hero {
+      // Give the banner content plenty of padding.
+      padding: 3rem $global-margin;
+
+      &:after {
+        display: block;
+      }
+
+      > div {
+        // Centre-align the banner content elements.
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-width: $global-width;
+        text-align: center;
       }
     }
 
-    h1, h2 {
-      line-height: 1.2em;
-    }
+    &.stacked {
+      // Make room for the background image at the top.
+      padding: $stacked-banner-image-height $global-margin 0;
 
-    h2 {
-      line-height: 1.2em;
-      font-size: 1.5rem;
-
-      @include breakpoint(medium) {
-        font-size: 1.75rem;
-      }
-
-      a {
-        color: inherit;
-      }
-    }
-
-    .button {
-      margin-top: 0;
-      min-width: 8em;
-    }
-  }
-}
-
-
-@mixin alkaline-hero-banner {
-  .banner.hero {
-    padding: 3rem 1rem 3rem;
-    text-align: center;
-
-    @include breakpoint(medium) {
-      padding: 6rem;
-    }
-
-    > * {
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      max-width: $global-width;
-    }
-
-    .button {
-      font-weight: bold;
-
-      @include breakpoint(medium) {
-        font-size: 1.2em;
-      }
-    }
-  }
-}
-
-
-@mixin alkaline-callout-banner {
-  .banner.callout {
-    color: inherit;
-    margin: 0 auto;
-    max-width: $global-width;
-
-    @include breakpoint(medium) {
-      padding: 6rem $global-margin;
-    }
-
-    > * {
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-    }
-
-    p {
-      font-size: 1.2em;
-
-      @include breakpoint(medium) {
-        font-size: 1.5em;
-      }
-    }
-
-    .button {
-      font-weight: bold;
-
-      @include breakpoint(medium) {
-        font-size: 1.2em;
+      &:before {
+        display: block;
+        height: $stacked-banner-image-height;
       }
     }
   }
@@ -113,5 +67,3 @@
 
 
 @include alkaline-banner;
-@include alkaline-hero-banner;
-@include alkaline-callout-banner;

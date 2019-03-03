@@ -6,11 +6,8 @@
     margin: 0 0 $global-margin 0;
     padding: 0;
 
-    .section {
-      margin: ($global-margin * 2) 0;
-    }
-
-    .row > * {
+    .body > .section {
+      margin: ($global-margin * 2) auto;
       max-width: $global-width;
     }
 
@@ -25,17 +22,6 @@
 
       img {
         margin-bottom: $global-margin;
-      }
-    }
-
-    header {
-      &.banner {
-        .page-title {
-          margin: $global-margin 0;
-        }
-      }
-      &:not(.banner) {
-        padding: 0 $global-margin;
       }
     }
 

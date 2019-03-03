@@ -17,7 +17,7 @@ base:
       css/print.css: { media: print }
     layout:
       css/layout/grid.css: {}
-      css/layout/row.css: {}
+      # css/layout/row.css: {}
     component:
       css/components/title-bar.css: {}
 
@@ -67,6 +67,11 @@ button:
   css:
     component:
       css/components/button.css: {}
+
+call_to_action:
+  css:
+    component:
+      css/components/call-to-action.css: {}
 
 carousel:
   css:

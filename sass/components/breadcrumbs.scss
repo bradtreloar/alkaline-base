@@ -5,7 +5,7 @@
   .breadcrumb {
     margin: $global-margin auto;
     max-width: $global-width;
-    padding: 0 $global-margin;
+    width: 100%;
 
     ol {
       @include breadcrumbs-container;

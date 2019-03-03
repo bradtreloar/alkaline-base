@@ -1,20 +1,16 @@
-{% extends "paragraph.html.twig" %}
+{% extends "paragraph--field-body.html.twig" %}
 {#
 /**
  * @file
  * Theme override for a paragraph type.
 #}
 {% block content %}
-  <div class="row">
-    {# <div> #}
-      <figure class="image">
-        {{ content.field_image }}
-        {% if content.field_caption %}
-          <figcaption>
-            {{ content.field_caption }}
-          </figcaption>
-        {% endif %}
-      </figure>
-    {# </div> #}
-  </div>
+  <figure{{ attributes.addClass("image") }}>
+    {{ content.field_image }}
+    {% if content.field_caption && view_mode != "teaser" %}
+      <figcaption>
+        {{ content.field_caption }}
+      </figcaption>
+    {% endif %}
+  </figure>
 {% endblock %}

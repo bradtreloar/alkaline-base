@@ -269,9 +269,30 @@ select {
   .form-error.is-visible {
     display: block; }
 
-form .form-item,
-form .form-actions {
-  margin: 0 0 1rem; }
+.region.header form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2em;
+  margin: 1rem 0;
+  padding: 0 1rem; }
+  .region.header form .form-item,
+  .region.header form .form-actions {
+    margin: 0; }
+    .region.header form .form-item:not(:last-child),
+    .region.header form .form-actions:not(:last-child) {
+      margin: 0 0.5rem 0 0; }
+    .region.header form .form-item > *,
+    .region.header form .form-actions > * {
+      height: 100%;
+      margin: 0; }
+  .region.header form .form-item {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
+  .region.header form .form-actions input[type="submit"] {
+    padding-top: 0;
+    padding-bottom: 0; }
 
 .region.navbar form {
   display: -webkit-box;
@@ -299,9 +320,12 @@ form .form-actions {
     padding-bottom: 0; }
 
 .region.content form {
-  padding: 0 1rem;
-  margin: 0 auto;
-  max-width: 60rem; }
+  margin: 0 auto 1rem;
+  max-width: 60rem;
+  width: 100%; }
+  .region.content form .form-item,
+  .region.content form .form-actions {
+    margin: 0 0 1rem; }
 
 .contact-message-form #edit-preview {
   display: none; }

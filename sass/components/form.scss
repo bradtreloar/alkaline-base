@@ -12,20 +12,24 @@
   @include foundation-form-error;
 
   form {
-    .form-item,
-    .form-actions {
-      // Add global form-spacing margins to the element wrappers.
-      margin: 0 0 $form-spacing;
+
+    .region.header & {
+      @include tda-form-inline;
     }
 
     .region.navbar & {
-      @include alkaline-form-inline;
+      @include tda-form-inline;
     }
 
     .region.content & {
-      padding: 0 $global-margin;
-      margin: 0 auto;
+      margin: 0 auto $form-spacing;
       max-width: $global-width;
+      width: 100%;
+
+      .form-item,
+      .form-actions {
+        margin: 0 0 $form-spacing;
+      }
     }
   }
 
@@ -41,7 +45,7 @@
 
 // Places all form elements in a row and sets
 // an explicit height on the wrapper
-@mixin alkaline-form-inline {
+@mixin tda-form-inline {
   // Make children inline.
   display: flex;
 

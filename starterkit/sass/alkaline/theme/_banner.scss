@@ -1,28 +1,18 @@
 
 
 
-$banner-background: transparent;
-$banner-color: $black;
-
-$hero-banner-background: $banner-background;
-$hero-banner-color: $banner-color!default;
+$hero-banner-background: transparent;
+$hero-banner-color: inherit;
 
 
 @mixin alkaline-banner-theme {
   .banner {
-    background-color: $banner-background;
-    color: $banner-color;
-  }
-}
-
-
-@mixin alkaline-hero-banner-theme {
-  .banner.hero {
-    background-color: $hero-banner-background;
-    color: $hero-banner-color;
+    &.hero {
+      background-color: $hero-banner-background;
+      color: $hero-banner-color;
+    }
   }
 }
 
 
 // @include alkaline-banner-theme;
-// @include alkaline-hero-banner-theme;
