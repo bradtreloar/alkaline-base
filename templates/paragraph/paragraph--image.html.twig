@@ -7,7 +7,7 @@
 {% block content %}
   <figure{{ attributes.addClass("image") }}>
     {{ content.field_image }}
-    {% if content.field_caption && view_mode != "teaser" %}
+    {% if content.field_caption and view_mode != "teaser" %}
       <figcaption>
         {{ content.field_caption }}
       </figcaption>

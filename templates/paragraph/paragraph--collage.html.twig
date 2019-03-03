@@ -6,5 +6,8 @@
  */
 #}
 {% block content %}
-  {{ content }}
+  {{ attach_library('alkaline/collage') }}
+  <div{{ attributes.addClass("collage") }}>
+    {{ content }}
+  </div>
 {% endblock content %}
