@@ -1,0 +1,14 @@
+{% extends "paragraph.html.twig" %}
+{#
+/**
+ * @file
+ * Custom theme implementation to display a paragraph.
+ */
+#}
+{% block paragraph %}
+  <div class="body-section">
+    {% block content %}
+      {{ content }}
+    {% endblock content %}
+  </div>
+{% endblock paragraph %}

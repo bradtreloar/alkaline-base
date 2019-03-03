@@ -1,7 +1,7 @@
 article {
   margin: 0 0 1rem 0;
   padding: 0; }
-  article .body > .section {
+  article .body-section {
     margin: 2rem auto;
     max-width: 60rem; }
   article .image figcaption {
@@ -17,6 +17,9 @@ article {
       width: auto; }
   article footer.media-object span {
     display: block; }
+  article footer address {
+    padding: 0 1rem;
+    margin: 1rem 0; }
   article.contact-details span {
     display: inline-block;
     vertical-align: top; }
