@@ -7,11 +7,19 @@
 {% block content %}
   {{ attach_library('alkaline/card') }}
   <div{{ attributes.addClass("card") }}>
-    <div class="image">
-      {{ content.field_image }}
-    </div>
-    <div class="section">
-      {{ content|without('field_image') }}
-    </div>
+
+    {% if content.field_image|render %}
+      <div class="image">
+        {{ content.field_image }}
+      </div>
+    {% endif %}
+
+    {% if content.field_text|render or content.field_link|render %}
+      <div class="card-section">
+        {{ content.field_text }}
+        {{ content.field_link }}
+      </div>
+    {% endif %}
+
   </figure>
 {% endblock %}
