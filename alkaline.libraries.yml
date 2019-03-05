@@ -8,6 +8,7 @@ foundation:
     base:
       css/motion-ui.min.css: {}
   dependencies:
+    - core/drupal
     - core/jquery
     - core/jquery.once
 
@@ -153,6 +154,9 @@ menu:
     js/behaviors/menu.js:
   dependencies:
     - alkaline/foundation
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
 
 messages:
   css:
