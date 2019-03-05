@@ -128,7 +128,7 @@ $header-styles: (
     'h5': ('font-size': 1.50rem),
     'h6': ('font-size': 1.25rem),
   ),
-);
+) !default;
 
 // Foundation default globals.
 @import 'foundation-sites/scss/global';
