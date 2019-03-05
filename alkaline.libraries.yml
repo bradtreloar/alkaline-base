@@ -4,6 +4,9 @@ foundation:
     js/motion-ui.min.js: {}
     js/foundation.min.js: {}
     js/behaviors/foundation.js: {}
+  css:
+    base:
+      css/motion-ui.min.css: {}
   dependencies:
     - core/jquery
     - core/jquery.once
@@ -13,7 +16,6 @@ base:
     base:
       css/base/base.css: {}
       css/base/drupal.css: {}
-      css/base/motion-ui.min.css: {}
       css/print.css: { media: print }
     layout:
       css/layout/grid.css: {}

@@ -4,59 +4,12 @@
 @mixin alkaline-carousel {
   @include foundation-orbit;
 
-  .carousel {
-    @include orbit-wrapper;
+  .block.carousel {
+    // // @bug this rule is less specific than .layer.main .block in layout/page
+    // padding: 0;
 
-    ul {
-      @include orbit-container;
-      background: $black;
-    }
-
-    li {
-      @include orbit-slide;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 100%;
-    }
-
-    figure {
-      @include orbit-figure;
-
-      img {
-        display: block;
-        margin: 0 auto;
-        max-width: 100%;
-      }
-    }
-
-    figcaption {
-      @include orbit-caption;
-    }
-
-    .controls {
-      button {
-        @include orbit-control;
-        cursor: pointer;
-
-        svg {
-          fill: $white;
-          height: 1.5em;
-          width: 1.5em;
-        }
-
-        &.previous {
-          @include orbit-previous;
-        }
-
-        &.next {
-          @include orbit-next;
-        }
-      }
-    }
-
-    nav {
-      @include orbit-bullets;
+    .orbit {
+      margin: 0 (-$global-margin);
     }
   }
 }

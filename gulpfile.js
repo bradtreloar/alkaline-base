@@ -5,7 +5,7 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 
 // Perform all build tasks
-gulp.task("build", ["sass", "copy-js", "starterkit"]);
+gulp.task("build", ["sass", "copy-css", "copy-js", "starterkit"]);
 
 // Copy JS libraries from node modules to JS folder.
 gulp.task("copy-js", () =>
@@ -15,6 +15,13 @@ gulp.task("copy-js", () =>
       "./node_modules/motion-ui/dist/motion-ui.min.js"
     ])
     .pipe(gulp.dest("./js"))
+);
+
+// Copy CSS libraries from node modules to CSS folder.
+gulp.task("copy-css", () =>
+  gulp
+    .src(["./node_modules/motion-ui/dist/motion-ui.min.css"])
+    .pipe(gulp.dest("./css"))
 );
 
 // Copy SASS components to starterkit as partials.
