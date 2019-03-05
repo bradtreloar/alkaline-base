@@ -244,14 +244,13 @@ function alkaline_preprocess_field_card(&$vars) {
   $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
 
   // Get the number of cards.
-  $card_count = count($vars['items']);
+  $item_count = count($vars['items']);
 
   // Set the grid classes based on the number of items.
-  switch($card_count) {
+  switch($item_count) {
     case 1: $grid_classes = ['grid', 'small-1']; break;
     case 2: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
     case 3: $grid_classes = ['grid', 'small-1', 'medium-3']; break;
-    case 4: $grid_classes = ['grid', 'small-2', 'medium-4']; break;
     default: $grid_classes = ['grid', 'small-2', 'medium-4'];
   }
 
@@ -268,10 +267,10 @@ function alkaline_preprocess_field_picture(&$vars) {
   $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
 
   // Get the number of cards.
-  $card_count = count($vars['items']);
+  $item_count = count($vars['items']);
 
   // Set the grid classes based on the number of items.
-  switch($card_count) {
+  switch($item_count) {
     case 1: $grid_classes = ['grid', 'small-1']; break;
     default: $grid_classes = ['grid', 'small-2', 'medium-2'];
   }
