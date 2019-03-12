@@ -90,6 +90,11 @@ breadcrumbs:
     component:
       css/components/breadcrumbs.css: {}
 
+call_to_action:
+  css:
+    component:
+      css/components/call-to-action.css: {}
+
 card:
   css:
     component:

@@ -30,7 +30,7 @@
     padding: 1rem; }
     .card .card-section > :last-child {
       margin-bottom: 0; }
-    .card .card-section > *:first-child {
+    .card .card-section .text-formatted > *:first-child {
       margin-top: 0; }
-    .card .card-section > *:last-child {
+    .card .card-section .text-formatted > *:last-child {
       margin-bottom: 0; }

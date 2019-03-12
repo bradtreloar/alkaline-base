@@ -301,22 +301,6 @@ function alkaline_preprocess_field_picture(&$vars) {
 }
 
 
-// /**
-//  * Preprocessor for field_button_link
-//  */
-// function alkaline_preprocess_field_type_link(&$vars) {
-//   dpm(array_keys($vars));
-//   // dpm(array_keys($vars['attributes']));
-//   // dpm($vars['theme_hook_original']);
-//   // dpm(array_keys($vars));
-//   // dpm(array_keys($vars));
-//   $vars['attributes'] = array_merge(
-//     $vars['attributes'],
-//     $vars['element']['attributes']
-//   );
-// }
-
-
 /**
  * Implements template_preprocess_html()
  */
