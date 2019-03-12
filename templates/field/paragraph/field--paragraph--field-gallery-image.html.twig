@@ -6,10 +6,12 @@
  * Classes are set in preprocessor.
  */
 #}
-<ul {{ attributes.addClass('gallery') }}>
-  {% for item in items %}
-  <li {{ item.attributes }}>
-    {{ item.content }}
-  </li>
-  {% endfor %}
-</ul>
+<div class="gallery">
+  <ul {{ attributes }}>
+    {% for item in items %}
+      <li {{ item.attributes }}>
+        {{ item.content }}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

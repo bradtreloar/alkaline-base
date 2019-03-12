@@ -258,6 +258,27 @@ function alkaline_preprocess_field_card(&$vars) {
   $vars['attributes']['class'] = array_merge($classes, $grid_classes);
 }
 
+/**
+ * Preprocessor for field_gallery_image
+ */
+function alkaline_preprocess_field_gallery_image(&$vars) {
+  // Get the existing classes
+  $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
+
+  // Get the number of cards.
+  $item_count = count($vars['items']);
+
+  // Set the grid classes based on the number of items.
+  switch($item_count) {
+    case 1: $grid_classes = ['grid', 'small-1']; break;
+    case 2: $grid_classes = ['grid', 'small-2']; break;
+    case 3: $grid_classes = ['grid', 'small-1', 'medium-3']; break;
+    default: $grid_classes = ['grid', 'small-2', 'medium-4'];
+  }
+
+  // Add the grid classes to the class array.
+  $vars['attributes']['class'] = array_merge($classes, $grid_classes);
+}
 
 /**
  * Preprocessor for field_picture
