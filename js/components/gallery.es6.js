@@ -1,7 +1,6 @@
 (($, Alkaline) => {
   class Gallery {
     constructor(gallery) {
-      const self = this;
       this.gallery = $(gallery);
       // Create the modal.
       this.reveal = $(`
