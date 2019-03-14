@@ -16,6 +16,14 @@
     .card-section {
       @include card-section;
 
+      > *:first-child {
+        margin-top: 0;
+      }
+
+      > *:last-child {
+        margin-bottom: 0;
+      }
+
       .text-formatted {
         > *:first-child {
           margin-top: 0;
