@@ -1,0 +1,15 @@
+@import 'global';
+
+
+@mixin alkaline-lightbox {
+  .lightbox {
+    background: yellow;
+
+    button {
+      display: none;
+    }
+  }
+}
+
+
+@include alkaline-lightbox;

@@ -258,32 +258,13 @@ function alkaline_preprocess_field_card(&$vars) {
   $vars['attributes']['class'] = array_merge($classes, $grid_classes);
 }
 
-/**
- * Preprocessor for field_gallery_image
- */
-function alkaline_preprocess_field_gallery_image(&$vars) {
-  // Get the existing classes
-  $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
-
-  // Get the number of cards.
-  $item_count = count($vars['items']);
-
-  // Set the grid classes based on the number of items.
-  switch($item_count) {
-    case 1: $grid_classes = ['grid', 'small-1']; break;
-    case 2: $grid_classes = ['grid', 'small-2']; break;
-    case 3: $grid_classes = ['grid', 'small-1', 'medium-3']; break;
-    default: $grid_classes = ['grid', 'small-2', 'medium-4'];
-  }
-
-  // Add the grid classes to the class array.
-  $vars['attributes']['class'] = array_merge($classes, $grid_classes);
-}
 
 /**
  * Preprocessor for field_picture
  */
 function alkaline_preprocess_field_picture(&$vars) {
+  $field = $vars['element'];
+
   // Get the existing classes
   $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
 
@@ -293,11 +274,23 @@ function alkaline_preprocess_field_picture(&$vars) {
   // Set the grid classes based on the number of items.
   switch($item_count) {
     case 1: $grid_classes = ['grid', 'small-1']; break;
-    default: $grid_classes = ['grid', 'small-2', 'medium-2'];
+    case 2: $grid_classes = ['grid', 'small-1']; break;
+    case 3: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
+    default: $grid_classes = ['grid', 'small-2', 'medium-4'];
   }
 
   // Add the grid classes to the class array.
   $vars['attributes']['class'] = array_merge($classes, $grid_classes);
+
+  // if ($field['#bundle'] == 'gallery') {
+  //   foreach ($vars['items'] as &$item) {
+  //     // Get the image URL.
+  //     $paragraph = $item['content']['#paragraph'];
+  //     $image = $paragraph->field_image->entity;
+  //     $uri = $image->getFileUri();
+  //     $item['href'] = file_create_url($uri);
+  //   }
+  // }
 }
 
 
@@ -404,6 +397,20 @@ function alkaline_preprocess_page(&$vars) {
 
 
 /**
+ * Implements template_preprocess_page()
+ */
+function alkaline_preprocess_paragraph(&$vars) {
+  $paragraph = $vars['elements']['#paragraph'];
+
+  // Call the type-specific preprocessor.
+  $paragraph_type_preprocessor = __FUNCTION__ . '_' . $paragraph->getType();
+  if (function_exists($paragraph_type_preprocessor)) {
+    $paragraph_type_preprocessor($vars);
+  }
+}
+
+
+/**
  * Implements hook_theme_suggestions_block_alter()
  */
 function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
@@ -429,11 +436,13 @@ function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
 /**
  * Implements hook_theme_suggestions_field_alter()
  */
-function alkaline_theme_suggestions_field_alter(array &$suggestions, array $vars) {
-  if (in_array('field__text_with_summary', $suggestions) && in_array('field__body', $suggestions)) {
-    if ($vars["element"]['#view_mode'] == 'teaser')
-      $suggestions[] = 'field__body__teaser';
-  }
+function alkaline_theme_suggestions_field_alter(&$suggestions, $vars) {
+  $field = $vars['element'];
+
+  // Add template suggestions based on view mode.
+  $view_mode = $field['#view_mode'];
+  $suggestions[] = 'field__' . $field['#field_name'] . '__' . $view_mode;
+  $suggestions[] = 'field__' . $field['#field_type'] . '__' . $view_mode;
 }
 
 
