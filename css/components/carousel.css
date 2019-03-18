@@ -71,3 +71,11 @@
 
 .block.carousel .orbit {
   margin: 0 -1rem; }
+
+.orbit-controls button {
+  cursor: pointer; }
+
+.orbit-controls svg.icon {
+  fill: white;
+  width: 1rem;
+  height: 1rem; }

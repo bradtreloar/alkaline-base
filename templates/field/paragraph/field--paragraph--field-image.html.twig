@@ -1,14 +1,3 @@
-{#
-/**
- * @file
- * Theme override for image fields
- *
- * Wraps image in a figure and adds an optional caption, whch is created by a
- * field template preprocessor.
- *
- * The Classy classes have been preserved so that AJAX can update this field
- */
-#}
 {% for item in items %}
   <picture {{ attributes }}>
     {{ item.content }}

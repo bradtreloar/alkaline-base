@@ -1,15 +1,13 @@
-{#
-/**
- * @file
- * Theme override for a cards field.
- *
- * Classes are set in preprocessor.
- */
-#}
 <ul {{ attributes }}>
   {% for item in items %}
-  <li {{ item.attributes }}>
-    {{ item.content }}
-  </li>
+    <li {{ item.attributes }}>
+      {% if item.href %}
+        <a href="{{ item.href }}">
+          {{ item.content }}
+        </a>
+      {% else %}
+        {{ item.content }}
+      {% endif %}
+    </li>
   {% endfor %}
 </ul>

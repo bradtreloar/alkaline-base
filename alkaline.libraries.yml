@@ -13,6 +13,8 @@ foundation:
     - core/jquery.once
 
 base:
+  js:
+    js/alkaline.js: { weight: -1 }
   css:
     base:
       css/base/base.css: {}
@@ -125,11 +127,23 @@ icon:
     component:
       css/components/icon.css: {}
 
-lightbox:
+gallery:
   js:
-    js/lightbox.js:
+    js/components/gallery.js: {}
+    js/behaviors/gallery.js: {}
   dependencies:
     - alkaline/foundation
+    - alkaline/base
+    - alkaline/carousel
+    - alkaline/modal
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+lightbox:
+  css:
+    component:
+      css/components/lightbox.css: {}
 
 links:
   css:

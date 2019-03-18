@@ -1,12 +1,6 @@
 {% extends "paragraph--body-section.html.twig" %}
-{#
-/**
- * @file
- * Custom theme implementation to display a paragraph.
- */
-#}
 {% block content %}
-  {# {{ attach_library('alkaline/gallery') }}  #}
+  {{ attach_library('alkaline/gallery') }}
   <div{{ attributes.addClass("gallery") }}>
     {{ content }}
   </div>
