@@ -7,10 +7,12 @@ $article-lead-line-height: 1.5;
 
 @mixin alkaline-article-theme {
   article {
-    header {
-      p {
-        font-size: $article-lead-font-size;
-        line-height: $article-lead-line-height;
+    .region.content & {
+      header {
+        p {
+          font-size: $article-lead-font-size;
+          line-height: $article-lead-line-height;
+        }
       }
     }
   }

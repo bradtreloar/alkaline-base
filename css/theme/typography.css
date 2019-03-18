@@ -202,5 +202,5 @@ ul.grid ul, ul.grid ol, ol.grid ul, ol.grid ol {
   margin-bottom: 1rem; }
 
 @media print, screen and (min-width: 45em) {
-  article {
+  .region.content article {
     font-size: 1.25rem; } }
