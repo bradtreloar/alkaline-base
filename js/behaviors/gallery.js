@@ -20,9 +20,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       this.reveal = $("\n        <div class=\"lightbox\">\n          <button class=\"close-button\" data-close aria-label=\"Close modal\" type=\"button\">\n            <svg class=\"icon\" aria-hidden=\"true\">\n              <use xlink:href=\"#times\" />\n            </svg>\n          </button>\n        </div>\n      ").appendTo(this.gallery);
 
       this.reveal.addClass("reveal full");
-      this.revealPlugin = new Foundation.Reveal(this.reveal, {
-        fullScreen: true
-      });
+      this.revealPlugin = new Foundation.Reveal(this.reveal, {});
 
       this.carousel = $("<div class=\"carousel\">").appendTo(this.reveal);
 
@@ -56,6 +54,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         delete _this.orbitPlugin.$slides;
         delete _this.orbitPlugin;
+
+        $("html").scrollTop(_this.originalScrollPos);
+        _this.originalScrollPos = null;
       });
     }
 
@@ -65,6 +66,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         var _this2 = this;
 
         slide.addClass("is-active").show().queue(function (next) {
+          _this2.originalScrollPos = window.pageYOffset;
+
           _this2.revealPlugin.open();
           next();
         });

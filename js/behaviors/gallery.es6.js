@@ -15,9 +15,7 @@
 
       // // Initialise the Foundation Reveal component.
       this.reveal.addClass("reveal full");
-      this.revealPlugin = new Foundation.Reveal(this.reveal, {
-        fullScreen: true
-      });
+      this.revealPlugin = new Foundation.Reveal(this.reveal, {});
 
       // Build the carousel
       this.carousel = $(`<div class="carousel">`).appendTo(this.reveal);
@@ -85,6 +83,7 @@
       });
 
       this.reveal.on("closed.zf.reveal", () => {
+
         // Reset all slides.
         this.orbitPlugin.$slides
           .removeClass("is-active")
@@ -95,6 +94,10 @@
         // both of these deletions are here.
         delete this.orbitPlugin.$slides;
         delete this.orbitPlugin;
+
+        // Reset the page scroll position.
+        $("html").scrollTop(this.originalScrollPos);
+        this.originalScrollPos = null;
       });
     }
 
@@ -104,6 +107,10 @@
         .addClass("is-active")
         .show()
         .queue(next => {
+          // Save the scroll position.
+          this.originalScrollPos = window.pageYOffset;
+
+          // Open the lightbox.
           this.revealPlugin.open();
           next();
         });
