@@ -1,13 +1,7 @@
 <ul {{ attributes }}>
   {% for item in items %}
     <li {{ item.attributes }}>
-      {% if item.href %}
-        <a href="{{ item.href }}">
-          {{ item.content }}
-        </a>
-      {% else %}
-        {{ item.content }}
-      {% endif %}
+      {{ item.content }}
     </li>
   {% endfor %}
 </ul>

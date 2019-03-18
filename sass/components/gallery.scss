@@ -1,4 +1,4 @@
-
+@import 'global';
 
 
 @mixin alkaline-gallery {
@@ -11,4 +11,4 @@
 }
 
 
-// @include alkaline-gallery;
+@include alkaline-gallery;

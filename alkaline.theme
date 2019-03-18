@@ -271,26 +271,21 @@ function alkaline_preprocess_field_picture(&$vars) {
   // Get the number of cards.
   $item_count = count($vars['items']);
 
-  // Set the grid classes based on the number of items.
-  switch($item_count) {
-    case 1: $grid_classes = ['grid', 'small-1']; break;
-    case 2: $grid_classes = ['grid', 'small-1']; break;
-    case 3: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
-    default: $grid_classes = ['grid', 'small-2', 'medium-4'];
+  if ($field['#bundle'] == 'gallery') {
+    $grid_classes = ['grid', 'small-2', 'medium-4'];
+  } else {
+    // Set the grid classes based on the number of items.
+    switch($item_count) {
+      case 1: $grid_classes = ['grid', 'small-1']; break;
+      case 2: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
+      case 3: $grid_classes = ['grid', 'small-1', 'medium-3']; break;
+      default: $grid_classes = ['grid', 'small-2', 'medium-4'];
+    }
   }
 
   // Add the grid classes to the class array.
   $vars['attributes']['class'] = array_merge($classes, $grid_classes);
 
-  // if ($field['#bundle'] == 'gallery') {
-  //   foreach ($vars['items'] as &$item) {
-  //     // Get the image URL.
-  //     $paragraph = $item['content']['#paragraph'];
-  //     $image = $paragraph->field_image->entity;
-  //     $uri = $image->getFileUri();
-  //     $item['href'] = file_create_url($uri);
-  //   }
-  // }
 }
 
 

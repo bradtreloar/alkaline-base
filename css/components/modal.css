@@ -120,3 +120,5 @@ html.is-reveal-open body {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center; }
+      .reveal.lightbox .orbit-figure picture img {
+        max-height: 100%; }
