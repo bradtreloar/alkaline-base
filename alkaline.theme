@@ -276,7 +276,7 @@ function alkaline_preprocess_field_picture(&$vars) {
   } else {
     // Set the grid classes based on the number of items.
     switch($item_count) {
-      case 1: $grid_classes = ['grid', 'small-1']; break;
+      case 1: $grid_classes = ['grid']; break;
       case 2: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
       case 3: $grid_classes = ['grid', 'small-1', 'medium-3']; break;
       default: $grid_classes = ['grid', 'small-2', 'medium-4'];
