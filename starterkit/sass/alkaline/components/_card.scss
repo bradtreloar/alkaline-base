@@ -4,6 +4,7 @@
 @mixin alkaline-card {
   .card {
     @include card-container;
+    margin: 0;
 
     .image {
       width: 100%;

@@ -16,7 +16,8 @@
   -webkit-box-shadow: none;
   box-shadow: none;
   overflow: hidden;
-  color: #0a0a0a; }
+  color: #0a0a0a;
+  margin: 0; }
   .card > :last-child {
     margin-bottom: 0; }
   .card .image {
