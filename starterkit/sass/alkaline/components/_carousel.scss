@@ -4,9 +4,13 @@
 @mixin alkaline-carousel {
   @include foundation-orbit;
 
-  .block.carousel {
-    .orbit {
+  .block {
+    > .carousel {
       margin: 0 (-$global-margin);
+
+      .orbit {
+        // width: 100%;
+      }
     }
   }
 

@@ -1,5 +1,7 @@
-<div{{ attributes.addClass('block carousel') }}>
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+<div{{ attributes.addClass('block') }}>
+  <div class="carousel">
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
 </div>
