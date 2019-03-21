@@ -22,7 +22,7 @@ div.page {
     top: 0;
     -webkit-transition: top 300ms ease;
     transition: top 300ms ease;
-    z-index: 1; }
+    z-index: 1000; }
     body.toolbar-horizontal .layer.header.fixed,
     body.toolbar-vertical .layer.header.fixed {
       padding-top: 39px; }
@@ -70,7 +70,7 @@ div.page {
     position: fixed;
     right: 0;
     top: 0;
-    z-index: -1; }
+    z-index: 999; }
     .layer.header .super-region.navbar {
       width: 0;
       pointer-events: none; }
@@ -95,7 +95,7 @@ div.page {
         pointer-events: all;
         position: static;
         width: auto;
-        z-index: 1;
+        z-index: 1001;
         padding-top: 0 !important; } }
     .layer.header .super-region.navbar > .region {
       background: inherit; }
