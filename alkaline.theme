@@ -324,6 +324,11 @@ function alkaline_preprocess_html(&$vars) {
       'times-circle', // @todo Remove this icon
     ],
   ]);
+
+  // Set a class based on the current route
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $vars['attributes']['class'][] = $path_alias;
 }
 
 
