@@ -21,15 +21,9 @@ $share-menu-button-size: 2em;
     height: $menu-button-icon-size;
     width: $menu-button-icon-size;
 
-    // If the menu item has an icon then hide the
-    // text labal until there is ample horizontal space.
     & + span {
-      display: none;
-
-      @include breakpoint(medium) {
-        display: inline-block;
-        margin-left: 0.5em;
-      }
+      display: inline-block;
+      margin-left: 0.5em;
     }
   }
 
@@ -49,6 +43,14 @@ $share-menu-button-size: 2em;
 
       .layer.header & {
         font-size: 0.875em;
+
+        // If the menu item has an icon then hide the
+        // text labal until there is ample horizontal space.
+        svg.icon + span {
+          @include breakpoint(small only) {
+            display: none;
+          }
+        }
       }
     }
 

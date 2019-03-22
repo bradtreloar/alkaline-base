@@ -225,16 +225,16 @@ ul.menu a {
     height: 1.5em;
     width: 1.5em; }
     ul.menu a svg.icon + span {
-      display: none; }
-      @media print, screen and (min-width: 45em) {
-        ul.menu a svg.icon + span {
-          display: inline-block;
-          margin-left: 0.5em; } }
+      display: inline-block;
+      margin-left: 0.5em; }
   ul.menu a span {
     display: block;
     line-height: 1.5em; }
   .layer.header ul.menu a {
     font-size: 0.875em; }
+    @media screen and (max-width: 44.9375em) {
+      .layer.header ul.menu a svg.icon + span {
+        display: none; } }
 
 .region.navbar ul.menu {
   -ms-flex-wrap: nowrap;
@@ -638,11 +638,8 @@ button[data-toggle="navbar"] {
     height: 1.5em;
     width: 1.5em; }
     button[data-toggle="navbar"] svg.icon + span {
-      display: none; }
-      @media print, screen and (min-width: 45em) {
-        button[data-toggle="navbar"] svg.icon + span {
-          display: inline-block;
-          margin-left: 0.5em; } }
+      display: inline-block;
+      margin-left: 0.5em; }
   button[data-toggle="navbar"] span {
     display: block;
     line-height: 1.5em; }
