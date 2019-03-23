@@ -20,31 +20,19 @@
 
   <main class="layer main" role="main">
 
-    {% if page.sidebar_first %}
-      <div id="sidebar-first" class="region sidebar sidebar-first">
-        {{ page.sidebar_first }}
-      </div>
-    {% endif %}
-
     <div id="content" class="region content">
       <a id="main-content" tabindex="-1"></a>
       {{ attach_library('alkaline/article') }}
       <article>
-        <div class="section">
-          <div class="row">
-            <div class="text">
+        <div class="body">
+          <div class="body-section">
+            <div class="text-formatted">
               <p>{{ page.content }}</p>
             </div>
           </div>
         </div>
       </article>
     </div>
-
-    {% if page.sidebar_second %}
-      <div id="sidebar-second" class="region sidebar sidebar-second">
-        {{ page.sidebar_second }}
-      </div>
-    {% endif %}
 
   </main>
 
