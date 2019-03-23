@@ -68,18 +68,18 @@ $top-bar-z-index: 1000;
 
 
 @mixin tda-navbar-super-region {
+  bottom: 0;
   background: inherit;
   color: inherit;
   display: flex;
   flex-direction: column;
   height: 100%;
-  // overflow-x: hidden; // @bug this rule causes dropdown submenus to be hidden
-  padding-top: $top-bar-height;
   position: fixed;
   right: 0;
-  // transition: width 300ms;
-  top: 0;
   z-index: $top-bar-z-index - 1; // under the header
+
+  // @bug this rule causes dropdown submenus to be hidden
+  // overflow-x: hidden;
 
   & {
     width: 0;
@@ -91,13 +91,20 @@ $top-bar-z-index: 1000;
     pointer-events: all;
   }
 
+  // The height of the navbar is the difference between the top bar(s) and
+  // the viewport height
+  $difference: $top-bar-height;
+  height: calc(100vh - #{$difference});
+
   body.toolbar-horizontal &,
   body.toolbar-vertical & {
-    padding-top: $top-bar-height + $admin-toolbar-height;
+    $difference: $top-bar-height + $admin-toolbar-height;;
+    height: calc(100vh - #{$difference});
   }
 
   body.toolbar-horizontal.toolbar-tray-open & {
-    padding-top: $top-bar-height + $admin-toolbar-height + $admin-toolbar-tray-height;
+    $difference: $top-bar-height + $admin-toolbar-height + $admin-toolbar-tray-height;
+    height: calc(100vh - #{$difference});
   }
 
   // Convert to a header region.
@@ -110,8 +117,8 @@ $top-bar-z-index: 1000;
     width: auto;
     z-index: $top-bar-z-index + 1; // above the header
 
-    // Forcefully override toolbar padding.
-    padding-top: 0 !important;
+    // // Forcefully override toolbar padding.
+    // padding-top: 0 !important;
   }
 }
 
