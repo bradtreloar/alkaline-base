@@ -19,12 +19,15 @@
           @include breakpoint($name) {
             $cell-selector: 'li';
             @include xy-grid-layout($col-count, $cell-selector);
+            $cell-selector: '.cell';
+            @include xy-grid-layout($col-count, $cell-selector);
           }
         }
       }
     }
 
-    > li {
+    > li,
+    > .cell {
       display: flex;
       justify-content: center;
       margin-bottom: 0.625rem;
