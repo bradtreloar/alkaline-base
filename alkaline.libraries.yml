@@ -18,8 +18,6 @@ base:
       css/base/base.css: {}
       css/base/drupal.css: {}
       css/print.css: { media: print }
-    layout:
-      css/layout/grid.css: {}
     component:
       css/components/title-bar.css: {}
 
@@ -138,6 +136,11 @@ gallery:
     - core/drupal
     - core/jquery
     - core/jquery.once
+
+grid:
+  css:
+    layout:
+      css/layout/grid.css: {}
 
 lightbox:
   css:

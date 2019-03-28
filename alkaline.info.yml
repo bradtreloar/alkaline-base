@@ -12,6 +12,7 @@ libraries-override:
   commerce/cart_block: alkaline/cart_block
 
 libraries:
+  - alkaline/grid
   - alkaline/page
   - alkaline/button
   - alkaline/menu
