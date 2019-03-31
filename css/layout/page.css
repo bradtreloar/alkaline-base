@@ -69,7 +69,7 @@ div.page {
     position: fixed;
     right: 0;
     z-index: 999;
-    height: calc(100vh - 48px); }
+    height: calc(100% - 48px); }
     .layer.header .super-region.navbar {
       width: 0;
       pointer-events: none; }
@@ -78,9 +78,9 @@ div.page {
       pointer-events: all; }
     body.toolbar-horizontal .layer.header .super-region.navbar,
     body.toolbar-vertical .layer.header .super-region.navbar {
-      height: calc(100vh - 87px); }
+      height: calc(100% - 87px); }
     body.toolbar-horizontal.toolbar-tray-open .layer.header .super-region.navbar {
-      height: calc(100vh - 127px); }
+      height: calc(100% - 127px); }
     @media print, screen and (min-width: 67.5em) {
       .layer.header .super-region.navbar {
         -webkit-box-orient: horizontal;
