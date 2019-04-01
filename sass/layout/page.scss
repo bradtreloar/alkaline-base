@@ -68,7 +68,6 @@ $top-bar-z-index: 1000;
 
 
 @mixin tda-navbar-super-region {
-  bottom: 0;
   background: inherit;
   color: inherit;
   display: flex;
@@ -94,16 +93,19 @@ $top-bar-z-index: 1000;
   // the viewport height
   $difference: $top-bar-height;
   height: calc(100% - #{$difference});
+  top: $difference;
 
   body.toolbar-horizontal &,
   body.toolbar-vertical & {
     $difference: $top-bar-height + $admin-toolbar-height;;
     height: calc(100% - #{$difference});
+    top: $difference;
   }
 
   body.toolbar-horizontal.toolbar-tray-open & {
     $difference: $top-bar-height + $admin-toolbar-height + $admin-toolbar-tray-height;
     height: calc(100% - #{$difference});
+    top: $difference;
   }
 
   // Convert to a header region.
