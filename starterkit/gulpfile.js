@@ -1,19 +1,19 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+const gulp = require("gulp");
+const sass = require("gulp-sass");
 
 // Compile .scss files to .css
-gulp.task('sass', function() {
-  return gulp.src('sass/**/*.scss')
-    .pipe(sass({
-      includePaths: [
-        './node_modules',
-        './sass',
-      ],
-    }))
-    .pipe(gulp.dest('css'))
+gulp.task("sass", () => {
+  return gulp
+    .src("sass/**/*.scss")
+    .pipe(
+      sass({
+        includePaths: ["./node_modules", "./sass"]
+      })
+    )
+    .pipe(gulp.dest("css"));
 });
 
 // Compile .scss files to .css when .scss files are updated.
-gulp.task('watch', function() {
-  gulp.watch('sass/**/*.scss', ['sass']); 
+gulp.task("watch", () => {
+  gulp.watch("sass/**/*.scss", gulp.series("sass"));
 });

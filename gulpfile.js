@@ -5,7 +5,7 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 
 // Perform all build tasks
-gulp.task("build", ["sass", "copy-css", "copy-js", "starterkit"]);
+gulp.task("build", gulp.parallel("sass", "copy-css", "copy-js", "starterkit"));
 
 // Copy JS libraries from node modules to JS folder.
 gulp.task("copy-js", () =>
@@ -71,5 +71,5 @@ gulp.task("sass", () =>
 
 // Compile .scss files to .css when .scss files are updated.
 gulp.task("watch", () => {
-  gulp.watch("./sass/**/*.scss", ["sass"]);
+  gulp.watch("./sass/**/*.scss", gulp.parallel("sass"));
 });
