@@ -5,9 +5,5 @@
 $banner-background: transparent;
 $banner-color: $black;
 
-$hero-banner-background: $banner-background;
-$hero-banner-color: $banner-color!default;
-
 
 @include alkaline-banner-theme;
-@include alkaline-hero-banner-theme;
