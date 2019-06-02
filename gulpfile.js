@@ -4,9 +4,6 @@ const replace = require("gulp-replace");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 
-// Perform all build tasks
-gulp.task("build", gulp.parallel("sass", "copy-css", "copy-js", "starterkit"));
-
 // Copy JS libraries from node modules to JS folder.
 gulp.task("copy-js", () =>
   gulp
@@ -73,3 +70,6 @@ gulp.task("sass", () =>
 gulp.task("watch", () => {
   gulp.watch("./sass/**/*.scss", gulp.parallel("sass"));
 });
+
+// Perform all build tasks
+gulp.task("build", gulp.parallel("sass", "copy-css", "copy-js", "starterkit"));
