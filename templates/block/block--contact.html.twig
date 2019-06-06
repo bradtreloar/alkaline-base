@@ -5,13 +5,7 @@
  */
 #}
 {{ attach_library('alkaline/location') }}
-{%
-  set classes = [
-    'block',
-    'location',
-  ]
-%}
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass('block') }}>
 
   {{ title_prefix }}
   {% if label or more_link %}
@@ -28,20 +22,16 @@
 
   {% block content %}
     {% if content %}
-      {% if content.field_map %}
-      <div>
+      <div class="location">
         <section>
           {{ content|without('field_map') }}
         </section>
-        <section>
-          {{ content.field_map }}
-        </section>
+        {% if content.field_map %}
+          <section>
+            {{ content.field_map }}
+          </section>
+        {% endif %}
       </div>
-      {% else %}
-      <section>
-        {{ content }}
-      </section>
-      {% endif %}
     {% endif %}
   {% endblock %}
 </div>
