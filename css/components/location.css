@@ -1,21 +1,19 @@
 .location {
-  margin: 0 auto;
+  margin: 1rem auto;
   max-width: 60rem; }
   .layer.header .location {
     margin: 0; }
-  .location > div {
-    padding: 0 1rem; }
   @media print, screen and (min-width: 45em) {
-    .location > div {
+    .location {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex; }
-      .location > div > section:first-child {
+      .location > section:first-child {
         -webkit-box-flex: 0;
         -ms-flex: none;
         flex: none;
         padding-right: 3rem; }
-      .location > div > section:last-child {
+      .location > section:last-child {
         -webkit-box-flex: 1;
         -ms-flex-positive: 1;
         flex-grow: 1; } }
