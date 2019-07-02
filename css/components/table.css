@@ -3,34 +3,34 @@
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 2px; }
-  thead,
-  tbody,
-  tfoot {
+  .region.content table thead,
+  .region.content table tbody,
+  .region.content table tfoot {
     border: 1px solid #f1f1f1;
     background-color: #fefefe; }
-  caption {
+  .region.content table caption {
     padding: 0.5rem 0.625rem 0.625rem;
     font-weight: bold; }
-  thead {
+  .region.content table thead {
     background: #f8f8f8;
     color: #0a0a0a; }
-  tfoot {
+  .region.content table tfoot {
     background: #f1f1f1;
     color: #0a0a0a; }
-  thead tr,
-  tfoot tr {
+  .region.content table thead tr,
+  .region.content table tfoot tr {
     background: transparent; }
-  thead th,
-  thead td,
-  tfoot th,
-  tfoot td {
+  .region.content table thead th,
+  .region.content table thead td,
+  .region.content table tfoot th,
+  .region.content table tfoot td {
     padding: 0.5rem 0.625rem 0.625rem;
     font-weight: bold;
     text-align: left; }
-  tbody th,
-  tbody td {
+  .region.content table tbody th,
+  .region.content table tbody td {
     padding: 0.5rem 0.625rem 0.625rem; }
-  tbody tr:nth-child(even) {
+  .region.content table tbody tr:nth-child(even) {
     border-bottom: 0;
     background-color: #f1f1f1; }
   .region.content table.unstriped tbody {
@@ -39,5 +39,40 @@
       border-bottom: 0;
       border-bottom: 1px solid #f1f1f1;
       background-color: #fefefe; }
-  .region.content table th, .region.content table td {
-    border: none; }
+
+@media screen and (max-width: 67.4375em) {
+  .region.content table.stack thead {
+    display: none; }
+  .region.content table.stack tfoot {
+    display: none; }
+  .region.content table.stack tr,
+  .region.content table.stack th,
+  .region.content table.stack td {
+    display: block; }
+  .region.content table.stack td {
+    border-top: 0; } }
+
+.region.content table.scroll {
+  display: block;
+  width: 100%;
+  overflow-x: auto; }
+
+.region.content table.hover thead tr:hover {
+  background-color: #f3f3f3; }
+
+.region.content table.hover tfoot tr:hover {
+  background-color: #ececec; }
+
+.region.content table.hover tbody tr:hover {
+  background-color: #f9f9f9; }
+
+.region.content table.hover:not(.unstriped) tr:nth-of-type(even):hover {
+  background-color: #ececec; }
+
+.region.content .table-scroll {
+  overflow-x: auto; }
+  .region.content .table-scroll table {
+    width: auto; }
+
+.region.content th, .region.content td {
+  border: none; }
