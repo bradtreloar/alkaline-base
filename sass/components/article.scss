@@ -16,6 +16,12 @@
       max-width: $global-width;
     }
 
+    .aside {
+      .body-section {
+        padding: $global-margin;
+      }
+    }
+
     .image {
       figcaption {
         font-size: 1rem;

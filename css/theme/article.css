@@ -1,3 +1,6 @@
 .region.content article header p {
   font-size: 120%;
   line-height: 1.5; }
+
+.region.content article .aside .body-section {
+  background: #e6e6e6; }
