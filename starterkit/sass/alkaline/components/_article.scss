@@ -3,69 +3,77 @@
 
 @mixin alkaline-article {
   article {
-    margin: 0 0 $global-margin 0;
-    padding: 0;
+    main & {
+      margin: 0 0 $global-margin 0;
+      padding: 0;
 
-    .lead-section {
-      margin: 0 auto;
-      max-width: $global-width;
-    }
-
-    .body-section {
-      margin: ($global-margin * 2) auto;
-      max-width: $global-width;
-    }
-
-    .image {
-      figcaption {
-        font-size: 1rem;
-        padding: 1rem;
+      .lead-section {
+        margin: 0 auto;
+        max-width: $global-width;
       }
-    }
 
-    .text-formatted {
-      width: 100%;
-
-      img {
-        margin-bottom: $global-margin;
+      .body-section {
+        margin: ($global-margin * 2) auto;
+        max-width: $global-width;
       }
-    }
 
-    footer {
-      &.media-object {
-        figure {
-          // Make the author picture the same height as two lines of text.
-          height: $global-lineheight * 2em;
+      .aside {
+        .body-section {
+          padding: $global-margin;
+        }
+      }
 
-          // Shrink img to fit figure.
-          img {
-            height: 100%;
-            width: auto;
+      .image {
+        figcaption {
+          font-size: 1rem;
+          padding: 1rem;
+        }
+      }
+
+      .text-formatted {
+        width: 100%;
+
+        img {
+          margin-bottom: $global-margin;
+        }
+      }
+
+      footer {
+        &.media-object {
+          figure {
+            // Make the author picture the same height as two lines of text.
+            height: $global-lineheight * 2em;
+
+            // Shrink img to fit figure.
+            img {
+              height: 100%;
+              width: auto;
+            }
+          }
+
+          // Stack author name and date.
+          span {
+            display: block;
           }
         }
 
-        // Stack author name and date.
-        span {
-          display: block;
+        address {
+          padding: 0 $global-margin;
+          margin: $global-margin 0;
         }
       }
 
-      address {
-        padding: 0 $global-margin;
-        margin: $global-margin 0;
+      iframe {
+        display: block;
+        margin: 0 auto;
       }
-    }
 
-    iframe {
-      display: block;
-      margin: 0 auto;
-    }
-
-    // @todo Review this block.
-    &.contact-details {
-      span {
-        display: inline-block;
-        vertical-align: top;
+      // @todo Review this block.
+      &.contact-details {
+        span {
+          display: inline-block;
+          vertical-align: top;
+        }
       }
     }
   }

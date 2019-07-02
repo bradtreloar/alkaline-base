@@ -14,6 +14,12 @@ $article-lead-line-height: 1.5;
           line-height: $article-lead-line-height;
         }
       }
+
+      .aside {
+        .body-section {
+          background: $light-gray;
+        }
+      }
     }
   }
 }
