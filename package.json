@@ -6,7 +6,7 @@
     "node": ">= 8.11"
   },
   "scripts": {
-    "build": "yarn build:css && yarn build:js",
+    "build": "gulp build && yarn build:js",
     "build:css": "gulp sass",
     "watch:css": "gulp watch",
     "build:js": "cross-env BABEL_ENV=legacy node ./scripts/js/babel-es6-build.js",

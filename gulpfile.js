@@ -26,7 +26,6 @@ gulp.task("starterkit", () =>
   gulp
     .src(
       [
-        "./sass/base/typography.scss",
         "./sass/components/*.scss",
         "./sass/layout/*.scss",
         "./sass/theme/*.scss",
