@@ -1,34 +1,34 @@
-article {
+main article {
   margin: 0 0 1rem 0;
   padding: 0; }
-  article .lead-section {
+  main article .lead-section {
     margin: 0 auto;
     max-width: 60rem; }
-  article .body-section {
+  main article .body-section {
     margin: 2rem auto;
     max-width: 60rem; }
-  article .aside .body-section {
+  main article .aside .body-section {
     padding: 1rem; }
-  article .image figcaption {
+  main article .image figcaption {
     font-size: 1rem;
     padding: 1rem; }
-  article .text-formatted {
+  main article .text-formatted {
     width: 100%; }
-    article .text-formatted img {
+    main article .text-formatted img {
       margin-bottom: 1rem; }
-  article footer.media-object figure {
+  main article footer.media-object figure {
     height: 3em; }
-    article footer.media-object figure img {
+    main article footer.media-object figure img {
       height: 100%;
       width: auto; }
-  article footer.media-object span {
+  main article footer.media-object span {
     display: block; }
-  article footer address {
+  main article footer address {
     padding: 0 1rem;
     margin: 1rem 0; }
-  article iframe {
+  main article iframe {
     display: block;
     margin: 0 auto; }
-  article.contact-details span {
+  main article.contact-details span {
     display: inline-block;
     vertical-align: top; }
