@@ -39,6 +39,9 @@
       }
 
       footer {
+        margin: 0 auto;
+        max-width: $global-width;
+
         &.media-object {
           figure {
             // Make the author picture the same height as two lines of text.
@@ -58,7 +61,6 @@
         }
 
         address {
-          padding: 0 $global-margin;
           margin: $global-margin 0;
         }
       }

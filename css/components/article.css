@@ -16,16 +16,18 @@ main article {
     width: 100%; }
     main article .text-formatted img {
       margin-bottom: 1rem; }
-  main article footer.media-object figure {
-    height: 3em; }
-    main article footer.media-object figure img {
-      height: 100%;
-      width: auto; }
-  main article footer.media-object span {
-    display: block; }
-  main article footer address {
-    padding: 0 1rem;
-    margin: 1rem 0; }
+  main article footer {
+    margin: 0 auto;
+    max-width: 60rem; }
+    main article footer.media-object figure {
+      height: 3em; }
+      main article footer.media-object figure img {
+        height: 100%;
+        width: auto; }
+    main article footer.media-object span {
+      display: block; }
+    main article footer address {
+      margin: 1rem 0; }
   main article iframe {
     display: block;
     margin: 0 auto; }
