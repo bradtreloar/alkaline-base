@@ -4,11 +4,11 @@
  * Theme override to display a block.
  */
 #}
-{{ attach_library('alkaline/page_title') }}
-<header{{ attributes.addClass("block block-page-title") }}>
-  {% block content %}
+{% if not hidden %}
+  {{ attach_library('alkaline/page_title') }}
+  <header{{ attributes.addClass("block block-page-title") }}>
     <div class="title-bar">
       {{ content }}
     </div>
-  {% endblock %}
-</header>
+  </header>
+{% endif %}

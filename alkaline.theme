@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\block\Entity\Block;
 use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
 use Drupal\image\Entity\ImageStyle;
@@ -157,6 +158,13 @@ function alkaline_preprocess_block(&$vars) {
       // dpm($vars['content']);
       $vars['content']['#prefix'] = '<article><div class="body"><section><div class="text">';
       $vars['content']['#suffix'] = '</div></section></div></article>';
+    }
+  }
+
+  if ($vars['plugin_id'] == 'page_title_block') {
+    $route_name = \Drupal::routeMatch()->getRouteName();
+    if ($route_name == 'entity.node.canonical') {
+      $vars['hidden'] = true;
     }
   }
 }
