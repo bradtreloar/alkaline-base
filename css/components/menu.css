@@ -251,6 +251,8 @@ ul.menu a {
       -webkit-box-direction: normal;
       -ms-flex-direction: row;
       flex-direction: row; } }
+  .region.navbar ul.menu:not(.drilldown):not(.dropdown) ul {
+    display: none; }
 
 .region.footer ul.menu {
   -ms-flex-wrap: nowrap;

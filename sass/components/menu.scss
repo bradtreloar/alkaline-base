@@ -60,6 +60,13 @@ $share-menu-button-size: 2em;
       @include breakpoint(large) {
         @include menu-direction(horizontal);
       }
+
+      // Prevent FOUC on responsive menu
+      &:not(.drilldown):not(.dropdown) {
+        ul {
+          display: none;
+        }
+      }
     }
 
     .region.footer & {
