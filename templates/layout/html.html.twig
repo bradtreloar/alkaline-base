@@ -37,6 +37,8 @@
     <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
     {% include '@alkaline/layout/includes/favicon.html.twig' %}
+    <meta name="theme-color" content="{{ theme_color }}">
+    <meta name="msapplication-TileColor" content="{{ theme_color }}">
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
   </head>

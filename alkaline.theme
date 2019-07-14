@@ -340,6 +340,9 @@ function alkaline_preprocess_html(&$vars) {
 
   // Add no-js class to prevent FOUC.
   $vars['attributes']['class'][] = "no-js";
+
+  // Set a color for the theme_color metatag.
+  $vars['theme_color'] = '#0a0a0a';
 }
 
 
