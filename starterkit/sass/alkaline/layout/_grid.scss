@@ -17,10 +17,20 @@
       @each $name, $width in $breakpoints {
         &.#{$name}-#{$col-count} {
           @include breakpoint($name) {
-            $cell-selector: 'li';
-            @include xy-grid-layout($col-count, $cell-selector);
-            $cell-selector: '.cell';
-            @include xy-grid-layout($col-count, $cell-selector);
+            $selectors: 'li', '.cell';
+
+            @if $col-count == 1 {
+              @each $selector in $selectors {
+                // Create grid without gutters.
+                @include xy-grid-layout($col-count, $selector, false);
+              }
+            }
+            @else {
+              @each $selector in $selectors {
+                // Create grid with gutters.
+                @include xy-grid-layout($col-count, $selector);
+              }
+            }
           }
         }
       }

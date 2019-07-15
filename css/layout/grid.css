@@ -15,49 +15,29 @@
   .grid.content-width {
     max-width: 60rem; }
   .grid.small-1 > li {
-    width: calc(100% - 1.25rem);
-    margin-right: 0.625rem;
-    margin-left: 0.625rem; }
+    width: calc(100% - 1.25rem); }
   .grid.small-1 > .cell {
-    width: calc(100% - 1.25rem);
-    margin-right: 0.625rem;
-    margin-left: 0.625rem; }
+    width: calc(100% - 1.25rem); }
   @media print, screen and (min-width: 45em) {
     .grid.medium-1 > li {
-      width: calc(100% - 1.25rem);
-      margin-right: 0.625rem;
-      margin-left: 0.625rem; }
+      width: calc(100% - 1.25rem); }
     .grid.medium-1 > .cell {
-      width: calc(100% - 1.25rem);
-      margin-right: 0.625rem;
-      margin-left: 0.625rem; } }
+      width: calc(100% - 1.25rem); } }
   @media print, screen and (min-width: 67.5em) {
     .grid.large-1 > li {
-      width: calc(100% - 1.25rem);
-      margin-right: 0.625rem;
-      margin-left: 0.625rem; }
+      width: calc(100% - 1.25rem); }
     .grid.large-1 > .cell {
-      width: calc(100% - 1.25rem);
-      margin-right: 0.625rem;
-      margin-left: 0.625rem; } }
+      width: calc(100% - 1.25rem); } }
   @media screen and (min-width: 75em) {
     .grid.xlarge-1 > li {
-      width: calc(100% - 1.25rem);
-      margin-right: 0.625rem;
-      margin-left: 0.625rem; }
+      width: calc(100% - 1.25rem); }
     .grid.xlarge-1 > .cell {
-      width: calc(100% - 1.25rem);
-      margin-right: 0.625rem;
-      margin-left: 0.625rem; } }
+      width: calc(100% - 1.25rem); } }
   @media screen and (min-width: 90em) {
     .grid.xxlarge-1 > li {
-      width: calc(100% - 1.25rem);
-      margin-right: 0.625rem;
-      margin-left: 0.625rem; }
+      width: calc(100% - 1.25rem); }
     .grid.xxlarge-1 > .cell {
-      width: calc(100% - 1.25rem);
-      margin-right: 0.625rem;
-      margin-left: 0.625rem; } }
+      width: calc(100% - 1.25rem); } }
   .grid.small-2 > li {
     width: calc(50% - 1.25rem);
     margin-right: 0.625rem;
