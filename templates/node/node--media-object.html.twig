@@ -5,15 +5,12 @@
  */
 #}
 {{ attach_library('alkaline/media_object') }}
-{%
-  set classes = [
-    'media-object',
-  ]
-%}
-<div {{ attributes.addClass(classes) }}>
+<div {{ attributes.addClass("media-object") }}>
+
   <figure>
     {{ content.field_image ? content.field_image : content.field_background_image }}
   </figure>
+
   <div>
     <h3{{ title_attributes }}>
       {{ label }}

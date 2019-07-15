@@ -4,8 +4,8 @@
  * Theme override to display a node.
  */
 #}
-{{ attach_library('alkaline/card') }}
-<div {{ attributes.addClass("card") }}>
+{{ attach_library('alkaline/media_object') }}
+<div {{ attributes.addClass("media-object") }}>
 
   <figure>
     {{ content.field_image ? content.field_image : content.field_background_image }}
