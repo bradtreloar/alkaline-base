@@ -5,6 +5,9 @@
     "motion-ui": "^2.0.3"
   },
   "scripts": {
+    "build": "yarn update-alkaline && gulp sass",
+    "watch": "gulp watch",
+    "update-alkaline": "rm -rf sass/alkaline && cp -r ../../contrib/alkaline-base/starterkit/sass/alkaline sass/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
