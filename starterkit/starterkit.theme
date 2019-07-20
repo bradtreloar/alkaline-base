@@ -4,7 +4,7 @@
 /**
  * Implements template_preprocess_html()
  */
-function alkaline_preprocess_html(&$vars) {
+function starterkit_preprocess_html(&$vars) {
   // Set a color for the theme_color metatag.
   $vars['theme_color'] = '#0a0a0a';
 }
