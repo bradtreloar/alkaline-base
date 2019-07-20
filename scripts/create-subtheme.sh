@@ -3,13 +3,13 @@
 # Get the name of the new subtheme.
 SUBTHEME_NAME=$1
 
+echo "Creating subtheme $SUBTHEME_NAME"
+
 # Get the path to the starterkit.
 STARTERKIT_PATH="$(pwd)/starterkit"
 
 # Copy starterkit to subtheme.
-mkdir -p ../../custom/$SUBTHEME_NAME
-cp -r $STARTERKIT_PATH/* ../../custom/$SUBTHEME_NAME
-cp -r $STARTERKIT_PATH/.* ../../custom/$SUBTHEME_NAME
+cp -r $STARTERKIT_PATH ../../custom/$SUBTHEME_NAME
 
 # Move to subtheme directory.
 cd ../../custom/$SUBTHEME_NAME
