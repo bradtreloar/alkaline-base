@@ -14,7 +14,7 @@
    id="svg4084"
    version="1.1"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   inkscape:export-filename="/home/brad/Vagrant/housemasterhomes.com.au/drupal/web/themes/custom/alkaline/starterkit/screenshot.png"
+   inkscape:export-filename="/home/brad/Sites/alkaline/drupal/web/themes/contrib/alkaline-base/starterkit/screenshot.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
    sodipodi:docname="screenshot.svg">
@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.56273728"
-     inkscape:cx="121.39346"
-     inkscape:cy="22.08582"
+     inkscape:zoom="1.317712"
+     inkscape:cx="213.7945"
+     inkscape:cy="136.42529"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -75,5 +75,57 @@
        height="438"
        x="-170.42535"
        y="-245.33722" />
+    <g
+       id="g872"
+       transform="translate(22.580469,45.150004)">
+      <g
+         style="stroke-width:0.21052632"
+         transform="matrix(4.75,0,0,4.75,728.34506,-880.23543)"
+         id="g1078-7">
+        <path
+           style="opacity:1;vector-effect:none;fill:#1779ba;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.10526314;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
+           d="m -113.42535,181.66278 h -40 l 12,-29 v -11 0 h 16 v 11 l 12,29"
+           id="path944-0-5"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccccc" />
+        <rect
+           style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#479ed9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.10526314;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+           id="rect974-9-9-3"
+           width="5.0000062"
+           height="11"
+           x="-141.42534"
+           y="141.66278" />
+        <rect
+           style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#479ed9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.1095056;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+           id="rect974-9-2-3-5"
+           width="5.0000062"
+           height="31.384708"
+           x="-78.254547"
+           y="165.21645"
+           transform="matrix(1,0,-0.38235173,0.92401686,0,0)" />
+        <rect
+           style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#479ed9;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.10721102;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+           id="rect974-9-2-7-6-6"
+           width="5.0000062"
+           height="30.08322"
+           x="-99.311432"
+           y="158.3651"
+           transform="matrix(1,0,-0.26592927,0.96399254,0,0)" />
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:63.71379471px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       x="-75.90316"
+       y="102.45358"
+       id="text829"><tspan
+         sodipodi:role="line"
+         id="tspan827"
+         x="-75.90316"
+         y="102.45358"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web';text-align:start;letter-spacing:4.98560286px;text-anchor:start;fill:#ffffff;stroke-width:0.99999994px"
+         dx="0">STARTER<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Titillium Web';-inkscape-font-specification:'Titillium Web Bold';text-align:start;letter-spacing:4.98560286px;text-anchor:start;fill:#ffffff;stroke-width:0.99999994px"
+   id="tspan831">KIT</tspan></tspan></text>
   </g>
 </svg>
