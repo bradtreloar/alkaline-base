@@ -7,18 +7,9 @@
 
 (function ($, Drupal) {
   Drupal.behaviors.alkalineResponsiveMenu = {
-    attach: function attach() {
-      $(".navbar nav > ul.menu").once("alkalineResponsiveMenu").each(function (index, menu) {
-        var $menu = $(menu).data({
-          "responsive-menu": "drilldown large-dropdown",
-          backButton: "\n                <li class=\"js-drilldown-back\">\n                  <a tabindex=\"0\">\n                    <span>Back</span>\n                  </a>\n                </li>\n              ",
-          autoHeight: true,
-          animateHeight: true
-        }).addClass("vertical large-horizontal");
-
-        $menu.find("ul.sub-menu").addClass("vertical");
-
-        $menu.responsiveMenu = new Foundation.ResponsiveMenu($menu, {});
+    attach: function attach(context) {
+      $(".navbar nav > ul.menu", context).once("alkalineResponsiveMenu").each(function (index, menu) {
+        return new Alkaline.ResponsiveMenu(menu);
       });
     }
   };

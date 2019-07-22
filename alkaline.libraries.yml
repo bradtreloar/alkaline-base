@@ -128,6 +128,7 @@ gallery:
     component:
       css/components/gallery.css: {}
   js:
+    js/components/gallery.js: {}
     js/behaviors/gallery.js: {}
   dependencies:
     - alkaline/foundation
@@ -172,6 +173,7 @@ menu:
     component:
       css/components/menu.css: {}
   js:
+    js/components/menu.js:
     js/behaviors/menu.js:
   dependencies:
     - alkaline/foundation
