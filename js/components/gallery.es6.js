@@ -129,5 +129,5 @@ if (window.Alkaline === undefined) Alkaline = {};
         });
       else this.orbitPlugin._init();
     }
-  }
+  };
 })(jQuery);
