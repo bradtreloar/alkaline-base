@@ -3,12 +3,14 @@
 /**
  * @file
  * Theme override for the picture paragraph type.
+ *
+ * `image` class is for backwards compatibility.
  */
 #}
 {% block content %}
-  <figure{{ attributes.addClass("image") }}>
+  <figure class="picture image">
     {{ content.field_image }}
-    {% if content.field_caption and view_mode != "teaser" %}
+    {% if content.field_caption|render and view_mode != "teaser" %}
       <figcaption>
         {{ content.field_caption }}
       </figcaption>
