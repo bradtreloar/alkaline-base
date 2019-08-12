@@ -17,7 +17,7 @@
       @each $name, $width in $breakpoints {
         &.#{$name}-#{$col-count} {
           @include breakpoint($name) {
-            $selectors: 'li', '.cell';
+            $selectors: 'li', '.cell', '.block';
 
             @if $col-count == 1 {
               @each $selector in $selectors {
@@ -42,20 +42,6 @@
       justify-content: center;
       margin-bottom: 0.625rem;
       margin-top: 0.625rem;
-    }
-
-    // Regions use .block instead of li
-    &.region {
-      @for $col-count from 1 through 12 {
-        @each $name, $width in $breakpoints {
-          &.#{$name}-#{$col-count} {
-            @include breakpoint($name) {
-              $cell-selector: '.block';
-              @include xy-grid-layout($col-count, $cell-selector);
-            }
-          }
-        }
-      }
     }
   }
 }
