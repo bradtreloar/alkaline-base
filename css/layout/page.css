@@ -197,7 +197,8 @@ div.page {
     top: -127px; }
 
 .layer.footer {
-  margin: 1rem 0 0 0; }
+  margin: 1rem 0 0 0;
+  padding: 0 1rem; }
   .layer.footer > div {
     margin: 0 auto;
     max-width: 1080px; }

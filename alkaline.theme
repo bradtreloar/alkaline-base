@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\block\Entity\Block;
+use Drupal\Core\Render\Element;
 use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
 use Drupal\image\Entity\ImageStyle;
@@ -429,6 +430,32 @@ function alkaline_preprocess_paragraph(&$vars) {
     $paragraph_type_preprocessor($vars);
   }
 }
+
+
+/**
+ * Implements template_preprocess_region()
+ */
+function alkaline_preprocess_region(&$vars) {
+  if ($vars['region'] == 'footer') {
+    // Get the existing classes.
+    $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
+
+    // Get the number of blocks.
+    $block_count = count(Element::children($vars['elements']));
+
+    // Set the grid classes based on the number of blocks.
+    switch($block_count) {
+      case 1: $grid_classes = ['grid', 'small-1']; break;
+      case 2: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
+      case 3: $grid_classes = ['grid', 'small-1', 'medium-1', 'large-3']; break;
+      default: $grid_classes = ['grid', 'small-1', 'medium-2', 'large-4'];
+    }
+
+    // Add the grid classes to the class array.
+    $vars['attributes']['class'] = array_merge($classes, $grid_classes);
+  }
+}
+
 
 
 /**

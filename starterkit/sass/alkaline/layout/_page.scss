@@ -271,6 +271,7 @@ $top-bar-z-index: 1000;
 @mixin tda-footer-layer {
   .layer.footer {
     margin: $global-margin 0 0 0;
+    padding: 0 $global-margin;
 
     > div {
       margin: 0 auto;
@@ -282,9 +283,6 @@ $top-bar-z-index: 1000;
     }
 
     .block {
-      // margin: $global-margin auto;
-      // padding: 0 $global-margin;
-
       h2 {
         margin: $global-margin 0;
       }
