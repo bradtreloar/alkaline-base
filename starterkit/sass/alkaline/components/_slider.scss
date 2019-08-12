@@ -1,0 +1,28 @@
+
+
+
+@mixin alkaline-slider {
+  @include foundation-orbit;
+
+  // Cancel out block padding.
+  .slider {
+    margin: 0 (-$global-margin);
+  }
+
+  .orbit-controls {
+    button {
+      cursor: pointer;
+    }
+
+    svg.icon {
+      $icon-size: 1rem;
+
+      fill: white;
+      width: $icon-size;
+      height: $icon-size;
+    }
+  }
+}
+
+
+// @include alkaline-slider;

@@ -73,11 +73,6 @@ call_to_action:
     component:
       css/components/call-to-action.css: {}
 
-carousel:
-  css:
-    component:
-      css/components/carousel.css: {}
-
 branding:
   css:
     component:
@@ -132,7 +127,7 @@ gallery:
     js/behaviors/gallery.js: {}
   dependencies:
     - alkaline/foundation
-    - alkaline/carousel
+    - alkaline/slider
     - alkaline/modal
     - core/drupal
     - core/jquery
@@ -205,6 +200,11 @@ pagination:
   css:
     component:
       css/components/pagination.css: {}
+
+slider:
+  css:
+    component:
+      css/components/slider.css: {}
 
 table:
   css:

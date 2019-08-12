@@ -20,8 +20,8 @@ if (window.Alkaline === undefined) Alkaline = {};
       this.reveal.addClass("reveal full");
       this.revealPlugin = new Foundation.Reveal(this.reveal, {});
 
-      // Build the carousel
-      this.carousel = $(`<div class="carousel">`).appendTo(this.reveal);
+      // Build the slider.
+      this.slider = $(`<div class="slider">`).appendTo(this.reveal);
 
       // Add the Foundation Orbit component element.
       this.orbit = $(`
@@ -42,7 +42,7 @@ if (window.Alkaline === undefined) Alkaline = {};
             </button>
           </div>
         </div>
-      `).appendTo(this.carousel);
+      `).appendTo(this.slider);
 
       // Add the Orbits slides.
       const orbitContainer = $(`<ul class="orbit-container">`).appendTo(

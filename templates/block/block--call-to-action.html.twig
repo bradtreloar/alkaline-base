@@ -1,12 +1,13 @@
-{{ attach_library('alkaline/call_to_action') }}
-<div{{ attributes.addClass("block") }}>
-
-  {{ title_prefix }}
-  {{ title_suffix }}
-
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override to display a call-to-action block.
+ */
+#}
+{% block content %}
+  {{ attach_library('alkaline/call_to_action') }}
   <div class="call-to-action">
-    {% block content %}
-      {{ content }}
-    {% endblock %}
+    {{ content }}
   </div>
-</div>
+{% endblock %}

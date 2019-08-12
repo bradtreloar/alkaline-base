@@ -24,9 +24,9 @@ if (window.Alkaline === undefined) Alkaline = {};
       this.reveal.addClass("reveal full");
       this.revealPlugin = new Foundation.Reveal(this.reveal, {});
 
-      this.carousel = $("<div class=\"carousel\">").appendTo(this.reveal);
+      this.slider = $("<div class=\"slider\">").appendTo(this.reveal);
 
-      this.orbit = $("\n        <div class=\"orbit\" role=\"region\"\n          data-orbit\n          data-options=\"animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;\"\n        >\n          <div class=\"orbit-controls\">\n            <button class=\"previous orbit-previous\">\n              <svg aria-hidden=\"true\" class=\"icon\">\n                <use xlink:href=\"#caret-left\" />\n              </svg>\n            </button>\n            <button class=\"next orbit-next\">\n              <svg aria-hidden=\"true\" class=\"icon\">\n                <use xlink:href=\"#caret-right\" />\n              </svg>\n            </button>\n          </div>\n        </div>\n      ").appendTo(this.carousel);
+      this.orbit = $("\n        <div class=\"orbit\" role=\"region\"\n          data-orbit\n          data-options=\"animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;\"\n        >\n          <div class=\"orbit-controls\">\n            <button class=\"previous orbit-previous\">\n              <svg aria-hidden=\"true\" class=\"icon\">\n                <use xlink:href=\"#caret-left\" />\n              </svg>\n            </button>\n            <button class=\"next orbit-next\">\n              <svg aria-hidden=\"true\" class=\"icon\">\n                <use xlink:href=\"#caret-right\" />\n              </svg>\n            </button>\n          </div>\n        </div>\n      ").appendTo(this.slider);
 
       var orbitContainer = $("<ul class=\"orbit-container\">").appendTo(this.orbit);
 

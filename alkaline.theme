@@ -255,12 +255,19 @@ function alkaline_preprocess_field(&$vars) {
 /**
  * Preprocessor for field_card
  *
- * @deprecated Replaced by grid paragraph.
+ * @deprecated
  */
 function alkaline_preprocess_field_card(&$vars) {
-  // Get the existing classes
-  $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
+  alkaline_preprocess_field_grid($vars);
+}
 
+
+/**
+ * Preprocessor for fields that need to be rendered as grids.
+ *
+ * Used for backwards compatibility only.
+ */
+function alkaline_preprocess_field_grid(&$vars) {
   // Get the number of cards.
   $item_count = count($vars['items']);
 
@@ -273,40 +280,27 @@ function alkaline_preprocess_field_card(&$vars) {
   }
 
   // Add the grid classes to the class array.
+  $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
   $vars['attributes']['class'] = array_merge($classes, $grid_classes);
 }
 
 
 /**
  * Preprocessor for field_picture
+ *
+ * @deprecated
  */
 function alkaline_preprocess_field_picture(&$vars) {
   $field = $vars['element'];
 
-  // Get the existing classes
-  $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
-
-  // Get the number of cards.
-  $item_count = count($vars['items']);
-
   if ($field['#bundle'] == 'gallery') {
+    // Add the grid classes to the class array.
     $grid_classes = ['grid', 'small-2', 'medium-4'];
-  } else {
-    /*
-     * @deprecated Grid paragraph makes field_picture redundant outside of the
-     *             gallery paragraph.
-     */
-    // Set the grid classes based on the number of items.
-    switch($item_count) {
-      case 1: $grid_classes = ['grid', 'small-1']; break;
-      case 2: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
-      case 3: $grid_classes = ['grid', 'small-1', 'medium-3']; break;
-      default: $grid_classes = ['grid', 'small-2', 'medium-4'];
-    }
+    $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
+    $vars['attributes']['class'] = array_merge($classes, $grid_classes);
   }
-
-  // Add the grid classes to the class array.
-  $vars['attributes']['class'] = array_merge($classes, $grid_classes);
+  else
+    alkaline_preprocess_field_grid($vars);
 }
 
 
@@ -429,10 +423,9 @@ function alkaline_preprocess_page(&$vars) {
 function alkaline_preprocess_paragraph(&$vars) {
   $paragraph = $vars['elements']['#paragraph'];
 
-  // Add body-section cless to paragraphs using the default view mode
-  if ($vars['view_mode'] == 'default') {
+  // Add body-section cless to paragraphs.
+  if ($vars['view_mode'] == 'body_section')
     $vars['attributes']['class'][] = 'body-section';
-  }
 
   // Call the type-specific preprocessor.
   $paragraph_type_preprocessor = __FUNCTION__ . '_' . $paragraph->getType();
@@ -524,6 +517,10 @@ function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
 
     // Add a template suggestion for the block type.
     $suggestions[] = 'block__' . $block_type;
+
+    // Backwards compatibility for deprecated block types.
+    if ($block_type == 'carousel')
+      $suggestions[] = 'block__slider';
   }
 }
 
@@ -533,11 +530,29 @@ function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
  */
 function alkaline_theme_suggestions_field_alter(&$suggestions, $vars) {
   $field = $vars['element'];
+  $field_name = $field['#field_name'];
+  $field_type = $field['#field_type'];
 
   // Add template suggestions based on view mode.
   $view_mode = $field['#view_mode'];
-  $suggestions[] = 'field__' . $field['#field_name'] . '__' . $view_mode;
-  $suggestions[] = 'field__' . $field['#field_type'] . '__' . $view_mode;
+  $suggestions[] = 'field__' . $field_name . '__' . $view_mode;
+  $suggestions[] = 'field__' . $field_type . '__' . $view_mode;
+
+  // Backwards compatibility for deprecated field types.
+  if ($field['#entity_type'] == 'paragraph') {
+    if ($field_name == 'field_caption' && $field['#bundle'] == 'collage') {
+      $suggestions[] = 'field__paragraph__field_heading';
+      $suggestions[] = 'field__paragraph__field_heading__' . $view_mode;
+    }
+    if (in_array($field_name, ['field_card', 'field_picture'])) {
+      $suggestions[] = 'field__list';
+      $suggestions[] = 'field__list__' . $view_mode;
+    }
+  }
+  if ($field_name == 'field_slide') {
+    $suggestions[] = 'field__slider';
+    $suggestions[] = 'field__slider__' . $view_mode;
+  }
 }
 
 
@@ -567,4 +582,3 @@ function alkaline_theme_suggestions_user_alter(&$suggestions, $vars) {
   // add view mode template suggestion
   $suggestions[] = 'user__' . $vars['elements']['#view_mode'];
 }
-

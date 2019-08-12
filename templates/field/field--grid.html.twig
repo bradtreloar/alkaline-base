@@ -1,0 +1,11 @@
+{#
+  Provides backwards compatibility for deprecated fields that were rendered
+  as unordered lists and classed as grids.
+#}
+<ul {{ attributes.addClass("grid") }}>
+  {% for item in items %}
+    <li {{ item.attributes }}>
+      {{ item.content }}
+    </li>
+  {% endfor %}
+</ul>

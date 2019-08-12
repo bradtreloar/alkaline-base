@@ -1,7 +1,15 @@
+{#
+/**
+ * @file
+ * Theme override for lead section.
+ *
+ * @todo Consider removing `.lead` wrapper.
+ */
+#}
 <div class="lead">
-{% for item in items %}
-  <div class="lead-section">
-    {{ item.content }}
-  </div>
-{% endfor %}
+  {% for item in items %}
+    <div class="lead-section">
+      {{ item.content }}
+    </div>
+  {% endfor %}
 </div>

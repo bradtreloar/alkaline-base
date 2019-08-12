@@ -1,37 +1,22 @@
+{% extends "block.html.twig" %}
 {#
 /**
  * @file
- * Theme override to display a block.
+ * Theme override to display a contact details block.
  */
 #}
-{{ attach_library('alkaline/location') }}
-<div{{ attributes.addClass('block') }}>
-
-  {{ title_prefix }}
-  {% if label or more_link %}
-    <div class="title-bar">
-      {% if label %}
-        <h2{{ title_attributes }}>{{ label }}</h2>
-      {% endif %}
-      {% if more_link %}
-        {{ more_link }}
+{% block content %}
+  {{ attach_library('alkaline/location') }}
+  {% if content %}
+    <div class="location">
+      <section>
+        {{ content|without('field_map') }}
+      </section>
+      {% if content.field_map %}
+        <section>
+          {{ content.field_map }}
+        </section>
       {% endif %}
     </div>
   {% endif %}
-  {{ title_suffix }}
-
-  {% block content %}
-    {% if content %}
-      <div class="location">
-        <section>
-          {{ content|without('field_map') }}
-        </section>
-        {% if content.field_map %}
-          <section>
-            {{ content.field_map }}
-          </section>
-        {% endif %}
-      </div>
-    {% endif %}
-  {% endblock %}
-</div>
+{% endblock %}

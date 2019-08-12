@@ -1,17 +1,12 @@
 @import 'global';
 
 
-@mixin alkaline-carousel {
+@mixin alkaline-slider {
   @include foundation-orbit;
 
-  .block {
-    > .carousel {
-      margin: 0 (-$global-margin);
-
-      .orbit {
-        // width: 100%;
-      }
-    }
+  // Cancel out block padding.
+  .slider {
+    margin: 0 (-$global-margin);
   }
 
   .orbit-controls {
@@ -30,4 +25,4 @@
 }
 
 
-@include alkaline-carousel;
+@include alkaline-slider;

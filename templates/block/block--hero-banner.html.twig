@@ -1,13 +1,20 @@
-{{ attach_library('alkaline/banner') }}
-<header{{ attributes.addClass('block') }}>
-  {{ title_prefix }}
-  {{ title_suffix }}
-  <figure class="banner hero">
-    <figcaption>
-      {% block content %}
+{% extends "block.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override to display a hero banner block.
+ *
+ * @todo Consider replacing this with a generic banner block that can be
+ * configured in multiple ways using a `layout` field.
+ */
+#}
+{% block content %}
+  {{ attach_library('alkaline/banner') }}
+  {% if content %}
+    <figure class="banner hero">
+      <figcaption>
         {{ content }}
-      {% endblock %}
-    </figcaption>
-  </figure>
-</header>
-{{ css }}
+      </figcaption>
+    </figure>
+  {% endif %}
+{% endblock %}

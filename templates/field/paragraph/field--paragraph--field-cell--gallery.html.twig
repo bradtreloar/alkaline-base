@@ -1,0 +1,11 @@
+{#
+/**
+ * @file
+ * Theme override for cell fields in gallery paragraphs.
+ */
+#}
+{% for item in items %}
+  <li {{ item.attributes }}>
+    {{ item.content }}
+  </li>
+{% endfor %}

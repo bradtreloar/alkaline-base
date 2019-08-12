@@ -1,7 +1,14 @@
-{% extends "paragraph.html.twig" %}
+{% extends "paragraph.html.twig" %}{#
+/**
+ * @file
+ * Theme override for the gallery paragraph type.
+ */
+#}
 {% block content %}
   {{ attach_library('alkaline/gallery') }}
   <div{{ attributes.addClass("gallery") }}>
-    {{ content }}
+    <ul {{ attributes }}>
+      {{ content }}
+    </ul>
   </div>
 {% endblock content %}
