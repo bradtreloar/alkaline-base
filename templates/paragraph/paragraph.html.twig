@@ -5,7 +5,9 @@
  */
 #}
 {% block paragraph %}
-  {% block content %}
-    {{ content }}
-  {% endblock content %}
+  <div{{ attributes }}>
+    {% block content %}
+      {{ content }}
+    {% endblock content %}
+  </div>
 {% endblock paragraph %}

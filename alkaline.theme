@@ -254,6 +254,8 @@ function alkaline_preprocess_field(&$vars) {
 
 /**
  * Preprocessor for field_card
+ *
+ * @deprecated Replaced by grid paragraph.
  */
 function alkaline_preprocess_field_card(&$vars) {
   // Get the existing classes
@@ -290,6 +292,10 @@ function alkaline_preprocess_field_picture(&$vars) {
   if ($field['#bundle'] == 'gallery') {
     $grid_classes = ['grid', 'small-2', 'medium-4'];
   } else {
+    /*
+     * @deprecated Grid paragraph makes field_picture redundant outside of the
+     *             gallery paragraph.
+     */
     // Set the grid classes based on the number of items.
     switch($item_count) {
       case 1: $grid_classes = ['grid', 'small-1']; break;
@@ -301,7 +307,6 @@ function alkaline_preprocess_field_picture(&$vars) {
 
   // Add the grid classes to the class array.
   $vars['attributes']['class'] = array_merge($classes, $grid_classes);
-
 }
 
 
@@ -424,11 +429,53 @@ function alkaline_preprocess_page(&$vars) {
 function alkaline_preprocess_paragraph(&$vars) {
   $paragraph = $vars['elements']['#paragraph'];
 
+  // Add body-section cless to paragraphs using the default view mode
+  if ($vars['view_mode'] == 'default') {
+    $vars['attributes']['class'][] = 'body-section';
+  }
+
   // Call the type-specific preprocessor.
   $paragraph_type_preprocessor = __FUNCTION__ . '_' . $paragraph->getType();
   if (function_exists($paragraph_type_preprocessor)) {
     $paragraph_type_preprocessor($vars);
   }
+}
+
+
+/**
+ * Implements template_preprocess_page() for grid type paragraph.
+ */
+function alkaline_preprocess_paragraph_grid(&$vars) {
+  $paragraph = $vars['elements']['#paragraph'];
+
+  // Get the maximum number of columns.
+  $max_column_count = $paragraph->field_column_count->value;
+
+  // Count the items in field_cell.
+  $column_count = count($paragraph->field_cell->getValue());
+
+  // Limit the number of columns to the maximum set by the user.
+  if ($column_count >= $max_column_count)
+    $column_count = $max_column_count;
+
+  $grid_classes = [
+    1  => ['small-1'],
+    2  => ['small-1', 'medium-2'],
+    3  => ['small-1', 'medium-3'],
+    4  => ['small-2', 'medium-2', 'large-4'],
+    5  => ['small-2', 'medium-3', 'large-5'],
+    6  => ['small-2', 'medium-3', 'large-6'],
+    7  => ['small-2', 'medium-4', 'large-7'],
+    8  => ['small-2', 'medium-4', 'large-8'],
+    9  => ['small-2', 'medium-3', 'large-9'],
+    10 => ['small-2', 'medium-5', 'large-10'],
+    11 => ['small-2', 'medium-6', 'large-11'],
+    12 => ['small-3', 'medium-6', 'large-12'],
+  ];
+
+  // Add the grid classes to the class array.
+  $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
+  $vars['attributes']['class'] = array_merge($classes, $grid_classes[$column_count]);
 }
 
 
