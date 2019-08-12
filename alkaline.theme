@@ -114,14 +114,21 @@ function _alkaline_get_svg_icons(array $icons) {
 
 /**
  * Generates SVG icon render array.
- *
- * @todo Replace with a render plugin
  */
 function _alkaline_icon($name) {
   return [
-    '#prefix' => '<svg class="icon">',
-    '#markup' => '<use xlink:href="#' . $name . '" />',
-    '#suffix' => '</svg>',
+    '#type' => 'html_tag',
+    '#tag' => 'svg',
+    'symbol' => [
+      '#type' => 'html_tag',
+      '#tag' => 'use',
+      '#attributes' => [
+        'xlink:href' => "#$name",
+      ],
+    ],
+    '#attributes' => [
+      'class' => 'icon',
+    ],
   ];
 }
 
