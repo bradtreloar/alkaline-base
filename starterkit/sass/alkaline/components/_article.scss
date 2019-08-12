@@ -23,11 +23,9 @@
         }
       }
 
-      .image, // For backwards compatibility.
-      figure.picture {
+      .picture {
         display: flex;
-        flex-direction: column;
-        align-items: stretch;
+        justify-content: center;
 
         figcaption {
           font-size: 1rem;

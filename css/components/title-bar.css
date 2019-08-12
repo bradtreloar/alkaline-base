@@ -16,3 +16,7 @@
     .region.content .title-bar a.button {
       display: block;
       margin: 0; }
+  .title-bar h1, .title-bar h2, .title-bar h3, .title-bar h4, .title-bar h5, .title-bar h6 {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1; }
