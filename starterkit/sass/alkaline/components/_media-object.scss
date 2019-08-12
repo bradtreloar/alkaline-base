@@ -3,14 +3,51 @@
 
 @mixin alkaline-media-object {
   .media-object {
-    @include media-object-container;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: $global-margin;
     width: 100%;
 
-    > * {
-      @include media-object-section;
+    @include breakpoint(small only) {
+      flex-wrap: wrap;
+
+      > * {
+        padding: 0;
+        padding-bottom: $global-padding;
+        flex-basis: 100%;
+        max-width: 100%;
+      }
     }
 
-    > figure {
+    > * {
+      flex: 0 1 auto;
+
+      &:first-child {
+        padding-left: $global-padding;
+
+        @include breakpoint(medium) {
+          padding-left: $global-padding * 2;
+        }
+      }
+
+      &:last-child:not(:nth-child(2)) {
+        padding-right: $global-padding;
+
+        @include breakpoint(medium) {
+          padding-right: $global-padding * 2;
+        }
+      }
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+
+      &.main-section {
+        flex: 1 1 0px; // sass-lint:disable-line zero-unit
+      }
+    }
+
+    > figure:first-child {
       // flex: none;
       max-width: 30vw;
 
