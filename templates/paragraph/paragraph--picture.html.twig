@@ -8,12 +8,14 @@
  */
 #}
 {% block content %}
-  <figure class="picture image">
-    {{ content.field_image }}
-    {% if content.field_caption|render and view_mode != "teaser" %}
-      <figcaption>
-        {{ content.field_caption }}
-      </figcaption>
-    {% endif %}
-  </figure>
+  <div class="picture">
+    <figure>
+      {{ content.field_image }}
+      {% if content.field_caption|render and view_mode != "teaser" %}
+        <figcaption>
+          {{ content.field_caption }}
+        </figcaption>
+      {% endif %}
+    </figure>
+  </div>
 {% endblock %}

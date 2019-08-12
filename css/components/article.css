@@ -9,9 +9,16 @@ main article {
     max-width: 60rem; }
   main article .aside .body-section {
     padding: 1rem; }
-  main article .image figcaption {
-    font-size: 1rem;
-    padding: 1rem; }
+  main article .picture {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    main article .picture figcaption {
+      font-size: 1rem;
+      padding: 1rem; }
   main article .text-formatted {
     width: 100%; }
     main article .text-formatted img {
