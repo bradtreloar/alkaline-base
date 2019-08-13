@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Theme override to display an aside paragraph.
+ *
+ * We don't bother with attributes on this because it's only meant to be
+ * a simple wrapper.
+ */
+#}
+{% block paragraph %}
+  {{ attach_library('alkaline/backdrop') }}
+  <div{{ attributes.addClass("backdrop") }}>
+    <div>
+      {% block content %}
+        {{ content }}
+      {% endblock content %}
+    </div>
+  </div>
+  {{ css }}
+{% endblock paragraph %}

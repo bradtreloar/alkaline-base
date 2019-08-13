@@ -436,6 +436,35 @@ function alkaline_preprocess_paragraph(&$vars) {
 
 
 /**
+ * Implements template_preprocess_page() for backdrop type paragraph.
+ */
+function alkaline_preprocess_paragraph_backdrop(&$vars) {
+  $paragraph = $vars['elements']['#paragraph'];
+
+  // Remove classes.
+  $vars['attributes']['class'] = [];
+
+  // Add the background CSS.
+  if ($paragraph->field_image) {
+    if ($file = $paragraph->field_image->entity) {
+      $uri = $file->getFileUri();
+
+      // Generate a unique ID to use as a selector.
+      $id = "backdrop--" . $paragraph->id();
+      $vars['attributes']['id'] = $id;
+
+      // Add style element to vars.
+      $vars['css'] = _alkaline_responsive_background_css('hero', "#$id", $uri);
+    }
+  }
+
+  // Get the maximum number of columns.
+  if ($paragraph->field_reverse_color->value)
+    $vars['attributes']['class'][] = 'reverse-color';
+}
+
+
+/**
  * Implements template_preprocess_page() for grid type paragraph.
  */
 function alkaline_preprocess_paragraph_grid(&$vars) {
@@ -469,6 +498,10 @@ function alkaline_preprocess_paragraph_grid(&$vars) {
   // Add the grid classes to the class array.
   $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
   $vars['attributes']['class'] = array_merge($classes, $grid_classes[$column_count]);
+
+  // Set cell content alignment to centre if user does not select stretch.
+  if (!$paragraph->field_stretch_content->value)
+    $vars['attributes']['style'] = 'align-items:center;';
 }
 
 

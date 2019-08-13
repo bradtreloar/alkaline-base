@@ -58,6 +58,11 @@ ajax:
     component:
       css/components/ajax.css: {}
 
+backdrop:
+  css:
+    component:
+      css/components/backdrop.css: {}
+
 banner:
   css:
     component:

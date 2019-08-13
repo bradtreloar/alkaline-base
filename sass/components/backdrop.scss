@@ -1,0 +1,40 @@
+@import 'global';
+
+
+$backdrop-reverse-color: $white;
+$backdrop-reverse-link-color: $backdrop-reverse-color;
+
+
+@mixin alkaline-backdrop {
+  .backdrop {
+    position: relative;
+    margin: 0 (-$global-margin);
+    color: $backdrop-reverse-color;
+
+    &:before {
+      background-position: center;
+      background-size: cover;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+    }
+
+    > div {
+      display: flex;
+      padding: ($global-margin * 2) $global-margin;
+    }
+
+    a,
+    a:hover,
+    a:active {
+      color: $backdrop-reverse-link-color;
+    }
+  }
+}
+
+
+@include alkaline-backdrop;
