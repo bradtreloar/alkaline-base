@@ -21,7 +21,11 @@
 <ul {{ attributes.addClass(classes) }}>
   {% for item in items %}
   <li {{ item.attributes }}>
-    {{ item.content }}
+    <figure>
+      <picture>
+        {{ item.content }}
+      </picture>
+    </figure>
   </li>
   {% endfor %}
 </ul>
