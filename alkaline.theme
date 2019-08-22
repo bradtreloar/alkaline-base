@@ -313,10 +313,11 @@ function alkaline_preprocess_field_picture(&$vars) {
  * Implements template_preprocess_html()
  */
 function alkaline_preprocess_html(&$vars) {
+  $theme_path = \Drupal::service('theme.manager')->getActiveTheme()->getPath();
+
   // Get the favicon directory.
   global $base_url;
-  $theme = \Drupal::service('theme.manager')->getActiveTheme();
-  $vars['favicon_dir'] = $base_url . '/' . $theme->getPath() . '/images/favicon';
+  $vars['favicon_dir'] = $base_url . '/' . $theme_path . '/images/favicon';
 
   // Get the SVG icons.
   // @todo Remove times-circle icon.
