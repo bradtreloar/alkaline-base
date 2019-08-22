@@ -30,6 +30,10 @@ $button-icon-size: 1em;
     &.hollow {
       @include button-hollow;
     }
+
+    &.large {
+      font-size: 120%;
+    }
   }
 
   .button-group {

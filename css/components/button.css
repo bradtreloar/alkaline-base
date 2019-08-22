@@ -43,6 +43,8 @@
     background-color: transparent; }
   .button.hollow.disabled, .button.hollow.disabled:hover, .button.hollow.disabled:focus, .button.hollow[disabled], .button.hollow[disabled]:hover, .button.hollow[disabled]:focus {
     background-color: transparent; }
+  .button.large {
+    font-size: 120%; }
 
 .button-group {
   margin-bottom: 1rem;
