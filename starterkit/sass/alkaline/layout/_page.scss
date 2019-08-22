@@ -4,8 +4,17 @@
 $admin-toolbar-height: 39px;
 $admin-toolbar-tray-height: 40px;
 
-$top-bar-height: 48px;
-$top-bar-z-index: 1000;
+$topbar-height: 48px;
+$topbar-z-index: 1000;
+
+
+@mixin hbox {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: space-between;
+}
 
 
 @mixin alkaline-page {
@@ -15,23 +24,23 @@ $top-bar-z-index: 1000;
 
   div.page {
     height: 100%;
-    padding: $top-bar-height 0 0 0;
+    padding: $topbar-height 0 0 0;
 
     main {
       flex-grow: 1;
     }
   }
 
-  @include tda-admin-layer;
-  @include tda-header-layer;
-  @include tda-lead-layer;
-  @include tda-main-layer;
-  @include tda-footer-layer;
-  @include tda-boilerplate-layer;
+  @include _alkaline-admin-layer;
+  @include _alkaline-topbar-layer;
+  @include _alkaline-lead-layer;
+  @include _alkaline-main-layer;
+  @include _alkaline-footer-layer;
+  @include _alkaline-boilerplate-layer;
 }
 
 
-@mixin tda-admin-layer {
+@mixin _alkaline-admin-layer {
   .layer.admin {
     position: relative;
 
@@ -45,16 +54,7 @@ $top-bar-z-index: 1000;
 }
 
 
-@mixin tda-header-super-region {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  height: 100%;
-  justify-content: space-between;
-}
-
-
-@mixin tda-header-region {
+@mixin _alkaline-header-region {
   display: flex;
   flex-direction: row;
   height: 100%;
@@ -67,72 +67,18 @@ $top-bar-z-index: 1000;
 }
 
 
-@mixin tda-navbar-super-region {
-  background: inherit;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  right: 0;
-  z-index: $top-bar-z-index - 1; // under the header
-
-  // @bug this rule causes dropdown submenus to be hidden
-  // overflow-x: hidden;
-
-  & {
-    width: 0;
-    pointer-events: none;
-  }
-
-  &.active {
-    width: 320px;
-    pointer-events: all;
-  }
-
-  // The height of the navbar is the difference between the top bar(s) and
-  // the viewport height
-  $difference: $top-bar-height;
-  height: calc(100% - #{$difference});
-  top: $difference;
-
-  body.toolbar-horizontal &,
-  body.toolbar-vertical & {
-    $difference: $top-bar-height + $admin-toolbar-height;;
-    height: calc(100% - #{$difference});
-    top: $difference;
-  }
-
-  body.toolbar-horizontal.toolbar-tray-open & {
-    $difference: $top-bar-height + $admin-toolbar-height + $admin-toolbar-tray-height;
-    height: calc(100% - #{$difference});
-    top: $difference;
-  }
-
-  // Convert to a header region.
-  @include breakpoint(large) {
-    flex-direction: row;
-    height: 100% !important;
-    justify-content: flex-end;
-    pointer-events: all;
-    position: static;
-    width: auto;
-    z-index: $top-bar-z-index + 1; // above the header
-  }
-}
-
-
-@mixin tda-navbar-region {
+@mixin _alkaline-navbar-region {
 
   @include breakpoint(large) {
     // Convert to a header region.
-    @include tda-header-region;
+    @include _alkaline-header-region;
     justify-content: flex-end;
   }
 }
 
 
-@mixin tda-header-layer {
-  .layer.header {
+@mixin _alkaline-topbar-layer {
+  .layer.topbar {
     width: 100%;
 
     &.fixed {
@@ -140,7 +86,7 @@ $top-bar-z-index: 1000;
       // position: absolute; //@debug
       top: 0;
       transition: top 300ms ease;
-      z-index: $top-bar-z-index;
+      z-index: $topbar-z-index;
 
       body.toolbar-horizontal &,
       body.toolbar-vertical & {
@@ -155,7 +101,7 @@ $top-bar-z-index: 1000;
     // wrapper
     > div {
       background: inherit;
-      height: $top-bar-height;
+      height: $topbar-height;
       display: flex;
       justify-content: space-between;
       margin: 0 auto;
@@ -163,18 +109,67 @@ $top-bar-z-index: 1000;
       position: relative;
     }
 
-    .super-region {
+    .container {
+      display: flex;
+      background: inherit;
+      color: inherit;
+
       &.header {
-        @include tda-header-super-region;
+        flex-direction: row;
+        flex-grow: 1;
+        height: 100%;
+        justify-content: space-between;
       }
 
       &.navbar {
-        @include tda-navbar-super-region;
+        height: 100% !important;
+        justify-content: flex-end;
+        z-index: $topbar-z-index + 1; // above the header
 
+        // Convert to an off-canvas for small viewports.
+        @include breakpoint(small medium) {
+          flex-direction: column;
+          position: fixed;
+          right: 0;
+          z-index: $topbar-z-index - 1; // under the header
+
+          // @bug this rule causes dropdown submenus to be hidden
+          // overflow-x: hidden;
+
+          // The height of the navbar is the difference between the top bar(s) and
+          // the viewport height
+          $difference: $topbar-height;
+          height: calc(100% - #{$difference});
+          top: $difference;
+
+          body.toolbar-horizontal &,
+          body.toolbar-vertical & {
+            $difference: $topbar-height + $admin-toolbar-height;;
+            height: calc(100% - #{$difference});
+            top: $difference;
+          }
+
+          body.toolbar-horizontal.toolbar-tray-open & {
+            $difference: $topbar-height + $admin-toolbar-height + $admin-toolbar-tray-height;
+            height: calc(100% - #{$difference});
+            top: $difference;
+          }
+
+          & {
+            width: 0;
+            pointer-events: none;
+          }
+
+          &.active {
+            width: 320px;
+            pointer-events: all;
+          }
+        }
+
+        // Navbar blocks need to inherit the container's background color.
         > .region {
           background: inherit;
 
-          // Navbar blocks need to inherit the super-region's background color
           > .block {
             background: inherit;
           }
@@ -184,15 +179,15 @@ $top-bar-z-index: 1000;
 
     .region {
       &.header {
-        @include tda-header-region;
+        @include _alkaline-header-region;
       }
 
       &.navbar {
-        @include tda-navbar-region;
+        @include _alkaline-navbar-region;
       }
 
       &.buttons {
-        @include tda-header-region;
+        @include _alkaline-header-region;
         flex: none;
 
         @include breakpoint (large) {
@@ -204,7 +199,7 @@ $top-bar-z-index: 1000;
 }
 
 
-@mixin tda-lead-layer {
+@mixin _alkaline-lead-layer {
   .layer.lead {
     position: relative;
 
@@ -238,7 +233,7 @@ $top-bar-z-index: 1000;
 }
 
 
-@mixin tda-main-layer {
+@mixin _alkaline-main-layer {
   .layer.main {
     margin: 0 0 (2 * $global-margin);
 
@@ -254,21 +249,21 @@ $top-bar-z-index: 1000;
 
   #main-content {
     position: relative;
-    top: -$top-bar-height;
+    top: -$topbar-height;
 
     body.toolbar-horizontal &,
     body.toolbar-vertical & {
-      top: -($top-bar-height + 39px);
+      top: -($topbar-height + 39px);
     }
 
     body.toolbar-horizontal.toolbar-tray-open & {
-      top: -($top-bar-height + 79px);
+      top: -($topbar-height + 79px);
     }
   }
 }
 
 
-@mixin tda-footer-layer {
+@mixin _alkaline-footer-layer {
   .layer.footer {
     margin: $global-margin 0 0 0;
     padding: 0 $global-margin;
@@ -291,7 +286,7 @@ $top-bar-z-index: 1000;
 }
 
 
-@mixin tda-boilerplate-layer {
+@mixin _alkaline-boilerplate-layer {
   .layer.boilerplate {
     padding: (2 * $global-margin) 0 $global-margin;
 

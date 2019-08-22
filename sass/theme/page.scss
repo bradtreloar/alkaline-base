@@ -1,8 +1,8 @@
 @import 'global';
 
 
-$header-layer-background: $black;
-$header-layer-color: $white;
+$topbar-layer-background: $black;
+$topbar-layer-color: $white;
 
 $footer-layer-background: $medium-gray;
 $footer-layer-color: $black;
@@ -13,10 +13,10 @@ $boilerplate-layer-background: $footer-layer-background;
 
 @mixin alkaline-page-theme {
   .layer {
-    &.header {
-      color: $header-layer-color;
-      background-color: $header-layer-background;
-      fill: $header-layer-color; // for SVG icons
+    &.topbar {
+      color: $topbar-layer-color;
+      background-color: $topbar-layer-background;
+      fill: $topbar-layer-color; // for SVG icons
     }
 
     &.footer {

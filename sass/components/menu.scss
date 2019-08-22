@@ -41,7 +41,7 @@ $share-menu-button-size: 2em;
     a {
       @include tda-menu-button;
 
-      .layer.header & {
+      .layer.topbar & {
         font-size: 0.875em;
 
         // If the menu item has an icon then hide the

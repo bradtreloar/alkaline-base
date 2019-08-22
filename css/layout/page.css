@@ -15,153 +15,102 @@ div.page {
     margin: 0 auto;
     max-width: 60rem; }
 
-.layer.header {
+.layer.topbar {
   width: 100%; }
-  .layer.header.fixed {
+  .layer.topbar.fixed {
     position: fixed;
     top: 0;
     -webkit-transition: top 300ms ease;
     transition: top 300ms ease;
     z-index: 1000; }
-    body.toolbar-horizontal .layer.header.fixed,
-    body.toolbar-vertical .layer.header.fixed {
+    body.toolbar-horizontal .layer.topbar.fixed,
+    body.toolbar-vertical .layer.topbar.fixed {
       padding-top: 39px; }
-    body.toolbar-horizontal.toolbar-tray-open .layer.header.fixed {
+    body.toolbar-horizontal.toolbar-tray-open .layer.topbar.fixed {
       padding-top: 79px; }
-  .layer.header > div {
+  .layer.topbar .container,
+  .layer.topbar .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     background: inherit;
+    color: inherit; }
+  .layer.topbar .wrapper {
     height: 48px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     margin: 0 auto;
-    max-width: 1080px;
-    position: relative; }
-  .layer.header .super-region.header {
+    max-width: 1080px; }
+  .layer.topbar .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    height: 100%;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between; }
-  .layer.header .super-region.navbar {
     background: inherit;
-    color: inherit;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    position: fixed;
-    right: 0;
-    z-index: 999;
-    height: calc(100% - 48px);
-    top: 48px; }
-    .layer.header .super-region.navbar {
-      width: 0;
-      pointer-events: none; }
-    .layer.header .super-region.navbar.active {
-      width: 320px;
-      pointer-events: all; }
-    body.toolbar-horizontal .layer.header .super-region.navbar,
-    body.toolbar-vertical .layer.header .super-region.navbar {
-      height: calc(100% - 87px);
-      top: 87px; }
-    body.toolbar-horizontal.toolbar-tray-open .layer.header .super-region.navbar {
-      height: calc(100% - 127px);
-      top: 127px; }
-    @media print, screen and (min-width: 67.5em) {
-      .layer.header .super-region.navbar {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        height: 100% !important;
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-end;
-        pointer-events: all;
-        position: static;
-        width: auto;
-        z-index: 1001; } }
-    .layer.header .super-region.navbar > .region {
-      background: inherit; }
-      .layer.header .super-region.navbar > .region > .block {
-        background: inherit; }
-  .layer.header .region.header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    height: 100%; }
-    .layer.header .region.header .block {
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      height: 100%; }
-  @media print, screen and (min-width: 67.5em) {
-    .layer.header .region.navbar {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      height: 100%;
-      -webkit-box-pack: end;
-      -ms-flex-pack: end;
-      justify-content: flex-end; }
-      .layer.header .region.navbar .block {
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        height: 100%; } }
-  .layer.header .region.buttons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    height: 100%;
     -webkit-box-flex: 0;
-    -ms-flex: none;
-    flex: none; }
-    .layer.header .region.buttons .block {
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      height: 100%; }
-    @media print, screen and (min-width: 67.5em) {
-      .layer.header .region.buttons {
-        display: none; } }
+    -ms-flex-positive: 0;
+    flex-grow: 0; }
+    .layer.topbar .container.topbar-wrapper {
+      height: 48px;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1080px;
+      position: relative; }
+    .layer.topbar .container.header {
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+    @media screen and (max-width: 67.4375em) {
+      .layer.topbar .container.navbar {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        position: fixed;
+        right: 0;
+        z-index: 999;
+        height: calc(100% - 48px);
+        top: 48px; }
+        body.toolbar-horizontal .layer.topbar .container.navbar,
+        body.toolbar-vertical .layer.topbar .container.navbar {
+          height: calc(100% - 87px);
+          top: 87px; }
+        body.toolbar-horizontal.toolbar-tray-open .layer.topbar .container.navbar {
+          height: calc(100% - 127px);
+          top: 127px; }
+        .layer.topbar .container.navbar {
+          width: 0;
+          pointer-events: none; }
+        .layer.topbar .container.navbar.active {
+          width: 320px;
+          pointer-events: all; } }
+    .layer.topbar .container.buttons {
+      -webkit-box-flex: 0;
+      -ms-flex: none;
+      flex: none; }
+      @media print, screen and (min-width: 67.5em) {
+        .layer.topbar .container.buttons {
+          display: none; } }
+  .layer.topbar .region {
+    background: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+  .layer.topbar .block {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%; }
 
 .layer.lead {
   position: relative; }

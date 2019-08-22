@@ -230,10 +230,10 @@ ul.menu a {
   ul.menu a span {
     display: block;
     line-height: 1.5em; }
-  .layer.header ul.menu a {
+  .layer.topbar ul.menu a {
     font-size: 0.875em; }
     @media screen and (max-width: 44.9375em) {
-      .layer.header ul.menu a svg.icon + span {
+      .layer.topbar ul.menu a svg.icon + span {
         display: none; } }
 
 .region.navbar ul.menu {
