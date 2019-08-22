@@ -5,16 +5,8 @@ $admin-toolbar-height: 39px;
 $admin-toolbar-tray-height: 40px;
 
 $topbar-height: 48px;
+$topbar-width: map-get($breakpoints, large);
 $topbar-z-index: 1000;
-
-
-@mixin hbox {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  height: 100%;
-  justify-content: space-between;
-}
 
 
 @mixin alkaline-page {
@@ -53,37 +45,12 @@ $topbar-z-index: 1000;
   }
 }
 
-
-@mixin _alkaline-header-region {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-
-  .block {
-    align-items: center;
-    display: flex;
-    height: 100%;
-  }
-}
-
-
-@mixin _alkaline-navbar-region {
-
-  @include breakpoint(large) {
-    // Convert to a header region.
-    @include _alkaline-header-region;
-    justify-content: flex-end;
-  }
-}
-
-
 @mixin _alkaline-topbar-layer {
   .layer.topbar {
     width: 100%;
 
     &.fixed {
       position: fixed;
-      // position: absolute; //@debug
       top: 0;
       transition: top 300ms ease;
       z-index: $topbar-z-index;
@@ -98,36 +65,40 @@ $topbar-z-index: 1000;
       }
     }
 
-    // wrapper
-    > div {
-      background: inherit;
-      height: $topbar-height;
+    .container,
+    .wrapper {
       display: flex;
-      justify-content: space-between;
+      background: inherit;
+      color: inherit;
+    }
+
+    .wrapper {
+      height: $topbar-height;
       margin: 0 auto;
-      max-width: map-get($breakpoints, large);
-      position: relative;
+      max-width: $topbar-width;
     }
 
     .container {
       display: flex;
       background: inherit;
-      color: inherit;
+      flex-grow: 0;
+
+      &.topbar-wrapper {
+        height: $topbar-height;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: map-get($breakpoints, large);
+        position: relative;
+      }
 
       &.header {
-        flex-direction: row;
         flex-grow: 1;
-        height: 100%;
         justify-content: space-between;
       }
 
       &.navbar {
-        height: 100% !important;
-        justify-content: flex-end;
-        z-index: $topbar-z-index + 1; // above the header
-
         // Convert to an off-canvas for small viewports.
-        @include breakpoint(small medium) {
+        @include breakpoint(medium down) {
           flex-direction: column;
           position: fixed;
           right: 0;
@@ -165,35 +136,28 @@ $topbar-z-index: 1000;
             pointer-events: all;
           }
         }
-
-        // Navbar blocks need to inherit the container's background color.
-        > .region {
-          background: inherit;
-
-          > .block {
-            background: inherit;
-          }
-        }
-      }
-    }
-
-    .region {
-      &.header {
-        @include _alkaline-header-region;
-      }
-
-      &.navbar {
-        @include _alkaline-navbar-region;
       }
 
       &.buttons {
-        @include _alkaline-header-region;
         flex: none;
 
         @include breakpoint (large) {
           display: none;
         }
       }
+    }
+
+    .region {
+      background: inherit;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .block {
+      align-items: center;
+      background: inherit;
+      display: flex;
+      height: 100%;
     }
   }
 }
