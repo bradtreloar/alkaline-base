@@ -53,10 +53,6 @@
   // 2em is a safe bet.
   height: 2em;
 
-  // Add global form-spacing margins to entire form,
-  // as if it were a single form item.
-  margin: $global-margin 0;
-
   // Put a gap either side of the form because it's
   // Probably alongside other inline elements.
   padding: 0 $global-margin;

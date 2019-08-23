@@ -12,13 +12,13 @@
   @include foundation-form-error;
 
   form {
-
-    .region.header & {
+    .layer.topbar & {
       @include _alkaline-form-inline;
-    }
 
-    .region.navbar & {
-      @include _alkaline-form-inline;
+      // Centre the form vertically in the topbar.
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .region.content & {
@@ -49,13 +49,6 @@
 @mixin _alkaline-form-inline {
   // Make children inline.
   display: flex;
-
-  // 2em is a safe bet.
-  height: 2em;
-
-  // Add global form-spacing margins to entire form,
-  // as if it were a single form item.
-  margin: $global-margin 0;
 
   // Put a gap either side of the form because it's
   // Probably alongside other inline elements.
