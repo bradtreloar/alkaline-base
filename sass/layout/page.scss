@@ -8,6 +8,8 @@ $topbar-height: 48px;
 $topbar-width: map-get($breakpoints, large);
 $topbar-z-index: 1000;
 
+$navbar-off-canvas-width: 320px;
+
 
 @mixin alkaline-page {
   .dialog-off-canvas-main-canvas {
@@ -78,6 +80,46 @@ $topbar-z-index: 1000;
       max-width: $topbar-width;
     }
 
+    .off-canvas {
+      background: inherit;
+
+      @include breakpoint(medium down) {
+        overflow-x: hidden;
+        position: fixed;
+        right: 0;
+        z-index: $topbar-z-index - 1; // under the header
+
+        // The height of the navbar is the difference between the top bar(s) and
+        // the viewport height
+        $difference: $topbar-height;
+        height: calc(100% - #{$difference});
+        top: $difference;
+
+        body.toolbar-horizontal &,
+        body.toolbar-vertical & {
+          $difference: $topbar-height + $admin-toolbar-height;;
+          height: calc(100% - #{$difference});
+          top: $difference;
+        }
+
+        body.toolbar-horizontal.toolbar-tray-open & {
+          $difference: $topbar-height + $admin-toolbar-height + $admin-toolbar-tray-height;
+          height: calc(100% - #{$difference});
+          top: $difference;
+        }
+
+        & {
+          width: 0;
+          pointer-events: none;
+        }
+
+        &.active {
+          width: $navbar-off-canvas-width;
+          pointer-events: all;
+        }
+      }
+    }
+
     .container {
       display: flex;
       background: inherit;
@@ -97,43 +139,16 @@ $topbar-z-index: 1000;
       }
 
       &.navbar {
-        // Convert to an off-canvas for small viewports.
+        // Convert to a vertical container for small viewports.
         @include breakpoint(medium down) {
           flex-direction: column;
-          position: fixed;
+          height: 100%;
           right: 0;
+          width: $navbar-off-canvas-width;
           z-index: $topbar-z-index - 1; // under the header
 
-          // @bug this rule causes dropdown submenus to be hidden
-          // overflow-x: hidden;
-
-          // The height of the navbar is the difference between the top bar(s) and
-          // the viewport height
-          $difference: $topbar-height;
-          height: calc(100% - #{$difference});
-          top: $difference;
-
-          body.toolbar-horizontal &,
-          body.toolbar-vertical & {
-            $difference: $topbar-height + $admin-toolbar-height;;
-            height: calc(100% - #{$difference});
-            top: $difference;
-          }
-
-          body.toolbar-horizontal.toolbar-tray-open & {
-            $difference: $topbar-height + $admin-toolbar-height + $admin-toolbar-tray-height;
-            height: calc(100% - #{$difference});
-            top: $difference;
-          }
-
-          & {
-            width: 0;
-            pointer-events: none;
-          }
-
-          &.active {
-            width: 320px;
-            pointer-events: all;
+          .region {
+            flex-direction: column;
           }
         }
       }
@@ -150,13 +165,10 @@ $topbar-z-index: 1000;
     .region {
       background: inherit;
       display: flex;
-      flex-direction: row;
     }
 
     .block {
-      align-items: center;
       background: inherit;
-      display: flex;
       height: 100%;
     }
   }

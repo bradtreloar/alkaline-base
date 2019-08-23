@@ -20,20 +20,22 @@
     {% endif %}
 
     {% if page.navbar_top or page.navbar_bottom %}
-    <div id="navbar" class="container navbar" data-toggler=".active">
+    <div id="navbar" class="off-canvas" data-toggler=".active">
+      <div class="container navbar">
 
-      {% if page.navbar_top %}
-      <div class="region navbar navbar-top">
-        {{ page.navbar_top }}
+        {% if page.navbar_top %}
+        <div class="region navbar navbar-top">
+          {{ page.navbar_top }}
+        </div>
+        {% endif %}
+
+        {% if page.navbar_bottom %}
+        <div class="region navbar navbar-bottom">
+          {{ page.navbar_bottom }}
+        </div>
+        {% endif %}
+
       </div>
-      {% endif %}
-
-      {% if page.navbar_bottom %}
-      <div class="region navbar navbar-bottom">
-        {{ page.navbar_bottom }}
-      </div>
-      {% endif %}
-
     </div>
 
     <div class="container buttons">
