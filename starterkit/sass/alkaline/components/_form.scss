@@ -14,11 +14,11 @@
   form {
 
     .region.header & {
-      @include tda-form-inline;
+      @include _alkaline-form-inline;
     }
 
     .region.navbar & {
-      @include tda-form-inline;
+      @include _alkaline-form-inline;
     }
 
     .region.content & {
@@ -46,7 +46,7 @@
 
 // Places all form elements in a row and sets
 // an explicit height on the wrapper
-@mixin tda-form-inline {
+@mixin _alkaline-form-inline {
   // Make children inline.
   display: flex;
 

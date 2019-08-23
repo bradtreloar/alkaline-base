@@ -12,7 +12,7 @@ $dropdownmenu-arrow-size: 6px;
 $dropdownmenu-arrow-padding: 1.5rem;
 
 
-@mixin tda-dropdown-menu-theme-direction($dir: horizontal) {
+@mixin _alkaline-dropdown-menu-theme-direction($dir: horizontal) {
   > li {
     @if $dir == horizontal {
       &.is-dropdown-submenu-parent > a::after {
@@ -78,11 +78,11 @@ $dropdownmenu-arrow-padding: 1.5rem;
     }
 
     &.horizontal {
-      @include tda-dropdown-menu-theme-direction(vertical);
+      @include _alkaline-dropdown-menu-theme-direction(vertical);
     }
 
     &.vertical {
-      @include tda-dropdown-menu-theme-direction(vertical);
+      @include _alkaline-dropdown-menu-theme-direction(vertical);
     }
 
     @each $size in $breakpoint-classes {

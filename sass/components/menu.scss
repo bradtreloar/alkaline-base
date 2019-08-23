@@ -12,7 +12,7 @@ $header-menu-button-font-size: 0.875em;
 $share-menu-button-size: 2em;
 
 
-@mixin tda-menu-button {
+@mixin _alkaline-menu-button {
   display: flex;
   align-items: center;
 
@@ -39,7 +39,7 @@ $share-menu-button-size: 2em;
 
   ul.menu {
     a {
-      @include tda-menu-button;
+      @include _alkaline-menu-button;
 
       .layer.topbar & {
         font-size: 0.875em;
@@ -115,7 +115,7 @@ $share-menu-button-size: 2em;
 
 @mixin alkaline-navbar-toggle-button {
   button[data-toggle="navbar"] {
-    @include tda-menu-button;
+    @include _alkaline-menu-button;
     height: 100%;
     line-height: 1;
     text-decoration: none;
