@@ -1,13 +1,18 @@
 <?php
 
-use Drupal\block\Entity\Block;
+/**
+ * @file
+ * Theme file for Alkaline base theme.
+ */
+
 use Drupal\Core\Render\Element;
 use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
 use Drupal\image\Entity\ImageStyle;
-use Drupal\paragraphs\Entity\Paragraph;
 
-
+/**
+ * Adds background CSS to lead section.
+ */
 function _alkaline_lead_section(&$vars) {
   $node = $vars['node'];
   if ($node->field_background_image) {
@@ -22,7 +27,9 @@ function _alkaline_lead_section(&$vars) {
   }
 }
 
-
+/**
+ * Adds background image CSS.
+ */
 function _alkaline_responsive_background_css($imageStyleClass, $selector, $imageUri) {
   // Fetch this theme's breakpoints.
   $breakpoints = \Drupal::service('breakpoint.manager')->getBreakpointsByGroup('alkaline');
@@ -34,9 +41,9 @@ function _alkaline_responsive_background_css($imageStyleClass, $selector, $image
     // Derive the image style name from the breakpoint name.
     $imageStyleName = str_replace('alkaline.', '' . $imageStyleClass . '_', $name);
 
-    // Try to load the image style
+    // Try to load the image style.
     if ($imageStyle = ImageStyle::load($imageStyleName)) {
-      // Save the cssRule components
+      // Save the cssRule components.
       $cssRules[] = [
         'mediaQuery' => $breakpoint->getMediaQuery(),
         'url' => file_url_transform_relative($imageStyle->buildUrl($imageUri)),
@@ -61,9 +68,8 @@ function _alkaline_responsive_background_css($imageStyleClass, $selector, $image
   ];
 }
 
-
 /**
- * Extracts SVG symbols from a collection of SVG files
+ * Extracts SVG symbols from a collection of SVG files.
  *
  * @param array $icons
  *   An array of arrays of icons names, keyed by the file name
@@ -75,7 +81,7 @@ function _alkaline_responsive_background_css($imageStyleClass, $selector, $image
 function _alkaline_get_svg_icons(array $icons) {
   $selected_nodes = [];
 
-  // load the selected icons into an array
+  // Load the selected icons into an array.
   foreach ($icons as $set => $selected_ids) {
     $svgDoc = new DOMDocument();
     $svgDoc->load(drupal_get_path('theme', 'alkaline') . "/icons/$set.svg");
@@ -83,35 +89,34 @@ function _alkaline_get_svg_icons(array $icons) {
     foreach ($svgDoc->getElementsByTagName('symbol') as $node) {
       $id = $node->getAttribute('id');
       if (in_array($id, $selected_ids)) {
-        $selected_nodes[] = $node->cloneNode(true);
+        $selected_nodes[] = $node->cloneNode(TRUE);
       }
     }
   }
 
-  // initialise a blank DOM
+  // Initialise a blank DOM.
   $htmlDoc = new DOMDocument();
 
-  // build the root element
+  // Build the root element.
   $body = $htmlDoc->createElement('body');
   $htmlDoc->appendChild($body);
 
-  // build the svg element
+  // Build the svg element.
   $svg = $htmlDoc->createElement('svg');
   $svg->setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   $svg->setAttribute('style', 'display: none;');
   $body->appendChild($svg);
 
-  // clone the nodes and add them to the new SVG element
+  // Clone the nodes and add them to the new SVG element.
   foreach ($selected_nodes as $node) {
-    $importedNode = $htmlDoc->importNode($node, true);
+    $importedNode = $htmlDoc->importNode($node, TRUE);
     $svg->appendChild($importedNode);
   }
 
-  // render the SVG element
+  // Render the SVG element.
   $html = Html::serialize($htmlDoc);
   return $html;
 }
-
 
 /**
  * Generates SVG icon render array.
@@ -132,7 +137,6 @@ function _alkaline_icon($name) {
     ],
   ];
 }
-
 
 /**
  * Implements template_preprocess_block()
@@ -155,7 +159,7 @@ function alkaline_preprocess_block(&$vars) {
 
   // If this is a views block and it has a more link
   // then add the link to the block as a button.
-  if(isset($vars['content']['#type']) && $vars['content']['#type'] == 'view') {
+  if (isset($vars['content']['#type']) && $vars['content']['#type'] == 'view') {
     alkaline_preprocess_block_views($vars);
   }
 
@@ -163,7 +167,7 @@ function alkaline_preprocess_block(&$vars) {
     // If this is a 404 block then wrap the system block content.
     $route_name = \Drupal::routeMatch()->getRouteName();
     if ($route_name == 'system.404') {
-      // dpm($vars['content']);
+      // dpm($vars['content']);.
       $vars['content']['#prefix'] = '<article><div class="body"><section><div class="text">';
       $vars['content']['#suffix'] = '</div></section></div></article>';
     }
@@ -172,14 +176,13 @@ function alkaline_preprocess_block(&$vars) {
   if ($vars['plugin_id'] == 'page_title_block') {
     $route_name = \Drupal::routeMatch()->getRouteName();
     if ($route_name == 'entity.node.canonical') {
-      $vars['hidden'] = true;
+      $vars['hidden'] = TRUE;
     }
   }
 }
 
-
 /**
- * Preprocessor for alkaline_hero_banner block type
+ * Preprocessor for alkaline_hero_banner block type.
  */
 function alkaline_preprocess_block_hero_banner(&$vars) {
 
@@ -187,12 +190,14 @@ function alkaline_preprocess_block_hero_banner(&$vars) {
   $block_content = \Drupal::service('entity.repository')->loadEntityByUuid('block_content', $uuid);
   if ($block_content) {
     // Fetch the background image URI.
-    if ($block_content->field_image)
+    if ($block_content->field_image) {
       $file = $block_content->field_image->entity;
-    else if ($block_content->field_background_image)
+    }
+    elseif ($block_content->field_background_image) {
       $file = $block_content->field_background_image->entity;
+    }
 
-    if(isset($file)) {
+    if (isset($file)) {
       $uri = $file->getFileUri();
       $htmlId = $vars['attributes']['id'];
 
@@ -202,9 +207,8 @@ function alkaline_preprocess_block_hero_banner(&$vars) {
   }
 }
 
-
 /**
- * Preprocessor for views blocks
+ * Preprocessor for views blocks.
  */
 function alkaline_preprocess_block_views(&$vars) {
   $view = $vars['content']['#view'];
@@ -219,7 +223,6 @@ function alkaline_preprocess_block_views(&$vars) {
       $url = $display->getOption('link_url');
     }
     // @todo Handle link provided by other view displays (e.g. page)
-
     // Prepare the link element.
     $vars['more_link'] = [
       '#type' => 'link',
@@ -227,11 +230,10 @@ function alkaline_preprocess_block_views(&$vars) {
       '#url' => Url::fromUserInput('/' . $url),
       '#attributes' => [
         'class' => 'button',
-      ]
+      ],
     ];
   }
 }
-
 
 /**
  * Implements template_preprocess_field()
@@ -244,29 +246,34 @@ function alkaline_preprocess_field(&$vars) {
   }
 
   // Call the name-specific preprocessor.
-  $field_name_preprocessor = __FUNCTION__ . '_' . str_replace("field_", "" ,$vars['field_name']);
+  $field_name_preprocessor = __FUNCTION__ . '_' . str_replace("field_", "", $vars['field_name']);
   if (function_exists($field_name_preprocessor)) {
     $field_name_preprocessor($vars);
   }
 
 }
 
-
 /**
- * Preprocessor for field_card
+ * Preprocessor for field_card.
  */
 function alkaline_preprocess_field_card(&$vars) {
-  // Get the existing classes
+  // Get the existing classes.
   $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
 
   // Get the number of cards.
   $item_count = count($vars['items']);
 
   // Set the grid classes based on the number of items.
-  switch($item_count) {
-    case 1: $grid_classes = ['grid', 'small-1']; break;
-    case 2: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
-    case 3: $grid_classes = ['grid', 'small-1', 'medium-3']; break;
+  switch ($item_count) {
+    case 1: $grid_classes = ['grid', 'small-1'];
+      break;
+
+    case 2: $grid_classes = ['grid', 'small-1', 'medium-2'];
+      break;
+
+    case 3: $grid_classes = ['grid', 'small-1', 'medium-3'];
+      break;
+
     default: $grid_classes = ['grid', 'small-2', 'medium-4'];
   }
 
@@ -274,14 +281,13 @@ function alkaline_preprocess_field_card(&$vars) {
   $vars['attributes']['class'] = array_merge($classes, $grid_classes);
 }
 
-
 /**
- * Preprocessor for field_picture
+ * Preprocessor for field_picture.
  */
 function alkaline_preprocess_field_picture(&$vars) {
   $field = $vars['element'];
 
-  // Get the existing classes
+  // Get the existing classes.
   $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
 
   // Get the number of cards.
@@ -289,12 +295,19 @@ function alkaline_preprocess_field_picture(&$vars) {
 
   if ($field['#bundle'] == 'gallery') {
     $grid_classes = ['grid', 'small-2', 'medium-4'];
-  } else {
+  }
+  else {
     // Set the grid classes based on the number of items.
-    switch($item_count) {
-      case 1: $grid_classes = ['grid', 'small-1']; break;
-      case 2: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
-      case 3: $grid_classes = ['grid', 'small-1', 'medium-3']; break;
+    switch ($item_count) {
+      case 1: $grid_classes = ['grid', 'small-1'];
+        break;
+
+      case 2: $grid_classes = ['grid', 'small-1', 'medium-2'];
+        break;
+
+      case 3: $grid_classes = ['grid', 'small-1', 'medium-3'];
+        break;
+
       default: $grid_classes = ['grid', 'small-2', 'medium-4'];
     }
   }
@@ -304,7 +317,6 @@ function alkaline_preprocess_field_picture(&$vars) {
 
 }
 
-
 /**
  * Implements template_preprocess_html()
  */
@@ -312,7 +324,7 @@ function alkaline_preprocess_html(&$vars) {
   // Get the favicon directory.
   global $base_url;
   $theme = \Drupal::service('theme.manager')->getActiveTheme();
-  $vars['favicon_dir'] = $base_url.'/'. $theme->getPath() .'/images/favicon';
+  $vars['favicon_dir'] = $base_url . '/' . $theme->getPath() . '/images/favicon';
 
   // Get the SVG icons.
   $vars['icons'] = _alkaline_get_svg_icons([
@@ -337,11 +349,12 @@ function alkaline_preprocess_html(&$vars) {
       'search', 'search-minus', 'search-plus',
       'shopping-cart',
       'times',
-      'times-circle', // @todo Remove this icon
+    // @todo Remove this icon
+      'times-circle',
     ],
   ]);
 
-  // Set a class based on the current route
+  // Set a class based on the current route.
   $current_path = \Drupal::service('path.current')->getPath();
   $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
   $vars['attributes']['class'][] = $path_alias;
@@ -352,7 +365,6 @@ function alkaline_preprocess_html(&$vars) {
   // Set a color for the theme_color metatag.
   $vars['theme_color'] = '#0a0a0a';
 }
-
 
 /**
  * Implements template_preprocess_node()
@@ -369,18 +381,16 @@ function alkaline_preprocess_menu(&$vars, $hook) {
         }
       }
       catch (UnexpectedValueException $ex) {
-        $route_name = $item['url']->getRouteName();
       }
     }
   }
 }
 
-
 /**
  * Implements template_preprocess_node()
  */
 function alkaline_preprocess_node(&$vars) {
-  // Change the submission date format
+  // Change the submission date format.
   $vars['date'] = \Drupal::service('date.formatter')
     ->format($vars['node']->getCreatedTime(), 'custom', 'j M Y');
 
@@ -391,15 +401,15 @@ function alkaline_preprocess_node(&$vars) {
   }
 }
 
-
 /**
- * Preprocessor for article content type
+ * Preprocessor for article content type.
  */
 function alkaline_preprocess_node_page(&$vars) {
   if ($vars['page'] && $vars['url'] == '/home') {
-    // Remove the social share buttons if enabled
-    if(isset($vars['content']['social_share_buttons']))
+    // Remove the social share buttons if enabled.
+    if (isset($vars['content']['social_share_buttons'])) {
       unset($vars['content']['social_share_buttons']);
+    }
   }
 
   // Preprocess variables for lead section.
@@ -408,7 +418,6 @@ function alkaline_preprocess_node_page(&$vars) {
   }
 }
 
-
 /**
  * Implements template_preprocess_page()
  */
@@ -416,7 +425,6 @@ function alkaline_preprocess_page(&$vars) {
   $vars['site_name'] = \Drupal::config('system.site')->get('name');
   $vars['current_year'] = date('Y');
 }
-
 
 /**
  * Implements template_preprocess_page()
@@ -431,7 +439,6 @@ function alkaline_preprocess_paragraph(&$vars) {
   }
 }
 
-
 /**
  * Implements template_preprocess_region()
  */
@@ -444,10 +451,16 @@ function alkaline_preprocess_region(&$vars) {
     $block_count = count(Element::children($vars['elements']));
 
     // Set the grid classes based on the number of blocks.
-    switch($block_count) {
-      case 1: $grid_classes = ['grid', 'small-1']; break;
-      case 2: $grid_classes = ['grid', 'small-1', 'medium-2']; break;
-      case 3: $grid_classes = ['grid', 'small-1', 'medium-1', 'large-3']; break;
+    switch ($block_count) {
+      case 1: $grid_classes = ['grid', 'small-1'];
+        break;
+
+      case 2: $grid_classes = ['grid', 'small-1', 'medium-2'];
+        break;
+
+      case 3: $grid_classes = ['grid', 'small-1', 'medium-1', 'large-3'];
+        break;
+
       default: $grid_classes = ['grid', 'small-1', 'medium-2', 'large-4'];
     }
 
@@ -456,10 +469,8 @@ function alkaline_preprocess_region(&$vars) {
   }
 }
 
-
-
 /**
- * Implements hook_theme_suggestions_block_alter()
+ * Implements hook_theme_suggestions_block_alter().
  */
 function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
 
@@ -469,20 +480,19 @@ function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
     // Get the block type from the database.
     $uuid = $vars['elements']['#derivative_plugin_id'];
     $block_type = \Drupal::database()
-    ->select('block_content','bc')
-    ->fields('bc', ['type'])
-    ->condition('uuid', $uuid)
-    ->execute()
-    ->fetchField();
+      ->select('block_content', 'bc')
+      ->fields('bc', ['type'])
+      ->condition('uuid', $uuid)
+      ->execute()
+      ->fetchField();
 
     // Add a template suggestion for the block type.
     $suggestions[] = 'block__' . $block_type;
   }
 }
 
-
 /**
- * Implements hook_theme_suggestions_field_alter()
+ * Implements hook_theme_suggestions_field_alter().
  */
 function alkaline_theme_suggestions_field_alter(&$suggestions, $vars) {
   $field = $vars['element'];
@@ -493,31 +503,30 @@ function alkaline_theme_suggestions_field_alter(&$suggestions, $vars) {
   $suggestions[] = 'field__' . $field['#field_type'] . '__' . $view_mode;
 }
 
-
 /**
- * Implements hook_theme_suggestions_page_alter() to set 4xx template suggestions.
+ * Implements hook_theme_suggestions_page_alter().
+ *
+ * Sets 4xx template suggestions.
  */
 function alkaline_theme_suggestions_page_alter(array &$suggestions, array $vars) {
-  // get the route
+  // Get the route.
   $route_name = \Drupal::routeMatch()->getRouteName();
   $route_parts = explode('.', $route_name);
 
-  // is it system.4xx ?
+  // Is it system.4xx ?
   if (count($route_parts) == 2 && $route_parts[0] === 'system') {
     $code = $route_parts[1];
     if (is_numeric($code) && $code >= 400 and $code < 500) {
-      // suggest template page--4xx.html.twig (e.g., page--404.html.twig)
+      // Suggest template page--4xx.html.twig (e.g., page--404.html.twig)
       $suggestions[] = 'page__' . $route_parts[1];
     }
   }
 }
 
-
 /**
- * Implements hook_theme_suggestions_user_alter()
+ * Implements hook_theme_suggestions_user_alter().
  */
 function alkaline_theme_suggestions_user_alter(&$suggestions, $vars) {
-  // add view mode template suggestion
+  // Add view mode template suggestion.
   $suggestions[] = 'user__' . $vars['elements']['#view_mode'];
 }
-
