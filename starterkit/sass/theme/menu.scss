@@ -8,4 +8,6 @@ $menu-button-color: inherit;
 
 
 @include alkaline-menu-theme;
+@include alkaline-drilldown-menu-theme;
+@include alkaline-dropdown-menu-theme;
 @include alkaline-share-menu-theme;

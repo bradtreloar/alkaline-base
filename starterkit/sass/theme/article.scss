@@ -2,10 +2,4 @@
 @import 'alkaline/theme/article';
 
 
-$article-emphasis-background: $black;
-$article-emphasis-background-image: none;
-$article-emphasis-color: $white;
-
-
 @include alkaline-article-theme;
-
