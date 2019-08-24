@@ -9,7 +9,7 @@
   Drupal.behaviors.alkalineGallery = {
     attach: function attach() {
       $(".gallery").once("alkalineGallery").each(function (index, gallery) {
-        return new AlkalineGallery(gallery);
+        return new Alkaline.Gallery(gallery);
       });
     }
   };
