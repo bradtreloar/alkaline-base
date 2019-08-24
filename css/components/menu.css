@@ -213,13 +213,39 @@
 .no-js [data-responsive-menu] ul {
   display: none; }
 
+.region.navbar ul.menu {
+  height: 100%; }
+  @media screen and (max-width: 67.4375em) {
+    .region.navbar ul.menu {
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      height: auto; } }
+  .region.navbar ul.menu:not(.drilldown):not(.dropdown) ul {
+    display: none; }
+
+.region.footer ul.menu {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .region.footer ul.menu a {
+    padding-left: 0;
+    padding-right: 0; }
+
 ul.menu a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  height: 100%; }
   ul.menu a svg.icon {
     display: block;
     height: 1.5em;
@@ -235,35 +261,6 @@ ul.menu a {
     @media screen and (max-width: 44.9375em) {
       .layer.topbar ul.menu a svg.icon + span {
         display: none; } }
-
-.region.navbar ul.menu {
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-  @media print, screen and (min-width: 67.5em) {
-    .region.navbar ul.menu {
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row; } }
-  .region.navbar ul.menu:not(.drilldown):not(.dropdown) ul {
-    display: none; }
-
-.region.footer ul.menu {
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-  .region.footer ul.menu a {
-    padding-left: 0;
-    padding-right: 0; }
 
 .is-drilldown {
   position: relative;
@@ -629,6 +626,7 @@ button[data-toggle="navbar"] {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  height: 100%;
   height: 100%;
   line-height: 1;
   text-decoration: none;

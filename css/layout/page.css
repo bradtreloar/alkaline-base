@@ -28,45 +28,44 @@ div.page {
       padding-top: 39px; }
     body.toolbar-horizontal.toolbar-tray-open .layer.topbar.fixed {
       padding-top: 79px; }
+  .layer.topbar .off-canvas,
   .layer.topbar .container,
   .layer.topbar .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background: inherit;
+    background-color: inherit;
     color: inherit; }
   .layer.topbar .wrapper {
     height: 48px;
     margin: 0 auto;
     max-width: 1080px; }
-  .layer.topbar .off-canvas {
-    background: inherit; }
-    @media screen and (max-width: 67.4375em) {
+  @media screen and (max-width: 67.4375em) {
+    .layer.topbar .off-canvas {
+      overflow-x: hidden;
+      position: fixed;
+      right: 0;
+      z-index: 999;
+      height: calc(100% - 48px);
+      top: 48px; }
+      body.toolbar-horizontal .layer.topbar .off-canvas,
+      body.toolbar-vertical .layer.topbar .off-canvas {
+        height: calc(100% - 87px);
+        top: 87px; }
+      body.toolbar-horizontal.toolbar-tray-open .layer.topbar .off-canvas {
+        height: calc(100% - 127px);
+        top: 127px; }
       .layer.topbar .off-canvas {
-        overflow-x: hidden;
-        position: fixed;
-        right: 0;
-        z-index: 999;
-        height: calc(100% - 48px);
-        top: 48px; }
-        body.toolbar-horizontal .layer.topbar .off-canvas,
-        body.toolbar-vertical .layer.topbar .off-canvas {
-          height: calc(100% - 87px);
-          top: 87px; }
-        body.toolbar-horizontal.toolbar-tray-open .layer.topbar .off-canvas {
-          height: calc(100% - 127px);
-          top: 127px; }
-        .layer.topbar .off-canvas {
-          width: 0;
-          pointer-events: none; }
-        .layer.topbar .off-canvas.active {
-          width: 320px;
-          pointer-events: all; } }
+        width: 0;
+        pointer-events: none; }
+      .layer.topbar .off-canvas.active {
+        width: 320px;
+        pointer-events: all; } }
   .layer.topbar .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background: inherit;
+    background-color: inherit;
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
     flex-grow: 0; }
@@ -108,12 +107,12 @@ div.page {
         .layer.topbar .container.buttons {
           display: none; } }
   .layer.topbar .region {
-    background: inherit;
+    background-color: inherit;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
   .layer.topbar .block {
-    background: inherit;
+    background-color: inherit;
     height: 100%; }
 
 .layer.lead {

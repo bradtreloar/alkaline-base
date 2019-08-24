@@ -67,10 +67,11 @@ $navbar-off-canvas-width: 320px;
       }
     }
 
+    .off-canvas,
     .container,
     .wrapper {
       display: flex;
-      background: inherit;
+      background-color: inherit;
       color: inherit;
     }
 
@@ -81,8 +82,6 @@ $navbar-off-canvas-width: 320px;
     }
 
     .off-canvas {
-      background: inherit;
-
       @include breakpoint(medium down) {
         overflow-x: hidden;
         position: fixed;
@@ -122,7 +121,7 @@ $navbar-off-canvas-width: 320px;
 
     .container {
       display: flex;
-      background: inherit;
+      background-color: inherit;
       flex-grow: 0;
 
       &.topbar-wrapper {
@@ -163,12 +162,12 @@ $navbar-off-canvas-width: 320px;
     }
 
     .region {
-      background: inherit;
+      background-color: inherit;
       display: flex;
     }
 
     .block {
-      background: inherit;
+      background-color: inherit;
       height: 100%;
     }
   }

@@ -15,6 +15,7 @@ $share-menu-button-size: 2em;
 @mixin _alkaline-menu-button {
   display: flex;
   align-items: center;
+  height: 100%;
 
   svg.icon {
     display: block;
@@ -38,27 +39,12 @@ $share-menu-button-size: 2em;
   @include foundation-menu;
 
   ul.menu {
-    a {
-      @include _alkaline-menu-button;
-
-      .layer.topbar & {
-        font-size: 0.875em;
-
-        // If the menu item has an icon then hide the
-        // text labal until there is ample horizontal space.
-        svg.icon + span {
-          @include breakpoint(small only) {
-            display: none;
-          }
-        }
-      }
-    }
-
     .region.navbar & {
-      @include menu-direction(vertical);
+      height: 100%;
 
-      @include breakpoint(large) {
-        @include menu-direction(horizontal);
+      @include breakpoint(medium down) {
+        @include menu-direction(vertical);
+        height: auto;
       }
 
       // Prevent FOUC on responsive menu
@@ -75,6 +61,22 @@ $share-menu-button-size: 2em;
       a {
         padding-left: 0;
         padding-right: 0;
+      }
+    }
+
+    a {
+      @include _alkaline-menu-button;
+
+      .layer.topbar & {
+        font-size: 0.875em;
+
+        // If the menu item has an icon then hide the
+        // text labal until there is ample horizontal space.
+        svg.icon + span {
+          @include breakpoint(small only) {
+            display: none;
+          }
+        }
       }
     }
   }
