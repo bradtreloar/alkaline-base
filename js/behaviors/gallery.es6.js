@@ -4,7 +4,7 @@
       // Add lightbox to gallery.
       $(".gallery")
         .once("alkalineGallery")
-        .each((index, gallery) => new AlkalineGallery(gallery));
+        .each((index, gallery) => new Alkaline.Gallery(gallery));
     }
   };
 })(jQuery, Drupal);
