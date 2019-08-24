@@ -39,19 +39,21 @@ $share-menu-button-size: 2em;
   @include foundation-menu;
 
   ul.menu {
-    .region.navbar & {
+    .layer.topbar & {
       height: 100%;
-
-      @include breakpoint(medium down) {
-        @include menu-direction(vertical);
-        height: auto;
-      }
 
       // Prevent FOUC on responsive menu
       &:not(.drilldown):not(.dropdown) {
         ul {
           display: none;
         }
+      }
+    }
+
+    .region.navbar & {
+      @include breakpoint(medium down) {
+        @include menu-direction(vertical);
+        height: auto;
       }
     }
 
