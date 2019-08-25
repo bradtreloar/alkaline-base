@@ -1,0 +1,18 @@
+
+
+
+$backdrop-reverse-background: $black;
+$backdrop-reverse-color: $white;
+
+
+@mixin alkaline-backdrop-theme {
+  .backdrop {
+    &.reverse-color {
+      background-color: $backdrop-reverse-background;
+      color: $backdrop-reverse-color;
+    }
+  }
+}
+
+
+// @include alkaline-backdrop-theme;
