@@ -6,6 +6,10 @@
     @include card-container;
     margin: 0;
 
+    .cell & {
+      height: 100%;
+    }
+
     .image {
       width: 100%;
 
