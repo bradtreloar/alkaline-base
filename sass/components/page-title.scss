@@ -6,6 +6,10 @@
     margin: ($global-margin * 2) auto;
     max-width: $global-width;
     width: 100%;
+
+    .title-bar & {
+      margin: ($global-margin * 4) auto ($global-margin * 2);
+    }
   }
 }
 
