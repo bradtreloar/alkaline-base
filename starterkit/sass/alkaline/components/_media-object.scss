@@ -19,6 +19,10 @@
       }
     }
 
+    .body-section > & {
+      margin-bottom: 0;
+    }
+
     > * {
       flex: 0 1 auto;
 
@@ -48,8 +52,7 @@
     }
 
     > figure:first-child {
-      // flex: none;
-      max-width: 30vw;
+      flex-shrink: 0;
 
       @include breakpoint(medium) {
         max-width: 50%;

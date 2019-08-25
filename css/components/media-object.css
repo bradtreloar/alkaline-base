@@ -16,6 +16,8 @@
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
         max-width: 100%; } }
+  .body-section > .media-object {
+    margin-bottom: 0; }
   .media-object > * {
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
@@ -37,7 +39,8 @@
       -ms-flex: 1 1 0px;
       flex: 1 1 0px; }
   .media-object > figure:first-child {
-    max-width: 30vw; }
+    -ms-flex-negative: 0;
+    flex-shrink: 0; }
     @media print, screen and (min-width: 45em) {
       .media-object > figure:first-child {
         max-width: 50%; } }
