@@ -213,19 +213,20 @@
 .no-js [data-responsive-menu] ul {
   display: none; }
 
-.region.navbar ul.menu {
+.layer.topbar ul.menu {
   height: 100%; }
-  @media screen and (max-width: 67.4375em) {
-    .region.navbar ul.menu {
-      -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      height: auto; } }
-  .region.navbar ul.menu:not(.drilldown):not(.dropdown) ul {
+  .layer.topbar ul.menu:not(.drilldown):not(.dropdown) ul {
     display: none; }
+
+@media screen and (max-width: 67.4375em) {
+  .region.navbar ul.menu {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: auto; } }
 
 .region.footer ul.menu {
   -ms-flex-wrap: nowrap;
