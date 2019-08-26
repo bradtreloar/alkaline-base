@@ -1,3 +1,4 @@
+{% extends "paragraph.html.twig" %}
 {#
 /**
  * @file
@@ -5,7 +6,8 @@
  */
 #}
 {% block paragraph %}
-  <div{{ attributes.addClass("map") }}>
+  {{ attach_library('alkaline/map') }}
+  <div class="map">
     {% block content %}
       {{ content }}
     {% endblock content %}
