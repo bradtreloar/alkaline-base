@@ -69,16 +69,6 @@ banner:
     component:
       css/components/banner.css: {}
 
-button:
-  css:
-    component:
-      css/components/button.css: {}
-
-call_to_action:
-  css:
-    component:
-      css/components/call-to-action.css: {}
-
 branding:
   css:
     component:
@@ -88,6 +78,11 @@ breadcrumbs:
   css:
     component:
       css/components/breadcrumbs.css: {}
+
+button:
+  css:
+    component:
+      css/components/button.css: {}
 
 call_to_action:
   css:
