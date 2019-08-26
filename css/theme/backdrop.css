@@ -1,3 +1,7 @@
 .backdrop.reverse-color {
-  background-color: #0a0a0a;
   color: #fefefe; }
+  .backdrop.reverse-color:before, .backdrop.reverse-color:after {
+    background-color: #0a0a0a;
+    background-position: center;
+    background-size: cover;
+    color: #fefefe; }

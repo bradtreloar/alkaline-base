@@ -3,8 +3,6 @@
   margin: 0 -1rem;
   color: #fefefe; }
   .backdrop:before {
-    background-position: center;
-    background-size: cover;
     content: '';
     display: block;
     height: 100%;

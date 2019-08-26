@@ -12,8 +12,6 @@ $backdrop-reverse-link-color: $backdrop-reverse-color;
     color: $backdrop-reverse-color;
 
     &:before {
-      background-position: center;
-      background-size: cover;
       content: '';
       display: block;
       height: 100%;

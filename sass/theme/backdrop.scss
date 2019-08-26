@@ -8,8 +8,15 @@ $backdrop-reverse-color: $white;
 @mixin alkaline-backdrop-theme {
   .backdrop {
     &.reverse-color {
-      background-color: $backdrop-reverse-background;
       color: $backdrop-reverse-color;
+
+      &:before,
+      &:after {
+        background-color: $backdrop-reverse-background;
+        background-position: center;
+        background-size: cover;
+        color: $backdrop-reverse-color;
+      }
     }
   }
 }
