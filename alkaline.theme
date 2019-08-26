@@ -546,7 +546,7 @@ function alkaline_preprocess_region(&$vars) {
     $grid_classes = _alkaline_get_grid_classes($item_count, $max_column_count);
 
     // Add the grid classes to the class array.
-    $vars['attributes']['class'] = array_merge($classes, $grid_classes);
+    $vars['attributes']['class'] = $classes + ['grid'] + $grid_classes;
   }
 }
 
