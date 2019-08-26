@@ -5,6 +5,7 @@
  * Theme file for Alkaline base theme.
  */
 
+use Drupal\block\Entity\Block;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Url;
 use Drupal\Component\Utility\Html;
@@ -554,6 +555,12 @@ function alkaline_preprocess_region(&$vars) {
  * Implements hook_theme_suggestions_block_alter().
  */
 function alkaline_theme_suggestions_block_alter(&$suggestions, $vars) {
+  // Add theme suggestions to blocks based on region.
+  if (!empty($vars['elements']['#id'])) {
+    $block = Block::load($vars['elements']['#id']);
+    $suggestions[] = 'block__' . $block->getRegion();
+    $suggestions[] = 'block__' . $block->getRegion() . '__' . $vars['elements']['#id'];
+  }
 
   // Add template suggestions for custom block types.
   if ($vars['elements']['#base_plugin_id'] == 'block_content') {
