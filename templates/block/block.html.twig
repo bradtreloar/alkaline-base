@@ -4,7 +4,7 @@
  * Theme override to display a block.
  */
 #}
-<div class="block">
+<div{{ attributes.addClass("block") }}>
 
   {{ title_prefix }}
   {% if label or more_link %}
