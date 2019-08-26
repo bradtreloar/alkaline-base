@@ -69,7 +69,6 @@ function _alkaline_responsive_background_css($imageStyleClass, $selector, $image
   ];
 }
 
-
 /**
  * Extracts SVG symbols from a collection of SVG files.
  *
