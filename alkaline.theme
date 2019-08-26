@@ -83,7 +83,7 @@ function _alkaline_responsive_background_css($imageStyleClass, $selector, $image
 function _alkaline_get_grid_classes(int $item_count, int $max_column_count) {
   // Limit the number of columns to the maximum set by the user.
   $column_count = $item_count;
-  if ($item_count >= $max_column_count) {
+  if ($column_count >= $max_column_count) {
     $column_count = $max_column_count;
   }
 
@@ -102,7 +102,7 @@ function _alkaline_get_grid_classes(int $item_count, int $max_column_count) {
     12 => ['small-3', 'medium-6', 'large-12'],
   ];
 
-  return $grid_classes[$column_count];
+  return array_merge(['grid'], $grid_classes[$column_count]);
 }
 
 /**
@@ -553,7 +553,7 @@ function alkaline_preprocess_region(&$variables) {
     $grid_classes = _alkaline_get_grid_classes($item_count, $max_column_count);
 
     // Add the grid classes to the class array.
-    $variables['attributes']['class'] = $classes + ['grid'] + $grid_classes;
+    $variables['attributes']['class'] = array_merge($classes, $grid_classes);
   }
 }
 
