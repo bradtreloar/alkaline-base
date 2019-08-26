@@ -9,7 +9,6 @@ $backdrop-reverse-link-color: $backdrop-reverse-color;
   .backdrop {
     position: relative;
     margin: 0 (-$global-margin);
-    color: $backdrop-reverse-color;
 
     &:before {
       content: '';
@@ -24,12 +23,6 @@ $backdrop-reverse-link-color: $backdrop-reverse-color;
     > div {
       display: flex;
       padding: ($global-margin * 2) $global-margin;
-    }
-
-    a,
-    a:hover,
-    a:active {
-      color: $backdrop-reverse-link-color;
     }
   }
 }

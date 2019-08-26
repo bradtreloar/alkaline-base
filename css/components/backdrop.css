@@ -1,7 +1,6 @@
 .backdrop {
   position: relative;
-  margin: 0 -1rem;
-  color: #fefefe; }
+  margin: 0 -1rem; }
   .backdrop:before {
     content: '';
     display: block;
@@ -15,7 +14,3 @@
     display: -ms-flexbox;
     display: flex;
     padding: 2rem 1rem; }
-  .backdrop a,
-  .backdrop a:hover,
-  .backdrop a:active {
-    color: #fefefe; }
