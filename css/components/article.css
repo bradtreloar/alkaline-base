@@ -38,6 +38,3 @@ main article {
   main article iframe {
     display: block;
     margin: 0 auto; }
-  main article.contact-details span {
-    display: inline-block;
-    vertical-align: top; }
