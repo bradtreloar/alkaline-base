@@ -562,12 +562,6 @@ function alkaline_preprocess_region(&$variables) {
  * Implements hook_theme_suggestions_block_alter().
  */
 function alkaline_theme_suggestions_block_alter(&$suggestions, $variables) {
-  // Add theme suggestions to blocks based on region.
-  if (!empty($variables['elements']['#id'])) {
-    $block = Block::load($variables['elements']['#id']);
-    $suggestions[] = 'block__' . $block->getRegion();
-    $suggestions[] = 'block__' . $block->getRegion() . '__' . $variables['elements']['#id'];
-  }
 
   // Add template suggestions for custom block types.
   if ($variables['elements']['#base_plugin_id'] == 'block_content') {
@@ -587,6 +581,9 @@ function alkaline_theme_suggestions_block_alter(&$suggestions, $variables) {
     // Backwards compatibility for deprecated block types.
     if ($block_type == 'carousel') {
       $suggestions[] = 'block__slider';
+    }
+    if ($block_type == 'basic') {
+      $suggestions[] = 'block__common';
     }
   }
 }
