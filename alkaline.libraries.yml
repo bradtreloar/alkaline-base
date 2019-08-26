@@ -32,6 +32,7 @@ theme:
       css/theme/card.css: {}
       css/theme/menu.css: {}
       css/theme/page.css: {}
+      css/theme/table.css: {}
       css/theme/typography.css: {}
 
 action_links:

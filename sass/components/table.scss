@@ -1,13 +1,67 @@
 @import 'global';
 
 
+/// Default padding for table.
+/// @type Number
+$table-padding: rem-calc(8 10 10);
+
+/// Breakpoint at which stacked table switches from mobile to desktop view.
+/// @type Breakpoint
+$table-stack-breakpoint: medium;
+
+
 @mixin alkaline-table {
-  main {
-    @include foundation-table($nest: true);
+  $nest: true;
+
+  main,
+  .layer.footer {
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: $global-margin;
+      border-radius: $global-radius;
+
+      &.stack {
+        @include breakpoint($table-stack-breakpoint down) {
+          tr,
+          th,
+          td {
+            display: block;
+          }
+
+          td {
+            border-top: 0;
+          }
+        }
+      }
+
+      &.scroll {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+      }
+    }
+
+    tbody {
+      th, td {
+        &:first-child {
+          text-align: left;
+        }
+
+        &:last-child:not(:first-child) {
+          text-align: right;
+        }
+      }
+    }
 
     // Explicitly unset cell borders in case table's border attribute is set.
     th, td {
       border: none;
+      padding: $table-padding;
+    }
+
+    caption {
+      padding: $table-padding;
     }
   }
 }

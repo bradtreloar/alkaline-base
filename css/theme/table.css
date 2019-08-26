@@ -1,0 +1,34 @@
+main table {
+  border: 1px solid #f1f1f1; }
+
+main thead,
+main tbody,
+main tfoot {
+  border: 1px solid #f1f1f1;
+  background-color: #fefefe; }
+
+main caption {
+  font-weight: bold; }
+
+main thead {
+  background: #f8f8f8;
+  color: #0a0a0a; }
+
+main tfoot {
+  background: #f1f1f1;
+  color: #0a0a0a; }
+
+main thead tr,
+main tfoot tr {
+  background: transparent; }
+
+main thead th,
+main thead td,
+main tfoot th,
+main tfoot td {
+  font-weight: bold;
+  text-align: left; }
+
+main tbody tr:nth-child(even) {
+  border-bottom: 0;
+  background-color: #f1f1f1; }
