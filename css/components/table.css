@@ -1,78 +1,78 @@
-.region.content table {
+main table {
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 2px; }
-  .region.content table thead,
-  .region.content table tbody,
-  .region.content table tfoot {
+  main table thead,
+  main table tbody,
+  main table tfoot {
     border: 1px solid #f1f1f1;
     background-color: #fefefe; }
-  .region.content table caption {
+  main table caption {
     padding: 0.5rem 0.625rem 0.625rem;
     font-weight: bold; }
-  .region.content table thead {
+  main table thead {
     background: #f8f8f8;
     color: #0a0a0a; }
-  .region.content table tfoot {
+  main table tfoot {
     background: #f1f1f1;
     color: #0a0a0a; }
-  .region.content table thead tr,
-  .region.content table tfoot tr {
+  main table thead tr,
+  main table tfoot tr {
     background: transparent; }
-  .region.content table thead th,
-  .region.content table thead td,
-  .region.content table tfoot th,
-  .region.content table tfoot td {
+  main table thead th,
+  main table thead td,
+  main table tfoot th,
+  main table tfoot td {
     padding: 0.5rem 0.625rem 0.625rem;
     font-weight: bold;
     text-align: left; }
-  .region.content table tbody th,
-  .region.content table tbody td {
+  main table tbody th,
+  main table tbody td {
     padding: 0.5rem 0.625rem 0.625rem; }
-  .region.content table tbody tr:nth-child(even) {
+  main table tbody tr:nth-child(even) {
     border-bottom: 0;
     background-color: #f1f1f1; }
-  .region.content table.unstriped tbody {
+  main table.unstriped tbody {
     background-color: #fefefe; }
-    .region.content table.unstriped tbody tr {
+    main table.unstriped tbody tr {
       border-bottom: 0;
       border-bottom: 1px solid #f1f1f1;
       background-color: #fefefe; }
 
 @media screen and (max-width: 67.4375em) {
-  .region.content table.stack thead {
+  main table.stack thead {
     display: none; }
-  .region.content table.stack tfoot {
+  main table.stack tfoot {
     display: none; }
-  .region.content table.stack tr,
-  .region.content table.stack th,
-  .region.content table.stack td {
+  main table.stack tr,
+  main table.stack th,
+  main table.stack td {
     display: block; }
-  .region.content table.stack td {
+  main table.stack td {
     border-top: 0; } }
 
-.region.content table.scroll {
+main table.scroll {
   display: block;
   width: 100%;
   overflow-x: auto; }
 
-.region.content table.hover thead tr:hover {
+main table.hover thead tr:hover {
   background-color: #f3f3f3; }
 
-.region.content table.hover tfoot tr:hover {
+main table.hover tfoot tr:hover {
   background-color: #ececec; }
 
-.region.content table.hover tbody tr:hover {
+main table.hover tbody tr:hover {
   background-color: #f9f9f9; }
 
-.region.content table.hover:not(.unstriped) tr:nth-of-type(even):hover {
+main table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   background-color: #ececec; }
 
-.region.content .table-scroll {
+main .table-scroll {
   overflow-x: auto; }
-  .region.content .table-scroll table {
+  main .table-scroll table {
     width: auto; }
 
-.region.content th, .region.content td {
+main th, main td {
   border: none; }

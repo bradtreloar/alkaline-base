@@ -2,7 +2,7 @@
 
 
 @mixin alkaline-table {
-  .region.content {
+  main {
     @include foundation-table($nest: true);
 
     // Explicitly unset cell borders in case table's border attribute is set.
