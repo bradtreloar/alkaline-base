@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Theme override to display a map paragraph.
+ */
+#}
+{% block paragraph %}
+  <div{{ attributes.addClass("map") }}>
+    {% block content %}
+      {{ content }}
+    {% endblock content %}
+  </div>
+{% endblock paragraph %}
