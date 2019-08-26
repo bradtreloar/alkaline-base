@@ -180,6 +180,13 @@ function _alkaline_icon($name) {
  * Implements template_preprocess_block()
  */
 function alkaline_preprocess_block(&$variables) {
+  $block = Block::load($variables['elements']['#id']);
+
+  // Add .cell class if block is in footer.
+  $region = $block->getRegion();
+  if ($region == 'footer') {
+    $variables['attributes']['class'][] = 'cell';
+  }
 
   if ($variables['base_plugin_id'] == 'block_content') {
     // Get the machine name of the custom block type.
