@@ -68,6 +68,43 @@ function _alkaline_responsive_background_css($imageStyleClass, $selector, $image
   ];
 }
 
+
+/**
+ * Extracts SVG symbols from a collection of SVG files.
+ *
+ * @param int $item_count
+ *   The number of items in the grid.
+ * @param int $max_column_count
+ *   The maximum number of columns permitted in the grid.
+ *
+ * @return array
+ *   an array of classnames.
+ */
+function _alkaline_get_grid_classes(int $item_count, int $max_column_count) {
+  // Limit the number of columns to the maximum set by the user.
+  $column_count = $item_count;
+  if ($item_count >= $max_column_count) {
+    $column_count = $max_column_count;
+  }
+
+  $grid_classes = [
+    1  => ['small-1'],
+    2  => ['small-1', 'medium-2'],
+    3  => ['small-1', 'medium-3'],
+    4  => ['small-2', 'medium-2', 'large-4'],
+    5  => ['small-2', 'medium-3', 'large-5'],
+    6  => ['small-2', 'medium-3', 'large-6'],
+    7  => ['small-2', 'medium-4', 'large-7'],
+    8  => ['small-2', 'medium-4', 'large-8'],
+    9  => ['small-2', 'medium-3', 'large-9'],
+    10 => ['small-2', 'medium-5', 'large-10'],
+    11 => ['small-2', 'medium-6', 'large-11'],
+    12 => ['small-3', 'medium-6', 'large-12'],
+  ];
+
+  return $grid_classes[$column_count];
+}
+
 /**
  * Extracts SVG symbols from a collection of SVG files.
  *
@@ -476,31 +513,14 @@ function alkaline_preprocess_paragraph_grid(&$vars) {
   $max_column_count = $paragraph->field_column_count->value;
 
   // Count the items in field_cell.
-  $column_count = count($paragraph->field_cell->getValue());
+  $item_count = count($paragraph->field_cell->getValue());
 
-  // Limit the number of columns to the maximum set by the user.
-  if ($column_count >= $max_column_count) {
-    $column_count = $max_column_count;
-  }
-
-  $grid_classes = [
-    1  => ['small-1'],
-    2  => ['small-1', 'medium-2'],
-    3  => ['small-1', 'medium-3'],
-    4  => ['small-2', 'medium-2', 'large-4'],
-    5  => ['small-2', 'medium-3', 'large-5'],
-    6  => ['small-2', 'medium-3', 'large-6'],
-    7  => ['small-2', 'medium-4', 'large-7'],
-    8  => ['small-2', 'medium-4', 'large-8'],
-    9  => ['small-2', 'medium-3', 'large-9'],
-    10 => ['small-2', 'medium-5', 'large-10'],
-    11 => ['small-2', 'medium-6', 'large-11'],
-    12 => ['small-3', 'medium-6', 'large-12'],
-  ];
+  // Get the grid classes.
+  $grid_classes = _alkaline_get_grid_classes($item_count, $max_column_count);
 
   // Add the grid classes to the class array.
   $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
-  $vars['attributes']['class'] = array_merge($classes, $grid_classes[$column_count]);
+  $vars['attributes']['class'] = array_merge($classes, $grid_classes);
 
   // Set cell content alignment to centre if user does not select stretch.
   if (!$paragraph->field_stretch_content->value) {
@@ -517,25 +537,13 @@ function alkaline_preprocess_region(&$vars) {
     $classes = isset($vars['attributes']['class']) ? $vars['attributes']['class'] : [];
 
     // Get the number of blocks.
-    $block_count = count(Element::children($vars['elements']));
+    $item_count = count(Element::children($vars['elements']));
 
-    // Set the grid classes based on the number of blocks.
-    switch ($block_count) {
-      case 1:
-        $grid_classes = ['grid', 'small-1'];
-        break;
+    // Limit the footer to a maximum of four columns.
+    $max_column_count = 4;
 
-      case 2:
-        $grid_classes = ['grid', 'small-1', 'medium-2'];
-        break;
-
-      case 3:
-        $grid_classes = ['grid', 'small-1', 'medium-1', 'large-3'];
-        break;
-
-      default:
-        $grid_classes = ['grid', 'small-1', 'medium-2', 'large-4'];
-    }
+    // Get the grid classes.
+    $grid_classes = _alkaline_get_grid_classes($item_count, $max_column_count);
 
     // Add the grid classes to the class array.
     $vars['attributes']['class'] = array_merge($classes, $grid_classes);
