@@ -1,22 +1,15 @@
+{% extends "block.html.twig" %}
 {#
 /**
  * @file
- * Theme override to display a common block.
+ * Abstract template for blocks that are rendered as articles.
  */
 #}
-{{ attach_library('alkaline/article') }}
-<div{{ attributes.addClass('common') }}>
+{% block content %}
+  {{ attach_library('alkaline/article') }}
   <article>
-
-    <div class="title-bar">
-      <h2{{ title_attributes }}>
-        {{ label }}
-      </h2>
-    </div>
-
     <div class="body">
       {{ content }}
     </div>
-
   </article>
-</div>
+{% endblock %}

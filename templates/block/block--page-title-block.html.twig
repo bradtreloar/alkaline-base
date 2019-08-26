@@ -1,3 +1,4 @@
+{% extends "block.html.twig" %}
 {#
 /**
  * @file
@@ -7,11 +8,13 @@
  * by another block e.g. a node display.
  */
 #}
-{% if not hidden %}
-  {{ attach_library('alkaline/page_title') }}
-  <header{{ attributes.addClass("block block-page-title") }}>
-    <div class="title-bar">
-      {{ content }}
-    </div>
-  </header>
-{% endif %}
+{% block content %}
+  {% if not hidden %}
+    {{ attach_library('alkaline/page_title') }}
+    <header class="page-title-block">
+      <div class="title-bar">
+        {{ content }}
+      </div>
+    </header>
+  {% endif %}
+{% endblock %}

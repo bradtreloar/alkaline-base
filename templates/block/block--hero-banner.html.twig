@@ -10,11 +10,9 @@
 #}
 {% block content %}
   {{ attach_library('alkaline/banner') }}
-  {% if content %}
-    <figure class="banner hero">
-      <figcaption>
-        {{ content }}
-      </figcaption>
-    </figure>
-  {% endif %}
+  <figure class="banner hero">
+    <figcaption>
+      {{ content }}
+    </figcaption>
+  </figure>
 {% endblock %}

@@ -1,3 +1,4 @@
+{% extends "block.html.twig" %}
 {#
 /**
  * @file
@@ -5,14 +6,7 @@
  *
  * @todo Consider removing once theme no longer subclasses classy.
 #}
-{%
-  set classes = [
-    'block',
-    'block-' ~ configuration.provider|clean_class,
-    'block-' ~ plugin_id|clean_class,
-  ]
-%}
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes }}>
   {% block content %}
     {{ content }}
   {% endblock %}
