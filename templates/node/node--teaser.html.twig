@@ -8,7 +8,9 @@
 <article{{ attributes.addClass("teaser") }}>
 
   <header>
-    {{ content.field_image }}
+    <a href="{{ url }}" rel="bookmark">
+      {{ content.field_image }}
+    </a>
 
     <div class="title-bar">
       <h2{{ title_attributes }}>

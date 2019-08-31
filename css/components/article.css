@@ -1,12 +1,17 @@
 main article {
   margin: 0 0 1rem 0;
   padding: 0; }
+  main article header > a {
+    display: block;
+    margin-bottom: 1rem; }
   main article .lead-section {
     margin: 0 auto;
     max-width: 60rem; }
   main article .body-section {
     margin: 2rem auto;
     max-width: 60rem; }
+  main article.teaser .body-section {
+    margin: 1rem auto; }
   main article .aside .body-section {
     padding: 1rem; }
   main article .picture {

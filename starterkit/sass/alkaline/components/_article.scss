@@ -7,6 +7,13 @@
       margin: 0 0 $global-margin 0;
       padding: 0;
 
+      header {
+        > a {
+          display: block;
+          margin-bottom: $global-margin;
+        }
+      }
+
       .lead-section {
         margin: 0 auto;
         max-width: $global-width;
@@ -15,6 +22,12 @@
       .body-section {
         margin: ($global-margin * 2) auto;
         max-width: $global-width;
+      }
+
+      &.teaser {
+        .body-section {
+          margin: $global-margin auto;
+        }
       }
 
       .aside {
