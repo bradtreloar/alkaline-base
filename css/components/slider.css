@@ -69,7 +69,7 @@
     .orbit-bullets button.is-active {
       background-color: #8a8a8a; }
 
-.slider {
+.block .slider {
   margin: 0 -1rem; }
 
 .orbit-controls button {

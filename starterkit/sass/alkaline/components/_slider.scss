@@ -6,7 +6,9 @@
 
   // Cancel out block padding.
   .slider {
-    margin: 0 (-$global-margin);
+    .block & {
+      margin: 0 (-$global-margin);
+    }
   }
 
   .orbit-controls {
