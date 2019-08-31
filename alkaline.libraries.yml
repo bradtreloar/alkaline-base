@@ -222,3 +222,8 @@ tags:
   css:
     component:
       css/components/tags.css: {}
+
+view:
+  css:
+    component:
+      css/components/view.css: {}

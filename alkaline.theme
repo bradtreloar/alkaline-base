@@ -570,6 +570,20 @@ function alkaline_preprocess_region(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_view()
+ */
+function alkaline_preprocess_views_view_grid(&$variables) {
+  // Get the column count from the view's configuration.
+  $column_count = $variables['options']['columns'];
+
+  $grid_classes = _alkaline_get_grid_classes($column_count, $column_count);
+
+  // Add the grid classes to the class array.
+  $classes = isset($variables['attributes']['class']) ? $variables['attributes']['class'] : [];
+  $variables['attributes']['class'] = array_merge($classes, $grid_classes);
+}
+
+/**
  * Implements hook_theme_suggestions_block_alter().
  */
 function alkaline_theme_suggestions_block_alter(&$suggestions, $variables) {

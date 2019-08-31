@@ -4,6 +4,7 @@
  * Theme override for a main view template.
  */
 #}
+{{ attach_library('alkaline/view') }}
 <div{{ attributes.addClass("view") }}>
 
   {% if title or header %}
@@ -11,21 +12,17 @@
 
     {{ title_prefix }}
     {% if title %}
-      <div class="row">
-        <div class="title-bar">
-          <h2>
-            {{ title }}
-          </h2>
-        </div>
+      <div class="title-bar">
+        <h2>
+          {{ title }}
+        </h2>
       </div>
     {% endif %}
     {{ title_suffix }}
 
     {% if header %}
-      <div class="row">
-        <div>
-          {{ header }}
-        </div>
+      <div class="view-header">
+        {{ header }}
       </div>
     {% endif %}
 
@@ -33,29 +30,23 @@
   {% endif %}
 
   {% if exposed %}
-    <div class="row">
-      <div>
-        {{ exposed }}
-      </div>
+    <div class="view-exposed">
+      {{ exposed }}
     </div>
   {% endif %}
 
   {% if attachment_before %}
-    <div class="row">
-      <div>
-        {{ attachment_before }}
-      </div>
+    <div class="view-attachment">
+      {{ attachment_before }}
     </div>
   {% endif %}
 
-  <div class="row">
-    <div>
-      {% if rows %}
-        {{ rows }}
-      {% elseif empty %}
-        {{ empty }}
-      {% endif %}
-    </div>
+  <div class="view-body">
+    {% if rows %}
+      {{ rows }}
+    {% elseif empty %}
+      {{ empty }}
+    {% endif %}
   </div>
 
   {% if pager %}
@@ -63,28 +54,22 @@
   {% endif %}
 
   {% if attachment_after %}
-    <div class="row">
-      <div>
-        {{ attachment_after }}
-      </div>
+    <div class="view-attachment">
+      {{ attachment_after }}
     </div>
   {% endif %}
 
   {#
   {% if more %}
-    <div class="row">
-      <div>
-        {{ more }}
-      </div>
+    <div class="view-more">
+      {{ more }}
     </div>
   {% endif %}
   #}
 
   {% if footer %}
-    <div class="row">
-      <div>
-        {{ footer }}
-      </div>
+    <div class="view-footer">
+      {{ footer }}
     </div>
   {% endif %}
 
