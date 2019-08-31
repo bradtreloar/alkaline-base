@@ -464,7 +464,7 @@ function alkaline_preprocess_page(&$variables) {
 }
 
 /**
- * Implements template_preprocess_page()
+ * Implements template_preprocess_paragraph()
  */
 function alkaline_preprocess_paragraph(&$variables) {
   $paragraph = $variables['elements']['#paragraph'];
@@ -482,7 +482,7 @@ function alkaline_preprocess_paragraph(&$variables) {
 }
 
 /**
- * Implements template_preprocess_page() for backdrop type paragraph.
+ * Implements template_preprocess_paragraph() for backdrop type paragraph.
  */
 function alkaline_preprocess_paragraph_backdrop(&$variables) {
   $paragraph = $variables['elements']['#paragraph'];
@@ -511,7 +511,7 @@ function alkaline_preprocess_paragraph_backdrop(&$variables) {
 }
 
 /**
- * Implements template_preprocess_page() for grid type paragraph.
+ * Implements template_preprocess_paragraph() for grid type paragraph.
  */
 function alkaline_preprocess_paragraph_grid(&$variables) {
   $paragraph = $variables['elements']['#paragraph'];
