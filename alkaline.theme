@@ -511,6 +511,18 @@ function alkaline_preprocess_paragraph_backdrop(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_paragraph() for gallery type paragraph.
+ */
+function alkaline_preprocess_paragraph_gallery(&$variables) {
+  // Get the grid classes for a four-column grid.
+  $grid_classes = _alkaline_get_grid_classes(4, 4);
+
+  // Add the grid classes to the class array.
+  $classes = isset($variables['attributes']['class']) ? $variables['attributes']['class'] : [];
+  $variables['attributes']['class'] = array_merge($classes, $grid_classes);
+}
+
+/**
  * Implements template_preprocess_paragraph() for grid type paragraph.
  */
 function alkaline_preprocess_paragraph_grid(&$variables) {
