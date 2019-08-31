@@ -1,0 +1,13 @@
+{#
+/**
+ * @file
+ * Theme override to display a paragraph.
+ */
+#}
+{% block paragraph %}
+  <div{{ attributes }}>
+    {% block content %}
+      {{ content }}
+    {% endblock content %}
+  </div>
+{% endblock paragraph %}
