@@ -1,0 +1,19 @@
+{% extends "paragraph.html.twig" %}
+{#
+/**
+ * @file
+ * Theme override for the button paragraph type.
+#}
+{% block content %}
+  {{ attach_library('alkaline/button') }}
+  <a href="{{ url }}" class="button large">
+    {{ content.field_image }}
+    {% if label %}
+      <div class="label">
+        <span>
+          {{ label }}
+        </span>
+      </div>
+    {% endif %}
+  </a>
+{% endblock %}
