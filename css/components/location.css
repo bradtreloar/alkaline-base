@@ -5,15 +5,15 @@
     margin: 0; }
   @media print, screen and (min-width: 45em) {
     .location {
-      display: -webkit-box;
+      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; }
       .location > section:first-child {
-        -webkit-box-flex: 0;
+        -webkit-flex: none;
         -ms-flex: none;
         flex: none;
         padding-right: 3rem; }
       .location > section:last-child {
-        -webkit-box-flex: 1;
+        -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1; } }

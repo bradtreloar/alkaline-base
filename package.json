@@ -6,13 +6,11 @@
     "node": ">= 8.11"
   },
   "scripts": {
-    "build": "gulp build && yarn build:js",
-    "build:css": "gulp sass",
-    "watch:css": "gulp watch",
-    "build:js": "cross-env BABEL_ENV=legacy node ./scripts/js/babel-es6-build.js",
-    "watch:js": "cross-env BABEL_ENV=legacy node ./scripts/js/babel-es6-watch.js",
-    "build:js-dev": "cross-env BABEL_ENV=development node ./scripts/js/babel-es6-build.js",
-    "watch:js-dev": "cross-env BABEL_ENV=development node ./scripts/js/babel-es6-watch.js",
+    "build": "gulp build",
+    "build:css": "gulp build:css",
+    "watch:css": "gulp watch:css",
+    "build:js": "gulp build:js",
+    "watch:js": "gulp watch:js",
     "prettier": "prettier --write \"./**/*.es6.js\" \"./tests/Drupal/Nightwatch/**/*.js\""
   },
   "dependencies": {
@@ -21,6 +19,7 @@
     "motion-ui": "^2.0.3"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.6.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-add-header-comment": "^1.0.3",
@@ -40,6 +39,7 @@
     "glob": "^7.1.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^5.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
@@ -90,5 +90,11 @@
         ]
       }
     }
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "ie >= 11",
+    "Safari >= 8",
+    "not bb < 10"
+  ]
 }

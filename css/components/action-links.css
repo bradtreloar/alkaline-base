@@ -3,9 +3,10 @@ ul.action-links {
   ul.action-links::before, ul.action-links::after {
     display: table;
     content: ' ';
+    -webkit-flex-basis: 0;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
-    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1; }
   ul.action-links::after {
@@ -26,7 +27,6 @@ ul.action-links {
       -webkit-appearance: none;
       border: 1px solid transparent;
       border-radius: 2px;
-      -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
       transition: background-color 0.25s ease-out, color 0.25s ease-out;
       font-size: 0.9rem;
       line-height: 1;

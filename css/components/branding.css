@@ -1,5 +1,5 @@
 .branding {
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 100%; }

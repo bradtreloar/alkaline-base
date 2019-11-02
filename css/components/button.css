@@ -7,7 +7,6 @@
   -webkit-appearance: none;
   border: 1px solid transparent;
   border-radius: 2px;
-  -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
   font-size: 0.9rem;
   line-height: 1;
@@ -15,10 +14,10 @@
   cursor: pointer;
   background-color: #1779ba;
   color: #fefefe;
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
+  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center; }
   [data-whatinput='mouse'] .button {
@@ -48,20 +47,22 @@
 
 .button-group {
   margin-bottom: 1rem;
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch; }
   .button-group::before, .button-group::after {
     display: table;
     content: ' ';
+    -webkit-flex-basis: 0;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
-    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
     -ms-flex-order: 1;
     order: 1; }
   .button-group::after {
@@ -71,7 +72,7 @@
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
-    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto; }
     .button-group .button:last-child {

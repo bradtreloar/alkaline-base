@@ -15,10 +15,10 @@ main article {
   main article .aside .body-section {
     padding: 1rem; }
   main article .picture {
-    display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
+    -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center; }
     main article .picture figcaption {

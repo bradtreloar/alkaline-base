@@ -1,25 +1,28 @@
 .media-object {
-  display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   margin-bottom: 1rem;
   width: 100%; }
   @media screen and (max-width: 44.9375em) {
     .media-object {
+      -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
       .media-object > * {
         padding: 0;
         padding-bottom: 1rem;
+        -webkit-flex-basis: 100%;
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
         max-width: 100%; } }
   .body-section > .media-object {
     margin-bottom: 0; }
   .media-object > * {
-    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto; }
     .media-object > *:first-child {
@@ -35,10 +38,11 @@
     .media-object > * > :last-child {
       margin-bottom: 0; }
     .media-object > *.main-section {
-      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 0px;
       -ms-flex: 1 1 0px;
       flex: 1 1 0px; }
   .media-object > figure:first-child {
+    -webkit-flex-shrink: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0; }
     @media print, screen and (min-width: 45em) {

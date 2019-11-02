@@ -5,7 +5,7 @@ div.page {
   height: 100%;
   padding: 48px 0 0 0; }
   div.page main {
-    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
 
@@ -20,7 +20,6 @@ div.page {
   .layer.topbar.fixed {
     position: fixed;
     top: 0;
-    -webkit-transition: top 300ms ease;
     transition: top 300ms ease;
     z-index: 1000; }
     body.toolbar-horizontal .layer.topbar.fixed,
@@ -31,7 +30,7 @@ div.page {
   .layer.topbar .off-canvas,
   .layer.topbar .container,
   .layer.topbar .wrapper {
-    display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     background-color: inherit;
@@ -62,32 +61,31 @@ div.page {
         width: 320px;
         pointer-events: all; } }
   .layer.topbar .container {
-    display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     background-color: inherit;
-    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
     -ms-flex-positive: 0;
     flex-grow: 0; }
     .layer.topbar .container.topbar-wrapper {
       height: 48px;
-      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
       justify-content: space-between;
       margin: 0 auto;
       max-width: 1080px;
       position: relative; }
     .layer.topbar .container.header {
-      -webkit-box-flex: 1;
+      -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
       flex-grow: 1;
-      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
       justify-content: space-between; }
     @media screen and (max-width: 67.4375em) {
       .layer.topbar .container.navbar {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
         -ms-flex-direction: column;
         flex-direction: column;
         height: 100%;
@@ -95,12 +93,11 @@ div.page {
         width: 320px;
         z-index: 999; }
         .layer.topbar .container.navbar .region {
-          -webkit-box-orient: vertical;
-          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
           -ms-flex-direction: column;
           flex-direction: column; } }
     .layer.topbar .container.buttons {
-      -webkit-box-flex: 0;
+      -webkit-flex: none;
       -ms-flex: none;
       flex: none; }
       @media print, screen and (min-width: 67.5em) {
@@ -108,7 +105,7 @@ div.page {
           display: none; } }
   .layer.topbar .region {
     background-color: inherit;
-    display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
   .layer.topbar .block {
@@ -155,7 +152,7 @@ div.page {
     margin: 0 auto;
     max-width: 1080px; }
   .layer.footer .region {
-    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between; }
   .layer.footer .block h2 {
@@ -167,12 +164,13 @@ div.page {
     margin: 0 auto;
     max-width: 1080px; }
   .layer.boilerplate .region {
-    display: -webkit-box;
+    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between; }
   .layer.boilerplate .block {
