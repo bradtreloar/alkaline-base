@@ -9,7 +9,8 @@ main article {
     max-width: 60rem; }
   main article .body-section {
     margin: 2rem auto;
-    max-width: 60rem; }
+    max-width: 60rem;
+    width: 100%; }
   main article.teaser .body-section {
     margin: 1rem auto; }
   main article .aside .body-section {
