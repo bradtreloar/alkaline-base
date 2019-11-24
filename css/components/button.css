@@ -44,6 +44,8 @@
     background-color: transparent; }
   .button.large {
     font-size: 120%; }
+  .cell > div > .button {
+    width: 100%; }
 
 .button-group {
   margin-bottom: 1rem;

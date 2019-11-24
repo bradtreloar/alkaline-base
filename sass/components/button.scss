@@ -34,6 +34,10 @@ $button-icon-size: 1em;
     &.large {
       font-size: 120%;
     }
+
+    .cell > div > & {
+      width: 100%;
+    }
   }
 
   .button-group {
