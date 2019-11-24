@@ -29,6 +29,13 @@ main article {
     width: 100%; }
     main article .text-formatted img {
       margin-bottom: 1rem; }
+  main article .video .file {
+    margin: 0 auto;
+    max-width: 100%; }
+  main article .video video {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; }
   main article footer {
     margin: 0 auto;
     max-width: 60rem; }

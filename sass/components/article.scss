@@ -55,6 +55,19 @@
         }
       }
 
+      .video {
+        .file {
+          margin: 0 auto;
+          max-width: 100%;
+        }
+
+        video {
+          display: block;
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      }
+
       footer {
         margin: 0 auto;
         max-width: $global-width;
