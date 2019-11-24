@@ -3,9 +3,12 @@ theme:
   css:
     theme:
       css/theme/article.css: {}
+      css/theme/backdrop.css: {}
       css/theme/banner.css: {}
       css/theme/breadcrumbs.css: {}
       css/theme/button.css: {}
+      css/theme/card.css: {}
       css/theme/menu.css: {}
       css/theme/page.css: {}
+      css/theme/table.css: {}
       css/theme/typography.css: {}
