@@ -3,7 +3,7 @@
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // Make sure Alkaline container object is initialised while JS aggregator is turned off.
-if (window.Alkaline === undefined) Alkaline = {};
+if (window.Alkaline === undefined) window.Alkaline = {};
 
 (function ($) {
   Alkaline.ResponsiveMenu =

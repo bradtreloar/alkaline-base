@@ -7,7 +7,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 // Make sure Alkaline container object is initialised while JS aggregator is turned off.
-if (window.Alkaline === undefined) Alkaline = {};
+if (window.Alkaline === undefined) window.Alkaline = {};
 
 (function ($) {
   Alkaline.Gallery =

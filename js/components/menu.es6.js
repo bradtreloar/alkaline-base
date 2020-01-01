@@ -1,5 +1,5 @@
 // Make sure Alkaline container object is initialised while JS aggregator is turned off.
-if (window.Alkaline === undefined) Alkaline = {};
+if (window.Alkaline === undefined) window.Alkaline = {};
 
 ($ => {
   Alkaline.ResponsiveMenu = class {
