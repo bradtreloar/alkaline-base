@@ -1,21 +1,80 @@
 
 
+$menu-items-padding: $global-menu-padding;
 
-// Foundation overrides
 $drilldown-background: inherit;
 $drilldown-submenu-background: inherit;
 $dropdownmenu-border: 0 solid transparent;
 
-// Alkaline defaults
 $menu-button-icon-size: 1.5em;
 $header-menu-button-font-size: 0.875em;
 $share-menu-button-size: 2em;
 
+// @todo move to theme
+$menu-item-color-active: $white;
+$menu-item-background-active: get-color(primary);
 
-@mixin _alkaline-menu-button {
-  display: flex;
+
+/// Align menu items.
+@mixin menu-align($alignment) {
+  @if $alignment == left {
+    justify-content: flex-start;
+  }
+  @else if $alignment == right {
+    li {
+      display: flex;
+      justify-content: flex-end;
+
+      .submenu li {
+        justify-content: flex-start;
+      }
+    }
+
+    &.vertical li {
+      display: block;
+      text-align: $global-right;
+
+      .submenu li {
+        text-align: $global-right;
+      }
+    }
+  }
+  @else if $alignment == center {
+    li {
+      display: flex;
+      justify-content: center;
+
+      .submenu li {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+/// Sets the direction of a Menu.
+/// @param {Keyword} $dir [horizontal] - Direction of the Menu. Can be `horizontal` or `vertical`.
+@mixin menu-direction($dir: horizontal) {
+  @if $dir == horizontal {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  @else if $dir == vertical {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  @else {
+    @warn 'The direction used for menu-direction() must be horizontal or vertical.';
+  }
+}
+
+@mixin menu-button {
   align-items: center;
+  display: flex;
   height: 100%;
+  line-height: 1;
+  margin-bottom: 0;
+  padding: $menu-items-padding;
+  text-decoration: none;
 
   svg.icon {
     display: block;
@@ -32,13 +91,30 @@ $share-menu-button-size: 2em;
     display: block;
     line-height: $menu-button-icon-size;
   }
+
+  .layer.topbar & {
+    font-size: 0.875em;
+
+    // If the menu item has an icon then hide the
+    // text labal until there is ample horizontal space.
+    svg.icon + span {
+      @include breakpoint(small only) {
+        display: none;
+      }
+    }
+  }
 }
 
 
 @mixin alkaline-menu {
-  @include foundation-menu;
-
   ul.menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+
     .layer.topbar & {
       height: 100%;
 
@@ -66,21 +142,61 @@ $share-menu-button-size: 2em;
       }
     }
 
-    a {
-      @include _alkaline-menu-button;
+    // Default orientation: horizontal
+    &, &.horizontal {
+      @include menu-direction(horizontal);
+    }
 
-      .layer.topbar & {
-        font-size: 0.875em;
+    // Vertical orientation modifier
+    &.vertical {
+      @include menu-direction(vertical);
+    }
 
-        // If the menu item has an icon then hide the
-        // text labal until there is ample horizontal space.
-        svg.icon + span {
-          @include breakpoint(small only) {
-            display: none;
-          }
-        }
+    // Breakpoint specific versions
+    @include -zf-each-breakpoint($small: false) {
+      &.#{$-zf-size}-horizontal {
+        @include menu-direction(horizontal);
+      }
+
+      &.#{$-zf-size}-vertical {
+        @include menu-direction(vertical);
       }
     }
+
+    // @todo move to theme
+    // Active state
+    .is-active > a {
+      background: $menu-item-background-active;
+      color: $menu-item-color-active;
+    }
+
+    // Align left
+    &.align-#{$global-left} {
+      @include menu-align(left);
+    }
+
+    // Align right
+    &.align-#{$global-right} {
+      @include menu-align(right);
+    }
+
+    // Align center
+    &.align-center {
+      @include menu-align(center);
+    }
+
+    li {
+      @include disable-mouse-outline;
+    }
+
+    a {
+      @include menu-button;
+    }
+  }
+
+  // Prevent FOUC when using the Responsive Menu plugin
+  .no-js [data-responsive-menu] ul {
+    display: none;
   }
 }
 
@@ -119,7 +235,7 @@ $share-menu-button-size: 2em;
 
 @mixin alkaline-navbar-toggle-button {
   button[data-toggle="navbar"] {
-    @include _alkaline-menu-button;
+    @include menu-button;
     height: 100%;
     line-height: 1;
     text-decoration: none;

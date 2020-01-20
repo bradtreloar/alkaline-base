@@ -1,4 +1,4 @@
-.menu {
+ul.menu {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -9,258 +9,139 @@
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
-  [data-whatinput='mouse'] .menu li {
-    outline: 0; }
-  .menu a,
-  .menu .button {
-    line-height: 1;
-    text-decoration: none;
-    display: block;
-    padding: 0.7rem 1rem; }
-  .menu input,
-  .menu select,
-  .menu a,
-  .menu button {
-    margin-bottom: 0; }
-  .menu input {
-    display: inline-block; }
-  .menu, .menu.horizontal {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row; }
-  .menu.vertical {
+  .layer.topbar ul.menu {
+    height: 100%; }
+    .layer.topbar ul.menu:not(.drilldown):not(.dropdown) ul {
+      display: none; }
+  @media screen and (max-width: 67.4375em) {
+    .region.navbar ul.menu {
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      height: auto; } }
+  .region.footer ul.menu {
     -webkit-flex-wrap: nowrap;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column; }
-  .menu.expanded li {
-    -webkit-flex: 1 1 0px;
-    -ms-flex: 1 1 0px;
-    flex: 1 1 0px; }
-  .menu.simple {
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center; }
-    .menu.simple li + li {
-      margin-left: 1rem; }
-    .menu.simple a {
-      padding: 0; }
+    .region.footer ul.menu a {
+      padding-left: 0;
+      padding-right: 0; }
+  ul.menu, ul.menu.horizontal {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+  ul.menu.vertical {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
   @media print, screen and (min-width: 45em) {
-    .menu.medium-horizontal {
+    ul.menu.medium-horizontal {
       -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       -webkit-flex-direction: row;
       -ms-flex-direction: row;
       flex-direction: row; }
-    .menu.medium-vertical {
+    ul.menu.medium-vertical {
       -webkit-flex-wrap: nowrap;
       -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
-      flex-direction: column; }
-    .menu.medium-expanded li {
-      -webkit-flex: 1 1 0px;
-      -ms-flex: 1 1 0px;
-      flex: 1 1 0px; }
-    .menu.medium-simple li {
-      -webkit-flex: 1 1 0px;
-      -ms-flex: 1 1 0px;
-      flex: 1 1 0px; } }
+      flex-direction: column; } }
   @media print, screen and (min-width: 67.5em) {
-    .menu.large-horizontal {
+    ul.menu.large-horizontal {
       -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
       -webkit-flex-direction: row;
       -ms-flex-direction: row;
       flex-direction: row; }
-    .menu.large-vertical {
+    ul.menu.large-vertical {
       -webkit-flex-wrap: nowrap;
       -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
-      flex-direction: column; }
-    .menu.large-expanded li {
-      -webkit-flex: 1 1 0px;
-      -ms-flex: 1 1 0px;
-      flex: 1 1 0px; }
-    .menu.large-simple li {
-      -webkit-flex: 1 1 0px;
-      -ms-flex: 1 1 0px;
-      flex: 1 1 0px; } }
-  .menu.nested {
-    margin-right: 0;
-    margin-left: 1rem; }
-  .menu.icons a {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-  .menu.icon-top a, .menu.icon-right a, .menu.icon-bottom a, .menu.icon-left a {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-  .menu.icon-left li a {
-    -webkit-flex-flow: row nowrap;
-    -ms-flex-flow: row nowrap;
-    flex-flow: row nowrap; }
-    .menu.icon-left li a img,
-    .menu.icon-left li a i,
-    .menu.icon-left li a svg {
-      margin-right: 0.25rem; }
-  .menu.icon-right li a {
-    -webkit-flex-flow: row nowrap;
-    -ms-flex-flow: row nowrap;
-    flex-flow: row nowrap; }
-    .menu.icon-right li a img,
-    .menu.icon-right li a i,
-    .menu.icon-right li a svg {
-      margin-left: 0.25rem; }
-  .menu.icon-top li a {
-    -webkit-flex-flow: column nowrap;
-    -ms-flex-flow: column nowrap;
-    flex-flow: column nowrap; }
-    .menu.icon-top li a img,
-    .menu.icon-top li a i,
-    .menu.icon-top li a svg {
-      -webkit-align-self: stretch;
-      -ms-flex-item-align: stretch;
-      align-self: stretch;
-      margin-bottom: 0.25rem;
-      text-align: center; }
-  .menu.icon-bottom li a {
-    -webkit-flex-flow: column nowrap;
-    -ms-flex-flow: column nowrap;
-    flex-flow: column nowrap; }
-    .menu.icon-bottom li a img,
-    .menu.icon-bottom li a i,
-    .menu.icon-bottom li a svg {
-      -webkit-align-self: stretch;
-      -ms-flex-item-align: stretch;
-      align-self: stretch;
-      margin-bottom: 0.25rem;
-      text-align: center; }
-  .menu .is-active > a {
+      flex-direction: column; } }
+  ul.menu .is-active > a {
     background: #1779ba;
     color: #fefefe; }
-  .menu .active > a {
-    background: #1779ba;
-    color: #fefefe; }
-  .menu.align-left {
+  ul.menu.align-left {
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start; }
-  .menu.align-right li {
+  ul.menu.align-right li {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-justify-content: flex-end;
     -ms-flex-pack: end;
     justify-content: flex-end; }
-    .menu.align-right li .submenu li {
+    ul.menu.align-right li .submenu li {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start; }
-  .menu.align-right.vertical li {
+  ul.menu.align-right.vertical li {
     display: block;
     text-align: right; }
-    .menu.align-right.vertical li .submenu li {
+    ul.menu.align-right.vertical li .submenu li {
       text-align: right; }
-  .menu.align-right .nested {
-    margin-right: 1rem;
-    margin-left: 0; }
-  .menu.align-center li {
+  ul.menu.align-center li {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center; }
-    .menu.align-center li .submenu li {
+    ul.menu.align-center li .submenu li {
       -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
       justify-content: flex-start; }
-  .menu .menu-text {
-    padding: 0.7rem 1rem;
-    font-weight: bold;
+  [data-whatinput='mouse'] ul.menu li {
+    outline: 0; }
+  ul.menu a {
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
     line-height: 1;
-    color: inherit; }
-
-.menu-centered > .menu {
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  .menu-centered > .menu li {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
-    .menu-centered > .menu li .submenu li {
-      -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-      justify-content: flex-start; }
+    margin-bottom: 0;
+    padding: 0.7rem 1rem;
+    text-decoration: none; }
+    ul.menu a svg.icon {
+      display: block;
+      height: 1.5em;
+      width: 1.5em; }
+      ul.menu a svg.icon + span {
+        display: inline-block;
+        margin-left: 0.5em; }
+    ul.menu a span {
+      display: block;
+      line-height: 1.5em; }
+    .layer.topbar ul.menu a {
+      font-size: 0.875em; }
+      @media screen and (max-width: 44.9375em) {
+        .layer.topbar ul.menu a svg.icon + span {
+          display: none; } }
 
 .no-js [data-responsive-menu] ul {
   display: none; }
-
-.layer.topbar ul.menu {
-  height: 100%; }
-  .layer.topbar ul.menu:not(.drilldown):not(.dropdown) ul {
-    display: none; }
-
-@media screen and (max-width: 67.4375em) {
-  .region.navbar ul.menu {
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    height: auto; } }
-
-.region.footer ul.menu {
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-  .region.footer ul.menu a {
-    padding-left: 0;
-    padding-right: 0; }
-
-ul.menu a {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%; }
-  ul.menu a svg.icon {
-    display: block;
-    height: 1.5em;
-    width: 1.5em; }
-    ul.menu a svg.icon + span {
-      display: inline-block;
-      margin-left: 0.5em; }
-  ul.menu a span {
-    display: block;
-    line-height: 1.5em; }
-  .layer.topbar ul.menu a {
-    font-size: 0.875em; }
-    @media screen and (max-width: 44.9375em) {
-      .layer.topbar ul.menu a svg.icon + span {
-        display: none; } }
 
 .is-drilldown {
   position: relative;
@@ -618,13 +499,17 @@ ul.menu a {
     display: block; }
 
 button[data-toggle="navbar"] {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 100%;
+  line-height: 1;
+  margin-bottom: 0;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
   height: 100%;
   line-height: 1;
   text-decoration: none;
@@ -641,6 +526,11 @@ button[data-toggle="navbar"] {
   button[data-toggle="navbar"] span {
     display: block;
     line-height: 1.5em; }
+  .layer.topbar button[data-toggle="navbar"] {
+    font-size: 0.875em; }
+    @media screen and (max-width: 44.9375em) {
+      .layer.topbar button[data-toggle="navbar"] svg.icon + span {
+        display: none; } }
   @media print, screen and (min-width: 67.5em) {
     button[data-toggle="navbar"] {
       display: none; } }
