@@ -13,9 +13,6 @@ ul.menu {
 .is-drilldown {
   background: inherit; }
 
-.is-dropdown {
-  background: inherit; }
-
 ul.menu.dropdown li.is-active a {
   background: inherit;
   color: inherit; }
@@ -181,6 +178,35 @@ ul.menu.dropdown.vertical > li.opens-right > a::after {
     border-right-width: 0;
     border-left-style: solid;
     border-color: transparent transparent transparent #fefefe; } }
+
+.is-dropdown {
+  background: inherit; }
+
+.is-dropdown-submenu {
+  border: none;
+  background: inherit; }
+  .is-dropdown-submenu .is-dropdown-submenu-parent > a::after {
+    right: 14px; }
+  .is-dropdown-submenu .is-dropdown-submenu-parent.opens-left > a::after {
+    right: auto;
+    left: 5px;
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    content: '';
+    border-left-width: 0;
+    border-right-style: solid;
+    border-color: transparent #fefefe transparent transparent; }
+  .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after {
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    content: '';
+    border-right-width: 0;
+    border-left-style: solid;
+    border-color: transparent transparent transparent #fefefe; }
 
 .menu.social-share li {
   fill: #fefefe; }

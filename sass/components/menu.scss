@@ -1,18 +1,23 @@
 @import 'global';
 
-$menu-items-padding: $global-menu-padding;
+$menu-button-icon-size: 1.5em;
+$menu-items-padding: 0.7rem 1.0rem;
+
+$header-menu-button-font-size: 0.875em;
 
 $drilldown-background: inherit;
 $drilldown-submenu-background: inherit;
-$dropdownmenu-border: 0 solid transparent;
 
-$menu-button-icon-size: 1.5em;
-$header-menu-button-font-size: 0.875em;
+$dropdownmenu-min-width: 200px;
+$dropdownmenu-padding: $menu-items-padding;
+$dropdownmenu-submenu-padding: $dropdownmenu-padding;
+
 $share-menu-button-size: 2em;
 
-// @todo move to theme
-$menu-item-color-active: $white;
-$menu-item-background-active: get-color(primary);
+
+////////////////////////////////////////////////////////////////////////////////
+/// Helpers
+////////////////////////////////////////////////////////////////////////////////
 
 
 /// Align menu items.
@@ -106,6 +111,57 @@ $menu-item-background-active: get-color(primary);
 }
 
 
+@mixin dropdown-menu-direction($dir: horizontal) {
+  @if $dir == horizontal {
+    > li.opens-left {
+      > .is-dropdown-submenu {
+        top: 100%;
+        right: 0;
+        left: auto;
+      }
+    }
+
+    > li.opens-right {
+      > .is-dropdown-submenu {
+        top: 100%;
+        right: auto;
+        left: 0;
+      }
+    }
+  }
+  @else if $dir == vertical {
+    > li {
+      .is-dropdown-submenu {
+        top: 0;
+      }
+
+      &.opens-left {
+        > .is-dropdown-submenu {
+          right: 100%;
+          left: auto;
+          top: 0;
+        }
+      }
+
+      &.opens-right {
+        > .is-dropdown-submenu {
+          right: auto;
+          left: 100%;
+        }
+      }
+    }
+  }
+  @else {
+    @warn 'The direction used for dropdown-menu-direction() must be horizontal or vertical.';
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+/// Components
+////////////////////////////////////////////////////////////////////////////////
+
+
 @mixin alkaline-menu {
   ul.menu {
     padding: 0;
@@ -161,13 +217,6 @@ $menu-item-background-active: get-color(primary);
       &.#{$-zf-size}-vertical {
         @include menu-direction(vertical);
       }
-    }
-
-    // @todo move to theme
-    // Active state
-    .is-active > a {
-      background: $menu-item-background-active;
-      color: $menu-item-color-active;
     }
 
     // Align left
@@ -229,9 +278,110 @@ $menu-item-background-active: get-color(primary);
 
 
 @mixin alkaline-dropdown-menu {
-  @include foundation-dropdown-menu;
-}
+  ul.menu.dropdown {
+    @include dropdown-menu-direction(horizontal);
 
+    a {
+      @include disable-mouse-outline;
+      padding: $dropdownmenu-padding;
+    }
+
+    .no-js & ul {
+      display: none;
+    }
+
+    &.vertical {
+      @include dropdown-menu-direction(vertical);
+    }
+
+    @each $size in $breakpoint-classes {
+      @if $size != $-zf-zero-breakpoint {
+        @include breakpoint($size) {
+          &.#{$size}-horizontal {
+            @include dropdown-menu-direction(horizontal);
+          }
+
+          &.#{$size}-vertical {
+            @include dropdown-menu-direction(vertical);
+          }
+        }
+      }
+    }
+
+    &.align-right {
+      .is-dropdown-submenu.first-sub {
+        top: 100%;
+        right: 0;
+        left: auto;
+      }
+    }
+  }
+
+  .is-dropdown-menu.vertical {
+    width: 100px;
+
+    &.align-right {
+      float: right;
+    }
+  }
+
+  .is-dropdown-submenu-parent {
+    position: relative;
+
+    a::after {
+      position: absolute;
+      top: 50%;
+      #{$global-right}: 5px;
+      #{$global-left}: auto;
+      margin-top: -1 * $dropdownmenu-arrow-size;
+    }
+
+    &.opens-inner > .is-dropdown-submenu {
+
+      top: 100%;
+      @if $global-text-direction == 'rtl' {
+        right: auto;
+      }
+      @else {
+        left: auto;
+      }
+    }
+
+    &.opens-left > .is-dropdown-submenu {
+      right: 100%;
+      left: auto;
+    }
+
+    &.opens-right > .is-dropdown-submenu {
+      right: auto;
+      left: 100%;
+    }
+  }
+
+  .is-dropdown-submenu {
+    position: absolute;
+    top: 0;
+    #{$global-left}: 100%;
+    z-index: 1;
+
+    display: none;
+    min-width: $dropdownmenu-min-width;
+
+    .dropdown & a {
+      padding: $dropdownmenu-submenu-padding;
+    }
+
+    > li {
+      width: 100%;
+    }
+
+    // TODO Cut back specificity
+    //&:not(.js-dropdown-nohover) > .is-dropdown-submenu-parent:hover > &, // why is this line needed? Opening is handled by JS and this causes some ugly flickering when the sub is re-positioned automatically...
+    &.js-dropdown-active {
+      display: block;
+    }
+  }
+}
 
 @mixin alkaline-navbar-toggle-button {
   button[data-toggle="navbar"] {
