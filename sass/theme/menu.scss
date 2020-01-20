@@ -4,6 +4,8 @@
 $menu-button-font-family: inherit;
 $menu-button-background: inherit;
 $menu-button-color: inherit;
+$menu-item-color-active: $white;
+$menu-item-background-active: get-color(primary);
 
 $dropdownmenu-active-button-background: inherit;
 $dropdownmenu-active-button-color: inherit;
@@ -40,6 +42,12 @@ $dropdownmenu-arrow-padding: 1.5rem;
       background: $menu-button-background;
       color: $menu-button-color;
       font-family: $menu-button-font-family;
+    }
+
+    // Active state
+    .is-active > a {
+      background: $menu-item-background-active;
+      color: $menu-item-color-active;
     }
   }
 }

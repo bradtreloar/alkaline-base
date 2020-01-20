@@ -6,6 +6,9 @@ ul.menu {
     background: inherit;
     color: inherit;
     font-family: inherit; }
+  ul.menu .is-active > a {
+    background: #1779ba;
+    color: #fefefe; }
 
 .is-drilldown {
   background: inherit; }
