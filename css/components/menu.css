@@ -149,8 +149,7 @@ ul.menu {
     transition: height 0.5s; }
 
 .drilldown a {
-  padding: 0.7rem 1rem;
-  background: inherit; }
+  padding: 0.7rem 1rem; }
 
 .drilldown .is-drilldown-submenu {
   position: absolute;
@@ -158,7 +157,6 @@ ul.menu {
   left: 100%;
   z-index: -1;
   width: 100%;
-  background: inherit;
   transition: -webkit-transform 0.15s linear;
   transition: transform 0.15s linear;
   transition: transform 0.15s linear, -webkit-transform 0.15s linear; }
@@ -173,67 +171,8 @@ ul.menu {
   .drilldown .is-drilldown-submenu a {
     padding: 0.7rem 1rem; }
 
-.drilldown .nested.is-drilldown-submenu {
-  margin-right: 0;
-  margin-left: 0; }
-
 .drilldown .drilldown-submenu-cover-previous {
   min-height: 100%; }
-
-.drilldown .is-drilldown-submenu-parent > a {
-  position: relative; }
-  .drilldown .is-drilldown-submenu-parent > a::after {
-    position: absolute;
-    top: 50%;
-    margin-top: -6px;
-    right: 1rem;
-    display: block;
-    width: 0;
-    height: 0;
-    border: inset 6px;
-    content: '';
-    border-right-width: 0;
-    border-left-style: solid;
-    border-color: transparent transparent transparent #1779ba; }
-
-.drilldown.align-left .is-drilldown-submenu-parent > a::after {
-  left: auto;
-  right: 1rem;
-  display: block;
-  width: 0;
-  height: 0;
-  border: inset 6px;
-  content: '';
-  border-right-width: 0;
-  border-left-style: solid;
-  border-color: transparent transparent transparent #1779ba; }
-
-.drilldown.align-right .is-drilldown-submenu-parent > a::after {
-  right: auto;
-  left: 1rem;
-  display: block;
-  width: 0;
-  height: 0;
-  border: inset 6px;
-  content: '';
-  border-left-width: 0;
-  border-right-style: solid;
-  border-color: transparent #1779ba transparent transparent; }
-
-.drilldown .js-drilldown-back > a::before {
-  display: block;
-  width: 0;
-  height: 0;
-  border: inset 6px;
-  content: '';
-  border-left-width: 0;
-  border-right-style: solid;
-  border-color: transparent #1779ba transparent transparent;
-  border-left-width: 0;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.75rem;
-  border-left-width: 0; }
 
 ul.menu.dropdown > li.opens-left > .is-dropdown-submenu {
   top: 100%;

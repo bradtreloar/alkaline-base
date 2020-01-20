@@ -5,8 +5,9 @@ $menu-items-padding: 0.7rem 1.0rem;
 
 $header-menu-button-font-size: 0.875em;
 
-$drilldown-background: inherit;
-$drilldown-submenu-background: inherit;
+$drilldown-transition: transform 0.15s linear;
+$drilldown-padding: $menu-items-padding;
+$drilldown-submenu-padding: $drilldown-padding;
 
 $dropdownmenu-min-width: 200px;
 $dropdownmenu-padding: $menu-items-padding;
@@ -273,7 +274,56 @@ $share-menu-button-size: 2em;
 
 
 @mixin alkaline-drilldown-menu {
-  @include foundation-drilldown-menu;
+  // Applied to the Menu container
+  .is-drilldown {
+    position: relative;
+    overflow: hidden;
+
+    li {
+      display: block;
+    }
+
+    &.animate-height {
+      transition: height 0.5s;
+    }
+  }
+
+  // The top level <ul>
+  .drilldown {
+    a {
+      padding: $drilldown-padding;
+    }
+
+    // Applied to submenu <ul>s
+    .is-drilldown-submenu {
+      position: absolute;
+      top: 0;
+      #{$global-left}: 100%;
+      z-index: -1;
+
+      width: 100%;
+      transition: $drilldown-transition;
+
+      &.is-active {
+        z-index: 1;
+        display: block;
+        transform: translateX(if($global-text-direction == ltr, -100%, 100%));
+      }
+
+      &.is-closing {
+        transform: translateX(if($global-text-direction == ltr, 100%, -100%));
+      }
+
+      // Submenu item padding
+      a {
+        padding: $drilldown-submenu-padding;
+      }
+    }
+
+    .drilldown-submenu-cover-previous {
+      min-height: 100%;
+    }
+  }
 }
 
 

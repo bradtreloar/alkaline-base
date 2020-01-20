@@ -7,16 +7,50 @@ $menu-button-color: inherit;
 $menu-item-color-active: $white;
 $menu-item-background-active: get-color(primary);
 
+$arrow-color: $white;
+$arrow-size: 6px;
+
+$drilldown-arrow-color: $arrow-color;
+$drilldown-arrow-size: $arrow-size;
+
 $dropdownmenu-active-button-background: inherit;
 $dropdownmenu-active-button-color: inherit;
-$dropdownmenu-arrow-color: $white;
-$dropdownmenu-arrow-size: 6px;
+$dropdownmenu-arrow-color: $arrow-color;
+$dropdownmenu-arrow-size: $arrow-size;
 $dropdownmenu-arrow-padding: 1.5rem;
 
 
 ////////////////////////////////////////////////////////////////////////////////
 /// Helpers
 ////////////////////////////////////////////////////////////////////////////////
+
+/// TODO Replace CSS arrows with SVG carets.
+
+@mixin zf-drilldown-left-right-arrows {
+  .is-drilldown-submenu-parent > a {
+    position: relative;
+    &::after {
+      position: absolute;
+      top: 50%;
+      margin-top: -1 * $drilldown-arrow-size;
+      #{$global-right}: 1rem;
+      @include css-triangle($drilldown-arrow-size, $drilldown-arrow-color, $global-right);
+    }
+  }
+
+  &.align-left .is-drilldown-submenu-parent > a::after {
+    left: auto;
+    right: 1rem;
+    @include css-triangle($dropdownmenu-arrow-size, $dropdownmenu-arrow-color, right);
+  }
+
+  &.align-right .is-drilldown-submenu-parent > a::after {
+    right: auto;
+    left: 1rem;
+    @include css-triangle($dropdownmenu-arrow-size, $dropdownmenu-arrow-color, left);
+  }
+}
+
 
 @mixin zf-dropdown-left-right-arrows {
   > a::after {
@@ -93,15 +127,23 @@ $dropdownmenu-arrow-padding: 1.5rem;
   .is-drilldown {
     background: inherit;
   }
-}
 
+  .is-drilldown-submenu {
+    background: inherit;
+  }
 
-@mixin alkaline-share-menu-theme {
-  .menu.social-share {
-    li {
-      @include brand-colors(background-color);
-      fill: $white;
-    }
+  ul.menu.drilldown {
+    @include zf-drilldown-left-right-arrows;
+  }
+
+  .js-drilldown-back > a::before {
+    @include css-triangle($drilldown-arrow-size, $drilldown-arrow-color, $global-left);
+    border-#{$global-left}-width: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin-#{$global-right}: 0.75rem; // Creates space between the arrow and the text
+
+    border-#{$global-left}-width: 0;
   }
 }
 
@@ -151,6 +193,16 @@ $dropdownmenu-arrow-padding: 1.5rem;
 
     .is-dropdown-submenu-parent {
       @include zf-dropdown-left-right-arrows;
+    }
+  }
+}
+
+
+@mixin alkaline-share-menu-theme {
+  .menu.social-share {
+    li {
+      @include brand-colors(background-color);
+      fill: $white;
     }
   }
 }
