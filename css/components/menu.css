@@ -254,12 +254,6 @@ ul.menu.dropdown.align-right .is-dropdown-submenu.first-sub {
 
 .is-dropdown-submenu-parent {
   position: relative; }
-  .is-dropdown-submenu-parent a::after {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    left: auto;
-    margin-top: -6px; }
   .is-dropdown-submenu-parent.opens-inner > .is-dropdown-submenu {
     top: 100%;
     left: auto; }

@@ -172,11 +172,11 @@ $dropdownmenu-arrow-padding: 1.5rem;
       @if $size != $-zf-zero-breakpoint {
         @include breakpoint($size) {
           &.#{$size}-horizontal {
-            @include dropdown-menu-direction(horizontal);
+            @include _alkaline-dropdown-menu-theme-direction(horizontal);
           }
 
           &.#{$size}-vertical {
-            @include dropdown-menu-direction(vertical);
+            @include _alkaline-dropdown-menu-theme-direction(vertical);
           }
         }
       }
@@ -185,6 +185,16 @@ $dropdownmenu-arrow-padding: 1.5rem;
 
   .is-dropdown {
     background: inherit;
+  }
+
+  .is-dropdown-submenu-parent {
+    a::after {
+      position: absolute;
+      top: 50%;
+      #{$global-right}: 5px;
+      #{$global-left}: auto;
+      margin-top: -1 * $dropdownmenu-arrow-size;
+    }
   }
 
   .is-dropdown-submenu {

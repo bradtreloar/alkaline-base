@@ -126,14 +126,6 @@ ul.menu.dropdown.vertical > li.opens-right > a::after {
   border-color: transparent transparent transparent #fefefe; }
 
 @media print, screen and (min-width: 45em) {
-  ul.menu.dropdown.medium-horizontal > li.opens-left > .is-dropdown-submenu {
-    top: 100%;
-    right: 0;
-    left: auto; }
-  ul.menu.dropdown.medium-horizontal > li.opens-right > .is-dropdown-submenu {
-    top: 100%;
-    right: auto;
-    left: 0; }
   ul.menu.dropdown.medium-horizontal > li.is-dropdown-submenu-parent > a {
     position: relative;
     padding-right: 1.5rem; }
@@ -149,15 +141,6 @@ ul.menu.dropdown.vertical > li.opens-right > a::after {
     right: 5px;
     left: auto;
     margin-top: -3px; }
-  ul.menu.dropdown.medium-vertical > li .is-dropdown-submenu {
-    top: 0; }
-  ul.menu.dropdown.medium-vertical > li.opens-left > .is-dropdown-submenu {
-    right: 100%;
-    left: auto;
-    top: 0; }
-  ul.menu.dropdown.medium-vertical > li.opens-right > .is-dropdown-submenu {
-    right: auto;
-    left: 100%; }
   ul.menu.dropdown.medium-vertical > li > a::after {
     right: 14px; }
   ul.menu.dropdown.medium-vertical > li.opens-left > a::after {
@@ -182,14 +165,6 @@ ul.menu.dropdown.vertical > li.opens-right > a::after {
     border-color: transparent transparent transparent #fefefe; } }
 
 @media print, screen and (min-width: 67.5em) {
-  ul.menu.dropdown.large-horizontal > li.opens-left > .is-dropdown-submenu {
-    top: 100%;
-    right: 0;
-    left: auto; }
-  ul.menu.dropdown.large-horizontal > li.opens-right > .is-dropdown-submenu {
-    top: 100%;
-    right: auto;
-    left: 0; }
   ul.menu.dropdown.large-horizontal > li.is-dropdown-submenu-parent > a {
     position: relative;
     padding-right: 1.5rem; }
@@ -205,15 +180,6 @@ ul.menu.dropdown.vertical > li.opens-right > a::after {
     right: 5px;
     left: auto;
     margin-top: -3px; }
-  ul.menu.dropdown.large-vertical > li .is-dropdown-submenu {
-    top: 0; }
-  ul.menu.dropdown.large-vertical > li.opens-left > .is-dropdown-submenu {
-    right: 100%;
-    left: auto;
-    top: 0; }
-  ul.menu.dropdown.large-vertical > li.opens-right > .is-dropdown-submenu {
-    right: auto;
-    left: 100%; }
   ul.menu.dropdown.large-vertical > li > a::after {
     right: 14px; }
   ul.menu.dropdown.large-vertical > li.opens-left > a::after {
@@ -239,6 +205,13 @@ ul.menu.dropdown.vertical > li.opens-right > a::after {
 
 .is-dropdown {
   background: inherit; }
+
+.is-dropdown-submenu-parent a::after {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  left: auto;
+  margin-top: -6px; }
 
 .is-dropdown-submenu {
   border: none;
